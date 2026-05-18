@@ -1,6 +1,39 @@
 # Authentic Digital Twin Content
 
-A skill for generating long-form content in a named human author's voice — with explicit, block-level provenance annotation so readers can audit which content is human-authored, which is AI-drafted-then-human-edited, and which is AI verbatim.
+A Claude Code plugin and Agent Skill for generating long-form content in a named human author's voice — with explicit, block-level provenance annotation so readers can audit which content is human-authored, which is AI-drafted-then-human-edited, and which is AI verbatim.
+
+## Installation
+
+### Claude Code (plugin — recommended)
+
+```bash
+/plugin install https://github.com/Know-Me-Tools/authentic-digital-twin-content
+```
+
+The skill is available as `/authentic-digital-twin-content:authentic-digital-twin-content` after installation.
+
+### Claude Code (standalone, dev/local)
+
+```bash
+git clone git@github.com:Know-Me-Tools/authentic-digital-twin-content.git
+claude --plugin-dir ./authentic-digital-twin-content
+```
+
+### OpenCode
+
+OpenCode discovers skills from `.claude/skills/` automatically. Copy or symlink the skill directory:
+
+```bash
+cp -r authentic-digital-twin-content/skills/authentic-digital-twin-content ~/.config/opencode/skills/
+```
+
+Or point OpenCode at `.claude/skills/authentic-digital-twin-content` if you have the repo checked out in your project.
+
+### Other agents (Cursor, Goose, Gemini CLI, Junie, etc.)
+
+This skill conforms to the [Agent Skills](https://agentskills.io) open format. Install per your agent's skill discovery mechanism, pointing it at `skills/authentic-digital-twin-content/SKILL.md`.
+
+---
 
 ## What this is
 
@@ -14,31 +47,38 @@ Every block of substantive content in an article produced by this skill declares
 
 A **content provenance manifest** at the article footer reports every block, its category, and (for AI-involved blocks) the model provider, model name, and authoring tool used to produce it.
 
-This is the **Authentic Digital Twin Content Standard v1**. Full specification: `references/authenticity-standard.md`.
+This is the **Authentic Digital Twin Content Standard v1**. Full specification: `skills/authentic-digital-twin-content/references/authenticity-standard.md`.
 
-## What's in this directory
+---
+
+## Repository layout
 
 | Path | Purpose |
 |---|---|
-| `SKILL.md` | The skill definition. Read this first. |
-| `references/authenticity-standard.md` | The v1 standard specification |
-| `references/voice-extraction-process.md` | How to build a new author's substrate from raw inputs |
-| `references/annotation-scheme.md` | Operational playbook for applying annotations |
-| `references/surreal-memory-schema.md` | Graph schema for persistence (optional) |
-| `references/substrate-template.md` | Directory structure for a new author's twin |
-| `zed-workspace-article.md` | Worked example: rewritten article under the standard |
-| `docs/digital-twin-travis/` | Worked example: complete substrate for Travis James |
-| `docs/authentic-digital-twin-conversation-transcript.md` | Decision history for this skill |
+| `.claude-plugin/plugin.json` | Claude Code plugin manifest |
+| `skills/authentic-digital-twin-content/SKILL.md` | The skill definition |
+| `skills/authentic-digital-twin-content/references/authenticity-standard.md` | The v1 standard specification |
+| `skills/authentic-digital-twin-content/references/voice-extraction-process.md` | How to build a new author's substrate from raw inputs |
+| `skills/authentic-digital-twin-content/references/annotation-scheme.md` | Operational playbook for applying annotations |
+| `skills/authentic-digital-twin-content/references/surreal-memory-schema.md` | Graph schema for persistence (optional) |
+| `skills/authentic-digital-twin-content/references/substrate-template.md` | Directory structure for a new author's twin |
+| `skills/authentic-digital-twin-content/zed-workspace-article.md` | Worked example: rewritten article under the standard |
+| `skills/authentic-digital-twin-content/docs/digital-twin-travis/` | Worked example: complete substrate for Travis James |
+| `skills/authentic-digital-twin-content/docs/authentic-digital-twin-conversation-transcript.md` | Decision history for this skill |
+
+---
 
 ## How to use
 
 The skill operates in three modes.
 
-**Mode A — Generate.** The author's substrate is already in place in `docs/digital-twin-<author>/`. Ask for new content. The skill reads the substrate and produces voice-aligned output with annotations.
+**Mode A — Generate.** The author's substrate is already in place in a `docs/digital-twin-<author>/` directory. Ask for new content. The skill reads the substrate and produces voice-aligned output with annotations.
 
-**Mode B — Rewrite.** An existing article is in AI-default voice. Ask the skill to rewrite under the standard. The skill classifies each block, rewrites the human-voice blocks against the substrate, preserves the AI-verbatim blocks, and applies annotations.
+**Mode B — Rewrite.** An existing article is in AI-default voice. Ask the skill to rewrite it under the standard. The skill classifies each block, rewrites the human-voice blocks against the substrate, preserves the AI-verbatim blocks, and applies annotations.
 
-**Mode C — Bootstrap.** No substrate yet for the author. The skill scaffolds the substrate directory using `references/substrate-template.md`, collects raw inputs from the author, runs the extraction process in `references/voice-extraction-process.md`, and produces a complete twelve-file substrate ready for Generate mode.
+**Mode C — Bootstrap.** No substrate exists yet for the author. The skill scaffolds the substrate directory using the template, collects raw inputs from the author, runs the extraction process, and produces a complete twelve-file substrate ready for Generate mode.
+
+---
 
 ## Reliability gates
 
@@ -49,6 +89,8 @@ Before Generate mode runs, the substrate must pass two gates:
 
 The skill refuses to generate from substrate that fails either gate. Voice-flat output wastes review cycles; failing fast is correct.
 
+---
+
 ## What this skill does not do
 
 - It does not impersonate authors who have not authorized a substrate
@@ -56,8 +98,12 @@ The skill refuses to generate from substrate that fails either gate. Voice-flat 
 - It does not replace editorial judgment — the author remains responsible for what is published under their name
 - It does not generate personality assessments; existing assessments are inputs
 
+---
+
 ## License and re-use
 
-The standard, the schema, and the methodology are intended to be re-used. Any author can bootstrap a substrate following `references/substrate-template.md` and apply the v1 standard to their own publishing. The standard is versioned; articles declare which version they were produced under.
+Licensed under the Apache License 2.0 — see [LICENSE](LICENSE).
 
-The Travis James substrate in `docs/digital-twin-travis/` is the reference implementation. It is published as a worked example, not as a personality file for general use.
+The standard, the schema, and the methodology are intended to be re-used. Any author can bootstrap a substrate and apply the v1 standard to their own publishing. The standard is versioned; articles declare which version they were produced under.
+
+**Exception:** `skills/authentic-digital-twin-content/docs/digital-twin-travis/` — All rights reserved. Published as a reference implementation only; do not reproduce or use to train models without explicit written permission from Travis James.

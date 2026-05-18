@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+ehthumbs.db
+
+# Node (for skills-ref and any dev tooling)
+node_modules/
+npm-debug.log*
+
+# KBD session artifacts (not committed — derived state)
+.kbd-orchestrator/phases/*/execution.md
+
+# Claude Code local session state
+.claude/settings.local.json

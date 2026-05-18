@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your AI agent doesn't know where it is — Travis James</title>
+<meta name="description" content="From vibe coding to context engineering: the workspace identity layer agentic tools still lack." />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" crossorigin="anonymous"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FAFAF9;
+  --fg: #111210;
+  --muted-fg: #5C6070;
+  --border: #E2E4E9;
+  --muted: #F2F3F5;
+  --card: #FFFFFF;
+  --primary: #E04E28;
+  --primary-light: #FF6A3D;
+  --accent: #F5E6E1;
+  --secondary: #0D1117;
+  --secondary-mid: #1C2333;
+  --sans: 'Space Grotesk', sans-serif;
+  --serif: 'Lora', Georgia, serif;
+  --ui: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --max: 680px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PROGRESS BAR ── */
+#reading-progress {
+  position: fixed; top: 0; left: 0; z-index: 200;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,250,249,.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: .7rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.nav-mark {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: linear-gradient(140deg, var(--primary), var(--primary-light));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-mark span { font-family: var(--sans); font-size: .7rem; font-weight: 700; color: #fff; }
+.nav-wordmark { font-family: var(--sans); font-size: .85rem; font-weight: 700; letter-spacing: -.02em; color: var(--fg); }
+.nav-wordmark em { font-style: normal; color: var(--primary); }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-link { font-family: var(--ui); font-size: .78rem; font-weight: 500; color: var(--muted-fg); text-decoration: none; transition: color .15s; }
+.nav-link:hover { color: var(--fg); }
+.nav-cta {
+  font-family: var(--ui); font-size: .75rem; font-weight: 600;
+  background: var(--fg); color: #fff;
+  padding: .4rem 1rem; border-radius: 6px;
+  text-decoration: none; transition: background .15s;
+}
+.nav-cta:hover { background: var(--primary); }
+
+/* ── POST HEADER ── */
+.post-header {
+  padding: 8rem 2rem 4rem;
+  max-width: 760px; margin: 0 auto;
+}
+.post-meta-top {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 2rem; flex-wrap: wrap;
+}
+.post-tag {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--primary); background: var(--accent);
+  padding: .2rem .65rem; border-radius: 4px;
+}
+.post-tag-plain {
+  font-family: var(--mono); font-size: .58rem; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted-fg);
+}
+.post-date { margin-left: auto; font-family: var(--mono); font-size: .58rem; font-weight: 500; letter-spacing: .08em; color: var(--muted-fg); }
+
+.post-title {
+  font-family: var(--serif); font-size: 2.55rem; font-weight: 600;
+  line-height: 1.15; letter-spacing: -.01em;
+  color: var(--fg); margin-bottom: 1rem;
+}
+.post-title .ember { color: var(--primary); font-style: italic; }
+
+.post-dek {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+  line-height: 1.72; color: var(--muted-fg);
+  max-width: 58ch; margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.post-byline {
+  display: flex; align-items: center; gap: 1rem;
+  padding-top: 1.75rem; border-top: 1px solid var(--border);
+}
+.byline-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(140deg, var(--primary), var(--primary-light));
+  display: flex; align-items: center; justify-content: center;
+}
+.byline-avatar span { font-family: var(--sans); font-size: .78rem; font-weight: 700; color: #fff; }
+.byline-name { font-family: var(--ui); font-size: .86rem; font-weight: 600; }
+.byline-role { font-family: var(--ui); font-size: .75rem; color: var(--muted-fg); }
+.byline-read { margin-left: auto; font-family: var(--mono); font-size: .58rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-fg); }
+
+.post-divider { height: 1px; background: var(--border); max-width: 760px; margin: 0 auto; }
+
+/* ── ARTICLE BODY ── */
+.post-body {
+  max-width: 680px; margin: 0 auto;
+  padding: 3.5rem 2rem 6rem;
+}
+
+/* prose */
+.post-body p {
+  font-family: var(--serif); font-size: 1.05rem;
+  line-height: 1.85; color: var(--fg);
+  margin-bottom: 1.65rem; max-width: 65ch;
+}
+.post-body p:last-child { margin-bottom: 0; }
+
+.post-body h2 {
+  font-family: var(--sans); font-size: 1.35rem; font-weight: 700;
+  letter-spacing: -.025em; line-height: 1.2;
+  margin-top: 3.5rem; margin-bottom: 1.1rem; color: var(--fg);
+}
+.post-body h3 {
+  font-family: var(--sans); font-size: 1.08rem; font-weight: 700;
+  letter-spacing: -.02em; margin-top: 2.5rem; margin-bottom: .75rem;
+  color: var(--fg);
+}
+
+/* ── AUTHORSHIP TAG ── */
+.authorship {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .18rem .6rem; border-radius: 4px;
+  margin-bottom: 1.25rem; margin-top: .25rem;
+}
+.authorship-block { margin-bottom: 0; }
+.authorship.travis {
+  color: var(--primary); background: var(--accent);
+}
+.authorship.travis-ai {
+  color: #A0C4FF; background: var(--secondary-mid);
+}
+.authorship.ai-verbatim {
+  color: #8B95A8; background: #F0F2F5;
+  border: 1px solid var(--border);
+}
+.authorship::before {
+  content: '—';
+  opacity: .5;
+}
+
+/* ── READ GUIDE BOX ── */
+.read-guide {
+  background: var(--secondary);
+  border-radius: 12px; padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem; position: relative; overflow: hidden;
+}
+.read-guide::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,78,40,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.read-guide-eyebrow {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--primary-light); margin-bottom: .85rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.read-guide-eyebrow::before { content: ''; width: 18px; height: 1.5px; background: var(--primary-light); }
+.read-guide p {
+  font-family: var(--ui) !important; font-size: .88rem !important;
+  line-height: 1.7 !important; color: #8B95A8 !important;
+  margin-bottom: .85rem !important; max-width: none !important;
+}
+.read-guide p:last-child { margin-bottom: 0 !important; }
+
+.auth-legend {
+  display: flex; flex-direction: column; gap: .5rem; margin-top: 1rem;
+}
+.auth-legend-row { display: flex; align-items: flex-start; gap: .75rem; }
+.auth-legend-tag {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: .18rem .55rem; border-radius: 4px; flex-shrink: 0;
+  white-space: nowrap; margin-top: .1rem;
+}
+.auth-legend-tag.travis { color: var(--primary); background: var(--accent); }
+.auth-legend-tag.travis-ai { color: #A0C4FF; background: var(--secondary-mid); }
+.auth-legend-tag.ai-verbatim { color: #8B95A8; background: #1E2433; border: 1px solid #2D3448; }
+.auth-legend-desc {
+  font-family: var(--ui); font-size: .82rem; color: #8B95A8; line-height: 1.55;
+}
+
+/* ── PULL QUOTE ── */
+.pull {
+  border-left: 3px solid var(--primary);
+  margin: 2.5rem 0 2.5rem -1.5rem;
+  padding: .5rem 0 .5rem 1.75rem;
+}
+.pull p {
+  font-family: var(--serif); font-size: 1.18rem !important;
+  font-style: italic; font-weight: 500;
+  color: var(--fg) !important; line-height: 1.65 !important;
+  margin-bottom: 0 !important; max-width: none !important;
+}
+
+/* ── CODE BLOCKS ── */
+.code-block {
+  background: var(--secondary);
+  border: 1px solid #1E2736;
+  border-radius: 10px; overflow: hidden;
+  margin: 1.75rem 0;
+}
+.code-block-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .55rem 1rem;
+  background: #161C29;
+  border-bottom: 1px solid #1E2736;
+}
+.code-lang {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: #8B95A8;
+}
+.code-copy-btn {
+  font-family: var(--mono); font-size: .55rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #5C6882; background: none; border: 1px solid #2D3448;
+  padding: .2rem .55rem; border-radius: 4px; cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.code-copy-btn:hover { color: var(--primary-light); border-color: var(--primary); }
+.code-copy-btn.copied { color: #4ade80; border-color: #4ade80; }
+.code-block pre {
+  padding: 1.25rem 1.25rem 1.4rem;
+  overflow-x: auto; margin: 0;
+}
+.code-block code {
+  font-family: var(--mono); font-size: .82rem; font-weight: 400;
+  line-height: 1.7; color: #C9D1E0;
+  background: none !important; padding: 0 !important;
+  border-radius: 0 !important; white-space: pre;
+}
+
+/* inline code */
+.post-body code {
+  font-family: var(--mono); font-size: .82em; font-weight: 500;
+  background: var(--muted); color: var(--primary);
+  padding: .1em .4em; border-radius: 4px;
+}
+.code-block pre code { color: #C9D1E0 !important; background: none !important; padding: 0 !important; }
+
+/* syntax tokens */
+.tok-key    { color: #79C0FF; }
+.tok-str    { color: #A5D6FF; }
+.tok-cmt    { color: #5C6882; font-style: italic; }
+.tok-num    { color: #F8B4A0; }
+.tok-kw     { color: #FF7B72; }
+.tok-fn     { color: #D2A8FF; }
+.tok-punct  { color: #6EAEFF; }
+.tok-prop   { color: #79C0FF; }
+.tok-val    { color: #A5D6FF; }
+.tok-path   { color: #78C896; }
+
+/* ── SECTION BREAK ── */
+.section-break {
+  display: flex; align-items: center; justify-content: center;
+  gap: .75rem; margin: 3rem 0;
+}
+.section-break span { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
+.section-break span:nth-child(2) { background: var(--primary); }
+
+/* ── DATA TABLE ── */
+.data-table-wrap {
+  margin: 1.75rem 0;
+  border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.data-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--ui); font-size: .85rem;
+}
+.data-table thead {
+  background: var(--secondary);
+}
+.data-table thead th {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #8B95A8; padding: .7rem 1rem;
+  text-align: left; border-bottom: 1px solid #1E2736;
+}
+.data-table tbody tr { border-bottom: 1px solid var(--border); }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:hover { background: var(--muted); }
+.data-table tbody td { padding: .65rem 1rem; color: var(--fg); vertical-align: top; }
+.data-table tbody td:first-child {
+  font-family: var(--mono); font-size: .8rem; font-weight: 600;
+  color: var(--primary); white-space: nowrap;
+}
+
+/* ── PROVENANCE TABLE ── */
+.provenance-section {
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+}
+.provenance-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.25rem; cursor: pointer;
+}
+.provenance-title {
+  font-family: var(--sans); font-size: 1rem; font-weight: 700;
+  letter-spacing: -.02em; color: var(--fg);
+}
+.provenance-toggle-btn {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted-fg); background: var(--muted);
+  border: 1px solid var(--border); padding: .25rem .7rem;
+  border-radius: 5px; cursor: pointer; transition: color .15s, border-color .15s;
+}
+.provenance-toggle-btn:hover { color: var(--primary); border-color: var(--primary); }
+
+#provenance-body { overflow: hidden; }
+#provenance-body[aria-hidden="true"] { display: none; }
+
+.provenance-table { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .8rem; }
+.provenance-table thead { background: var(--secondary); }
+.provenance-table thead th {
+  font-family: var(--mono); font-size: .55rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #8B95A8; padding: .6rem .85rem; text-align: left;
+  border-bottom: 1px solid #1E2736;
+}
+.provenance-table tbody td { padding: .55rem .85rem; color: var(--fg); vertical-align: top; border-bottom: 1px solid var(--border); }
+.provenance-table tbody tr:last-child td { border-bottom: none; }
+.provenance-table tbody tr:hover td { background: var(--muted); }
+.prov-authorship { display: inline-block; padding: .1rem .45rem; border-radius: 3px; font-size: .7rem; font-weight: 600; white-space: nowrap; }
+.prov-authorship.travis { color: var(--primary); background: var(--accent); }
+.prov-authorship.travis-ai { color: #A0C4FF; background: #1C2333; }
+.prov-authorship.ai-verbatim { color: #8B95A8; background: #F0F2F5; border: 1px solid var(--border); }
+
+.defs-block {
+  margin-top: 1.5rem; padding: 1.25rem 1.5rem;
+  background: var(--muted); border-radius: 8px;
+}
+.defs-block dt {
+  font-family: var(--mono); font-size: .7rem; font-weight: 600;
+  color: var(--primary); margin-top: .75rem;
+}
+.defs-block dt:first-child { margin-top: 0; }
+.defs-block dd {
+  font-family: var(--ui); font-size: .83rem; color: var(--muted-fg);
+  line-height: 1.6; margin-left: 0; padding-left: 0; margin-top: .25rem;
+}
+
+/* ── TAGS + SHARE ── */
+.post-footer {
+  border-top: 1px solid var(--border); padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+.post-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.ptag {
+  font-family: var(--mono); font-size: .58rem; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase;
+  border: 1px solid var(--border); color: var(--muted-fg);
+  padding: .22rem .65rem; border-radius: 4px;
+}
+.share-label { font-family: var(--ui); font-size: .75rem; font-weight: 600; color: var(--muted-fg); margin-bottom: .75rem; }
+.share-links { display: flex; gap: .65rem; }
+.share-btn {
+  font-family: var(--ui); font-size: .75rem; font-weight: 600;
+  padding: .45rem 1rem; border-radius: 6px; border: 1px solid var(--border);
+  text-decoration: none; color: var(--fg); background: var(--card);
+  transition: border-color .15s, background .15s; cursor: pointer;
+}
+.share-btn:hover { border-color: var(--primary); background: var(--accent); color: var(--primary); }
+
+/* ── AUTHOR BIO ── */
+.author-bio {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem 1.75rem;
+  margin: 3rem 0;
+}
+.author-bio-avatar {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(140deg, var(--primary), var(--primary-light));
+  display: flex; align-items: center; justify-content: center;
+}
+.author-bio-avatar span { font-family: var(--sans); font-size: .85rem; font-weight: 700; color: #fff; }
+.author-bio-name { font-family: var(--sans); font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+.author-bio-text { font-family: var(--ui); font-size: .83rem; line-height: 1.65; color: var(--muted-fg); }
+.author-bio-text a { color: var(--primary); text-decoration: none; }
+.author-bio-text a:hover { text-decoration: underline; }
+
+/* ── SITE FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border); padding: 2rem;
+  max-width: 760px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sf-brand { font-family: var(--sans); font-size: .82rem; font-weight: 700; letter-spacing: -.02em; }
+.sf-brand em { font-style: normal; color: var(--primary); }
+.sf-meta { font-family: var(--mono); font-size: .56rem; color: var(--muted-fg); letter-spacing: .06em; text-transform: uppercase; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.post-header { animation: fadeUp .6s ease both; }
+.post-body    { animation: fadeUp .6s .1s ease both; }
+
+@media (max-width: 640px) {
+  .post-title { font-size: 1.85rem; }
+  .nav-right .nav-link { display: none; }
+  .pull { margin-left: 0; }
+  .post-header, .post-body, .site-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .nav { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .data-table { font-size: .75rem; }
+  .data-table tbody td:first-child { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<div id="reading-progress"></div>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-mark"><span>TJ</span></div>
+    <span class="nav-wordmark">travis<em>james</em>.ai</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#">Writing</a>
+    <a class="nav-link" href="#">Projects</a>
+    <a class="nav-link" href="#">About</a>
+    <a class="nav-cta" href="#">Join — Free</a>
+  </div>
+</nav>
+
+<!-- ── POST HEADER ── -->
+<header class="post-header">
+  <div class="post-meta-top">
+    <span class="post-tag">Technical Deep Dive</span>
+    <span class="post-tag-plain">AI Infrastructure · Context Engineering · Agentic Systems</span>
+    <span class="post-date">May 2026</span>
+  </div>
+
+  <h1 class="post-title">
+    Your AI agent doesn't know where it is<span class="ember"> —</span><br />
+    and that's the real context problem
+  </h1>
+
+  <p class="post-dek">
+    From vibe coding to context engineering: the workspace identity layer agentic tools still lack.
+  </p>
+
+  <div class="post-byline">
+    <div class="byline-avatar"><span>TJ</span></div>
+    <div>
+      <div class="byline-name">Travis James</div>
+      <div class="byline-role">Founder &amp; CTO · Prometheus AGS · travisjames.ai</div>
+    </div>
+    <span class="byline-read">18 min read</span>
+  </div>
+</header>
+
+<div class="post-divider"></div>
+
+<!-- ── POST BODY ── -->
+<article class="post-body">
+
+  <!-- ─── HOW TO READ THIS ARTICLE ─── -->
+  <h2>How to read this article</h2>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <div class="read-guide">
+    <div class="read-guide-eyebrow">Authentic Digital Twin Content Standard v1</div>
+    <p>This article uses the <strong style="color:#C9D1E0;">Authentic Digital Twin Content Standard v1</strong>. Every block of substantive content declares its authorship:</p>
+    <div class="auth-legend">
+      <div class="auth-legend-row">
+        <span class="auth-legend-tag travis">Travis</span>
+        <span class="auth-legend-desc">Original prose, authored by me.</span>
+      </div>
+      <div class="auth-legend-row">
+        <span class="auth-legend-tag travis-ai">Travis ← AI</span>
+        <span class="auth-legend-desc">Drafted by AI, edited by me to match my voice.</span>
+      </div>
+      <div class="auth-legend-row">
+        <span class="auth-legend-tag ai-verbatim">AI verbatim</span>
+        <span class="auth-legend-desc">Generated by AI and kept unedited, because the machine-default register is the right one for that content (typically code, JSON, mechanical tables).</span>
+      </div>
+    </div>
+    <p style="margin-top:1rem;">Each block carries a small italic eyebrow before it. A full manifest at the article footer reports the model provider, model name, and authoring tool for every AI-involved block. The reader can audit which ideas are mine and which are AI-assisted unedited. The boundary is explicit, not hidden.</p>
+  </div>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── THE SESSION THAT STARTED THIS ─── -->
+  <h2>The session that started this</h2>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Four repositories. One system.</p>
+
+  <p><code>prometheus-uar</code> is the agent runtime. <code>flint-gate</code> is the API gateway. <code>prometheus-identity</code> handles auth and credentials. <code>flint-pmpo</code> orchestrates the lot. No meaningful change touches fewer than two of them.</p>
+
+  <p>I moved off VSCode about eight months ago. The Rust-native performance was obvious from the first session — no Electron tax, no extension host gnawing through 200MB before I'd opened a file. ACP was the deciding factor. One open protocol that connects Claude Code, Codex, and Gemini CLI to the same editor — without a bespoke per-vendor extension — is the first structural improvement the agentic-IDE space has produced in years.</p>
+
+  <p>Then I asked an agent to propagate a trait change across the runtime and the gateway. It started searching. It found <code>src/handler.rs</code> in two different directories and had no machine-readable way to know which codebase it was operating in. I explained the project structure. The session ended. The next one started cold, with no memory of that explanation.</p>
+
+  <p>The agent isn't dumb. The context it was handed is structurally incomplete. That's not a model problem. It's a workspace identity problem — and naming it took longer than fixing it.</p>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── WHY ZED / ACP ─── -->
+  <h2>Why Zed, and what ACP actually changed</h2>
+  <div class="authorship travis-ai authorship-block"><span>Travis ← AI · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <p>A few numbers first, because in this space the numbers do the arguing.</p>
+
+  <p>Zed's idle memory footprint with a project open has been benchmarked at roughly 222 MB. VSCode under the same conditions sits around 3,549 MB — a 16× gap. Startup runs under one second for Zed versus two to five for VSCode under typical extension load. Edit latency measures at approximately 58 ms versus 97 ms.</p>
+
+  <p>These are not impressions. An agentic session iterating on a cross-service refactor lives inside the editor for hours. A 16× memory gap isn't a laptop-fan problem. It's CPU time and thermal headroom that could be running analysis.</p>
+
+  <p>The more important advance is the Agent Client Protocol — ACP. It's an open JSON-RPC standard that decouples AI agents from editors the way LSP decoupled language intelligence from IDEs. An ACP-connected agent runs as a separate process, communicates with the editor over stdio, and is therefore portable. Zed is the reference implementation. JetBrains announced ACP integration in early 2026. Claude Code, Codex, and Gemini CLI all speak it.</p>
+
+  <p>The LSP analogy holds precisely. Before LSP, every editor maintained its own Go compiler integration, its own Python type checker, its own Rust analyzer. After LSP, you implement the protocol once and every editor inherits it. Before ACP, each AI coding agent needed a bespoke plugin per IDE. After ACP, you implement the protocol once and every compatible editor inherits the agent.</p>
+
+  <p>That's a real architectural advance. What ACP deliberately left out of scope — and what nobody else has filled in — is what the agent is told about the workspace it's operating in.</p>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── NOT A MISSING FEATURE ─── -->
+  <h2>Not a missing feature. A missing identity layer.</h2>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>The framing I see in every Zed thread on this — <em>"Zed is missing the workspace feature"</em> — is wrong. Or more precisely, it's incomplete in the way that gets a problem fixed at the wrong layer.</p>
+
+  <p>Zed has a workspace feature. It's called "Add Folder to Project." You open UAR, add Flint Gate, add Identity, and Zed merges the three into one project tree. From a human's perspective, this is fine. You can open files. You can search. You can run tasks. The recent patches that improve this on Zed's side smooth out edge cases — they don't change the architecture.</p>
+
+  <p>From an agent's perspective, the same merge produces one flat namespace. The agent sees <code>/Users/me/Projects/prometheus-uar/src/handler.rs</code> and <code>/Users/me/Projects/flint-gate/src/handler.rs</code>. Both contain a <code>Handler</code> struct. Both implement a shared trait from a common library. The agent has to infer from directory path which service it's looking at, which build contract applies, which environment variables are expected, whether <code>cargo clippy --workspace</code> is the agreed quality gate here or some different command per root.</p>
+
+  <p>Inference works until it doesn't. It breaks when roots use common naming conventions — which they will, because well-architected systems use consistent terminology. It breaks when you rename a directory. It supplies no machine-readable contract for task execution, so "run the tests" is an instruction the agent resolves by guessing.</p>
+
+  <p>Stop. The actual question is not whether Zed has a <code>.code-workspace</code> equivalent. The actual question is whether the agent layer has a namespace primitive — and it doesn't. ACP's <code>initialize</code> handshake sends <code>clientInfo</code> and <code>agentInfo</code>. There is no <code>workspaceInfo</code>. There is no concept of a named, multi-root workspace anywhere in the protocol. Zed's multi-folder workaround papers over the human-facing side and amplifies the agent-facing side.</p>
+
+  <div class="pull">
+    <p>Thoughtworks and MIT Technology Review have been calling the category "context engineering" since late 2025 — a systematic approach to managing how AI systems process context, rather than relying on a loose, vibes-based approach. The asymmetry is the whole argument: a well-crafted prompt in a poorly engineered context fails; a minimal prompt in a well-engineered context often succeeds. The prompt is tactics. The context is infrastructure.</p>
+  </div>
+
+  <p>At the workspace level, context engineering reduces to one requirement. The agent has to know its namespace. Not infer it. Know it.</p>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── WHAT WE BUILT ─── -->
+  <h2>What we built</h2>
+  <div class="authorship travis-ai authorship-block"><span>Travis ← AI · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <p><code>zed-workspace</code> is three Rust crates and roughly 1,800 lines of code. It does not patch Zed, modify ACP, or require root access. It adds one file format, one CLI binary, and one MCP server. It sits beside the existing infrastructure rather than inside it — which is why it shipped in eight weeks instead of becoming a multi-year RFC.</p>
+
+  <!-- sub: manifest -->
+  <h3>The manifest: <code>.zworkspace.toml</code></h3>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>The manifest is the source of truth. It declares the workspace name, its root directories and their display names, per-root settings overrides, tasks, debug launch configurations, environment variables. It can live anywhere — in a project directory, in a meta-repo, in <code>~/.config/zed/workspaces/</code>. It travels with the team, version-controlled like any other source artifact.</p>
+
+  <p>Here's the unabridged manifest for one of our production workspaces.</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="code-lang">toml</span>
+      <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code><span class="tok-punct">[</span><span class="tok-key">workspace</span><span class="tok-punct">]</span>
+<span class="tok-prop">name</span>        = <span class="tok-str">"prometheus-core"</span>
+<span class="tok-prop">description</span> = <span class="tok-str">"UAR · Flint Gate · Identity · Mesh"</span>
+<span class="tok-prop">icon</span>        = <span class="tok-str">"🔥"</span>
+
+<span class="tok-punct">[[</span><span class="tok-key">roots</span><span class="tok-punct">]]</span>
+<span class="tok-prop">path</span> = <span class="tok-str">"~/Projects/prometheus-uar"</span>
+<span class="tok-prop">name</span> = <span class="tok-str">"UAR"</span>
+
+<span class="tok-punct">[[</span><span class="tok-key">roots.tasks</span><span class="tok-punct">]]</span>
+<span class="tok-prop">label</span>   = <span class="tok-str">"test UAR"</span>
+<span class="tok-prop">command</span> = <span class="tok-str">"cargo test -p uar"</span>
+
+<span class="tok-punct">[[</span><span class="tok-key">roots</span><span class="tok-punct">]]</span>
+<span class="tok-prop">path</span> = <span class="tok-str">"~/Projects/flint-gate"</span>
+<span class="tok-prop">name</span> = <span class="tok-str">"Flint Gate"</span>
+
+<span class="tok-punct">[</span><span class="tok-key">zed</span><span class="tok-punct">]</span>
+<span class="tok-prop">theme</span>          = <span class="tok-str">"One Dark"</span>
+<span class="tok-prop">tab_size</span>       = <span class="tok-num">4</span>
+<span class="tok-prop">format_on_save</span> = <span class="tok-str">"on"</span>
+
+<span class="tok-punct">[[</span><span class="tok-key">tasks</span><span class="tok-punct">]]</span>
+<span class="tok-prop">label</span>   = <span class="tok-str">"cargo clippy (all)"</span>
+<span class="tok-prop">command</span> = <span class="tok-str">"cargo clippy --workspace -- -D warnings"</span>
+<span class="tok-prop">cwd</span>     = <span class="tok-str">"~/Projects/prometheus-uar"</span>
+
+<span class="tok-punct">[</span><span class="tok-key">env</span><span class="tok-punct">]</span>
+<span class="tok-prop">RUST_LOG</span> = <span class="tok-str">"debug"</span>
+
+<span class="tok-punct">[</span><span class="tok-key">mcp</span><span class="tok-punct">]</span>
+<span class="tok-prop">auto_start</span> = <span class="tok-num">true</span></code></pre>
+  </div>
+
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Per-root tasks (<code>[[roots.tasks]]</code>) scope specific commands to specific services. Workspace tasks (<code>[[tasks]]</code>) apply everywhere. Two levels, not seventeen. The manifest is the file we want; everything else is materialization.</p>
+
+  <!-- sub: launcher -->
+  <h3>The launcher: <code>zw</code></h3>
+  <div class="authorship travis-ai authorship-block"><span>Travis ← AI · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <p><code>zw open .</code> does four things in sequence. It resolves all root paths. It deep-merges — never overwrites — <code>.zed/settings.json</code>, <code>tasks.json</code>, and <code>debug.json</code> into every root that exists on disk. It injects a <code>context_servers</code> stanza into each root's settings telling Zed to launch <code>zed-workspace-mcp</code> over stdio when the session opens. Then it calls <code>zed --new-window</code> with all roots as arguments.</p>
+
+  <p>Three commands to learn:</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="code-lang">bash</span>
+      <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code><span class="tok-kw">zw</span> init        <span class="tok-cmt"># scaffold a manifest in the current directory</span>
+<span class="tok-kw">zw</span> check .     <span class="tok-cmt"># validate without opening Zed</span>
+<span class="tok-kw">zw</span> open .      <span class="tok-cmt"># materialize config and open Zed</span></code></pre>
+  </div>
+
+  <!-- sub: context server -->
+  <h3>The context server: <code>zed-workspace-mcp</code></h3>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>This is the load-bearing piece. An MCP server that Zed spawns over stdio when the session opens — lifecycle managed by Zed, not by a background daemon. Six tools.</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>workspace_info</td>
+          <td>Full manifest: name, roots, task count, env keys</td>
+        </tr>
+        <tr>
+          <td>list_roots</td>
+          <td>Resolved absolute paths for all roots</td>
+        </tr>
+        <tr>
+          <td>find_files</td>
+          <td>Cross-root glob search, respects <code>.gitignore</code></td>
+        </tr>
+        <tr>
+          <td>read_file</td>
+          <td>File content, path-jailed to declared roots</td>
+        </tr>
+        <tr>
+          <td>grep</td>
+          <td>Cross-root regex search, skips binary files</td>
+        </tr>
+        <tr>
+          <td>list_tasks</td>
+          <td>Workspace task definitions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Two production details worth surfacing because they're the kind of decisions that separate a tool from a proof of concept. The <code>read_file</code> tool canonicalizes the requested path and verifies it falls inside a declared root before reading — requests for files outside the workspace return access-denied, not a silent serve of whatever absolute path was supplied. The <code>grep</code> tool applies a NUL-byte heuristic to skip binary files and caps maximum file size before reading. Neither is novel. Both are non-negotiable for production tooling.</p>
+
+  <p>The server is not Zed-specific. Any MCP-capable client picks it up: Claude Code via <code>~/.claude/settings.json</code>, OpenCode via <code>.opencode/opencode.json</code>, Cursor and Windsurf and Codex via <code>.mcp.json</code>. The included <code>setup-zed-workspace</code> skill wires all of them. One install, one manifest, consistent workspace context for every agent in the stack — regardless of which editor they're running in.</p>
+
+  <p>The trade-off, because architecture without surfaced trade-offs is sycophancy with a syntax highlighter: this approach depends on the host editor cooperating. Zed cooperates. Cursor, Windsurf, and Codex cooperate via standard MCP. Any editor that ignores MCP context servers gets a no-op until it doesn't. The manifest still works as documentation and as a launcher hint; the agent-side context-injection requires the protocol path.</p>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── SESSION PROOF ─── -->
+  <h2>A session that made the value obvious</h2>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Here's the task that made this project worth writing about.</p>
+
+  <p>The goal: verify that a new <code>PolicyScope</code> enum added to the UAR crate had been propagated consistently to the Flint Gate service. Specifically, every <code>impl AuthorizationHandler</code> across both codebases needed to handle the new variant exhaustively. Three minutes of audit if the tooling is right. Forty minutes if it isn't.</p>
+
+  <p><strong>Without <code>zed-workspace-mcp</code>:</strong></p>
+
+  <p>The agent opened in a flat multi-root session. It searched for <code>AuthorizationHandler</code> and found four implementations across UAR and Flint Gate. When it tried to check exhaustiveness of the match arms on <code>PolicyScope</code>, it had to construct paths by reading the directory structure and request content by absolute path. Partway through, it asked: <em>"Which of these is the gateway-facing implementation?"</em></p>
+
+  <p>That question contains the entire problem. The answer was sitting in the manifest — Flint Gate is the gateway service; UAR is the runtime. Zero ambiguity, zero inference needed. But the manifest wasn't reachable. The agent had directory names and a guess.</p>
+
+  <p>Three clarifying exchanges before the agent had enough context to land a useful answer.</p>
+
+  <p><strong>With <code>zed-workspace-mcp</code>:</strong></p>
+
+  <p>The agent called <code>workspace_info</code> on session open — the server surfaces this as the recommended first call in its <code>instructions</code> field.</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="code-lang">json</span>
+      <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code><span class="tok-punct">{</span>
+  <span class="tok-key">"name"</span><span class="tok-punct">:</span> <span class="tok-str">"prometheus-core"</span><span class="tok-punct">,</span>
+  <span class="tok-key">"roots"</span><span class="tok-punct">:</span> <span class="tok-punct">[</span>
+    <span class="tok-punct">{</span> <span class="tok-key">"name"</span><span class="tok-punct">:</span> <span class="tok-str">"UAR"</span><span class="tok-punct">,</span>        <span class="tok-key">"path"</span><span class="tok-punct">:</span> <span class="tok-path">"/Users/gqadonis/Projects/prometheus-uar"</span><span class="tok-punct">,</span> <span class="tok-key">"exists"</span><span class="tok-punct">:</span> <span class="tok-num">true</span> <span class="tok-punct">},</span>
+    <span class="tok-punct">{</span> <span class="tok-key">"name"</span><span class="tok-punct">:</span> <span class="tok-str">"Flint Gate"</span><span class="tok-punct">,</span> <span class="tok-key">"path"</span><span class="tok-punct">:</span> <span class="tok-path">"/Users/gqadonis/Projects/flint-gate"</span><span class="tok-punct">,</span>     <span class="tok-key">"exists"</span><span class="tok-punct">:</span> <span class="tok-num">true</span> <span class="tok-punct">}</span>
+  <span class="tok-punct">],</span>
+  <span class="tok-key">"task_count"</span><span class="tok-punct">:</span> <span class="tok-num">4</span><span class="tok-punct">,</span>
+  <span class="tok-key">"env_keys"</span><span class="tok-punct">:</span> <span class="tok-punct">[</span><span class="tok-str">"RUST_LOG"</span><span class="tok-punct">]</span>
+<span class="tok-punct">}</span></code></pre>
+  </div>
+
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Named roots. No ambiguity. Next call:</p>
+
+  <p><code>grep(pattern: "impl AuthorizationHandler", file_glob: "**/*.rs")</code></p>
+
+  <p>Results prefixed with named roots:</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="code-lang">text</span>
+      <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code><span class="tok-path">UAR</span>:src/policy/auth.rs:18:        impl AuthorizationHandler for PolicyEngine {
+<span class="tok-path">UAR</span>:src/policy/cedar.rs:44:       impl AuthorizationHandler for CedarAdapter {
+<span class="tok-path">Flint Gate</span>:src/middleware/auth.rs:31: impl AuthorizationHandler for GatewayAuth {
+<span class="tok-path">Flint Gate</span>:src/grpc/auth.rs:67:   impl AuthorizationHandler for GrpcAuthLayer {</code></pre>
+  </div>
+
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>The agent then called <code>read_file("UAR:src/policy/auth.rs")</code> and <code>read_file("Flint Gate:src/middleware/auth.rs")</code> directly, using the <code>RootName:relative/path</code> addressing the server provides. It found the missing variant in the gateway implementation in one pass.</p>
+
+  <p>Zero clarifying questions. Zero re-orientation. The same model, the same prompt, a different context layer underneath.</p>
+
+  <div class="pull">
+    <p>The agent didn't get smarter. It got better equipped. Context that is declared performs differently from context that has to be inferred — and every minute the agent spends asking "where am I?" is a minute it isn't spending on the actual work. That minute compounds across hundreds of sessions.</p>
+  </div>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── VIBE CODING TO CONTEXT ENG ─── -->
+  <h2>From vibe coding to context engineering to workspace identity</h2>
+  <div class="authorship travis-ai authorship-block"><span>Travis ← AI · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <p>Andrej Karpathy coined "vibe coding" in February 2025. The term named something real — describing intent to an AI and accepting what came back, without necessarily understanding the implementation. For prototypes, for exploration, for the long tail of small tools that previously weren't worth the time to build, it worked. The unlocking was genuine.</p>
+
+  <p>The cost showed up within months. Code quality problems. Maintainability problems. Engineers shipping systems they couldn't fully explain. By late 2025, Thoughtworks and MIT Technology Review were describing the next phase as <em>context engineering</em> — a systematic discipline of structuring what AI agents know, rather than vibes. The Thoughtworks Technology Radar formulation: <em>the shift from a loose, vibes-based approach has given way to a systematic approach to managing how AI systems process context.</em></p>
+
+  <p>The Anthropic 2026 Agentic Coding Trends Report names where this trajectory is heading. Multi-agent systems replace single-agent workflows. Planner, architect, implementer, tester, reviewer — coordinated teams of specialized agents working in parallel across separate context windows. <em>"Organizations in 2026 will be able to harness multiple agents acting together to handle task complexity that was difficult to imagine just a year ago."</em></p>
+
+  <p>When five agents work in parallel across a four-repository workspace, workspace identity stops being a developer convenience. It becomes a coordination primitive. Without it, agents operate in the same undifferentiated namespace with no structural boundaries between their domains. You cannot tell the implementer agent <em>"your domain is UAR, the reviewer's domain is Flint Gate"</em> — because UAR and Flint Gate have no machine-readable definitions to anchor those assignments to.</p>
+
+  <p>Gartner projects 33% of enterprise software will feature agentic AI by 2028. The teams operating at that scale will not be differentiated by model capability. They will be differentiated by how precisely they have structured the context their agents operate in. Workspace identity — the named, versioned, machine-readable definition of which repositories exist, what they are called, and what contracts govern them — is foundational to that structure.</p>
+
+  <p><code>.zworkspace.toml</code> is an early answer to that need. It will not be the last.</p>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── WHAT'S NEXT ─── -->
+  <h2>What's next</h2>
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>The infrastructure for agent portability exists. ACP is stable, adopted, architecturally sound. The infrastructure for workspace identity does not yet exist at the protocol level — there is no workspace primitive in the ACP handshake, no standard for named roots in any editor-agent protocol I've audited.</p>
+
+  <p>What we built is a working implementation of that missing layer: a manifest format that names and structures a multi-repository workspace, a launcher that materializes it into Zed's per-root configuration, and an MCP server that hands every ACP-and-MCP-capable agent in the stack a precise, structured understanding of where it is operating.</p>
+
+  <p>The honest limit on this work: the manifest format is intentionally minimal. There is more to encode at the workspace identity layer than one team's use cases can anticipate — environment matrices for monorepos, dependency graphs across roots, declared interface contracts between services, agent-domain partitioning for multi-agent sessions. Those need to be designed in the open, not from one shop's experience. The current scope is the floor, not the ceiling.</p>
+
+  <p>MIT-licensed. Open source. Install in two commands.</p>
+
+  <div class="authorship ai-verbatim authorship-block"><span>AI verbatim · Anthropic Claude Opus 4.7 via Claude Code</span></div>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="code-lang">bash</span>
+      <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <pre><code><span class="tok-kw">git</span> clone https://github.com/GQAdonis/zed-workspace
+<span class="tok-kw">cd</span> zed-workspace && ./install.sh</code></pre>
+  </div>
+
+  <div class="authorship travis authorship-block"><span>Travis James</span></div>
+
+  <p>Pull requests welcome — especially on the manifest format itself.</p>
+
+  <p>Software manufacturing is becoming a coordination problem between agents. The agents are ready. The context infrastructure is catching up.</p>
+
+  <!-- ─── AUTHOR BIO ─── -->
+  <div class="author-bio">
+    <div class="author-bio-avatar"><span>TJ</span></div>
+    <div>
+      <div class="author-bio-name">Travis James</div>
+      <div class="author-bio-text">
+        Founder and CTO of Prometheus Agentic Growth Solutions, building sovereign AI infrastructure and agentic orchestration systems. He writes about the architecture of intelligent systems at <a href="https://travisjames.ai">travisjames.ai</a>.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-break"><span></span><span></span><span></span></div>
+
+  <!-- ─── PROVENANCE MANIFEST ─── -->
+  <div class="provenance-section">
+    <div class="provenance-header" onclick="toggleProvenance()" role="button" tabindex="0" aria-expanded="false" aria-controls="provenance-body">
+      <div class="provenance-title">Content provenance manifest</div>
+      <button class="provenance-toggle-btn" id="prov-toggle-btn">Show</button>
+    </div>
+
+    <div id="provenance-body" aria-hidden="true">
+      <p style="font-family:var(--ui);font-size:.85rem;color:var(--muted-fg);margin-bottom:1.25rem;line-height:1.65;">
+        This article was produced under the <strong>Authentic Digital Twin Content Standard v1</strong>. Block-level attribution follows.
+      </p>
+      <div class="data-table-wrap">
+        <table class="provenance-table">
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>Authorship</th>
+              <th>Model</th>
+              <th>Tool</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>How to read this article</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>The session that started this</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>Why Zed, and what ACP actually changed</td><td><span class="prov-authorship travis-ai">Travis ← AI</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>Not a missing feature. A missing identity layer.</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>What we built — intro</td><td><span class="prov-authorship travis-ai">Travis ← AI</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What we built — manifest prose</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>What we built — manifest TOML</td><td><span class="prov-authorship ai-verbatim">AI verbatim</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What we built — manifest commentary</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>What we built — launcher prose</td><td><span class="prov-authorship travis-ai">Travis ← AI</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What we built — launcher commands</td><td><span class="prov-authorship ai-verbatim">AI verbatim</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What we built — context server intro</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>What we built — tool table</td><td><span class="prov-authorship ai-verbatim">AI verbatim</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What we built — production details and cross-tool</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>A session that made the value obvious — narrative</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>A session that made the value obvious — JSON / grep output</td><td><span class="prov-authorship ai-verbatim">AI verbatim</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>From vibe coding to context engineering</td><td><span class="prov-authorship travis-ai">Travis ← AI</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>What's next — prose</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+            <tr><td>What's next — install commands</td><td><span class="prov-authorship ai-verbatim">AI verbatim</span></td><td>Anthropic Claude Opus 4.7</td><td>Claude Code</td></tr>
+            <tr><td>Author bio</td><td><span class="prov-authorship travis">Travis James</span></td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="defs-block">
+        <dt>Travis James</dt>
+        <dd>Original prose by the named author. No AI involvement, or AI involvement limited to spell-check and grammar that did not alter voice.</dd>
+        <dt>Travis ← AI</dt>
+        <dd>Drafted by AI, then edited by the human author for voice, tone, framing, and accuracy. The published voice is the human's; provenance of the original draft is reported for transparency.</dd>
+        <dt>AI verbatim</dt>
+        <dd>Generated by the named model via the named tool and reproduced without editorial intervention. Used for code samples, structured data outputs, and mechanical reference tables.</dd>
+      </div>
+
+      <p style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);margin-top:1.25rem;line-height:1.65;">
+        The standard exists so the reader can audit which ideas are mine and which are AI-assisted unedited. The boundary is explicit, not hidden.
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── TAGS + SHARE ─── -->
+  <div class="post-footer">
+    <div class="post-tags">
+      <span class="ptag">AI Infrastructure</span>
+      <span class="ptag">Context Engineering</span>
+      <span class="ptag">Agentic Systems</span>
+      <span class="ptag">Zed</span>
+      <span class="ptag">Rust</span>
+      <span class="ptag">MCP</span>
+      <span class="ptag">Workspace Identity</span>
+    </div>
+    <div class="share-label">Cross-published on</div>
+    <div class="share-links">
+      <a class="share-btn" href="#">LinkedIn</a>
+      <a class="share-btn" href="#">Medium</a>
+      <button class="share-btn" id="copy-link-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+
+</article>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="sf-brand">travis<em>james</em>.ai</div>
+  <div class="sf-meta">© 2026 Travis James · All rights reserved</div>
+</footer>
+
+<script>
+// ── Reading progress bar ──
+(function () {
+  const bar = document.getElementById('reading-progress');
+  function updateProgress() {
+    const scrollTop  = window.scrollY;
+    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width  = Math.min(pct, 100) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+})();
+
+// ── Code copy ──
+function copyCode(btn) {
+  const pre  = btn.closest('.code-block').querySelector('pre');
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function () {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(function () {
+    btn.textContent = 'Error';
+    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+// ── Copy article link ──
+function copyLink() {
+  const btn = document.getElementById('copy-link-btn');
+  navigator.clipboard.writeText(window.location.href).then(function () {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function () { btn.textContent = 'Copy link'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// ── Provenance manifest toggle ──
+function toggleProvenance() {
+  const body    = document.getElementById('provenance-body');
+  const btn     = document.getElementById('prov-toggle-btn');
+  const header  = body.previousElementSibling;
+  const hidden  = body.getAttribute('aria-hidden') === 'true';
+  body.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+  header.setAttribute('aria-expanded', hidden ? 'true' : 'false');
+  btn.textContent = hidden ? 'Hide' : 'Show';
+}
+
+// ── Keyboard accessibility for provenance toggle ──
+document.querySelector('.provenance-header').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleProvenance(); }
+});
+</script>
+</body>
+</html>

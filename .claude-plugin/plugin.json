@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "authentic-digital-twin-content",
+  "version": "1.0.0",
+  "description": "Generate published content in a specific human author's voice with block-level provenance annotation. Supports Generate, Rewrite, and Bootstrap modes. Every output block declares whether it was authored by the human, AI-drafted-then-edited, or AI verbatim.",
+  "author": {
+    "name": "Prometheus AGS",
+    "url": "https://github.com/Know-Me-Tools"
+  },
+  "homepage": "https://github.com/Know-Me-Tools/authentic-digital-twin-content",
+  "repository": "https://github.com/Know-Me-Tools/authentic-digital-twin-content",
+  "license": "Apache-2.0",
+  "keywords": [
+    "voice",
+    "authorship",
+    "provenance",
+    "digital-twin",
+    "content-generation",
+    "brand-voice",
+    "ai-disclosure"
+  ]
+}

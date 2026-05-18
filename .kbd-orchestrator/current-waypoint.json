@@ -3,9 +3,9 @@
   "phase": "phase-1-distribution-compliance",
   "lifecycle_stage": "execute-in-progress",
   "change_backend": "native-kbd",
-  "changes_completed": 1,
+  "changes_completed": 2,
   "changes_total": 4,
-  "next_step": "kbd-execute change-B-plugin-packaging — resolve OQ1 and OQ2 first",
+  "next_step": "kbd-execute change-C-registration-docs",
   "ordered_changes": [
     "change-A-spec-compliance",
     "change-B-plugin-packaging",
@@ -13,9 +13,7 @@
     "change-D-communication-scope"
   ],
   "blocked_on": [
-    "OQ1: wrap vs restructure (blocks B)",
-    "OQ2: public repo hosting (blocks B, C)",
-    "OQ4: Standard v2 vs v1.1 (blocks D)"
+    "OQ4: Standard v2 vs v1.1 (blocks D only)"
   ],
   "last_updated": "2026-05-18"
 }

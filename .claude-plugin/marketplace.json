@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "know-me-tools",
+  "description": "Skills and plugins for authentic AI-assisted authorship from Know Me Tools.",
+  "owner": {
+    "name": "Prometheus AGS / Know Me Tools",
+    "email": "tjames@prometheusags.ai"
+  },
+  "plugins": [
+    {
+      "name": "authentic-digital-twin-content",
+      "source": {
+        "source": "github",
+        "repo": "Know-Me-Tools/authentic-digital-twin-content"
+      },
+      "description": "Generate content in a specific human author's voice with block-level provenance annotation. Supports Generate, Rewrite, and Bootstrap modes. Implements the Authentic Digital Twin Content Standard v1.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Prometheus AGS"
+      },
+      "homepage": "https://github.com/Know-Me-Tools/authentic-digital-twin-content",
+      "repository": "https://github.com/Know-Me-Tools/authentic-digital-twin-content",
+      "license": "Apache-2.0",
+      "keywords": [
+        "voice",
+        "authorship",
+        "provenance",
+        "digital-twin",
+        "content-generation",
+        "brand-voice",
+        "ai-disclosure"
+      ],
+      "category": "content"
+    }
+  ]
+}

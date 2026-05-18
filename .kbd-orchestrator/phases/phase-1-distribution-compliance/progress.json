@@ -7,7 +7,7 @@
   "reflect_complete": false,
   "change_backend": "native-kbd",
   "changes_total": 4,
-  "changes_completed": 1,
+  "changes_completed": 2,
   "ordered_changes": [
     "change-A-spec-compliance",
     "change-B-plugin-packaging",
@@ -16,11 +16,11 @@
   ],
   "change_status": {
     "change-A-spec-compliance": "DONE",
-    "change-B-plugin-packaging": "blocked — OQ1 and OQ2 unresolved",
-    "change-C-registration-docs": "not started",
+    "change-B-plugin-packaging": "DONE",
+    "change-C-registration-docs": "ready to start",
     "change-D-communication-scope": "not started — OQ4 unresolved"
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-18",
-  "notes": "Change A complete. skills-ref validate passes. Blocked on OQ1 (wrap vs restructure), OQ2 (repo hosting) before Change B can start."
+  "notes": "Change B complete. Plugin wraps skill at skills/authentic-digital-twin-content/. claude --plugin-dir loads successfully. Pushed to github.com:Know-Me-Tools/authentic-digital-twin-content.git. marketplace.json moved to Change C scope."
 }

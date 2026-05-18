@@ -100,6 +100,14 @@ The skill refuses to generate from substrate that fails either gate. Voice-flat 
 
 ---
 
+## Distribution and registration
+
+See [docs/REGISTRATION.md](docs/REGISTRATION.md) for step-by-step instructions for every distribution channel: agentskills.io community showcase, Anthropic official marketplace, community git-repo marketplaces, OpenCode, and generic agent clients.
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+---
+
 ## License and re-use
 
 Licensed under the Apache License 2.0 — see [LICENSE](LICENSE).

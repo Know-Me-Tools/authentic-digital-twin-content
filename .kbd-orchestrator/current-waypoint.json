@@ -1,11 +1,11 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-1-distribution-compliance",
-  "lifecycle_stage": "reflect-ready",
+  "lifecycle_stage": "complete",
   "change_backend": "native-kbd",
   "changes_completed": 4,
   "changes_total": 4,
-  "next_step": "Run /kbd-reflect phase-1-distribution-compliance to close the phase",
+  "next_step": "Run /kbd-new-phase to begin phase-2-substrate-enrichment",
   "ordered_changes": [
     "change-A-spec-compliance",
     "change-B-plugin-packaging",
@@ -13,5 +13,5 @@
     "change-D-communication-scope"
   ],
   "blocked_on": [],
-  "last_updated": "2026-05-18"
+  "last_updated": "2026-05-19"
 }

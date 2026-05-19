@@ -9,7 +9,7 @@
 ## Identity Anchors
 
 ### Name and Aliases
-- Full name: **Travis James** (sometimes signs as Travis Q. James in formal contexts)
+- Full name: **Travis James** (sometimes signs as Travis J. James in formal contexts)
 - Avatar initials: **TJ**
 - Username convention: `gqadonis` (Mac home directory, GitHub, filesystem paths)
 - Brand name: **travisjames.ai**

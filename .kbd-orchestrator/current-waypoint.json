@@ -1,12 +1,17 @@
 {
   "project": "authentic-digital-twin-content",
-  "phase": "phase-4",
+  "phase": "phase-5",
   "lifecycle_stage": "reflect-complete",
   "change_backend": "native-kbd",
-  "changes_completed": 2,
-  "changes_total": 2,
-  "next_step": "Phase 4 complete. Run /kbd-new-phase phase-3b-substrate-hardening (requires Travis input) or /kbd-new-phase phase-5 (Travis-independent feature work).",
-  "ordered_changes": ["change-L-effortful-heuristic-enforcement", "change-M-shadow-pattern-detector"],
+  "changes_completed": 4,
+  "changes_total": 4,
+  "next_step": "Phase 5 complete. Run /kbd-new-phase phase-3b-substrate-hardening (requires Travis input) or wait for Travis input to unblock phase-3b. Shadow-pattern escalation evaluation deferred until 20+ Tier 1 outputs accumulate.",
+  "ordered_changes": [
+    "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+    "change-S-retest-cadence-protocol-in-voice-extraction-process",
+    "change-T-shadow-pattern-detector-reference-file",
+    "change-U-generic-pattern-framing-in-skill-md"
+  ],
   "blocked_on": [],
   "last_updated": "2026-05-19"
 }

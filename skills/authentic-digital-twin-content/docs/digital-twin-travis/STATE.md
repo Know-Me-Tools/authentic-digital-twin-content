@@ -161,7 +161,7 @@ These are explicitly NOT answered here — they belong in Assess and Plan:
 2. **Coverage gaps:** Are there voice registers (e.g., emotional contexts, family contexts) missing from the substrate?
 3. **Authenticity standard mechanics:** Exactly how should the in-article annotation scheme render?
 4. **Skill packaging structure:** What's the right `agentskills.io` skill shape?
-5. **Re-test cadence:** How should the digital twin update when Travis retakes either assessment? CliftonStrengths is generally stable but ranks can shift; SoulTrace is adaptive Bayesian and converges differently each pass.
+5. **Re-test cadence:** RESOLVED — see `references/voice-extraction-process.md`, Personality-framework re-test cadence section.
 6. **Shadow detection:** Should the skill include an active shadow-pattern detector flagging generated content matching Operator failure modes?
 7. **Effortful-heuristic enforcement:** Should the skill explicitly prompt for the effortful heuristics (16, 9, 11, 7, 4) when generating content? Travis-the-person sometimes skips them; the twin should not.
 

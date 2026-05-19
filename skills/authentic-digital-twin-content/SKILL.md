@@ -67,7 +67,7 @@ Steps:
    | 11 — Cedar Governance | When the surface is in a regulated domain (healthcare, banking, policy): include governance framing in the generated content |
    | 16 — Acknowledge Before Analyzing | When the content is in a conflict, repair, or feedback context: open with acknowledgment before structural analysis |
 
-   The 11 natural heuristics (1, 2, 3, 5, 6, 8, 10, 12, 13, 14, 15) are applied implicitly via substrate reading — no explicit enforcement needed.
+   The 11 natural heuristics (1, 2, 3, 5, 6, 8, 10, 12, 13, 14, 15) are applied implicitly via substrate reading — no explicit enforcement needed. For new author substrates, see the natural-vs-effortful classification guidance in `references/voice-extraction-process.md`.
 
 5. **Generate the content** using the voice substrate and the register appropriate to the surface. Apply the rejection filters (no "leverage" as a verb, no "harness", no "delve", no "revolutionary"; em-dashes over commas at clause boundaries; specific numbers over rounded; named alternatives in comparisons; trade-offs surfaced; closes that land on stakes, not invitations).
 6. **Apply annotations** per `references/annotation-scheme.md` at the correct tier:
@@ -95,6 +95,8 @@ Steps:
 
    This is a soft warning. The output above is returned as generated. Review the flagged passage before publishing.
    ```
+
+   For the escalation protocol and expanded detection signals, see `references/shadow-pattern-detector.md`.
 
 ### Mode B — Rewrite (article exists in wrong voice)
 

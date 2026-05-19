@@ -69,6 +69,25 @@ The personality profile (01) and the raw samples (02) are the only documents tha
 
 ---
 
+## Natural-vs-effortful heuristic classification
+
+After writing document 11 (decision heuristics), classify each heuristic as **natural** or **effortful**:
+
+- **Natural heuristic:** amplifies the author's dominant traits — the behavior flows automatically from their personality profile. The twin can apply it implicitly via substrate reading.
+- **Effortful heuristic:** compensates for a trait gap — the behavior runs counter to the author's natural profile and the author applies it inconsistently as a result. The twin must enforce it explicitly, because the author does not do so reliably.
+
+**The classification question to ask for each heuristic:** Does this heuristic require the author to act against their lowest-scoring or absent personality themes? If so, it is effortful; otherwise it is natural.
+
+**How to express the classification in document 11:** Add a two-column table at the end of the document — one row per heuristic, columns: heuristic name and number | natural/effortful + one-line justification citing the personality theme that makes it natural or the theme gap that makes it effortful.
+
+**Downstream use:** Effortful heuristics become the explicit enforcement list for Mode A step 4b — they are named and applied consciously during generation. Natural heuristics remain implicit via substrate reading — no explicit enforcement needed.
+
+**Reference implementation — Travis James substrate:** 5 effortful heuristics (4 — Phase Discipline, 7 — Don't Pivot Silently, 9 — Champion Over Cold Outreach, 11 — Cedar Governance, 16 — Acknowledge Before Analyzing), all grounded in CliftonStrengths bottom-tercile themes (Empathy #34, Deliberative #33, Developer #32, Discipline #26). 11 natural heuristics flow from Strategic Thinking domain dominance (Futuristic #1, Activator #3, Achiever #4, Focus #6, Strategic #7, Analytical #8) and Enneagram 8 directness.
+
+For new author substrates, the same classification applies — the specific heuristics and themes will differ, but the mechanism (cross-reference heuristics against the personality framework's low-scoring or absent themes) is universal.
+
+---
+
 ## What each document looks like at finished state
 
 The Travis James substrate in `docs/digital-twin-travis/` is the worked example. It includes:
@@ -147,3 +166,33 @@ Re-extraction does not require regenerating all eleven documents. The most-affec
 - Author starts writing email newsletters → add correspondence samples to 02, update 06 and 10
 - Author starts posting on social media → add ultra-short samples to 02, update 07
 - Author starts giving talks or podcasts → add spoken-register samples to 02 (transcripts, notes), add a spoken-register section to 07 capturing pace, informal vocabulary, and self-correction moves
+
+### Personality-framework re-test cadence
+
+When the author retakes a personality assessment, use the following protocol to determine what needs updating.
+
+**Categorical/ranked assessments (e.g., CliftonStrengths):**
+
+A material shift is any theme crossing the natural-vs-effortful boundary:
+- An effortful theme (previously in the bottom tercile) enters the top 15 — it may no longer need explicit enforcement
+- A natural theme drops below #20 — it may shift from implicit to effortful
+
+When a boundary crossing occurs, update documents 01, 04, 10, and 11. Re-run the effortful-heuristic classification in document 11 and revise Mode A step 4b accordingly.
+
+When rank shifts are within the same zone (no boundary crossing), update the document 01 table only. The natural-vs-effortful classification is unchanged.
+
+**Probabilistic assessments (e.g., SoulTrace):**
+
+A material shift is either: (a) the primary archetype changes, or (b) any color dimension moves ≥10 percentage points from the prior result.
+
+When a material shift occurs, update documents 01, 07, 10, and 11. Re-run the effortful-heuristic classification if the color dimensions that ground the bottom-trait cluster shift.
+
+When the same archetype and similar color distribution persist across re-tests (as with Travis James — Green 5% consistent across a seven-year gap, two different methodologies), record this stability explicitly in document 01 as durable-substrate signal. It strengthens the confidence level of all patterns grounded in that dimension.
+
+**Partial vs. full re-extraction:**
+
+Partial re-extraction (only affected documents) is sufficient when the shift is limited to one framework. Full 11-document re-run is warranted when: (a) multiple frameworks shift simultaneously, or (b) the author self-reports that the substrate "no longer feels right" — their own voice judgment takes precedence over framework stability.
+
+**Effortful-heuristic re-classification trigger:**
+
+Always re-run the effortful-heuristic classification in document 11 when the bottom-theme cluster changes, regardless of whether the primary archetype changes. The classification is derived from low-scoring themes — even a modest shift in the bottom tercile can change which heuristics require explicit enforcement.

@@ -8,6 +8,10 @@ Format: [Semantic Versioning](https://semver.org/). Standard version is noted wh
 
 ## [Unreleased]
 
+### Distribution
+
+- Checked agentskills.io community showcase — skill submissions not currently accepted per CONTRIBUTING.md ("What We're Not Accepting (Yet)"); drafted entry ready for when submissions open; see `docs/DISTRIBUTION-STATUS.md`
+
 ---
 
 ## [2.0.0] — 2026-05-18

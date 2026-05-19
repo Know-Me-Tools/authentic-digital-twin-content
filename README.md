@@ -100,6 +100,38 @@ The skill refuses to generate from substrate that fails either gate. Voice-flat 
 
 ---
 
+## Worked examples
+
+Three annotated examples show how the standard applies across tiers and registers:
+
+| File | What it demonstrates |
+|---|---|
+| [`tier-1-format-demo.md`](skills/authentic-digital-twin-content/docs/worked-examples/tier-1-format-demo.md) | Tier 1 format demo: per-block v2 eyebrow annotation with all three authorship categories |
+| [`tier-2-linkedin-post-example.md`](skills/authentic-digital-twin-content/docs/worked-examples/tier-2-linkedin-post-example.md) | Tier 2 LinkedIn post: compact inline disclosure tag on a written-social register post |
+| [`tier-3-voice-prep-example.md`](skills/authentic-digital-twin-content/docs/worked-examples/tier-3-voice-prep-example.md) | Tier 3 voice prep: channel-level disclosure on speaker preparation notes |
+
+---
+
+## Standard version
+
+This skill implements the **Authentic Digital Twin Content Standard v2.0.0**.
+
+Full specification: [`authentic-digital-twin-content-standard-v2.md`](skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v2.md)
+
+Articles produced under Standard v1 remain valid — the v1 standard is still respected and content annotated under it does not require migration.
+
+---
+
+## Reference implementation
+
+`skills/authentic-digital-twin-content/docs/digital-twin-travis/` is the reference implementation of what a complete author substrate looks like in practice.
+
+The skill is generic — any author can build their own substrate using the template and extraction process. Travis James's substrate is one example, not a required model.
+
+Note: the Travis substrate is all-rights-reserved (see License and re-use below).
+
+---
+
 ## Distribution and registration
 
 See [docs/REGISTRATION.md](docs/REGISTRATION.md) for step-by-step instructions for every distribution channel: agentskills.io community showcase, Anthropic official marketplace, community git-repo marketplaces, OpenCode, and generic agent clients.

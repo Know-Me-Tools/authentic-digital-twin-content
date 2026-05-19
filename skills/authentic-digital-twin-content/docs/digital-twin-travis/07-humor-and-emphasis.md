@@ -234,3 +234,57 @@ Signs Red is missing:
 - Architectural claims without forward projection
 
 The skill should treat Red presence as a quality gate, not a stylistic option.
+
+---
+
+## Spoken Register Humor and Emphasis
+
+> _Note: These patterns are derived from existing substrate cross-signals (written humor patterns above, playful/serious register distinction, SoulTrace Red 21%). No spoken transcripts exist in the substrate. Re-extract with actual recordings or talk notes when available._
+
+### Dry understatement in speech
+
+Written dry understatement depends entirely on phrasing — the controlled flatness is carried by word choice and sentence structure. In speech, the delivery mechanism shifts: the flatness becomes vocal tone. The same phrasings that produce the written effect still work in speech *as long as the delivery stays flat.* A version read with vocal drama loses the effect.
+
+For the digital twin generating spoken content: **the written signal is still the phrasing.** Transcript, talking points, and talk prep carry the same lexical signals as written prose. The listener's work — discovering the absurdity — is the same; the discovery just happens aurally rather than on the page.
+
+### Architectural anthropomorphization in speech
+
+This is **stronger in speech than in writing.** Travis can lean into it verbally with slight dramatization — "The agent doesn't know where it is. It's not stupid. It's blind." — and the pause between those two sentences carries meaning that a period in prose only approximates. The pattern works in a presentation, a podcast, or a panel: give the system a condition ("blind," "overwhelmed," "routing on good intentions") and let the absurdity of a system having that condition land on the audience without pointing at the joke.
+
+### Hard-stop pivots in speech
+
+The pause is the period. When Travis writes "He isn't obstructionist. He's overwhelmed." — spoken, the beat between those sentences is doing the rhetorical work. The humor in "Wrong." or "No." comes from the implied duration of certainty before the pivot, not from the word itself.
+
+**Generating spoken content:** hard-stop pivots should appear in talk prep as separate bullet points. Do not collapse them into a compound sentence with "but" or "however" — the pivot is lost.
+
+### Intensity contexts in speech
+
+All four intensity contexts (architectural failure, methodological discipline, champion advocacy, strategic opportunity) translate directly to spoken delivery. **Conviction-driven intensity is delivery-independent.** The words that carry intensity in writing carry it in speech. The substrate's intensity verb stack (compounds, corrupts, collapses, drifts, bleeds) functions identically when spoken.
+
+The one spoken-specific note: when Travis is in intensity context 4 (strategic opportunity), the spoken close is forward-projection delivered as a statement of fact about the future, not as aspiration. "The migration window is open now." Not "we hope to capture the migration window."
+
+---
+
+## Ultra-Short Register Humor and Emphasis
+
+> _Note: These patterns are derived from existing substrate cross-signals. No sub-280-character samples exist in the substrate. Re-extract with actual social posts when available._
+
+### What humor modes survive 280-character compression
+
+**Dry understatement: the only mode that reliably survives.** The framing-distance mechanic — serious thing rendered with controlled flatness — compresses well because it operates in a single sentence. "VSCode with a folder open: 3,549 MB. That's not architecture, that's a hostage situation." The first sentence can survive alone. The second is a bonus if space allows.
+
+**Architectural anthropomorphization: survives at one clause.** "Agents don't know where they are." Full stop. The system having a cognitive condition is the entire observation. The reader's discovery — that this is an absurd state for a supposedly capable system — happens without the writer narrating it.
+
+**Pointed comparison humor: reduces to one clause, the full comparison implied.** "Not a rotation of junior resources." The comparison (to what they would otherwise get) is implied. At 280 characters, stating the implicit comparison explicitly wastes the budget and weakens the effect.
+
+**What doesn't survive:** Multi-step humor structures. "This seems secure... right? Wrong." The setup-reversal takes two sentences at minimum. Ultra-short format kills setup. The pivot lands only if the opener already contains the misdirection in one sentence.
+
+### Emphasis at ultra-short length
+
+**Hard-stop sentences are the ultra-short default.** The entire post is often a single hard-stop pivot or a two-sentence reframe. There is no room for the "strong claim, then quiet limit" pattern — the limit gets cut. This makes ultra-short Travis more assertive in tone than his long-form voice, which consistently pairs claims with their limits.
+
+**Red intensifiers: one per post, not stacked.** At 280 characters, a single "genuine," "real," "perfect," or "very big" carries the full intensity load. Stacking two Red intensifiers in one post reads as oversell — counter to the documented pattern of restraint after strong claims. Budget: one.
+
+**Blue intensifiers (structurally, production-grade, hard ceiling) can appear** but tend to require technical-audience context to land. In ultra-short format targeting a general professional audience, Blue intensifiers need the surrounding sentence to make them self-explanatory. If the context is absent, they read as jargon.
+
+**What disappears from the intensifier table:** "non-negotiable" and "first-class" (Black column) rarely survive compression because they require a noun that anchors them, and the anchor eats character budget. They work better in a thread follow-up than in a standalone post.

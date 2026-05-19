@@ -1,33 +1,28 @@
 # Current Waypoint
 
 **Project:** authentic-digital-twin-content
-**Phase:** phase-3-voice-validation
-**Stage:** REFLECT complete — phase closed
+**Phase:** phase-4
+**Stage:** ASSESS complete — waiting on OQ resolution before planning
 **Change backend:** native KBD
 
-## Phase 3 summary
+## Assessment summary
 
-All Track A changes complete (3/3). Track B deferred to phase-3b.
+Two feature changes identified, both Travis-independent:
 
-| Change | Status | Outcome |
-|---|---|---|
-| I — agentskills.io submission | DONE | Skill submissions not yet open; DISTRIBUTION-STATUS.md created with drafted entry |
-| J — Tier 1 v2 format demo | DONE | `docs/worked-examples/tier-1-format-demo.md` created |
-| K — README polish | DONE | Worked-examples table, standard-version note, reference-implementation note added |
+**Change L — Effortful-heuristic enforcement in Mode A:**
+Add a new step between classify (step 4) and generate (step 5) that explicitly checks which of the five effortful heuristics (4, 7, 9, 11, 16) apply to the current surface/task, and applies them during generation.
 
-## Next phase options
+**Change M — Shadow-pattern detector (soft warn):**
+Add a new step after the rejection check (step 7 → step 8) that checks for the four Operator shadow patterns (Puppet Master, Transactional Tunnel Vision, Analysis Fortress, Lone Wolf Lockdown) and appends an annotation if detected.
 
-**Option A:** `/kbd-new-phase phase-3b-substrate-hardening`
-- Requires Travis input: raw email/Twitter/talk samples + worked example review
-- Blocked until Travis supplies content
+## Next step
 
-**Option B:** `/kbd-new-phase phase-4` (Travis-independent)
-- Effortful-heuristic enforcement in SKILL.md Mode A behavior
-- Shadow-pattern detector design
-- REGISTRATION.md update if agentskills.io opens skill directory
+Resolve OQ1–OQ4 from the assessment, then run `/kbd-plan phase-4`.
 
-## Distribution watch
+Key open questions:
+- **OQ1:** Heuristic-check placement — new numbered step or integrated into step 5 phrasing?
+- **OQ2:** Shadow-pattern output format — prefix warning, appended annotation, or inline flag?
+- **OQ3:** Shadow-check scope — all tiers or Tier 1 only?
+- **OQ4:** Natural heuristics — explicit enforcement or implicit via substrate reading?
 
-- agentskills.io skill directory: not yet open — see `docs/DISTRIBUTION-STATUS.md`
-- Discord announcement: can be done immediately (no PR required)
-- Anthropic marketplace: maintainer action; prerequisites met
+See `phases/phase-4/assessment.md` for full detail.

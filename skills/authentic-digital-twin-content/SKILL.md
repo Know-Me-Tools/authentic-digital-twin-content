@@ -1,6 +1,7 @@
 ---
 name: authentic-digital-twin-content
-description: Generate published content (articles, posts, emails, proposals) in a specific human author's voice — not in generic AI default voice — and annotate the result so a reader can audit which blocks are human-authored, which are AI-drafted-then-human-edited, and which are AI verbatim. Use this skill whenever the user asks to write, rewrite, or refine long-form content that must read as authored by them rather than as AI output. Triggers include "write in my voice", "rewrite this as me", "make this sound like me", "apply my brand voice", "this reads too AI", "make this authentic", "annotate authorship", "content provenance", "digital twin content", "build my digital twin", or any uploaded substrate of writing samples and personality assessments that should drive future generation. Also triggers when the user wants to set up the substrate scaffolding for a new digital twin from scratch.
+description: >-
+  Generate content in a specific human author's voice — articles, emails, social posts, proposals, or voice prep — and annotate provenance so readers can audit which blocks are human-authored, AI-drafted-then-edited, or AI verbatim. Use when the user asks to write, rewrite, or refine content that must read as authored by them. Triggers include write in my voice, rewrite this as me, make this sound like me, apply my brand voice, this reads too AI, make this authentic, annotate authorship, content provenance, digital twin content, build my digital twin, draft this email for me, write a LinkedIn post, help me prepare talking points, or any uploaded substrate of writing samples and personality assessments. Also triggers when the user wants to bootstrap a new digital twin substrate from scratch. Supports Standard v2 — full manifest for long-form, compact disclosure for short-form, channel-level disclosure for voice/video.
 license: Apache-2.0
 compatibility: Works with any agent that supports the Agent Skills format. Optionally integrates with a surreal-memory MCP server for substrate persistence; falls back to filesystem-only state when unavailable.
 metadata:
@@ -14,7 +15,7 @@ metadata:
 
 A skill for generating long-form content in a named human author's voice, with explicit per-block provenance annotation so readers can audit authorship.
 
-This skill produces content under the **Authentic Digital Twin Content Standard v1** — every block declares whether it was authored by the human, drafted by AI and edited by the human, or kept verbatim from AI. The model provider, model name, and authoring tool are reported for every AI-involved block.
+This skill produces content under the **Authentic Digital Twin Content Standard v2** — every block, post, email, or piece of voice prep declares whether it was authored by the human, drafted by AI and edited by the human, or kept verbatim from AI. v2 introduces three annotation tiers matched to surface type: full per-block manifest for long-form articles; compact inline disclosure for email and social; channel-level disclosure for voice and real-time chat. The model provider, model name, and authoring tool are reported for every AI-involved block (Tier 1) or in the disclosure tag (Tier 2).
 
 The skill is generic — it works for any author once their substrate is in place. The bundled `docs/digital-twin-travis/` directory is the reference implementation for Travis James and serves as a worked example of what good substrate looks like.
 
@@ -24,18 +25,21 @@ The skill is generic — it works for any author once their substrate is in plac
 
 Trigger this skill when any of the following are true:
 
-- The user is publishing content under their name (articles, blog posts, op-eds, LinkedIn posts, newsletters, proposals, internal memos with named authorship)
+- The user is publishing content under their name — articles, blog posts, op-eds, newsletters, proposals, technical reports, internal memos with named authorship
+- The user is drafting email, LinkedIn posts, Twitter/X threads, Substack Notes, or other short-form content that should sound like them, not generic AI
+- The user is preparing talking points, a podcast outline, meeting notes, or any voice/video content where they want to speak in their own voice
 - The user has been disappointed that AI-drafted content "doesn't sound like them"
 - The user wants to disclose AI involvement in their writing without hiding it
 - The user wants to set up the substrate scaffolding for a new author's digital twin
-- An existing article exists that was 100% AI-generated and the user wants it rewritten in their voice with provenance annotations
+- An existing article or post was 100% AI-generated and the user wants it rewritten in their voice with provenance annotations
 
 Do **not** trigger this skill for:
 
 - Pure code generation (no authorship voice involved)
-- Conversational responses inside chat (annotation overhead would dominate)
-- Technical specifications where machine-default voice is the correct register
+- Purely conversational back-and-forth chat where no authored content is being produced
+- Technical specifications or API documentation where machine-default voice is the correct register and the author is not claiming personal voice
 - Anonymous or institutional content with no named author
+- Content produced on behalf of an author who has not authorized a substrate (do not impersonate)
 
 ---
 
@@ -49,12 +53,16 @@ The author's substrate directory is populated (12 documents — index plus 11 nu
 
 Steps:
 
-1. **Read the substrate.** Load all eleven numbered files in the substrate directory. The personality profile and the rejection filters in the corrections document are non-negotiable inputs.
-2. **Classify content type** against the table in `references/annotation-scheme.md`. Code samples, JSON output, and mechanical tables default to `AI verbatim`. Strategic, narrative, rhetorical, and editorial content defaults to `Travis James` (or named author).
-3. **Generate the prose** using the voice substrate. Apply the rejection filters (no "leverage" as a verb, no "harness", no "delve", no "revolutionary"; em-dashes over commas at clause boundaries; specific numbers over rounded; named alternatives in comparisons; trade-offs surfaced; closes that land on stakes, not invitations).
-4. **Apply annotations** per `references/annotation-scheme.md`. Each major block gets an italic eyebrow line declaring authorship. Each AI-involved block names model provider, model, and tool.
-5. **Produce the provenance manifest** at the article footer — a table mapping every section to its authorship category, plus definitions of the three categories.
-6. **Run the rejection check** before returning. If any sentence matches the rejection-filter patterns, rewrite that sentence and re-check.
+1. **Identify the surface.** What is the user producing? If not stated, ask. Surface determines the annotation tier (see `references/communication-surface-taxonomy.md`) and the register to draw from the substrate.
+2. **Read the substrate.** Load all eleven numbered files. The personality profile and rejection filters in the corrections document are non-negotiable inputs. For Tier 2 / Tier 3 surfaces, pay particular attention to documents 07 (humor and emphasis), 10 (collaboration style), and the register-specific patterns.
+3. **Check Gate 3 (surface-register match).** If the substrate does not cover the target surface's primary register, warn the user before generating.
+4. **Classify content type** against the table in `references/annotation-scheme.md`. Code samples, JSON output, and mechanical tables default to `AI verbatim`. Strategic, narrative, rhetorical, and editorial content defaults to `<Author>` (or `<Author> ← AI`).
+5. **Generate the content** using the voice substrate and the register appropriate to the surface. Apply the rejection filters (no "leverage" as a verb, no "harness", no "delve", no "revolutionary"; em-dashes over commas at clause boundaries; specific numbers over rounded; named alternatives in comparisons; trade-offs surfaced; closes that land on stakes, not invitations).
+6. **Apply annotations** per `references/annotation-scheme.md` at the correct tier:
+   - Tier 1: per-block italic eyebrow line + footer manifest
+   - Tier 2: single compact disclosure tag at top or end
+   - Tier 3: channel-level disclosure statement
+7. **Run the rejection check** before returning. If any sentence matches the rejection-filter patterns, rewrite that sentence and re-check.
 
 ### Mode B — Rewrite (article exists in wrong voice)
 
@@ -107,19 +115,27 @@ The corrections document (`03`) is the most under-recognized signal. Where the a
 
 ---
 
-## The Authentic Digital Twin Content Standard v1
+## The Authentic Digital Twin Content Standard v2
 
-Full specification: `references/authenticity-standard.md`. Quick reference:
+Full specification: `docs/standards/authentic-digital-twin-content-standard-v2.md`. v1 specification (for articles already published under v1): `references/authenticity-standard.md`.
 
-Every block of substantive content declares its authorship via an italic eyebrow line placed immediately before the block.
+**Three authorship categories — same across all tiers:**
 
-| Tag form | Meaning |
+| Category | Definition |
 |---|---|
-| `_— <Author Name>._` | Original prose by the named author. No AI involvement, or AI involvement limited to spell-check and grammar that did not alter voice. |
-| `_— <Author Name> ← AI: <Provider> <Model> via <Tool>._` | Drafted by AI, edited by the human for voice, framing, and accuracy. Published voice is the human's; provenance of the original draft is reported. |
-| `_— AI verbatim: <Provider> <Model> via <Tool>._` | Generated by the named model via the named tool and reproduced without editorial intervention. |
+| `Human-authored` | Original voice of the named author. No AI involvement, or AI limited to spell-check that did not alter voice. |
+| `AI-drafted, human-edited` | AI drafted; human edited substantively for voice, framing, accuracy, or structure. |
+| `AI verbatim` | AI output reproduced without editorial intervention. |
 
-A **content provenance manifest** at the article footer enumerates every block's authorship category. See the worked example in `zed-workspace-article.md`.
+**Three annotation tiers — format adapts to surface:**
+
+| Tier | Surfaces | Format |
+|---|---|---|
+| 1 — Full manifest | Long-form articles, reports, proposals | Per-block italic eyebrow line + footer manifest table |
+| 2 — Compact tag | Email, social posts, Slack authored, slide notes | Single `(AI-assisted, edited by <Author Name>)` tag |
+| 3 — Channel disclosure | Voice, video, real-time chat, meeting notes | One spoken or written statement at session/document start |
+
+Tier selection uses the surface taxonomy in `references/communication-surface-taxonomy.md`. A **content provenance manifest** at the article footer enumerates every Tier 1 block's authorship category. See the worked example in `zed-workspace-article.md` for Tier 1 format.
 
 ---
 
@@ -155,9 +171,11 @@ For other authors, the equivalent positive patterns and rejection filters live i
 
 | Resource | Path |
 |---|---|
-| The full v1 standard | `references/authenticity-standard.md` |
+| Standard v2 (current) | `docs/standards/authentic-digital-twin-content-standard-v2.md` |
+| Standard v1 (for prior published articles) | `references/authenticity-standard.md` |
+| Communication surface taxonomy | `references/communication-surface-taxonomy.md` |
+| Annotation scheme and tier playbook | `references/annotation-scheme.md` |
 | Voice extraction process (bootstrap mode) | `references/voice-extraction-process.md` |
-| Annotation scheme details and edge cases | `references/annotation-scheme.md` |
 | Surreal-memory graph schema | `references/surreal-memory-schema.md` |
 | Substrate file templates | `templates/` |
 | Worked example: rewritten article | `zed-workspace-article.md` |
@@ -178,7 +196,9 @@ The skill enforces three rules that exist because they were violated in earlier 
 
 ## What this skill does not do
 
-- It does not impersonate authors who have not authorized a substrate. The substrate must be supplied by the author or by someone with the author's consent.
-- It does not produce content marked as authored by a human when it was actually AI verbatim. The provenance manifest is the integrity boundary.
+- It does not impersonate authors who have not authorized a substrate. The substrate must be supplied by the author or by someone with the author's explicit consent.
+- It does not produce content marked as authored by a human when it was actually AI verbatim. The provenance annotation is the integrity boundary — no tier of annotation permits understating AI involvement.
 - It does not generate personality assessments. Existing assessments (MBTI, Enneagram, CliftonStrengths, SoulTrace, etc.) are inputs, not outputs.
-- It does not replace editorial judgment. The author remains responsible for what is published under their name.
+- It does not replace editorial judgment. The author remains responsible for what is published, sent, or spoken under their name, at every tier.
+- It does not annotate image, audio, or video provenance. The standard covers textual content only.
+- It does not guarantee voice accuracy on registers not covered by the substrate. Gate 3 warns when a surface-register gap exists; the author decides whether to proceed.

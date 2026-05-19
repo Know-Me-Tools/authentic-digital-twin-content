@@ -3,11 +3,11 @@
   "project": "authentic-digital-twin-content",
   "assessment_complete": true,
   "plan_complete": true,
-  "execute_complete": false,
+  "execute_complete": true,
   "reflect_complete": false,
   "change_backend": "native-kbd",
   "changes_total": 4,
-  "changes_completed": 2,
+  "changes_completed": 4,
   "ordered_changes": [
     "change-A-spec-compliance",
     "change-B-plugin-packaging",
@@ -17,10 +17,10 @@
   "change_status": {
     "change-A-spec-compliance": "DONE",
     "change-B-plugin-packaging": "DONE",
-    "change-C-registration-docs": "ready to start",
-    "change-D-communication-scope": "not started — OQ4 unresolved"
+    "change-C-registration-docs": "DONE",
+    "change-D-communication-scope": "DONE"
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-18",
-  "notes": "Change B complete. Plugin wraps skill at skills/authentic-digital-twin-content/. claude --plugin-dir loads successfully. Pushed to github.com:Know-Me-Tools/authentic-digital-twin-content.git. marketplace.json moved to Change C scope."
+  "notes": "All 4 changes complete. Change D: Standard v2 published; tiered provenance model (Tier 1/2/3); surface taxonomy; annotation-scheme.md updated; voice-extraction-process.md expanded with spoken/correspondence/ultra-short registers; SKILL.md rewritten for v2 scope; skills-ref validate green (928/1024 chars). 4 commits on main."
 }

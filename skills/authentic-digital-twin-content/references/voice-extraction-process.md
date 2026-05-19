@@ -17,8 +17,11 @@ Before extraction starts, the author must supply the inputs in this table. The s
 | Personality framework results | Recommended | At least one (MBTI, Enneagram, CliftonStrengths, SoulTrace, Big Five, or similar) | Anchor facts that color every other extraction |
 | Domain context | Recommended | Topic list with depth signals | Grounds future content in subjects the author is fluent in |
 | Brand or aesthetic preferences | Optional | Brand guide if it exists; visual taste examples otherwise | Calibrates visual / structural taste signals |
+| Email / correspondence samples | Recommended for Tier 2 surfaces | 3–5 examples | Correspondence register — salutation style, formality per recipient tier, sign-off patterns |
+| Social post samples | Recommended for Tier 2 surfaces | 5–10 examples across platforms | Ultra-short and written social registers |
+| Spoken samples (transcripts, notes, talk recordings) | Recommended for Tier 3 surfaces | 1,000+ words of spoken content | Spoken/conversational register — pace, hedges, filler patterns, informal vocabulary |
 
-The 2,000-word minimum traces to Eder (2017) stylometric reliability work. The two-register requirement traces to the TwinVoice (ACL 2026) three-dimension framework — single-register samples produce a twin that cannot code-switch, which fails every time the author writes outside the captured register.
+The 2,000-word minimum traces to Eder (2017) stylometric reliability work. The two-register requirement traces to the TwinVoice (ACL 2026) three-dimension framework — single-register samples produce a twin that cannot code-switch, which fails every time the author writes outside the captured register. v2 adds three first-class registers (correspondence, ultra-short, spoken/conversational) required for full Tier 2 and Tier 3 surface coverage.
 
 ---
 
@@ -86,15 +89,28 @@ Total substrate: roughly 22,000 words across eleven documents for Travis James. 
 
 ---
 
-## Stylometric reliability gates
+## Stylometric reliability gates (v2)
 
-After extraction, run two reliability checks before declaring the substrate complete.
+After extraction, run three reliability checks before declaring the substrate complete.
 
-**Gate 1 — Sample volume.** The combined word count of documents 02 and 03 must be at least 2,000 words. Below that, the substrate is unreliable as stylometric input. Below 5,000 words, the substrate is reliable for known registers but may fail on unseen registers.
+**Gate 1 — Sample volume (unchanged from v1).** The combined word count of documents 02 and 03 must be at least 2,000 words. Below that, the substrate is unreliable as stylometric input. Below 5,000 words, the substrate is reliable for known registers but may fail on unseen registers.
 
-**Gate 2 — Register coverage.** The samples must span at least two registers. Common register pairs: casual-directive + stakeholder-facing, technical + brand-facing, internal + external. A substrate with only one register produces a twin that flattens to that register every time, which is voice-failure for any content outside the captured mode.
+**Gate 2 — Register coverage (updated in v2).** The samples must span at least two registers from the full register list: written formal, written casual, written directional, written social, ultra-short, correspondence, spoken/conversational, technical. A substrate with only one register produces a twin that flattens to that register every time. Common register pairs for adequate baseline coverage:
+- written formal + written casual
+- technical + stakeholder-facing
+- correspondence + written social
 
-If either gate fails, the skill should refuse to enter Generate mode and should report what additional inputs are required.
+For authors who will use the skill on Tier 2 or Tier 3 surfaces, the register list must also include at least one of: correspondence, ultra-short, spoken/conversational.
+
+**Gate 3 — Surface-register match (new in v2).** Before generating for a specific surface, the skill checks whether the substrate covers that surface's primary register. If not:
+
+- **Missing correspondence register:** Warn before drafting email, LinkedIn DMs, or cover letters. Proceed with written formal as approximation.
+- **Missing ultra-short register:** Warn before drafting Twitter/X, Instagram captions, SMS. Proceed with written social as approximation.
+- **Missing spoken/conversational register:** Warn before preparing voice call talking points, podcast prep, or real-time chat content. Proceed with written casual as approximation.
+
+Gate 3 triggers a warning, not a refusal. The author may intentionally accept the approximation.
+
+If Gate 1 or Gate 2 fails, the skill should refuse to enter Generate mode and report what additional inputs are required.
 
 ---
 
@@ -126,3 +142,8 @@ The substrate is not frozen. Re-extract when:
 - Six to twelve months elapse — natural drift in vocabulary and topic anchors
 
 Re-extraction does not require regenerating all eleven documents. The most-affected documents update; the dependency chain in the extraction-order table identifies downstream documents that may also need touch-up.
+
+**v2 addition — new register triggers:** Re-extract (or extend) when the author begins using a new communication surface class that their substrate does not yet cover. Specifically:
+- Author starts writing email newsletters → add correspondence samples to 02, update 06 and 10
+- Author starts posting on social media → add ultra-short samples to 02, update 07
+- Author starts giving talks or podcasts → add spoken-register samples to 02 (transcripts, notes), add a spoken-register section to 07 capturing pace, informal vocabulary, and self-correction moves

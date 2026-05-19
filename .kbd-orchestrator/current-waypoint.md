@@ -2,24 +2,18 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-1-distribution-compliance
-**Stage:** EXECUTE in progress — 1 of 4 changes complete
+**Stage:** EXECUTE complete — all 4 changes done. Ready for REFLECT.
 **Change backend:** native KBD
 
 ## Completed
 
-- [x] **change-A-spec-compliance** — `skills-ref validate` green; LICENSE added; `.gitignore` added
+- [x] **change-A-spec-compliance** — `skills-ref validate` green; LICENSE; `.gitignore`
+- [x] **change-B-plugin-packaging** — plugin manifest; `skills/` layout; git init; pushed to GitHub
+- [x] **change-C-registration-docs** — `marketplace.json`; `REGISTRATION.md`; `CHANGELOG.md`; README links
+- [x] **change-D-communication-scope** — Standard v2; tiered provenance (Tier 1/2/3); surface taxonomy; annotation-scheme.md updated; voice-extraction-process.md register expansion; SKILL.md rewrite; `skills-ref validate` green (928/1024 chars)
 
 ## Next step
 
-Resolve OQ1 and OQ2, then run `/kbd-execute change-B-plugin-packaging`.
-
-- **OQ1** — wrap skill in a plugin repo vs. restructure in place (recommended: wrap)
-- **OQ2** — which public GitHub repo (required; no safe default)
-
-## Remaining changes
-
-2. **change-B-plugin-packaging** — plugin.json, marketplace.json, git, public repo ← BLOCKED on OQ1, OQ2
-3. **change-C-registration-docs** — REGISTRATION.md, CHANGELOG.md ← blocked on B
-4. **change-D-communication-scope** — tiered provenance, surface taxonomy, Standard v2 ← blocked on B, C; awaits OQ4
+Run `/kbd-reflect phase-1-distribution-compliance` to close the phase.
 
 See `phases/phase-1-distribution-compliance/plan.md` for full detail.

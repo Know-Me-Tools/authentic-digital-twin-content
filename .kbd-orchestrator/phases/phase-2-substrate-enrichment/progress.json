@@ -2,15 +2,25 @@
   "phase": "phase-2-substrate-enrichment",
   "project": "authentic-digital-twin-content",
   "assessment_complete": true,
-  "plan_complete": false,
+  "plan_complete": true,
   "execute_complete": false,
   "reflect_complete": false,
   "change_backend": "native-kbd",
-  "changes_total": null,
+  "changes_total": 4,
   "changes_completed": 0,
-  "ordered_changes": [],
-  "change_status": {},
+  "ordered_changes": [
+    "change-E-release-cut",
+    "change-F-substrate-extension",
+    "change-G-tier2-worked-example",
+    "change-H-tier3-worked-example"
+  ],
+  "change_status": {
+    "change-E-release-cut": "not started",
+    "change-F-substrate-extension": "not started",
+    "change-G-tier2-worked-example": "not started",
+    "change-H-tier3-worked-example": "not started"
+  },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Assessment complete. Four open questions (OQ1–OQ4) must be resolved before planning. Key blocker: OQ1 (how to source Travis correspondence/ultra-short/spoken register samples). Recommended 4 changes: E (release cut), F (substrate extension), G (Tier 2 worked example), H (Tier 3 worked example)."
+  "notes": "Plan complete. OQs resolved: OQ1=derived patterns, OQ2=agentic programming, OQ3=retroactive v1.0.0 first, OQ4=worked examples declare v2. Order: E → F → G ∥ H. G and H can run in parallel after F."
 }

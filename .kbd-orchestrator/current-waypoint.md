@@ -2,27 +2,27 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-4
-**Stage:** ASSESS complete — waiting on OQ resolution before planning
+**Stage:** PLAN complete — ready to execute
 **Change backend:** native KBD
 
-## Assessment summary
+## Change summary
 
-Two feature changes identified, both Travis-independent:
+Two changes, independent (can run in parallel):
 
-**Change L — Effortful-heuristic enforcement in Mode A:**
-Add a new step between classify (step 4) and generate (step 5) that explicitly checks which of the five effortful heuristics (4, 7, 9, 11, 16) apply to the current surface/task, and applies them during generation.
+| # | Change | Description | Agent |
+|---|---|---|---|
+| L | change-L-effortful-heuristic-enforcement | Insert step 4b into SKILL.md Mode A — effortful-heuristic applicability check before generation | prompt-engineer |
+| M | change-M-shadow-pattern-detector | Add step 8 to SKILL.md Mode A — shadow-pattern soft-warn check after rejection filter (Tier 1 only) | prompt-engineer |
 
-**Change M — Shadow-pattern detector (soft warn):**
-Add a new step after the rejection check (step 7 → step 8) that checks for the four Operator shadow patterns (Puppet Master, Transactional Tunnel Vision, Analysis Fortress, Lone Wolf Lockdown) and appends an annotation if detected.
+## OQ resolutions
+
+- OQ1: New numbered step 4b (not integrated into step 5)
+- OQ2: Appended annotation block
+- OQ3: Tier 1 only
+- OQ4: Natural heuristics stay implicit
 
 ## Next step
 
-Resolve OQ1–OQ4 from the assessment, then run `/kbd-plan phase-4`.
+Run `/kbd-execute phase-4` to dispatch both changes.
 
-Key open questions:
-- **OQ1:** Heuristic-check placement — new numbered step or integrated into step 5 phrasing?
-- **OQ2:** Shadow-pattern output format — prefix warning, appended annotation, or inline flag?
-- **OQ3:** Shadow-check scope — all tiers or Tier 1 only?
-- **OQ4:** Natural heuristics — explicit enforcement or implicit via substrate reading?
-
-See `phases/phase-4/assessment.md` for full detail.
+Changes L ∥ M — different insertion points in Mode A (step 4b vs step 8); no shared state.

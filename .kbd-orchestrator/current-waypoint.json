@@ -1,12 +1,12 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-4",
-  "lifecycle_stage": "assess-complete",
+  "lifecycle_stage": "plan-complete",
   "change_backend": "native-kbd",
   "changes_completed": 0,
-  "changes_total": null,
-  "next_step": "Resolve OQ1-OQ4, then run /kbd-plan phase-4",
-  "ordered_changes": [],
-  "blocked_on": ["OQ1 (heuristic-check placement in Mode A)", "OQ2 (shadow-pattern output format)", "OQ3 (shadow-check scope by tier)", "OQ4 (natural heuristics — explicit or implicit)"],
+  "changes_total": 2,
+  "next_step": "Run /kbd-execute phase-4 — changes L and M are independent and can run in parallel",
+  "ordered_changes": ["change-L-effortful-heuristic-enforcement", "change-M-shadow-pattern-detector"],
+  "blocked_on": [],
   "last_updated": "2026-05-19"
 }

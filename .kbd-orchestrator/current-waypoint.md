@@ -1,27 +1,36 @@
 # Current Waypoint
 
 **Project:** authentic-digital-twin-content
-**Phase:** phase-1-distribution-compliance
-**Stage:** COMPLETE — all lifecycle stages done (Assess → Plan → Execute → Reflect)
+**Phase:** phase-2-substrate-enrichment
+**Stage:** ASSESS complete — blocked on 4 open questions before planning
 **Change backend:** native KBD
 
-## Phase 1 summary
+## Assessment summary
 
-All 4 changes complete. Reflection written. Changes archived.
+Four gaps identified:
+1. Travis substrate missing three v2 registers (correspondence, ultra-short, spoken) in docs 02, 07, 10
+2. No Tier 2 or Tier 3 worked examples exist
+3. Version not bumped to 2.0.0; no GitHub release tag
+4. CHANGELOG Unreleased items not promoted
 
-- [x] **change-A-spec-compliance** — `skills-ref validate` green; LICENSE; `.gitignore`
-- [x] **change-B-plugin-packaging** — plugin manifest; `skills/` layout; git init; pushed to GitHub
-- [x] **change-C-registration-docs** — `marketplace.json`; `REGISTRATION.md`; `CHANGELOG.md`; README links
-- [x] **change-D-communication-scope** — Standard v2; tiered provenance; surface taxonomy; register expansion; SKILL.md rewrite; `skills-ref validate` green
+## Open Questions (must resolve before /kbd-plan)
 
-## Next step
+**OQ1 — Sample sourcing:** How to extend substrate docs 02, 07, 10 with v2 registers?
+- (a) Travis provides real email/LinkedIn/transcript samples → highest signal
+- (b) Placeholders written, marked "needs sample infill" → partial
+- (c) Derived from existing personality + stylistic cross-signals, no raw samples → lowest but workable
 
-Run `/kbd-new-phase phase-2-substrate-enrichment` to begin the next phase.
+**OQ2 — Tier 2 worked example subject:** Which domain for the LinkedIn post or professional email example? (fintech, community banking, AI infrastructure, agentic programming — or allow executor to choose)
 
-**Recommended Phase 2 scope (from reflection.md):**
-1. Extend Travis James substrate — correspondence, ultra-short, spoken registers (docs 02, 07, 10)
-2. Add v2 Tier 2 and Tier 3 worked examples
-3. Cut v2 release (metadata.version 2.0.0, CHANGELOG, GitHub release tag)
-4. Optional: agentskills.io community showcase submission
+**OQ3 — Release tag strategy:** Create retroactive `v1.0.0` tag before `v2.0.0`, or go straight to `v2.0.0` from HEAD?
 
-See `.kbd-orchestrator/phases/phase-1-distribution-compliance/reflection.md` for full detail.
+**OQ4 — v1 standard path:** Confirm `skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v1.md` exists before publishing release.
+
+## Recommended changes (pending OQ resolution)
+
+- **Change E** — Release cut: v2.0.0 version bump, CHANGELOG, GitHub tag (no blockers)
+- **Change F** — Substrate register extension: docs 02, 07, 10 (depends on OQ1)
+- **Change G** — Tier 2 worked example: LinkedIn post or professional email (depends on OQ2 + F)
+- **Change H** — Tier 3 worked example: voice/talk prep (can run in parallel with G)
+
+See `phases/phase-2-substrate-enrichment/assessment.md` for full detail.

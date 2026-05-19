@@ -1,17 +1,17 @@
 {
   "project": "authentic-digital-twin-content",
-  "phase": "phase-1-distribution-compliance",
-  "lifecycle_stage": "complete",
+  "phase": "phase-2-substrate-enrichment",
+  "lifecycle_stage": "assess-complete",
   "change_backend": "native-kbd",
-  "changes_completed": 4,
-  "changes_total": 4,
-  "next_step": "Run /kbd-new-phase to begin phase-2-substrate-enrichment",
-  "ordered_changes": [
-    "change-A-spec-compliance",
-    "change-B-plugin-packaging",
-    "change-C-registration-docs",
-    "change-D-communication-scope"
+  "changes_completed": 0,
+  "changes_total": null,
+  "next_step": "Resolve OQ1–OQ4, then run /kbd-plan phase-2-substrate-enrichment",
+  "ordered_changes": [],
+  "blocked_on": [
+    "OQ1: Travis sample sourcing strategy (real samples vs. derived patterns vs. placeholders)",
+    "OQ2: Tier 2 worked example subject/domain",
+    "OQ3: Retroactive v1.0.0 tag vs. straight to v2.0.0",
+    "OQ4: Confirm standard-v1.md path in CHANGELOG is accurate"
   ],
-  "blocked_on": [],
   "last_updated": "2026-05-19"
 }

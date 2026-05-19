@@ -2,30 +2,25 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-3-voice-validation
-**Stage:** ASSESS complete — waiting on OQ resolution before planning
+**Stage:** PLAN complete — ready to execute
 **Change backend:** native KBD
 
-## Assessment summary
+## Change summary
 
-Two-track structure identified:
+Three Track A changes, all independent (can run in parallel):
 
-**Track A — can begin now (Travis-independent):**
-- Change I: agentskills.io community showcase submission
-- Change J: Tier 1 v2 demonstrative example in `docs/worked-examples/`
-- Change K: Effortful-heuristic check in SKILL.md Mode A behavior
-
-**Track B — blocked on Travis input:**
-- Changes L/M/N: Raw samples for correspondence, ultra-short, spoken registers
-- Changes O/P: Travis review of Tier 2 and Tier 3 worked examples
+| # | Change | Description | Agent |
+|---|---|---|---|
+| I | change-I-agentskills-submission | Open PR against agentskills/agentskills community showcase; create DISTRIBUTION-STATUS.md | general-purpose |
+| J | change-J-tier1-format-demo | Write Tier 1 v2 format demo in docs/worked-examples/ | prompt-engineer |
+| K | change-K-readme-polish | Add worked-examples, standard-version, and reference-implementation sections to README | general-purpose |
 
 ## Next step
 
-Resolve OQ1–OQ4 from the assessment, then run `/kbd-plan phase-3-voice-validation`.
+Run `/kbd-execute phase-3-voice-validation` to dispatch all three changes.
 
-Key open questions:
-- **OQ1:** Proceed with Track A only, or block the full phase on Travis input?
-- **OQ2:** How should Travis validation output be captured?
-- **OQ3:** Tier 1 v2 example scope (new article / updated existing / format-demo)?
-- **OQ4:** Include effortful-heuristic feature in this phase?
+Changes I ∥ J ∥ K — no shared files, no dependencies between them. Can run concurrently.
 
-See `phases/phase-3-voice-validation/assessment.md` for full detail.
+## Track B (deferred)
+
+Changes L–P (raw substrate samples, worked example reviews) require Travis input. Deferred to `phase-3b-substrate-hardening`.

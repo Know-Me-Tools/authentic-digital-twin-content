@@ -2,15 +2,19 @@
   "phase": "phase-3-voice-validation",
   "project": "authentic-digital-twin-content",
   "assessment_complete": true,
-  "plan_complete": false,
+  "plan_complete": true,
   "execute_complete": false,
   "reflect_complete": false,
   "change_backend": "native-kbd",
-  "changes_total": null,
+  "changes_total": 3,
   "changes_completed": 0,
-  "ordered_changes": [],
-  "change_status": {},
+  "ordered_changes": ["change-I-agentskills-submission", "change-J-tier1-format-demo", "change-K-readme-polish"],
+  "change_status": {
+    "change-I-agentskills-submission": "TODO",
+    "change-J-tier1-format-demo": "TODO",
+    "change-K-readme-polish": "TODO"
+  },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Assessment complete. Two tracks identified: Track A (Travis-independent — showcase submission, Tier 1 v2 example, effortful-heuristic feature) and Track B (Travis-dependent — raw samples for 3 registers, example reviews). OQ1-OQ4 must be resolved before planning. Run /kbd-plan phase-3-voice-validation."
+  "notes": "Plan complete. Three Track A changes: I (agentskills.io showcase PR), J (Tier 1 v2 format demo), K (README polish). All independent — can run in parallel. Track B (raw samples, example reviews) deferred to phase-3b-substrate-hardening."
 }

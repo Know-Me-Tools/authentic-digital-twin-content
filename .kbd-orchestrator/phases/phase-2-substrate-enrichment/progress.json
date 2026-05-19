@@ -4,7 +4,7 @@
   "assessment_complete": true,
   "plan_complete": true,
   "execute_complete": true,
-  "reflect_complete": false,
+  "reflect_complete": true,
   "change_backend": "native-kbd",
   "changes_total": 4,
   "changes_completed": 4,
@@ -22,5 +22,5 @@
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "All 4 changes complete. Change G: tier-2-linkedin-post-example.md (written-social register, Standard v2 Tier 2, annotation block). Change H: tier-3-voice-prep-example.md (spoken register, Standard v2 Tier 3, speaking-from-notes-is-Author distinction). Execute phase complete. Ready for Reflect."
+  "notes": "Phase 2 complete. All 4 changes archived. Reflection written. v2.0.0 released. Substrate extended (02/07/10). Tier 2 and Tier 3 worked examples in docs/worked-examples/. Ready for phase-3-voice-validation or maintainer-directed next phase."
 }

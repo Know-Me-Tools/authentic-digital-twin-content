@@ -1,11 +1,11 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-2-substrate-enrichment",
-  "lifecycle_stage": "execute-complete",
+  "lifecycle_stage": "reflect-complete",
   "change_backend": "native-kbd",
   "changes_completed": 4,
   "changes_total": 4,
-  "next_step": "Run /kbd-reflect phase-2-substrate-enrichment",
+  "next_step": "Run /kbd-new-phase to begin phase-3-voice-validation",
   "ordered_changes": [
     "change-E-release-cut",
     "change-F-substrate-extension",

@@ -2,19 +2,32 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-3-voice-validation
-**Stage:** EXECUTE complete — ready to reflect
+**Stage:** REFLECT complete — phase closed
 **Change backend:** native KBD
 
-## Execute summary
+## Phase 3 summary
 
-All three Track A changes completed (3/3):
+All Track A changes complete (3/3). Track B deferred to phase-3b.
 
-| Change | Status | Notes |
+| Change | Status | Outcome |
 |---|---|---|
-| I — agentskills.io submission | DONE | Skill submissions not yet open per CONTRIBUTING.md; DISTRIBUTION-STATUS.md documents status + drafted entry; CHANGELOG updated |
-| J — Tier 1 v2 format demo | DONE | `docs/worked-examples/tier-1-format-demo.md` created; worked-examples README updated |
-| K — README polish | DONE | Worked-examples table, standard-version note, reference-implementation note added to README.md |
+| I — agentskills.io submission | DONE | Skill submissions not yet open; DISTRIBUTION-STATUS.md created with drafted entry |
+| J — Tier 1 v2 format demo | DONE | `docs/worked-examples/tier-1-format-demo.md` created |
+| K — README polish | DONE | Worked-examples table, standard-version note, reference-implementation note added |
 
-## Next step
+## Next phase options
 
-Run `/kbd-reflect phase-3-voice-validation` to close the phase.
+**Option A:** `/kbd-new-phase phase-3b-substrate-hardening`
+- Requires Travis input: raw email/Twitter/talk samples + worked example review
+- Blocked until Travis supplies content
+
+**Option B:** `/kbd-new-phase phase-4` (Travis-independent)
+- Effortful-heuristic enforcement in SKILL.md Mode A behavior
+- Shadow-pattern detector design
+- REGISTRATION.md update if agentskills.io opens skill directory
+
+## Distribution watch
+
+- agentskills.io skill directory: not yet open — see `docs/DISTRIBUTION-STATUS.md`
+- Discord announcement: can be done immediately (no PR required)
+- Anthropic marketplace: maintainer action; prerequisites met

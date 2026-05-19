@@ -1,11 +1,11 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-3-voice-validation",
-  "lifecycle_stage": "execute-complete",
+  "lifecycle_stage": "reflect-complete",
   "change_backend": "native-kbd",
   "changes_completed": 3,
   "changes_total": 3,
-  "next_step": "Run /kbd-reflect phase-3-voice-validation",
+  "next_step": "Phase 3 complete. Run /kbd-new-phase to open phase-3b-substrate-hardening (blocked on Travis input) or phase-4 (feature phase, Travis-independent).",
   "ordered_changes": ["change-I-agentskills-submission", "change-J-tier1-format-demo", "change-K-readme-polish"],
   "blocked_on": [],
   "last_updated": "2026-05-19"

@@ -2,12 +2,12 @@
   "phase": "phase-3b-substrate-hardening",
   "project": "authentic-digital-twin-content",
   "assessment_complete": true,
-  "plan_complete": false,
-  "execute_complete": false,
-  "reflect_complete": false,
+  "plan_complete": true,
+  "execute_complete": true,
+  "reflect_complete": true,
   "change_backend": "native-kbd",
   "changes_total": 4,
-  "changes_completed": 0,
+  "changes_completed": 3,
   "ordered_changes": [
     "change-N-correspondence-re-extraction",
     "change-O-ultra-short-re-extraction",
@@ -15,18 +15,20 @@
     "change-Q-worked-example-review-and-corrections"
   ],
   "change_status": {
-    "change-N-correspondence-re-extraction": "BLOCKED — awaiting Travis email samples",
-    "change-O-ultra-short-re-extraction": "BLOCKED — awaiting Travis Twitter/X posts",
-    "change-P-spoken-re-extraction": "BLOCKED — awaiting Travis spoken transcript or confirmed talk prep notes",
-    "change-Q-worked-example-review-and-corrections": "BLOCKED — awaiting Travis review of Tier 2 and Tier 3 worked examples"
+    "change-N-correspondence-re-extraction": "DONE",
+    "change-O-ultra-short-re-extraction": "DONE",
+    "change-P-spoken-re-extraction": "DONE",
+    "change-Q-worked-example-review-and-corrections": "CARRIED FORWARD — blocked on Travis worked-example verdict"
   },
   "blocked_on": [
-    "Travis email samples (Change N)",
-    "Travis Twitter/X posts or Substack Notes (Change O)",
-    "Travis spoken transcript or edited talk prep notes (Change P)",
     "Travis review of tier-2-linkedin-post-example.md and tier-3-voice-prep-example.md (Change Q)"
+  ],
+  "carried_forward_debt": [
+    "Change Q — worked example review + doc 03 seeding",
+    "External-champion email sub-register not sampled (folds into Change N scope)",
+    "Register rename Ultra-Short → Short-Form Social not propagated to voice-extraction-process.md (4 refs) and tier-2 worked example (2 refs)"
   ],
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "All 4 changes blocked on Travis input. Assessment complete. Do not dispatch until Travis supplies at least one input category. Lowest-effort unblock is Change Q — Travis reads two files and provides a verdict. See assessment.md for full gap analysis and per-change MVP input requirements."
+  "notes": "Phase reflected. 3/4 changes DONE; 4/5 goals MET; Change Q carried forward. Gate 3 promoted warn→pass for email-internal, email-formal, short-form social, spoken. Reflection lesson 5: register rename has uncaught blast radius — voice-extraction-process.md and tier-2 worked example still reference old 'ultra-short' name; follow-up needed."
 }

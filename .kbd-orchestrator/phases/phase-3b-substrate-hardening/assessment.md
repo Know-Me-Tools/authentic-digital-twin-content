@@ -190,14 +190,28 @@ If Travis generates any new content via the twin and reviews it, those correctio
 
 ## Minimum Viable Inputs to Unblock Each Change
 
-| Change | Minimum Travis input | Can start without? |
+| Change | Minimum Travis input | Status |
 |---|---|---|
-| N — Correspondence re-extraction | 3 emails (any sub-register) | No |
-| O — Ultra-short re-extraction | 5 Twitter/X posts or Substack Notes | No |
-| P — Spoken re-extraction | 1 podcast transcript OR 1 edited talk prep note | No |
-| Q — Worked example review | Travis reads 2 files and provides verdict | No |
+| N — Correspondence re-extraction | 3 emails (any sub-register) | **UNBLOCKED** — 3 emails supplied 2026-05-19 |
+| O — Ultra-short re-extraction | 5 Twitter/X posts or Substack Notes | **UNBLOCKED** — 5 LinkedIn posts supplied 2026-05-19 |
+| P — Spoken re-extraction | 1 podcast transcript OR 1 edited talk prep note | **UNBLOCKED** — Ory Summit 2023 talk transcript supplied 2026-05-19 |
+| Q — Worked example review | Travis reads 2 files and provides verdict | BLOCKED — no verdict supplied |
 
-**All four changes are blocked.** None can be executed without Travis input. Phase-3b should not be dispatched until Travis has supplied at least one input category.
+## Unblock status (updated 2026-05-19)
+
+Travis supplied raw input for three of the four changes. The samples are saved verbatim in `raw-inputs.md` in this phase directory. Changes N, O, and P are now executable. Change Q remains blocked — Travis has not yet reviewed the Tier 2 / Tier 3 worked examples.
+
+**Input supplied:**
+
+| Input | Detail | Unblocks |
+|---|---|---|
+| 3 emails | 2 to Randy Jesberg (working partner), 1 to Hal (formal enterprise client) | Change N |
+| 5 LinkedIn posts | 4 ultra-short (link share, rant, humor, quote), 1 long-form written-social manifesto | Change O |
+| 1 spoken transcript | Ory Summit 2023 conference talk, ~21 min, delivered and recorded | Change P |
+
+**Sub-register coverage note:** The 3 emails cover the internal-team/working-partner register (Randy — informal, financial-pressure, estimate) and the formal enterprise register (Hal — status update, structured). The external-champion sub-register (Neil Henry tier — first-name salutation, relational-anchor opener) is not directly sampled. The Randy emails are closest but Randy is a working partner, not an external champion. Change N can fully re-extract internal and formal sub-registers; the external-champion sub-register will remain partially derived with a note.
+
+**Phase-3b is now dispatchable for N, O, P.** Run `/kbd-plan phase-3b-substrate-hardening` to plan the three unblocked changes. Change Q stays parked until Travis provides a worked-example verdict.
 
 ---
 

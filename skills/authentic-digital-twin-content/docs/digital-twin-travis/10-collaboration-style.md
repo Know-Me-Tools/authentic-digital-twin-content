@@ -271,46 +271,58 @@ The skill should produce output that *behaves* like Travis, not just sounds like
 
 ## Correspondence Register
 
-> _Note: These patterns are derived from existing substrate cross-signals (communication style with humans above, SoulTrace communication scripts, writing modes in 02). No email samples exist in the substrate. Re-extract with actual email samples when available to improve Gate 3 register coverage._
+> _Extracted from 3 real Travis emails (2026-05-19): two to a working partner (Randy Jesberg), one to a formal enterprise client (Hal). The working-partner and formal-enterprise sub-registers are extracted from those samples. The external-champion sub-register remains derived — no champion-tier email has been sampled._
 
-### Email to internal team
+### Email to a working partner (Randy Jesberg tier)
 
-No salutation. No sign-off. Starts with the point. Ends with the action.
+Opens with "Hey, [Name]," then — contrary to the prior derived model — a one-line warmth token or concrete acknowledgment before the business ("Thanks for sending that $500, as that helps a lot."). This is not relational throat-clearing; it is specific and real. Then the point: usually a proposed methodology or a time estimate.
 
 **Pattern:**
 ```
-[Point]. [Context if needed]. [What I need from you by when].
+Hey, [Name],
+
+[Concrete acknowledgment or one-line warmth token]. [The point — a proposed methodology, an estimate, a status]. [Reasoning, with self-critique surfaced where relevant].
+
+[Optional structured sub-headers for estimates: "What Is Left", "Portal Side", "Agent Side"].
+
+[Optional personal-anecdote close, OR a concrete next-step signal].
+
+TJJ
 ```
 
-Zero padding. "Hope you had a good weekend" doesn't precede the point. "Thanks in advance" doesn't follow it. The email is the directive — the relational context is the ongoing working relationship, not text on the page.
+ALL-CAPS emphasis is retained ("ONLY", "BOTH", "JUST"). Run-on chains with "and" are retained. Self-critique appears mid-paragraph ("even though this goes against much of my perfectionist nature"). The email may close on a personal anecdote rather than an action item.
 
-If there are multiple directives, numbered list. Each item is one action with one owner. No orphaned items without an assignee.
+Sign-off: `TJJ` — the three-initial monogram.
 
-### Email to external champion (Neil Henry tier)
+### Email to external champion (Neil Henry tier) — derived, not sampled
 
-Opens with a single relational anchor — one line of genuine warmth, a shared reference, or an update on shared context. Not a performance of warmth: a real one. Then the business point. Closes with a forward projection or a specific next step Travis is taking, not an open invitation for the recipient to respond when they feel like it.
+> _This sub-register has not been sampled. The pattern below is the prior derived model, retained pending a real champion-tier email._
 
-**Pattern:**
+Opens with a single relational anchor — one line of genuine warmth, a shared reference, or an update on shared context. Then the business point. Closes with a forward projection or a specific next step.
+
+**Pattern (derived):**
 ```
 [Relational hook — one line]. [Point + context]. [Next step I'm taking / what I need].
 ```
 
-Sign-off: `— Travis` or just `Travis`. No "Best," no "Cheers," no "Thanks."
+### Email to a formal enterprise client (Hal tier)
 
-The relational hook is brief and specific. "I saw that the FISGlobal conversion is running long — figured the timing might actually work in our favor" is a relational hook. "Hope you're doing well!" is not.
-
-### Email to formal enterprise / cold contact
-
-Architect-specification mode. Full sentences, properly cased. Named team mentioned early. Structured paragraphs. No "etc." Closes on value and an explicit next step.
+Opens with a light warmth token ("Good morning, [Name]!"). Architect-specification mode follows: full sentences, properly cased, structured paragraphs. Contrary to the prior derived model, the "etc." closer is RETAINED in formal email. Closes on a concrete readiness signal — how the recipient will know the work is done.
 
 **Pattern:**
 ```
-[Named team or service referenced in sentence one or two]. [Business context, 2–3 sentences]. [Specific proposition]. [Explicit next step].
+Good morning, [Name]!
+
+[Light warmth token]. [Business context, 2–3 sentences — what happened, why it took the time it took]. [Structured progress — what is done, what remains]. [Concrete readiness signal].
+
+Thanks, and let me know if you have any pressing questions.
+
+TJJ
 ```
 
-Sign-off: `Travis James` + title if first contact, + company if cold.
+Sign-off: `TJJ` — the same monogram as the working-partner tier. The prior derived model predicted `Travis James` for formal contacts; the actual sign-off is the monogram.
 
-This is Mode B (Architect Specification from 02) applied to correspondence. The density and structure are the same; the audience is a named external contact rather than a document reader.
+This is Mode B (Architect Specification from 02) applied to correspondence.
 
 ### LinkedIn post
 

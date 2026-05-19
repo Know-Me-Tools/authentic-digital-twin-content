@@ -1,44 +1,45 @@
 # Current Waypoint
 
 **Project:** authentic-digital-twin-content
-**Phase:** phase-5
-**Stage:** REFLECT complete — phase closed
+**Phase:** phase-3b-substrate-hardening
+**Stage:** REFLECT complete — 3/4 changes done, Change Q carried forward
 **Change backend:** native KBD
 
-## Phase 5 summary
+## Phase-3b summary
 
-Both phases complete (4/4). STATE.md OQ ledger clean (last open OQ resolved).
+3 of 4 changes complete. 4/5 goals MET. Change Q carried forward (blocked on Travis verdict).
 
 | Change | Status | Outcome |
 |---|---|---|
-| R — Natural-vs-effortful classification in voice-extraction-process.md | DONE | Generic bootstrap guidance for new-author heuristic classification; Travis substrate as reference implementation |
-| S — Re-test cadence protocol in voice-extraction-process.md + STATE.md OQ5 | DONE | CliftonStrengths boundary-crossing threshold; SoulTrace ≥10pt shift threshold; partial/full re-extraction criteria; OQ5 resolved |
-| T — shadow-pattern-detector.md | DONE | Four Operator patterns with expanded signals + false-positive watch-fors; escalation protocol (20+ obs, ≤15% FPR, per-pattern independence, author gate); generic Operator archetype design note |
-| U — Generic-pattern framing in SKILL.md steps 4b and 8 | DONE | Two sentence insertions pointing new-author builders to reference files; description stays 928/1024 chars |
+| N — Correspondence re-extraction | DONE | docs 02 + 10 re-extracted from 3 emails; sign-off corrected to `TJJ`; ALL-CAPS + "etc." retention corrected |
+| O — Short-form social re-extraction | DONE | docs 02 + 07 re-extracted from 5 LinkedIn posts; register renamed Ultra-Short → Short-Form Social |
+| P — Spoken re-extraction | DONE | docs 02 + 07 re-extracted from Ory Summit 2023 transcript; Q&A-handoff close = register-conditional exception |
+| Q — Worked example review | CARRIED FORWARD | No Travis verdict; blocked |
 
-## STATE.md OQ ledger status
+## Gate 3 status
+
+- **Promoted warn → pass:** email-internal, email-formal, short-form social, spoken/conversational
+- **Still warn (derived):** email-external-champion (not sampled)
+
+## Carried-forward work
+
+1. **Change Q** — Travis reviews Tier 2 / Tier 3 worked examples → seeds doc 03 corrections. Resume with `/kbd-plan phase-3b-substrate-hardening` when verdict arrives.
+2. **Register-rename propagation** — `voice-extraction-process.md` (4 refs) and `tier-2-linkedin-post-example.md` (2 refs) still say "ultra-short" after Change O's rename. Reflection lesson 5. Reconcile in a follow-up.
+3. **External-champion email sub-register** — not sampled; closes when Travis supplies a champion-tier email.
+
+## Open question ledger (STATE.md)
 
 | OQ | Status |
 |---|---|
 | OQ1 — Stylometric validation | Open — no phase assigned |
-| OQ2 — Coverage gaps (emotional, family contexts) | Open — no samples available |
-| OQ3 — Annotation mechanics | Resolved (phase-1/2) |
-| OQ4 — agentskills.io skill shape | Resolved (phase-3) |
-| OQ5 — Re-test cadence | **Resolved (phase-5, Change S)** |
-| OQ6 — Shadow detection | Resolved (phase-4, Change M) |
-| OQ7 — Effortful-heuristic enforcement | Resolved (phase-4, Change L) |
+| OQ2 — Coverage gaps (emotional/family) | Open — no input |
+| OQ3–OQ7 | All resolved (phases 1–5) |
 
 ## Next phase options
 
-**Option A:** `/kbd-new-phase phase-3b-substrate-hardening` (Travis input required)
-- Assessment complete; change scopes fully documented
-- Minimum viable unblock: Travis reads Tier 2 and Tier 3 worked examples and provides verdict (Change Q)
+**Option A:** Wait for Travis worked-example verdict → resume phase-3b for Change Q
+**Option B:** `/kbd-new-phase phase-6` — small phase for the register-rename propagation + any accumulated cleanup
 
-**Option B:** Wait for use data before defining phase-6
-- Shadow-pattern escalation evaluation requires 20+ Tier 1 outputs with step 8 triggered
-- No additional Travis-independent feature work identified at this time
+## Completed phases
 
-## Distribution watch
-
-- agentskills.io Discord: can announce v2.0.0 + new features immediately
-- agentskills.io skill directory: not yet open — drafted entry in DISTRIBUTION-STATUS.md
+phase-1, phase-2, phase-3, phase-4, phase-5 — all closed. phase-3b — 3/4, Q carried forward.

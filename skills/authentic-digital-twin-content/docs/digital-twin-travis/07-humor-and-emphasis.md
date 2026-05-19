@@ -239,7 +239,11 @@ The skill should treat Red presence as a quality gate, not a stylistic option.
 
 ## Spoken Register Humor and Emphasis
 
-> _Note: These patterns are derived from existing substrate cross-signals (written humor patterns above, playful/serious register distinction, SoulTrace Red 21%). No spoken transcripts exist in the substrate. Re-extract with actual recordings or talk notes when available._
+> _Extracted from a real ~21-minute recorded conference talk — "Identity + AI = Intelligent Applications," Ory Summit 2023 (Ory Corp YouTube, 2024-02-08). The patterns below are confirmed against actual delivery._
+
+### Self-deprecating opener humor
+
+The transcript confirms a humor mode the prior derived model did not predict: Travis opens warm and self-deprecating. "the home of the world's favorite sports franchise, the Dallas Cowboys. *(Sorry. Yeah, they're like number three or four, you know.)*" The joke undercuts his own claim in a parenthetical aside, then he signposts the return to substance: "But seriously, I love the Ory product." The self-deprecating opener plus the "But seriously," pivot is a real spoken pattern for warming an audience before the technical content.
 
 ### Dry understatement in speech
 
@@ -265,15 +269,19 @@ The one spoken-specific note: when Travis is in intensity context 4 (strategic o
 
 ---
 
-## Ultra-Short Register Humor and Emphasis
+## Short-Form Social Register Humor and Emphasis
 
-> _Note: These patterns are derived from existing substrate cross-signals. No sub-280-character samples exist in the substrate. Re-extract with actual social posts when available._
+> _Extracted from 5 real Travis LinkedIn posts (2026-05-19). The prior derived model framed this as "≤280-character ultra-short" — the samples correct that: Travis's short social posts run longer than tweet length. See the Short-Form Social Register section in 02 for the full register definition._
 
-### What humor modes survive 280-character compression
+### Humor modes in short-form social posts (confirmed against samples)
 
-**Dry understatement: the only mode that reliably survives.** The framing-distance mechanic — serious thing rendered with controlled flatness — compresses well because it operates in a single sentence. "VSCode with a folder open: 3,549 MB. That's not architecture, that's a hostage situation." The first sentence can survive alone. The second is a bonus if space allows.
+**Frustration-vented humor: the dominant short-form mode.** Posts 2 and 3 are rants delivered as comedy — the humor is in the exaggerated frustration, not in a punchline. "If I could, I would punch that AI agent in the face right now..." / "I cussed that bot out GOOD!" The absurdity is owned and performed, not understated.
 
-**Architectural anthropomorphization: survives at one clause.** "Agents don't know where they are." Full stop. The system having a cognitive condition is the entire observation. The reader's discovery — that this is an absurd state for a supposedly capable system — happens without the writer narrating it.
+**Self-deprecating tag-line sign-off.** Post 3 closes with an attribution line that turns the rant on the author: "--Worst AI Boss Ever." The self-deprecation is the punchline, placed as a signature.
+
+**Dry understatement still appears** — the framing-distance mechanic compresses well because it operates in a single sentence. But in the short-form samples it is less dominant than vented-frustration humor; the rant mode is Travis's characteristic short-form comedy register.
+
+**Architectural anthropomorphization: survives at one clause.** The system having a cognitive condition is the entire observation. The reader's discovery — that this is an absurd state for a supposedly capable system — happens without the writer narrating it.
 
 **Pointed comparison humor: reduces to one clause, the full comparison implied.** "Not a rotation of junior resources." The comparison (to what they would otherwise get) is implied. At 280 characters, stating the implicit comparison explicitly wastes the budget and weakens the effect.
 

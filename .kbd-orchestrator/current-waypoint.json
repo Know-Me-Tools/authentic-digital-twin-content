@@ -1,17 +1,19 @@
 {
   "project": "authentic-digital-twin-content",
-  "phase": "phase-5",
+  "phase": "phase-3b-substrate-hardening",
   "lifecycle_stage": "reflect-complete",
   "change_backend": "native-kbd",
-  "changes_completed": 4,
+  "changes_completed": 3,
   "changes_total": 4,
-  "next_step": "Phase 5 complete. Run /kbd-new-phase phase-3b-substrate-hardening (requires Travis input) or wait for Travis input to unblock phase-3b. Shadow-pattern escalation evaluation deferred until 20+ Tier 1 outputs accumulate.",
+  "next_step": "Phase-3b reflected — 3/4 changes complete. Change Q (worked example review) carried forward, blocked on Travis verdict. Follow-up needed: reconcile the 'ultra-short' register-name references in voice-extraction-process.md after the Change O rename. Options: wait for Travis worked-example verdict to unblock Change Q, or run a small follow-up phase for the register-rename propagation. STATE.md OQ1 (stylometric validation) remains the one open question with no phase.",
   "ordered_changes": [
-    "change-R-effortful-heuristic-classification-in-voice-extraction-process",
-    "change-S-retest-cadence-protocol-in-voice-extraction-process",
-    "change-T-shadow-pattern-detector-reference-file",
-    "change-U-generic-pattern-framing-in-skill-md"
+    "change-N-correspondence-re-extraction",
+    "change-O-ultra-short-re-extraction",
+    "change-P-spoken-re-extraction",
+    "change-Q-worked-example-review-and-corrections"
   ],
-  "blocked_on": [],
+  "blocked_on": [
+    "Travis review of Tier 2 and Tier 3 worked examples (Change Q)"
+  ],
   "last_updated": "2026-05-19"
 }

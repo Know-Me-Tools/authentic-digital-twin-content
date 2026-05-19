@@ -6,6 +6,30 @@ Format: [Semantic Versioning](https://semver.org/). Standard version is noted wh
 
 ---
 
+## [Unreleased]
+
+---
+
+## [2.0.0] — 2026-05-18
+
+### Added
+
+- **Standard v2** — tiered provenance model for all communication surfaces: full per-block manifest (Tier 1, long-form), compact inline disclosure tag (Tier 2, email/social), channel-level disclosure (Tier 3, voice/video/real-time chat). Full spec: `skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v2.md`
+- **Communication-surface taxonomy** — 35+ surfaces mapped to annotation tier, register, and generation mode: `skills/authentic-digital-twin-content/references/communication-surface-taxonomy.md`
+- **Expanded substrate register coverage** — correspondence, ultra-short, and spoken/conversational registers added as first-class inputs in the voice extraction process; Gate 3 (surface-register match) added
+- **Annotation scheme v2** — tier selection table, Tier 2/3 operational formats, tri-tier QA checklist: `skills/authentic-digital-twin-content/references/annotation-scheme.md`
+
+### Changed
+
+- `SKILL.md` description expanded to cover all communication surfaces (email, social, voice prep); `metadata.version` bumped to `2.0.0`; "When to use" and "Do not trigger" sections updated for v2 scope; Mode A now surface-aware (selects annotation tier before generating)
+- `references/voice-extraction-process.md` — expanded required inputs table; Gate 3 added; v2 re-extraction triggers documented
+
+### Standard version
+
+Implements **Authentic Digital Twin Content Standard v2** (see `skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v2.md`). Standard v1 articles remain valid at their declared version.
+
+---
+
 ## [1.0.0] — 2026-05-18
 
 ### Added
@@ -20,11 +44,3 @@ Format: [Semantic Versioning](https://semver.org/). Standard version is noted wh
 ### Standard version
 
 Implements **Authentic Digital Twin Content Standard v1** (see `skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v1.md`).
-
----
-
-## [Unreleased]
-
-- Standard v2 — tiered provenance model for all communication surfaces (email, chat, social, voice)
-- Communication-surface taxonomy reference file
-- Expanded substrate register coverage (spoken, conversational, ultra-short)

@@ -6,7 +6,7 @@ license: Apache-2.0
 compatibility: Works with any agent that supports the Agent Skills format. Optionally integrates with a surreal-memory MCP server for substrate persistence; falls back to filesystem-only state when unavailable.
 metadata:
   author: Prometheus AGS
-  version: "1.0.0"
+  version: "2.0.0"
   homepage: https://github.com/Know-Me-Tools/authentic-digital-twin-content
   repository: https://github.com/Know-Me-Tools/authentic-digital-twin-content
 ---

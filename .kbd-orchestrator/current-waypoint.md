@@ -1,27 +1,31 @@
 # Current Waypoint
 
 **Project:** authentic-digital-twin-content
-**Phase:** phase-2-substrate-enrichment
-**Stage:** REFLECT complete — phase closed
+**Phase:** phase-3-voice-validation
+**Stage:** ASSESS complete — waiting on OQ resolution before planning
 **Change backend:** native KBD
 
-## Phase 2 summary
+## Assessment summary
 
-All 4 changes delivered and archived. Phase goals met 5/5.
+Two-track structure identified:
 
-- [x] **change-E-release-cut** — v1.0.0 and v2.0.0 GitHub releases; `metadata.version=2.0.0`
-- [x] **change-F-substrate-extension** — docs 02, 07, 10 extended with derived register patterns
-- [x] **change-G-tier2-worked-example** — `docs/worked-examples/tier-2-linkedin-post-example.md`
-- [x] **change-H-tier3-worked-example** — `docs/worked-examples/tier-3-voice-prep-example.md`
+**Track A — can begin now (Travis-independent):**
+- Change I: agentskills.io community showcase submission
+- Change J: Tier 1 v2 demonstrative example in `docs/worked-examples/`
+- Change K: Effortful-heuristic check in SKILL.md Mode A behavior
+
+**Track B — blocked on Travis input:**
+- Changes L/M/N: Raw samples for correspondence, ultra-short, spoken registers
+- Changes O/P: Travis review of Tier 2 and Tier 3 worked examples
 
 ## Next step
 
-Run `/kbd-new-phase` to begin `phase-3-voice-validation` (recommended), or call it whatever fits.
+Resolve OQ1–OQ4 from the assessment, then run `/kbd-plan phase-3-voice-validation`.
 
-Recommended phase 3 scope:
-1. Supply raw substrate samples for correspondence, ultra-short, and spoken registers
-2. Travis review and approval of Tier 2/3 worked examples
-3. Submit to agentskills.io community registry
-4. Optional: Tier 1 v2 worked example
+Key open questions:
+- **OQ1:** Proceed with Track A only, or block the full phase on Travis input?
+- **OQ2:** How should Travis validation output be captured?
+- **OQ3:** Tier 1 v2 example scope (new article / updated existing / format-demo)?
+- **OQ4:** Include effortful-heuristic feature in this phase?
 
-See `phases/phase-2-substrate-enrichment/reflection.md` for full recommendations.
+See `phases/phase-3-voice-validation/assessment.md` for full detail.

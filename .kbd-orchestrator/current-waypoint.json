@@ -1,17 +1,12 @@
 {
   "project": "authentic-digital-twin-content",
-  "phase": "phase-2-substrate-enrichment",
-  "lifecycle_stage": "reflect-complete",
+  "phase": "phase-3-voice-validation",
+  "lifecycle_stage": "assess-complete",
   "change_backend": "native-kbd",
-  "changes_completed": 4,
-  "changes_total": 4,
-  "next_step": "Run /kbd-new-phase to begin phase-3-voice-validation",
-  "ordered_changes": [
-    "change-E-release-cut",
-    "change-F-substrate-extension",
-    "change-G-tier2-worked-example",
-    "change-H-tier3-worked-example"
-  ],
-  "blocked_on": [],
+  "changes_completed": 0,
+  "changes_total": null,
+  "next_step": "Resolve OQ1-OQ4, then run /kbd-plan phase-3-voice-validation",
+  "ordered_changes": [],
+  "blocked_on": ["OQ1 (Travis-dependency scope)", "OQ2 (validation workflow)", "OQ3 (Tier 1 v2 scope)", "OQ4 (effortful heuristics feature scope)"],
   "last_updated": "2026-05-19"
 }

@@ -57,12 +57,44 @@ Steps:
 2. **Read the substrate.** Load all eleven numbered files. The personality profile and rejection filters in the corrections document are non-negotiable inputs. For Tier 2 / Tier 3 surfaces, pay particular attention to documents 07 (humor and emphasis), 10 (collaboration style), and the register-specific patterns.
 3. **Check Gate 3 (surface-register match).** If the substrate does not cover the target surface's primary register, warn the user before generating.
 4. **Classify content type** against the table in `references/annotation-scheme.md`. Code samples, JSON output, and mechanical tables default to `AI verbatim`. Strategic, narrative, rhetorical, and editorial content defaults to `<Author>` (or `<Author> ← AI`).
+4b. **Apply effortful heuristics.** Before generating, identify which of the five effortful heuristics apply to this surface and task. Apply them explicitly during generation — do not rely on implicit substrate reading. These heuristics are counter-default in the author; the twin must enforce them consciously:
+
+   | Heuristic | When to apply |
+   |---|---|
+   | 4 — Phase Discipline | Always: Mode A generates content only — never produce assessment or plan-level output in a generate task |
+   | 7 — Don't Pivot Silently | When a Gate 3 warning fired or a substrate gap was found: surface the gap before generating; do not paper over it |
+   | 9 — Champion Over Cold Outreach | When the surface is GTM, sales, or relationship content: recommend named champion paths, not outreach-system optimization |
+   | 11 — Cedar Governance | When the surface is in a regulated domain (healthcare, banking, policy): include governance framing in the generated content |
+   | 16 — Acknowledge Before Analyzing | When the content is in a conflict, repair, or feedback context: open with acknowledgment before structural analysis |
+
+   The 11 natural heuristics (1, 2, 3, 5, 6, 8, 10, 12, 13, 14, 15) are applied implicitly via substrate reading — no explicit enforcement needed.
+
 5. **Generate the content** using the voice substrate and the register appropriate to the surface. Apply the rejection filters (no "leverage" as a verb, no "harness", no "delve", no "revolutionary"; em-dashes over commas at clause boundaries; specific numbers over rounded; named alternatives in comparisons; trade-offs surfaced; closes that land on stakes, not invitations).
 6. **Apply annotations** per `references/annotation-scheme.md` at the correct tier:
    - Tier 1: per-block italic eyebrow line + footer manifest
    - Tier 2: single compact disclosure tag at top or end
    - Tier 3: channel-level disclosure statement
 7. **Run the rejection check** before returning. If any sentence matches the rejection-filter patterns, rewrite that sentence and re-check.
+8. **Shadow-pattern check (Tier 1 long-form only).** After the rejection filter passes, and only when the surface tier is Tier 1, scan the generated content for the four Operator shadow patterns. If any is detected, append a shadow-pattern annotation block to the output. Output proceeds regardless — this is a soft warn, not a hard gate. Skip this step for Tier 2 and Tier 3 surfaces.
+
+   | Shadow | Detection signal |
+   |---|---|
+   | Puppet Master | Framing steers the reader to a predetermined conclusion without genuine alternatives; "position X and then Y will inevitably follow" without naming a counter-position |
+   | Transactional Tunnel Vision | Close lands only on metrics with no relational stake; human cost unacknowledged; "the ROI case" is the sole close |
+   | Analysis Fortress | Three or more trade-off qualifications with no commitment sentence; analysis surfaces indefinitely without landing on a stake or direction |
+   | Lone Wolf Lockdown | GTM or relationship content recommends building new outreach systems rather than leveraging existing named relationships |
+
+   **Annotation block format when triggered:**
+
+   ```
+   ---
+
+   ## Shadow-pattern check
+
+   ⚠ **[Pattern name] detected** — [one sentence describing what triggered it and what to reconsider]
+
+   This is a soft warning. The output above is returned as generated. Review the flagged passage before publishing.
+   ```
 
 ### Mode B — Rewrite (article exists in wrong voice)
 

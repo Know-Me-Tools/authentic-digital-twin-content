@@ -3,17 +3,17 @@
   "project": "authentic-digital-twin-content",
   "assessment_complete": true,
   "plan_complete": true,
-  "execute_complete": false,
+  "execute_complete": true,
   "reflect_complete": false,
   "change_backend": "native-kbd",
   "changes_total": 2,
-  "changes_completed": 0,
+  "changes_completed": 2,
   "ordered_changes": ["change-L-effortful-heuristic-enforcement", "change-M-shadow-pattern-detector"],
   "change_status": {
-    "change-L-effortful-heuristic-enforcement": "TODO",
-    "change-M-shadow-pattern-detector": "TODO"
+    "change-L-effortful-heuristic-enforcement": "DONE",
+    "change-M-shadow-pattern-detector": "DONE"
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Plan complete. OQ1-OQ4 resolved: new numbered step (OQ1), appended annotation block (OQ2), Tier 1 only (OQ3), natural heuristics implicit (OQ4). Two changes L and M — independent, can run in parallel. Both prompt-engineer agents modifying SKILL.md Mode A at different insertion points."
+  "notes": "Execute complete. Both changes applied to SKILL.md Mode A in a single edit: step 4b (effortful-heuristic enforcement table) inserted between steps 4 and 5; step 8 (shadow-pattern soft-warn, Tier 1 only) appended after step 7. Description remains 928/1024 chars. Both changes archived."
 }

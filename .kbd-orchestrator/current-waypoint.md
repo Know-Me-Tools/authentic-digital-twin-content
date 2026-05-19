@@ -2,27 +2,20 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-4
-**Stage:** PLAN complete — ready to execute
+**Stage:** EXECUTE complete — ready to reflect
 **Change backend:** native KBD
 
-## Change summary
+## Execute summary
 
-Two changes, independent (can run in parallel):
+Both changes complete (2/2):
 
-| # | Change | Description | Agent |
-|---|---|---|---|
-| L | change-L-effortful-heuristic-enforcement | Insert step 4b into SKILL.md Mode A — effortful-heuristic applicability check before generation | prompt-engineer |
-| M | change-M-shadow-pattern-detector | Add step 8 to SKILL.md Mode A — shadow-pattern soft-warn check after rejection filter (Tier 1 only) | prompt-engineer |
+| Change | Status | Notes |
+|---|---|---|
+| L — effortful-heuristic enforcement | DONE | Step 4b inserted between steps 4 and 5 in Mode A |
+| M — shadow-pattern detector | DONE | Step 8 appended after step 7 in Mode A (Tier 1 only, soft warn) |
 
-## OQ resolutions
-
-- OQ1: New numbered step 4b (not integrated into step 5)
-- OQ2: Appended annotation block
-- OQ3: Tier 1 only
-- OQ4: Natural heuristics stay implicit
+SKILL.md description: 928/1024 chars — unchanged, within limit.
 
 ## Next step
 
-Run `/kbd-execute phase-4` to dispatch both changes.
-
-Changes L ∥ M — different insertion points in Mode A (step 4b vs step 8); no shared state.
+Run `/kbd-reflect phase-4` to close the phase.

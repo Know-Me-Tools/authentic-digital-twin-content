@@ -3,7 +3,7 @@
 **Phase:** phase-2-substrate-enrichment
 **Depends on:** Change F
 **Recommended agent:** brand-voice:content-generation
-**Status:** [ ] not started
+**Status:** [x] DONE — 2026-05-19
 
 ## Goal
 
@@ -11,16 +11,16 @@ Produce a demonstrative LinkedIn post in Travis's voice under Standard v2 Tier 2
 
 ## Tasks
 
-- [ ] Create `skills/authentic-digital-twin-content/docs/worked-examples/` directory
-- [ ] Create `docs/worked-examples/README.md` — brief header explaining the directory structure (Tier 1 = existing `zed-workspace-article.md`; Tier 2 = this file; Tier 3 = Change H)
-- [ ] Write `docs/worked-examples/tier-2-linkedin-post-example.md`:
-  - [ ] Post length: 300–600 words
-  - [ ] Domain: agentic programming (workspace identity, context infrastructure, or ACP — Travis's documented domain anchors in 08)
-  - [ ] Opens with hard-stop sentence or reframe move (not "Excited to share...")
-  - [ ] Written-social register (declarative, properly cased, no `--` em-dashes)
-  - [ ] Compact Tier 2 disclosure tag at the top (first line before the post)
-  - [ ] Closes on stakes, not "thoughts?" or invitation
-  - [ ] Annotation block after the post: which tag was used; which register was applied; which substrate documents drove the content; which Gate 3 warnings would fire for this surface
+- [x] Create `skills/authentic-digital-twin-content/docs/worked-examples/` directory
+- [x] Create `docs/worked-examples/README.md` — brief header explaining the directory structure (Tier 1 = existing `zed-workspace-article.md`; Tier 2 = this file; Tier 3 = Change H)
+- [x] Write `docs/worked-examples/tier-2-linkedin-post-example.md`:
+  - [x] Post length: 300–600 words
+  - [x] Domain: agentic programming (workspace identity, context infrastructure, or ACP — Travis's documented domain anchors in 08)
+  - [x] Opens with hard-stop sentence or reframe move (not "Excited to share...")
+  - [x] Written-social register (declarative, properly cased, no `--` em-dashes)
+  - [x] Compact Tier 2 disclosure tag at the top (first line before the post)
+  - [x] Closes on stakes, not "thoughts?" or invitation
+  - [x] Annotation block after the post: which tag was used; which register was applied; which substrate documents drove the content; which Gate 3 warnings would fire for this surface
 
 ## Done when
 

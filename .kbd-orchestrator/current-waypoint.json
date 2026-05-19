@@ -1,11 +1,11 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-2-substrate-enrichment",
-  "lifecycle_stage": "execute-in-progress",
+  "lifecycle_stage": "execute-complete",
   "change_backend": "native-kbd",
-  "changes_completed": 2,
+  "changes_completed": 4,
   "changes_total": 4,
-  "next_step": "Run /kbd-execute change-G-tier2-worked-example and /kbd-execute change-H-tier3-worked-example in parallel",
+  "next_step": "Run /kbd-reflect phase-2-substrate-enrichment",
   "ordered_changes": [
     "change-E-release-cut",
     "change-F-substrate-extension",

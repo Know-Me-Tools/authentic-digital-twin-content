@@ -2,20 +2,32 @@
 
 **Project:** authentic-digital-twin-content
 **Phase:** phase-4
-**Stage:** EXECUTE complete — ready to reflect
+**Stage:** REFLECT complete — phase closed
 **Change backend:** native KBD
 
-## Execute summary
+## Phase 4 summary
 
-Both changes complete (2/2):
+Both changes complete (2/2). STATE.md OQ6 and OQ7 resolved.
 
-| Change | Status | Notes |
+| Change | Status | Outcome |
 |---|---|---|
-| L — effortful-heuristic enforcement | DONE | Step 4b inserted between steps 4 and 5 in Mode A |
-| M — shadow-pattern detector | DONE | Step 8 appended after step 7 in Mode A (Tier 1 only, soft warn) |
+| L — effortful-heuristic enforcement | DONE | Step 4b in Mode A: five counter-default heuristics enforced explicitly before generation |
+| M — shadow-pattern detector | DONE | Step 8 in Mode A: four Operator shadow patterns checked post-generation; soft warn; Tier 1 only |
 
-SKILL.md description: 928/1024 chars — unchanged, within limit.
+Mode A now has 8 steps. SKILL.md description: 928/1024 chars.
 
-## Next step
+## Next phase options
 
-Run `/kbd-reflect phase-4` to close the phase.
+**Option A:** `/kbd-new-phase phase-3b-substrate-hardening`
+- Requires Travis input: raw samples + worked example review
+- Highest-value substrate improvement
+
+**Option B:** `/kbd-new-phase phase-5` (Travis-independent)
+- Shadow-pattern detector escalation (hard-gate evaluation)
+- Effortful-heuristic pattern generalization to voice-extraction-process reference
+- Re-test cadence protocol (STATE.md OQ5)
+
+## Distribution watch
+
+- agentskills.io Discord: can announce v2.0.0 + new features immediately
+- agentskills.io skill directory: not yet open — drafted entry in DISTRIBUTION-STATUS.md

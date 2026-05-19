@@ -1,11 +1,11 @@
 {
   "project": "authentic-digital-twin-content",
   "phase": "phase-4",
-  "lifecycle_stage": "execute-complete",
+  "lifecycle_stage": "reflect-complete",
   "change_backend": "native-kbd",
   "changes_completed": 2,
   "changes_total": 2,
-  "next_step": "Run /kbd-reflect phase-4",
+  "next_step": "Phase 4 complete. Run /kbd-new-phase phase-3b-substrate-hardening (requires Travis input) or /kbd-new-phase phase-5 (Travis-independent feature work).",
   "ordered_changes": ["change-L-effortful-heuristic-enforcement", "change-M-shadow-pattern-detector"],
   "blocked_on": [],
   "last_updated": "2026-05-19"

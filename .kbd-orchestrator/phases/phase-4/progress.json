@@ -4,7 +4,7 @@
   "assessment_complete": true,
   "plan_complete": true,
   "execute_complete": true,
-  "reflect_complete": false,
+  "reflect_complete": true,
   "change_backend": "native-kbd",
   "changes_total": 2,
   "changes_completed": 2,
@@ -15,5 +15,5 @@
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Execute complete. Both changes applied to SKILL.md Mode A in a single edit: step 4b (effortful-heuristic enforcement table) inserted between steps 4 and 5; step 8 (shadow-pattern soft-warn, Tier 1 only) appended after step 7. Description remains 928/1024 chars. Both changes archived."
+  "notes": "Phase complete. Both STATE.md OQ6 and OQ7 resolved. Mode A now has 8 steps: effortful-heuristic enforcement (4b) and shadow-pattern soft-warn (8). Remaining work: phase-3b blocked on Travis input; phase-5 for shadow-pattern escalation and generalization patterns."
 }

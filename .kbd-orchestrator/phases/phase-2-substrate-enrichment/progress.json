@@ -7,7 +7,7 @@
   "reflect_complete": false,
   "change_backend": "native-kbd",
   "changes_total": 4,
-  "changes_completed": 1,
+  "changes_completed": 2,
   "ordered_changes": [
     "change-E-release-cut",
     "change-F-substrate-extension",
@@ -16,11 +16,11 @@
   ],
   "change_status": {
     "change-E-release-cut": "DONE",
-    "change-F-substrate-extension": "not started",
+    "change-F-substrate-extension": "DONE",
     "change-G-tier2-worked-example": "not started",
     "change-H-tier3-worked-example": "not started"
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Change E complete. v1.0.0 and v2.0.0 GitHub releases live. metadata.version=2.0.0. CHANGELOG promoted. skills-ref validate green. Next: change-F-substrate-extension."
+  "notes": "Change F complete. Docs 02, 07, 10 extended with derived register patterns for correspondence, ultra-short, and spoken surfaces. All sections include derivation disclaimers. Gate 3 patterns now available for v2 Tier 2/3 surfaces. Changes G and H can now run in parallel."
 }

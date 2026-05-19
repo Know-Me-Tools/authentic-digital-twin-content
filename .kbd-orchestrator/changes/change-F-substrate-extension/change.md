@@ -3,7 +3,7 @@
 **Phase:** phase-2-substrate-enrichment
 **Depends on:** Change E
 **Recommended agent:** prompt-engineer
-**Status:** [ ] not started
+**Status:** [x] DONE — 2026-05-19
 
 ## Goal
 
@@ -18,16 +18,16 @@ Each new section ends with: _"Note: These patterns are derived from existing sub
 ## Tasks
 
 ### Document 02 — Writing samples
-- [ ] Add **Correspondence Register (Derived)** section: how casual-directive and architect-spec modes adapt for named-human email; structural features that transfer vs. don't; salutation/sign-off patterns by recipient tier from 10; derivation note
-- [ ] Add **Ultra-Short Register (Derived)** section: what survives 280-char compression (hard-stops, specific numbers, reframe moves, one intensifier); what gets sacrificed (trade-off pairs, parenthetical chains); characteristic openers from 07 patterns; derivation note
-- [ ] Add **Spoken/Conversational Register (Derived)** section: how documented patterns surface in speech; mid-thought starts, self-correction, "etc." verbally; what prose features become speech features; derivation note
+- [x] Add **Correspondence Register (Derived)** section: how casual-directive and architect-spec modes adapt for named-human email; structural features that transfer vs. don't; salutation/sign-off patterns by recipient tier from 10; derivation note
+- [x] Add **Ultra-Short Register (Derived)** section: what survives 280-char compression (hard-stops, specific numbers, reframe moves, one intensifier); what gets sacrificed (trade-off pairs, parenthetical chains); characteristic openers from 07 patterns; derivation note
+- [x] Add **Spoken/Conversational Register (Derived)** section: how documented patterns surface in speech; mid-thought starts, self-correction, "etc." verbally; what prose features become speech features; derivation note
 
 ### Document 07 — Humor and emphasis
-- [ ] Add **Spoken Register Humor and Emphasis** section: how dry understatement, anthropomorphization, and hard-stop pivots operate in speech vs. prose; conviction-driven intensity as delivery-independent
-- [ ] Add **Ultra-Short Register Humor and Emphasis** section: dry understatement as only surviving humor mode; pointed comparison reduced to one clause; hard-stop as ultra-short default; Red intensifier budget (one per post)
+- [x] Add **Spoken Register Humor and Emphasis** section: how dry understatement, anthropomorphization, and hard-stop pivots operate in speech vs. prose; conviction-driven intensity as delivery-independent
+- [x] Add **Ultra-Short Register Humor and Emphasis** section: dry understatement as only surviving humor mode; pointed comparison reduced to one clause; hard-stop as ultra-short default; Red intensifier budget (one per post)
 
 ### Document 10 — Collaboration style
-- [ ] Add **Correspondence Register** section: email patterns by recipient tier (internal team, champion, formal enterprise, cold contact); LinkedIn post distinctions; inbound reply pattern; sign-off gradients
+- [x] Add **Correspondence Register** section: email patterns by recipient tier (internal team, champion, formal enterprise, cold contact); LinkedIn post distinctions; inbound reply pattern; sign-off gradients
 
 ## Done when
 

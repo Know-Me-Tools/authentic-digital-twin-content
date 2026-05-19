@@ -7,7 +7,7 @@
   "reflect_complete": false,
   "change_backend": "native-kbd",
   "changes_total": 4,
-  "changes_completed": 0,
+  "changes_completed": 1,
   "ordered_changes": [
     "change-E-release-cut",
     "change-F-substrate-extension",
@@ -15,12 +15,12 @@
     "change-H-tier3-worked-example"
   ],
   "change_status": {
-    "change-E-release-cut": "not started",
+    "change-E-release-cut": "DONE",
     "change-F-substrate-extension": "not started",
     "change-G-tier2-worked-example": "not started",
     "change-H-tier3-worked-example": "not started"
   },
   "last_tool": "claude-code",
   "last_updated": "2026-05-19",
-  "notes": "Plan complete. OQs resolved: OQ1=derived patterns, OQ2=agentic programming, OQ3=retroactive v1.0.0 first, OQ4=worked examples declare v2. Order: E → F → G ∥ H. G and H can run in parallel after F."
+  "notes": "Change E complete. v1.0.0 and v2.0.0 GitHub releases live. metadata.version=2.0.0. CHANGELOG promoted. skills-ref validate green. Next: change-F-substrate-extension."
 }

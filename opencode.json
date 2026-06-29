@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "@ory/opencode"
+  ],
+  "mcp": {
+    "ory": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "--package=@ory/mcp-server",
+        "ory-mcp-server"
+      ]
+    }
+  }
+}

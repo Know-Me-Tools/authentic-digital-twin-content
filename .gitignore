@@ -23,3 +23,9 @@ npm-debug.log*
 
 # Claude Code local session state
 .claude/settings.local.json
+
+# Firecrawl scrape/search output (ephemeral research artifacts)
+.firecrawl/
+
+# OpenCode loop session state (ephemeral; skills/ and commands/ ARE tracked)
+.opencode/opencode-loop/

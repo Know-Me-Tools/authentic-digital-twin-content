@@ -1,0 +1,16 @@
+{
+  "name": "authentic-digital-twin-portable-hooks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs --check",
+    "test": "node --test ../../tests/portability/hooks.test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.6",
+    "typescript": "7.0.2"
+  }
+}

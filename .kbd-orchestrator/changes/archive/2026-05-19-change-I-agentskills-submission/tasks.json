@@ -1,0 +1,54 @@
+{
+  "changeId": "change-I-agentskills-submission",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Read `docs/REGISTRATION.md` to retrieve exact agentskills.io contribution steps",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Check the `agentskills/agentskills` GitHub repo contributing guidelines (via `gh` or web) for current submission format",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Draft the showcase entry in the required format (YAML or Markdown skill entry referencing this repo URL and skill name)",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Open a PR against `agentskills/agentskills` with the entry",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "5",
+      "title": "Create `docs/DISTRIBUTION-STATUS.md` — lightweight ledger recording the PR URL, submission date, and channel status",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "6",
+      "title": "Update `CHANGELOG.md` with `[Unreleased]` note: \"Submitted to agentskills.io community showcase (PR #...)\"",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

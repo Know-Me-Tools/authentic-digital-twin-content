@@ -1,0 +1,19 @@
+[
+  {
+    "insert": [
+      {
+        "id": "authentic-digital-twin-persistence",
+        "name": "@deepseek-ai/dsh-session-persistence-jsonl"
+      },
+      {
+        "id": "authentic-digital-twin-team",
+        "name": "@deepseek-ai/dsh-experimental-agent-team",
+        "config": {}
+      },
+      {
+        "id": "authentic-digital-twin-team-tools",
+        "name": "@deepseek-ai/dsh-experimental-tool-agent-team"
+      }
+    ]
+  }
+]

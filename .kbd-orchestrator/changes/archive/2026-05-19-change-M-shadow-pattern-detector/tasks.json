@@ -1,0 +1,38 @@
+{
+  "changeId": "change-M-shadow-pattern-detector",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Read the current SKILL.md Mode A procedure to understand step 7 (rejection check) — step 8 follows immediately after",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Add step 8 after step 7 with the following content:",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Assess whether the four detection signals are better housed inline (in SKILL.md) or in a companion reference file (`references/shadow-pattern-detector.md`). If SKILL.md is becoming long, create the reference file and link from step 8 instead of inlining.",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Verify SKILL.md frontmatter description character count remains ≤ 1024 chars after changes L and M are both applied",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

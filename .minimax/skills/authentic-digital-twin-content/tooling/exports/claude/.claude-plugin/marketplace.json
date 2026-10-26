@@ -1,0 +1,13 @@
+{
+  "name": "authentic-digital-twin-marketplace",
+  "owner": {
+    "name": "authentic-digital-twin"
+  },
+  "plugins": [
+    {
+      "name": "authentic-digital-twin",
+      "source": "./plugins/authentic-digital-twin",
+      "description": "Develop and maintain the portable authoring skill, authorized evidence ingestion, Rust MCP/CLI interfaces and evaluated author-scoped graph/vector knowledge systems."
+    }
+  ]
+}

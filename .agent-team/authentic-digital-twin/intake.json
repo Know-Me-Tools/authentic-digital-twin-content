@@ -1,0 +1,39 @@
+{
+  "operation": "create",
+  "id": "authentic-digital-twin",
+  "outcome": "Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.",
+  "complexity": "complex",
+  "areas": [
+    "code",
+    "security",
+    "docs",
+    "product"
+  ],
+  "deliverables": [
+    "Portable specialist definitions",
+    "Bundled companion skills",
+    "Six native adapters and Zed routing",
+    "Cross-platform Node hooks and verification"
+  ],
+  "budget": "balanced",
+  "review": true,
+  "harness": "codex",
+  "scope": "project",
+  "ownership": {
+    "implementer": [
+      "crates/**"
+    ],
+    "security-reviewer": [
+      "reviews/security/**"
+    ],
+    "documentation-specialist": [
+      "docs/team/**"
+    ],
+    "product-manager": [
+      "docs/product/**"
+    ],
+    "reviewer": [
+      "reviews/acceptance/**"
+    ]
+  }
+}

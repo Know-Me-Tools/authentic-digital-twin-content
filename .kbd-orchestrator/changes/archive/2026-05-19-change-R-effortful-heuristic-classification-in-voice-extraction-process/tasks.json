@@ -1,0 +1,30 @@
+{
+  "changeId": "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Read `voice-extraction-process.md` in full to confirm insertion point (after extraction order table, before \"What each document looks like at finished state\")",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-R-effortful-heuristic-classification-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Write new section (~200 words):",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-R-effortful-heuristic-classification-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Verify no existing content modified",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-R-effortful-heuristic-classification-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

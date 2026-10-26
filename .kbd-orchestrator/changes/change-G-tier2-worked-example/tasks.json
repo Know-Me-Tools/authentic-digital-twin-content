@@ -1,0 +1,86 @@
+{
+  "changeId": "change-G-tier2-worked-example",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Create `skills/authentic-digital-twin-content/docs/worked-examples/` directory",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Create `docs/worked-examples/README.md` — brief header explaining the directory structure (Tier 1 = existing `zed-workspace-article.md`; Tier 2 = this file; Tier 3 = Change H)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Write `docs/worked-examples/tier-2-linkedin-post-example.md`:",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Post length: 300–600 words",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "5",
+      "title": "Domain: agentic programming (workspace identity, context infrastructure, or ACP — Travis's documented domain anchors in 08)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "6",
+      "title": "Opens with hard-stop sentence or reframe move (not \"Excited to share...\")",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "7",
+      "title": "Written-social register (declarative, properly cased, no `--` em-dashes)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "8",
+      "title": "Compact Tier 2 disclosure tag at the top (first line before the post)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "9",
+      "title": "Closes on stakes, not \"thoughts?\" or invitation",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "10",
+      "title": "Annotation block after the post: which tag was used; which register was applied; which substrate documents drove the content; which Gate 3 warnings would fire for this surface",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

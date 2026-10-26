@@ -1,0 +1,112 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".minimax/agents/product-manager/agent.md",
+    ".minimax/agents/systems-architect/agent.md",
+    ".minimax/agents/evidence-collector/agent.md",
+    ".minimax/agents/provenance-curator/agent.md",
+    ".minimax/agents/ingestion-engineer/agent.md",
+    ".minimax/agents/mcp-server-engineer/agent.md",
+    ".minimax/agents/rag-graphrag-expert/agent.md",
+    ".minimax/agents/surrealdb-engineer/agent.md",
+    ".minimax/agents/skill-maintainer/agent.md",
+    ".minimax/agents/security-reviewer/agent.md",
+    ".minimax/agents/evaluation-engineer/agent.md",
+    ".minimax/agents/release-engineer/agent.md"
+  ],
+  "changed": [
+    ".minimax/agents/product-manager/agent.md",
+    ".minimax/agents/systems-architect/agent.md",
+    ".minimax/agents/evidence-collector/agent.md",
+    ".minimax/agents/provenance-curator/agent.md",
+    ".minimax/agents/ingestion-engineer/agent.md",
+    ".minimax/agents/mcp-server-engineer/agent.md",
+    ".minimax/agents/rag-graphrag-expert/agent.md",
+    ".minimax/agents/surrealdb-engineer/agent.md",
+    ".minimax/agents/skill-maintainer/agent.md",
+    ".minimax/agents/security-reviewer/agent.md",
+    ".minimax/agents/evaluation-engineer/agent.md",
+    ".minimax/agents/release-engineer/agent.md",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": true,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".minimax/agents/product-manager/agent.md",
+      "before": null,
+      "after": "410cf4a9a8c97aecf4a4a75e4486a3278d844dfdb656ecaedabf16328b6ffed0"
+    },
+    {
+      "file": ".minimax/agents/systems-architect/agent.md",
+      "before": null,
+      "after": "ceb40aa18bb1e21a50d68ffc6fee29f730c868e68b89f3990a166fd2261107cd"
+    },
+    {
+      "file": ".minimax/agents/evidence-collector/agent.md",
+      "before": null,
+      "after": "fba37285e8ec30cda66b717e74180a4f56eb3ac306af0cf8f6fdc54345b4192b"
+    },
+    {
+      "file": ".minimax/agents/provenance-curator/agent.md",
+      "before": null,
+      "after": "bc6af6bc412117f572fa2a70f756f7967172e28b749a4762c45081f17b092c5c"
+    },
+    {
+      "file": ".minimax/agents/ingestion-engineer/agent.md",
+      "before": null,
+      "after": "7ed018315c13b7a9d774fee100d45070e55e864c032ccb2150e50dce2cdee8eb"
+    },
+    {
+      "file": ".minimax/agents/mcp-server-engineer/agent.md",
+      "before": null,
+      "after": "84c2cd13b2346a1b38ca0e44cd40436a679f6f1608053354b40b22ccf7f0cf54"
+    },
+    {
+      "file": ".minimax/agents/rag-graphrag-expert/agent.md",
+      "before": null,
+      "after": "c9c0e3ad0dd0758d875dc37c74e09042cd65fe4d01d148e19e925ac93867a490"
+    },
+    {
+      "file": ".minimax/agents/surrealdb-engineer/agent.md",
+      "before": null,
+      "after": "5b0c2f5ac699ea813e9ce2653379bf11d224c995ca420ee5e4bea23b850c7e32"
+    },
+    {
+      "file": ".minimax/agents/skill-maintainer/agent.md",
+      "before": null,
+      "after": "a1db057304e846e74342d3330e62589ef15275f7328c3e4a7051aa6ab659492a"
+    },
+    {
+      "file": ".minimax/agents/security-reviewer/agent.md",
+      "before": null,
+      "after": "f0e34411a1550fdef7084b862542f8a5e7b1a7ddc58251fb7c0efdfd9fbf6ce7"
+    },
+    {
+      "file": ".minimax/agents/evaluation-engineer/agent.md",
+      "before": null,
+      "after": "2b2b3b2abb770efcfe91cf053758dcb158526ded5e4098ce5d9dc3e0911249bc"
+    },
+    {
+      "file": ".minimax/agents/release-engineer/agent.md",
+      "before": null,
+      "after": "b1aaab004ea5d9439b845987e75bef5ef2db20af3e8f30de407070bade2daf83"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": "59bdd70399e7a0c175908a9bd9552aea07f70afcfa0633df6e0cdabcf820e1fe",
+      "after": "340b6fc6956378e548e54c07aa278c3b7ff50db5aecdd75bfb7415c50f5afd4e"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "mcode exec has no verified custom-agent selector. The MiniMax plugin manifest supports skills/MCP/hooks/apps, not an agents field; no agent plugin is invented.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them.",
+    "MiniMax definitions require launching with MINIMAX_DATA_DIR set to the absolute project directory .minimax; installing files does not set that environment."
+  ],
+  "recovery": null
+}

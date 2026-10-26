@@ -1,0 +1,286 @@
+{
+  "policy": "inherit authorized native session; explicit role model binding deferred until verified provider catalog is supplied",
+  "priceStatus": "unknown; no cost ceiling asserted",
+  "visionRequired": [
+    "evidence-collector"
+  ],
+  "selections": [
+    {
+      "role": "product-manager",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "systems-architect",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "evidence-collector",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling",
+            "vision"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "provenance-curator",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "ingestion-engineer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "mcp-server-engineer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "rag-graphrag-expert",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "surrealdb-engineer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "skill-maintainer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "security-reviewer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "evaluation-engineer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "hard"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    },
+    {
+      "role": "release-engineer",
+      "result": {
+        "selected": null,
+        "policy": {
+          "capabilities": [
+            "function_calling"
+          ],
+          "tier": "medium"
+        },
+        "appliedLayers": [
+          "team",
+          "role",
+          "task"
+        ],
+        "rejected": [],
+        "explanation": "No declared available model satisfies every constraint.",
+        "warnings": [],
+        "diagnostics": [],
+        "catalogProvenance": null,
+        "catalogFreshness": null
+      }
+    }
+  ]
+}

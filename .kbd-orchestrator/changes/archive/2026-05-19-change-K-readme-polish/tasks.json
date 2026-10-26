@@ -1,0 +1,30 @@
+{
+  "changeId": "change-K-readme-polish",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Add **\"Worked examples\" section** — brief table linking to the three worked examples in `docs/worked-examples/` (Tier 1 format demo, Tier 2 LinkedIn post, Tier 3 voice prep). One-line description per example of what it demonstrates.",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-K-readme-polish/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Add **\"Standard version\" section** (or expand existing standard reference) — clear statement that this skill implements Standard v2; link to `skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v2.md`; one-line note that Standard v1 articles remain valid.",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-K-readme-polish/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Add **\"Reference implementation\" note** — Travis James's substrate (`docs/digital-twin-travis/`) is the reference implementation of what good substrate looks like; the skill is generic; Travis's substrate is an example, not a dependency.",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-K-readme-polish/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

@@ -1,26 +1,120 @@
 {
+  "schemaVersion": "2",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
   "phase": "phase-2-substrate-enrichment",
-  "project": "authentic-digital-twin-content",
-  "assessment_complete": true,
-  "plan_complete": true,
-  "execute_complete": true,
-  "reflect_complete": true,
-  "change_backend": "native-kbd",
+  "phaseId": "phase-2-substrate-enrichment",
+  "parentPhase": null,
+  "last_updated": "2026-10-26T09:00:30.035627Z",
+  "last_updated_by": "kbd-runtime",
   "changes_total": 4,
   "changes_completed": 4,
-  "ordered_changes": [
-    "change-E-release-cut",
-    "change-F-substrate-extension",
-    "change-G-tier2-worked-example",
-    "change-H-tier3-worked-example"
-  ],
-  "change_status": {
-    "change-E-release-cut": "DONE",
-    "change-F-substrate-extension": "DONE",
-    "change-G-tier2-worked-example": "DONE",
-    "change-H-tier3-worked-example": "DONE"
+  "implementation_total": 4,
+  "implementation_completed": 4,
+  "completion": {
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 4,
+      "total": 4,
+      "status": "COMPLETE"
+    },
+    "evidence": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    }
   },
-  "last_tool": "claude-code",
-  "last_updated": "2026-05-19",
-  "notes": "Phase 2 complete. All 4 changes archived. Reflection written. v2.0.0 released. Substrate extended (02/07/10). Tier 2 and Tier 3 worked examples in docs/worked-examples/. Ready for phase-3-voice-validation or maintainer-directed next phase."
+  "completionScopes": {
+    "completion": "phase",
+    "runCompletion": "run"
+  },
+  "runCompletion": {
+    "scope": "run",
+    "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 20,
+      "total": 21,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    }
+  },
+  "changes": [
+    {
+      "id": "change-E-release-cut",
+      "title": "change-E-release-cut",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-F-substrate-extension",
+      "title": "change-F-substrate-extension",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-G-tier2-worked-example",
+      "title": "change-G-tier2-worked-example",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-H-tier3-worked-example",
+      "title": "change-H-tier3-worked-example",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    }
+  ],
+  "children": {},
+  "migrationStatus": null
 }

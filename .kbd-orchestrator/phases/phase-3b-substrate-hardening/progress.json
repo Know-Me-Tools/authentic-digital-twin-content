@@ -1,34 +1,120 @@
 {
+  "schemaVersion": "2",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
   "phase": "phase-3b-substrate-hardening",
-  "project": "authentic-digital-twin-content",
-  "assessment_complete": true,
-  "plan_complete": true,
-  "execute_complete": true,
-  "reflect_complete": true,
-  "change_backend": "native-kbd",
+  "phaseId": "phase-3b-substrate-hardening",
+  "parentPhase": null,
+  "last_updated": "2026-10-26T09:00:30.035627Z",
+  "last_updated_by": "kbd-runtime",
   "changes_total": 4,
   "changes_completed": 3,
-  "ordered_changes": [
-    "change-N-correspondence-re-extraction",
-    "change-O-ultra-short-re-extraction",
-    "change-P-spoken-re-extraction",
-    "change-Q-worked-example-review-and-corrections"
-  ],
-  "change_status": {
-    "change-N-correspondence-re-extraction": "DONE",
-    "change-O-ultra-short-re-extraction": "DONE",
-    "change-P-spoken-re-extraction": "DONE",
-    "change-Q-worked-example-review-and-corrections": "CARRIED FORWARD — blocked on Travis worked-example verdict"
+  "implementation_total": 4,
+  "implementation_completed": 3,
+  "completion": {
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 3,
+      "total": 4,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    }
   },
-  "blocked_on": [
-    "Travis review of tier-2-linkedin-post-example.md and tier-3-voice-prep-example.md (Change Q)"
+  "completionScopes": {
+    "completion": "phase",
+    "runCompletion": "run"
+  },
+  "runCompletion": {
+    "scope": "run",
+    "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 20,
+      "total": 21,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    }
+  },
+  "changes": [
+    {
+      "id": "change-N-correspondence-re-extraction",
+      "title": "change-N-correspondence-re-extraction",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-O-ultra-short-re-extraction",
+      "title": "change-O-ultra-short-re-extraction",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-P-spoken-re-extraction",
+      "title": "change-P-spoken-re-extraction",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-Q-worked-example-review-and-corrections",
+      "title": "change-Q-worked-example-review-and-corrections",
+      "status": "BLOCKED",
+      "implementation_status": "BLOCKED",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    }
   ],
-  "carried_forward_debt": [
-    "Change Q — worked example review + doc 03 seeding",
-    "External-champion email sub-register not sampled (folds into Change N scope)",
-    "Register rename Ultra-Short → Short-Form Social not propagated to voice-extraction-process.md (4 refs) and tier-2 worked example (2 refs)"
-  ],
-  "last_tool": "claude-code",
-  "last_updated": "2026-05-19",
-  "notes": "Phase reflected. 3/4 changes DONE; 4/5 goals MET; Change Q carried forward. Gate 3 promoted warn→pass for email-internal, email-formal, short-form social, spoken. Reflection lesson 5: register rename has uncaught blast radius — voice-extraction-process.md and tier-2 worked example still reference old 'ultra-short' name; follow-up needed."
+  "children": {},
+  "migrationStatus": null
 }

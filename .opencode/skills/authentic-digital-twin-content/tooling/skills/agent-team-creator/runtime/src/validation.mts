@@ -1,0 +1,109 @@
+import { exportCapabilityNames, harnesses, type Team, type Json, type ObjectValue, type Target } from './types.mjs';
+
+export function object(value: unknown, label = 'input'): ObjectValue {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error(`${label} must be an object`);
+  return value as ObjectValue;
+}
+export function text(value: unknown, label: string): string {
+  if (typeof value !== 'string' || !value.trim()) throw Error(`${label} must be a nonempty string`);
+  return value;
+}
+export function strings(value: unknown, label: string): string[] {
+  if (!Array.isArray(value) || value.some(v => typeof v !== 'string' || !v.trim())) throw Error(`${label} must be a string array`);
+  return value as string[];
+}
+export function id(value: unknown, label = 'id'): string {
+  const result = text(value, label);
+  if (!/^[a-z][a-z0-9-]{0,62}$/.test(result) || /^(con|prn|aux|nul|com[0-9]|lpt[0-9])$/.test(result)) throw Error(`${label} must be a portable lowercase identifier`);
+  return result;
+}
+export function target(value: unknown): Target {
+  if (typeof value !== 'string' || ![...harnesses, 'bossfang'].includes(value as Target)) throw Error('Unknown harness target');
+  return value as Target;
+}
+export function policy(value: unknown, label: string): void {
+  const p = object(value, label);
+  for (const key of Object.keys(p)) if (!['model', 'tier', 'capabilities', 'maxInputPerMillion', 'maxOutputPerMillion'].includes(key)) throw Error(`Unknown ${label} field: ${key}`);
+  if (p.model !== undefined) text(p.model, `${label}.model`);
+  if (p.tier !== undefined && !['low', 'medium', 'hard'].includes(String(p.tier))) throw Error(`Invalid ${label}.tier`);
+  if (p.capabilities !== undefined) strings(p.capabilities, `${label}.capabilities`);
+  for (const key of ['maxInputPerMillion', 'maxOutputPerMillion']) {
+    if (p[key] !== undefined && (typeof p[key] !== 'number' || !Number.isFinite(p[key]) || p[key] < 0)) throw Error(`Invalid ${label}.${key}`);
+  }
+}
+export function relativeFile(file: string): string {
+  if (!file || file.includes('\\') || file.startsWith('/') || /[<>:"|?*\u0000-\u001f]/.test(file) || file.split('/').some(p => !p || p === '.' || p === '..' || /[. ]$/.test(p) || /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\.|$)/i.test(p))) throw Error(`Unsafe portable file path: ${file}`);
+  return file;
+}
+export function card(value: unknown, teamId: string, roleIds: Set<string>): void {
+  const c = object(value, 'team.card');
+  for (const key of Object.keys(c)) if (!['repo','component','owns','capabilities','intake'].includes(key)) throw Error(`Unknown team.card field ${key}`);
+  text(c.repo, 'team.card.repo'); text(c.component, 'team.card.component');
+  strings(c.owns, 'team.card.owns'); strings(c.capabilities, 'team.card.capabilities');
+  const intake = object(c.intake, 'team.card.intake');
+  for (const key of Object.keys(intake)) if (!['intakeRole','label','rules'].includes(key)) throw Error(`Unknown team.card.intake field ${key}`);
+  const role = id(intake.intakeRole, 'team.card.intake.intakeRole');
+  if (!roleIds.has(role)) throw Error(`team.card.intake.intakeRole ${role} is not a role of this team`);
+  if (intake.label !== `team:${teamId}`) throw Error(`team.card.intake.label must be team:${teamId}`);
+  if (!Array.isArray(intake.rules)) throw Error('team.card.intake.rules must be an array');
+  for (const entry of intake.rules) {
+    const rule = object(entry, 'team.card.intake.rules[]');
+    for (const key of Object.keys(rule)) if (!['when','route'].includes(key)) throw Error(`Unknown intake rule field ${key}`);
+    text(rule.when, 'intake rule when');
+    if (rule.route !== 'handoff' && rule.route !== 'issue') throw Error('intake rule route must be handoff or issue');
+  }
+}
+export function validateTeam(value: unknown): Team {
+  const t = object(value, 'team');
+  const allowed = ['schemaVersion','id','outcome','scope','harness','roles','modelPolicy','skillPolicies','card','native','agentMemory'];
+  for (const key of Object.keys(t)) if (!allowed.includes(key)) throw Error(`Unknown team field ${key}; use native.<target>.options or files for harness-specific configuration`);
+  if (t.schemaVersion !== 1) throw Error('team.schemaVersion must be 1');
+  id(t.id, 'team.id'); text(t.outcome, 'team.outcome');
+  if (!['project', 'uar', 'bossfang'].includes(String(t.scope))) throw Error('Invalid scope');
+  if (!harnesses.includes(t.harness as typeof harnesses[number])) throw Error('Invalid team.harness');
+  if (!Array.isArray(t.roles) || t.roles.length === 0) throw Error('At least one role is required');
+  const ids = new Set<string>();
+  for (const entry of t.roles) {
+    const r = object(entry, 'role'), key = id(r.id, 'role.id');
+    if (ids.has(key)) throw Error(`Duplicate role ${key}`); ids.add(key);
+    for (const field of Object.keys(r)) if (!['id','description','prompt','skills','owns','inputs','outputs','dependsOn','modelPolicy','native'].includes(field)) throw Error(`Unknown role field ${field}`);
+    text(r.description, 'description'); text(r.prompt, 'prompt');
+    for (const field of ['skills','owns','inputs','outputs','dependsOn']) strings(r[field], field);
+    if (r.modelPolicy !== undefined) policy(r.modelPolicy, 'role.modelPolicy');
+    if (r.native !== undefined) for (const [key, v] of Object.entries(object(r.native))) { target(key); object(v, `role.native.${key}`); }
+  }
+  const visiting = new Set<string>(), visited = new Set<string>();
+  const team = t as unknown as Team;
+  function visit(key: string): void {
+    if (visiting.has(key)) throw Error('Role dependency cycle');
+    if (visited.has(key)) return;
+    const r = team.roles.find(r => r.id === key);
+    if (!r) throw Error(`Unknown dependency ${key}`);
+    visiting.add(key); r.dependsOn.forEach(visit); visiting.delete(key); visited.add(key);
+  }
+  ids.forEach(visit);
+  if (t.agentMemory !== undefined) {
+    const m = object(t.agentMemory, 'agentMemory');
+    for (const key of Object.keys(m)) if (key !== 'claude') throw Error(`Unknown agentMemory field ${key}`);
+    if (m.claude !== undefined && m.claude !== 'local') throw Error("agentMemory.claude must be 'local'");
+  }
+  if (t.card !== undefined) card(t.card, t.id as string, ids);
+  if (t.modelPolicy !== undefined) policy(t.modelPolicy, 'modelPolicy');
+  if (t.skillPolicies !== undefined) for (const [key, v] of Object.entries(object(t.skillPolicies))) policy(v, `skillPolicies.${key}`);
+  if (t.native !== undefined) for (const [key, v] of Object.entries(object(t.native))) {
+    target(key); const n = object(v, `native.${key}`);
+    for (const field of Object.keys(n)) if (!['version','source','options','files','requiredCapabilities'].includes(field)) throw Error(`Unknown native wrapper field ${field}; put native settings in options or files`);
+    text(n.version, 'native version'); text(n.source, 'native source');
+    if (n.requiredCapabilities !== undefined) {
+      const required = strings(n.requiredCapabilities, 'native.requiredCapabilities');
+      for (const capability of required) if (!(exportCapabilityNames as readonly string[]).includes(capability)) throw Error(`Unknown export capability: ${capability}`);
+    }
+    if (n.options !== undefined) object(n.options, 'native options');
+    if (n.files !== undefined) for (const [file, content] of Object.entries(object(n.files))) {
+      relativeFile(file); if (typeof content !== 'string') throw Error('Native file content must be a string');
+    }
+  }
+  return structuredClone(team);
+}
+
+export const asJson = (value: unknown): Json => JSON.parse(JSON.stringify(value)) as Json;

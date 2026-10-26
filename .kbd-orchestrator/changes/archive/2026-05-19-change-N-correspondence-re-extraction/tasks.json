@@ -1,0 +1,54 @@
+{
+  "changeId": "change-N-correspondence-re-extraction",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Read full Correspondence Register sections in docs 02 (pp. 190–245) and 10 (pp. 272+)",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Extract salutation, sign-off, opener, emphasis, closer, structure from the 3 emails",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Rewrite doc 02 section: drop \"(Derived)\" from heading; extraction note replaces derivation note; correct pattern tables against samples; keep external-champion sub-register marked derived",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Rewrite doc 10 section: same treatment",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "5",
+      "title": "Add 3 emails (or representative excerpts) as cited samples in doc 02",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "6",
+      "title": "Update Gate 3 status: email-internal + email-formal → \"pass\"; email-external-champion → \"warn (derived)\"",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

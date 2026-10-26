@@ -1,0 +1,110 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".kimi-code/agents/product-manager.md",
+    ".kimi-code/agents/systems-architect.md",
+    ".kimi-code/agents/evidence-collector.md",
+    ".kimi-code/agents/provenance-curator.md",
+    ".kimi-code/agents/ingestion-engineer.md",
+    ".kimi-code/agents/mcp-server-engineer.md",
+    ".kimi-code/agents/rag-graphrag-expert.md",
+    ".kimi-code/agents/surrealdb-engineer.md",
+    ".kimi-code/agents/skill-maintainer.md",
+    ".kimi-code/agents/security-reviewer.md",
+    ".kimi-code/agents/evaluation-engineer.md",
+    ".kimi-code/agents/release-engineer.md"
+  ],
+  "changed": [
+    ".kimi-code/agents/product-manager.md",
+    ".kimi-code/agents/systems-architect.md",
+    ".kimi-code/agents/evidence-collector.md",
+    ".kimi-code/agents/provenance-curator.md",
+    ".kimi-code/agents/ingestion-engineer.md",
+    ".kimi-code/agents/mcp-server-engineer.md",
+    ".kimi-code/agents/rag-graphrag-expert.md",
+    ".kimi-code/agents/surrealdb-engineer.md",
+    ".kimi-code/agents/skill-maintainer.md",
+    ".kimi-code/agents/security-reviewer.md",
+    ".kimi-code/agents/evaluation-engineer.md",
+    ".kimi-code/agents/release-engineer.md",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": false,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".kimi-code/agents/product-manager.md",
+      "before": null,
+      "after": "ca7063141915d38049fdbdb23a0bf8dd9f70cb8bd87ae04de3c949f5087f19da"
+    },
+    {
+      "file": ".kimi-code/agents/systems-architect.md",
+      "before": null,
+      "after": "a4f340105f9eb96b2a7752d5db9ac595eaffb0af04d635f15fa24736155c8cea"
+    },
+    {
+      "file": ".kimi-code/agents/evidence-collector.md",
+      "before": null,
+      "after": "3e3efd82db2ff61d8a918f4332e3a5f4e906a095c2f78f1167c4ff12bae996a4"
+    },
+    {
+      "file": ".kimi-code/agents/provenance-curator.md",
+      "before": null,
+      "after": "1454d04241c23a926b6759872304a5a65fb82f1881866d7dc28315f7b731061d"
+    },
+    {
+      "file": ".kimi-code/agents/ingestion-engineer.md",
+      "before": null,
+      "after": "021f11c2acbc236a97770c21e726831a3a32b6386efb1b2c4ad322118651b187"
+    },
+    {
+      "file": ".kimi-code/agents/mcp-server-engineer.md",
+      "before": null,
+      "after": "0f20407f17aa5d34045a55c0af0aeec3b61e1eb689b2e98acf0375871e9f9a12"
+    },
+    {
+      "file": ".kimi-code/agents/rag-graphrag-expert.md",
+      "before": null,
+      "after": "fe2437b9c1d7ab2c6d9d6a86be9a65ced64dbc3606676acf621ee51c36a68c7d"
+    },
+    {
+      "file": ".kimi-code/agents/surrealdb-engineer.md",
+      "before": null,
+      "after": "e8036a45dc6abe711cb66e41e6ce85ad69531dca776d80ba041a886f8c5cc3a4"
+    },
+    {
+      "file": ".kimi-code/agents/skill-maintainer.md",
+      "before": null,
+      "after": "55a1174442b180004b69fd00d98b50b7016f6fd13c3b141bb6724cd09c075d40"
+    },
+    {
+      "file": ".kimi-code/agents/security-reviewer.md",
+      "before": null,
+      "after": "7cd668c382302184515cb2d998dc7875982e0d131f884421695816aff3f809e3"
+    },
+    {
+      "file": ".kimi-code/agents/evaluation-engineer.md",
+      "before": null,
+      "after": "9116c9ca59a4b6f1f873bc1e3ab067596a113574a3b4d261ac0b717c56d7c97e"
+    },
+    {
+      "file": ".kimi-code/agents/release-engineer.md",
+      "before": null,
+      "after": "ced7074f9564894a84f3b44b69c456e757b62e3a217622127272d3a37ed8b747"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": "82807f7fd4f6da58fe7cb9fa721dd94d423e6d52b7c42b82c363ff31ae680a65",
+      "after": "8ad08ce310b80234be796c221b23733d2cc1086ca93bfd2f120e0b72ec6b68c8"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "recovery": ".agent-team/recovery/a2cf04e4d5455f907fa80ea1.json"
+}

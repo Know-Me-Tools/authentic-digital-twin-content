@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-26",
+  "platform": "darwin",
+  "node": "v26.5.0",
+  "clients": [
+    {
+      "client": "codex",
+      "probe": "--version",
+      "exitCode": 0,
+      "error": null,
+      "output": "codex-cli 0.160.1",
+      "support": "CLI availability/version only; no role discovery or invocation"
+    },
+    {
+      "client": "claude",
+      "probe": "--version",
+      "exitCode": 0,
+      "error": null,
+      "output": "2.1.310 (Claude Code)",
+      "support": "CLI availability/version only; no role discovery or invocation"
+    },
+    {
+      "client": "opencode",
+      "probe": "--version",
+      "exitCode": 0,
+      "error": null,
+      "output": "opencode v2.0.29",
+      "support": "CLI availability/version only; no role discovery or invocation"
+    },
+    {
+      "client": "deepseek",
+      "probe": "--version",
+      "exitCode": 1,
+      "error": null,
+      "output": "[ERROR] This project is configured to use 11.7.0 of pnpm. Your current pnpm is v11.25.0\nCorepack invoked pnpm with this version, and pnpm does not switch versions when running under corepack.\nAlign the \"packageManager\" field in package.json with \"devEngines.packageManager\", or invoke pnpm directly (without corepack) so it can switch versions automatically.\nIf you want to bypass this version check, you can set the \"pmOnFail\" configuration to \"warn\" or \"ignore\" (e.g. via --pm-on-fail=ignore). If using \"devEngines.packageManager\", you can set its \"onFail\" to \"warn\" or \"ignore\"",
+      "support": "CLI availability/version only; no role discovery or invocation"
+    },
+    {
+      "client": "zed",
+      "probe": "--version",
+      "exitCode": 1,
+      "error": null,
+      "output": "unknown flag: --version\nUsage:\n  zed [command]\n\nExamples:\n\nzed context list\nzed context set dev localhost:80 testpresharedkey --insecure\nzed context set prod grpc.authzed.com:443 tc_zed_my_laptop_deadbeefdeadbeefdeadbeefdeadbeef\nzed context use dev\nzed permission check --explain document:firstdoc writer user:emilia\n\n\nAvailable Commands:\n  backup       Create, restore, and inspect permissions system backups\n  completion   Generate the autocompletion script for the specified shell\n  context      Manage configurations for connecting to SpiceDB deployments\n  help         Help about any command\n  import       Imports schema and relationships from a file or url\n  mcp          MCP (Model Context Protocol) server commands\n  permission   Query the permissions in a permissions system\n  relationship Query and mutate the relationships in a permissions system\n  schema       Manage schema for a permissions system\n  use          Alias for `zed context use`\n  validate     Validates the given validatio",
+      "support": "Zed editor runtime unverified; instruction and skill routing only",
+      "identity": "PATH command is Authzed/SpiceDB CLI, not Zed editor"
+    },
+    {
+      "client": "kimi",
+      "probe": "executable discovery",
+      "available": false,
+      "support": "CLI not found on authoring host; source-only"
+    },
+    {
+      "client": "minimax",
+      "probe": "executable discovery",
+      "available": false,
+      "support": "CLI not found on authoring host; source-only"
+    },
+    {
+      "client": "zed-editor",
+      "probe": "bundled cli --version",
+      "exitCode": 0,
+      "output": "Zed 1.25.3",
+      "support": "Version verified; role discovery/invocation unverified"
+    }
+  ]
+}

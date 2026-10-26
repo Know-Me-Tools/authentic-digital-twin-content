@@ -1,0 +1,137 @@
+{
+  "target": "kimi",
+  "verification": {
+    "level": "source-verified",
+    "source": "https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md",
+    "version": "main documentation inspected 2026-09-24",
+    "live": "unverified"
+  },
+  "capabilities": {
+    "agent-definition": "emitted",
+    "role-model": "not-emitted",
+    "team-options": "preserved-only",
+    "agent-plugin": "emitted",
+    "agent-marketplace": "emitted",
+    "static-team-roster": "not-emitted",
+    "model-policy-resolution": "not-emitted"
+  },
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "instructions": [
+    "Review staged artifacts before installation. Export grants no execution or registration authority.",
+    "Choose project .kimi-code/agents or the staged Kimi v2 marketplace/plugin. Literal ${base_prompt} in supplied prompts remains unchanged."
+  ],
+  "files": [
+    {
+      "file": ".kimi-code/agents/product-manager.md",
+      "sha256": "ca7063141915d38049fdbdb23a0bf8dd9f70cb8bd87ae04de3c949f5087f19da"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/product-manager.md",
+      "sha256": "ca7063141915d38049fdbdb23a0bf8dd9f70cb8bd87ae04de3c949f5087f19da"
+    },
+    {
+      "file": ".kimi-code/agents/systems-architect.md",
+      "sha256": "88bfe7c2542449d45638e80513bbcd945c22612489fdc5d40f13b60fd7f58dd8"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/systems-architect.md",
+      "sha256": "88bfe7c2542449d45638e80513bbcd945c22612489fdc5d40f13b60fd7f58dd8"
+    },
+    {
+      "file": ".kimi-code/agents/evidence-collector.md",
+      "sha256": "3e3efd82db2ff61d8a918f4332e3a5f4e906a095c2f78f1167c4ff12bae996a4"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/evidence-collector.md",
+      "sha256": "3e3efd82db2ff61d8a918f4332e3a5f4e906a095c2f78f1167c4ff12bae996a4"
+    },
+    {
+      "file": ".kimi-code/agents/provenance-curator.md",
+      "sha256": "1454d04241c23a926b6759872304a5a65fb82f1881866d7dc28315f7b731061d"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/provenance-curator.md",
+      "sha256": "1454d04241c23a926b6759872304a5a65fb82f1881866d7dc28315f7b731061d"
+    },
+    {
+      "file": ".kimi-code/agents/ingestion-engineer.md",
+      "sha256": "021f11c2acbc236a97770c21e726831a3a32b6386efb1b2c4ad322118651b187"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/ingestion-engineer.md",
+      "sha256": "021f11c2acbc236a97770c21e726831a3a32b6386efb1b2c4ad322118651b187"
+    },
+    {
+      "file": ".kimi-code/agents/mcp-server-engineer.md",
+      "sha256": "0f20407f17aa5d34045a55c0af0aeec3b61e1eb689b2e98acf0375871e9f9a12"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/mcp-server-engineer.md",
+      "sha256": "0f20407f17aa5d34045a55c0af0aeec3b61e1eb689b2e98acf0375871e9f9a12"
+    },
+    {
+      "file": ".kimi-code/agents/rag-graphrag-expert.md",
+      "sha256": "fe2437b9c1d7ab2c6d9d6a86be9a65ced64dbc3606676acf621ee51c36a68c7d"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/rag-graphrag-expert.md",
+      "sha256": "fe2437b9c1d7ab2c6d9d6a86be9a65ced64dbc3606676acf621ee51c36a68c7d"
+    },
+    {
+      "file": ".kimi-code/agents/surrealdb-engineer.md",
+      "sha256": "e8036a45dc6abe711cb66e41e6ce85ad69531dca776d80ba041a886f8c5cc3a4"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/surrealdb-engineer.md",
+      "sha256": "e8036a45dc6abe711cb66e41e6ce85ad69531dca776d80ba041a886f8c5cc3a4"
+    },
+    {
+      "file": ".kimi-code/agents/skill-maintainer.md",
+      "sha256": "55a1174442b180004b69fd00d98b50b7016f6fd13c3b141bb6724cd09c075d40"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/skill-maintainer.md",
+      "sha256": "55a1174442b180004b69fd00d98b50b7016f6fd13c3b141bb6724cd09c075d40"
+    },
+    {
+      "file": ".kimi-code/agents/security-reviewer.md",
+      "sha256": "0ea9ec205df4dd18b22a4ca373576b08c2120eb3ca72a893bf66ea820cb2740c"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/security-reviewer.md",
+      "sha256": "0ea9ec205df4dd18b22a4ca373576b08c2120eb3ca72a893bf66ea820cb2740c"
+    },
+    {
+      "file": ".kimi-code/agents/evaluation-engineer.md",
+      "sha256": "9116c9ca59a4b6f1f873bc1e3ab067596a113574a3b4d261ac0b717c56d7c97e"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/evaluation-engineer.md",
+      "sha256": "9116c9ca59a4b6f1f873bc1e3ab067596a113574a3b4d261ac0b717c56d7c97e"
+    },
+    {
+      "file": ".kimi-code/agents/release-engineer.md",
+      "sha256": "bcb0240e070dd1f6ed91e83209084d459bcfeb9b99e98b9a9040bade9bf3764e"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/agents/release-engineer.md",
+      "sha256": "bcb0240e070dd1f6ed91e83209084d459bcfeb9b99e98b9a9040bade9bf3764e"
+    },
+    {
+      "file": "plugins/authentic-digital-twin/kimi.plugin.json",
+      "sha256": "b214912ee35429086c89f745d5377fcc5455ef00bdbe76c1444ca208cab96384"
+    },
+    {
+      "file": "marketplace.json",
+      "sha256": "302ddcc2651293bb71fe708c22835a08576a3dac1747bf82d73ee29f10d8034c"
+    },
+    {
+      "file": "export-receipt.json",
+      "sha256": "bd61733a898c9409c9edb2f4b4b5dbcbec0fd52d1095d36292fed5fa17a6b77b"
+    }
+  ]
+}

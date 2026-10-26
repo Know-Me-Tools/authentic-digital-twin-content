@@ -236,3 +236,28 @@ The skill enforces three rules that exist because they were violated in earlier 
 - It does not replace editorial judgment. The author remains responsible for what is published, sent, or spoken under their name, at every tier.
 - It does not annotate image, audio, or video provenance. The standard covers textual content only.
 - It does not guarantee voice accuracy on registers not covered by the substrate. Gate 3 warns when a surface-register gap exists; the author decides whether to proceed.
+
+## Optional development and evidence team
+
+This complete skill directory also carries a portable companion team for maintaining
+the skill and developing its ingestion, Rust CLI/MCP, retrieval and storage tools.
+Ordinary Generate/Rewrite/Bootstrap use does not require installing that team.
+
+To install it into an authorized project, use Node.js 22+:
+
+```text
+node <skill-directory>/scripts/install-team.mjs --project <existing-project-directory>
+```
+
+Read [the installer guide](scripts/README.md) before use. The adjacent `tooling/`
+bundle includes twelve role definitions, companion skills, native proposals and
+licenses. It supports Codex, Claude Code, Kimi Code, OpenCode, MiniMax Code,
+DeepSeek Harness and Zed through their documented discovery paths. Installation
+does not start agents, collect messages or deploy a server; native runtime support
+must be verified in the actual client. Maintained hooks use TypeScript 7 sources
+and shipped Node.js `.mjs`, without shell-script dependencies.
+
+The evidence collector operates only within authorized source and author scope,
+preserving actual authorship and source receipts. EdgeQuake and Surreal-memory are
+optional configured destinations; direct SurrealDB and the Rust MCP service remain
+future implementation work. See [NOTICE.md](NOTICE.md) for source-data restrictions.

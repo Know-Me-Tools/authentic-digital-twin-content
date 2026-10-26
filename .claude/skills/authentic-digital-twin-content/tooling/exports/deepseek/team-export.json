@@ -1,0 +1,86 @@
+{
+  "target": "deepseek",
+  "verification": {
+    "level": "source-verified",
+    "source": "https://github.com/deepseek-ai/deepseek-harness/tree/master/packages/experimental/agent-team",
+    "version": "master documentation inspected 2026-09-24; experimental",
+    "live": "unverified"
+  },
+  "capabilities": {
+    "agent-definition": "emitted",
+    "role-model": "not-emitted",
+    "team-options": "emitted",
+    "agent-plugin": "not-emitted",
+    "agent-marketplace": "not-emitted",
+    "static-team-roster": "not-emitted",
+    "model-policy-resolution": "not-emitted"
+  },
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "DeepSeek teams are experimental, require durable session storage, share one process/workspace, and provide no static per-member model setting. No package install, profile activation or team creation occurs on export.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "instructions": [
+    "Review staged artifacts before installation. Export grants no execution or registration authority.",
+    "Review the role persona profiles and separate team composition profile before selecting them in DeepSeek. Team options configure the experimental agent-team service. The lead creates members at runtime using the portable role prompts; profiles do not pre-create a roster."
+  ],
+  "files": [
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml",
+      "sha256": "59081638a029e71ba5cbe95f809e462409c868a6d8319c484bccef7b9a4689ad"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml",
+      "sha256": "5ca9bef0ebd9bd30d222b49db69f3ba3e5d2a4a23bc26e1c8810c9514bdc1a7d"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml",
+      "sha256": "21f067c34c6fd073513094aedc61a796a9a513b804036ff55434d20c3d895646"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml",
+      "sha256": "741467d79574319b97d01d3e30be73ec915a8602b88b56bcfbc487804e2d3395"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml",
+      "sha256": "15c1e89789949c731e78d4174d92e1da61bb25bd8b24462bd4046aba6ecf245e"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml",
+      "sha256": "6ae2d7ddc9962590ccc4f7b600807db6827c5bde5c727c375b0d3fb3b87a314b"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml",
+      "sha256": "fa8dc96255eca0538d68f447fdab298f74bb0def5fdf25fcaf83860b254775ce"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml",
+      "sha256": "0714f1f8dd085fc1cb358745fbcde36f2fb663d48f3418cf96c6d81d17732d3c"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml",
+      "sha256": "ffcdfb86dc1c8d7196423529e45eaf6bace7c18be4cb8eca7b303489d46189fc"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml",
+      "sha256": "0e241a448b1332ce3464f377cd7dea14c5eff2446216807328f88044cbc70e08"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml",
+      "sha256": "78d75f84cbd9b091a9c3d3a67db6dca0802197e95194842b6025aa91ee152e0a"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml",
+      "sha256": "031115bea4b3636f13e6b0a799e680e33c25be4270b51e7feee967399b171559"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-team/cordis.patch.yml",
+      "sha256": "5898e6ca5709150c7ee723d70d158abc10e6d62e78f1254e06a25084ef9f966b"
+    },
+    {
+      "file": "export-receipt.json",
+      "sha256": "ddb682c7806986d26dafeb209412455bef18063afea2104c40bc30c4bdd06f4d"
+    }
+  ]
+}

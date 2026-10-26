@@ -1,20 +1,109 @@
 {
+  "schemaVersion": "2",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
   "phase": "phase-3-voice-validation",
-  "project": "authentic-digital-twin-content",
-  "assessment_complete": true,
-  "plan_complete": true,
-  "execute_complete": true,
-  "reflect_complete": true,
-  "change_backend": "native-kbd",
+  "phaseId": "phase-3-voice-validation",
+  "parentPhase": null,
+  "last_updated": "2026-10-26T09:00:30.035627Z",
+  "last_updated_by": "kbd-runtime",
   "changes_total": 3,
   "changes_completed": 3,
-  "ordered_changes": ["change-I-agentskills-submission", "change-J-tier1-format-demo", "change-K-readme-polish"],
-  "change_status": {
-    "change-I-agentskills-submission": "DONE",
-    "change-J-tier1-format-demo": "DONE",
-    "change-K-readme-polish": "DONE"
+  "implementation_total": 3,
+  "implementation_completed": 3,
+  "completion": {
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 3,
+      "total": 3,
+      "status": "COMPLETE"
+    },
+    "evidence": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    }
   },
-  "last_tool": "claude-code",
-  "last_updated": "2026-05-19",
-  "notes": "Phase complete. Reflection written. Key finding: agentskills.io does not currently accept skill submissions — DISTRIBUTION-STATUS.md documents this with drafted entry. Three-tier worked-example set complete at format level. README distribution-ready. Track B (substrate hardening, example reviews) deferred to phase-3b pending Travis input."
+  "completionScopes": {
+    "completion": "phase",
+    "runCompletion": "run"
+  },
+  "runCompletion": {
+    "scope": "run",
+    "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 20,
+      "total": 21,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    }
+  },
+  "changes": [
+    {
+      "id": "change-I-agentskills-submission",
+      "title": "change-I-agentskills-submission",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-J-tier1-format-demo",
+      "title": "change-J-tier1-format-demo",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-K-readme-polish",
+      "title": "change-K-readme-polish",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    }
+  ],
+  "children": {},
+  "migrationStatus": null
 }

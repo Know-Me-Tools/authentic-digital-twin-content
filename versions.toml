@@ -1,0 +1,19 @@
+# Authoritative architecture decisions and dependency pins.
+# Agents must not contradict this file, and must not edit it — .claude/settings.json
+# denies Edit(versions.toml). Change it deliberately, by hand.
+
+[meta]
+created = "2026-10-26"
+
+[pins]
+# name = "x.y.z"
+node_minimum = "22.0.0"
+typescript = "7.0.2"
+
+[decisions]
+package_source = "skills/authentic-digital-twin-content; portable Markdown skill remains usable without a binary"
+content_standard = "v2 for new content; preserve v1 artifacts at their declared version"
+substrate_authority = "Filesystem canonical; optional graph is a rebuildable author-scoped projection"
+tooling_direction = "Future requested Rust CLI and MCP adapters share domain/application behavior; no runtime implemented yet"
+agent_context = "AGENTS.md is canonical; CLAUDE.md imports it without symlinks; mixed profile for seven configured clients"
+portable_tooling = "Windows/macOS/Linux; TypeScript 7 .mts sources, shipped Node.js .mjs; no shell-script hooks"

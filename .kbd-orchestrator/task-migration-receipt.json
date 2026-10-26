@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "sourceContract": "Prometheus Skill Pack 1.13.1 change-tasks.schema.json",
+  "policy": "Canonical change state remains authoritative. Historical unchecked task snapshots are not registered as new executable work.",
+  "changes": [
+    {
+      "id": "change-A-spec-compliance",
+      "phase": "phase-1-distribution-compliance",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-18-change-A-spec-compliance/change.md",
+      "sourceSha256": "0477cef916e58af6c722751dae97d5747b390acde87e85ecbd7293161a22dfbf",
+      "tasks": 9,
+      "checked": 9,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-18-change-A-spec-compliance",
+        ".kbd-orchestrator/changes/change-A-spec-compliance"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-B-plugin-packaging",
+      "phase": "phase-1-distribution-compliance",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-18-change-B-plugin-packaging/change.md",
+      "sourceSha256": "409b32b4b4b7192e908d667ae60d33046d4fccf2fbc01ceed054fed0c22940fa",
+      "tasks": 9,
+      "checked": 9,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-18-change-B-plugin-packaging",
+        ".kbd-orchestrator/changes/change-B-plugin-packaging"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-C-registration-docs",
+      "phase": "phase-1-distribution-compliance",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-18-change-C-registration-docs/change.md",
+      "sourceSha256": "497bcf97eaefae2dcf673893f3d42bfb1875dca23e210160d0b3a828bbfecc3b",
+      "tasks": 11,
+      "checked": 11,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-18-change-C-registration-docs",
+        ".kbd-orchestrator/changes/change-C-registration-docs"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-D-communication-scope",
+      "phase": "phase-1-distribution-compliance",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-18-change-D-communication-scope/change.md",
+      "sourceSha256": "40aeb9d7a5b2ca6a5cd7e1adb37e194e9fc2057867b4d0d80b8726436541a219",
+      "tasks": 8,
+      "checked": 8,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-18-change-D-communication-scope",
+        ".kbd-orchestrator/changes/change-D-communication-scope"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-E-release-cut",
+      "phase": "phase-2-substrate-enrichment",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-E-release-cut/change.md",
+      "sourceSha256": "c6332f0f389eaa045776a05d14baca66da8a939f8f67952605010d8a93336bac",
+      "tasks": 7,
+      "checked": 7,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-E-release-cut",
+        ".kbd-orchestrator/changes/change-E-release-cut"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-F-substrate-extension",
+      "phase": "phase-2-substrate-enrichment",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md",
+      "sourceSha256": "50874270e169aa41c276cdafd6e1bf3bd3cf274c8092bb35f441bbec584167f4",
+      "tasks": 6,
+      "checked": 6,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension",
+        ".kbd-orchestrator/changes/change-F-substrate-extension"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-G-tier2-worked-example",
+      "phase": "phase-2-substrate-enrichment",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example/change.md",
+      "sourceSha256": "aaebb78295a6545ef4e3e310c71a74d55cbf7a44771998ade86c2532be8a9e3b",
+      "tasks": 10,
+      "checked": 10,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-G-tier2-worked-example",
+        ".kbd-orchestrator/changes/change-G-tier2-worked-example"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-H-tier3-worked-example",
+      "phase": "phase-2-substrate-enrichment",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md",
+      "sourceSha256": "6512c1088d39c0d390a957440f8a1f086cfe01b977960c605ecc6641ea46c88a",
+      "tasks": 9,
+      "checked": 9,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example",
+        ".kbd-orchestrator/changes/change-H-tier3-worked-example"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-I-agentskills-submission",
+      "phase": "phase-3-voice-validation",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission/change.md",
+      "sourceSha256": "86ee7df34d88436cd247ca90e332b9ef092c0f99437547faaf4a1d651ec589d3",
+      "tasks": 6,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-I-agentskills-submission"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-J-tier1-format-demo",
+      "phase": "phase-3-voice-validation",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-J-tier1-format-demo/change.md",
+      "sourceSha256": "94e9bcd3a1c72fe9b5fab1a982a5d64a2272dd4d50577b2390b467461d310eab",
+      "tasks": 6,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-J-tier1-format-demo"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-K-readme-polish",
+      "phase": "phase-3-voice-validation",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-K-readme-polish/change.md",
+      "sourceSha256": "e77b72aa277d109d883a962b4713350122db7736dabd638bb03b3c665f389b3e",
+      "tasks": 3,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-K-readme-polish"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-N-correspondence-re-extraction",
+      "phase": "phase-3b-substrate-hardening",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction/change.md",
+      "sourceSha256": "6678f22390430e935bfa30535c439af7272288d56d2304b1029b2936a7685c61",
+      "tasks": 6,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-N-correspondence-re-extraction",
+        ".kbd-orchestrator/changes/change-N-correspondence-re-extraction"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-O-ultra-short-re-extraction",
+      "phase": "phase-3b-substrate-hardening",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-O-ultra-short-re-extraction/change.md",
+      "sourceSha256": "8bce48fd71771d21996135567d96a52dd75460ad36c80ab5ea7b245079b77d0e",
+      "tasks": 5,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-O-ultra-short-re-extraction",
+        ".kbd-orchestrator/changes/change-O-ultra-short-re-extraction"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-P-spoken-re-extraction",
+      "phase": "phase-3b-substrate-hardening",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-P-spoken-re-extraction/change.md",
+      "sourceSha256": "b352d08233059fb03a5bdbbccea1e0d834c4acea982c69397bed8e2bbf46a1c4",
+      "tasks": 6,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-P-spoken-re-extraction",
+        ".kbd-orchestrator/changes/change-P-spoken-re-extraction"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-Q-worked-example-review-and-corrections",
+      "phase": "phase-3b-substrate-hardening",
+      "recorded": "CARRIED FORWARD — blocked on Travis worked-example verdict",
+      "source": null,
+      "sourceSha256": null,
+      "tasks": 1,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/change-Q-worked-example-review-and-corrections"
+      ],
+      "discrepancy": false
+    },
+    {
+      "id": "change-L-effortful-heuristic-enforcement",
+      "phase": "phase-4",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-L-effortful-heuristic-enforcement/change.md",
+      "sourceSha256": "15bbfe24901c4c3543467f986790ba88e35a02807a0147878c5cfe951d2bbb6e",
+      "tasks": 4,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-L-effortful-heuristic-enforcement"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-M-shadow-pattern-detector",
+      "phase": "phase-4",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector/change.md",
+      "sourceSha256": "0161477f60360a62a5a476aee333f5127a1056212d3786eeb79c35d420aa3858",
+      "tasks": 4,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-M-shadow-pattern-detector"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+      "phase": "phase-5",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-R-effortful-heuristic-classification-in-voice-extraction-process/change.md",
+      "sourceSha256": "d1ab0d7f1b879b6c38cdc91f900e0f8bf9305cafb994c3e679c6715176308355",
+      "tasks": 3,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-R-effortful-heuristic-classification-in-voice-extraction-process",
+        ".kbd-orchestrator/changes/change-R-effortful-heuristic-classification-in-voice-extraction-process"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-S-retest-cadence-protocol-in-voice-extraction-process",
+      "phase": "phase-5",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-S-retest-cadence-protocol-in-voice-extraction-process/change.md",
+      "sourceSha256": "7233fb0e3567524b07977fc72a41c4a498c7aaf8c4b9bbcbbdf3c732e15fbd16",
+      "tasks": 3,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-S-retest-cadence-protocol-in-voice-extraction-process",
+        ".kbd-orchestrator/changes/change-S-retest-cadence-protocol-in-voice-extraction-process"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-T-shadow-pattern-detector-reference-file",
+      "phase": "phase-5",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-T-shadow-pattern-detector-reference-file/change.md",
+      "sourceSha256": "746b2a18beecfa8b8a0cd54af581921d9ee179aff5175e2e85949426b21ba6a9",
+      "tasks": 1,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-T-shadow-pattern-detector-reference-file",
+        ".kbd-orchestrator/changes/change-T-shadow-pattern-detector-reference-file"
+      ],
+      "discrepancy": true
+    },
+    {
+      "id": "change-U-generic-pattern-framing-in-skill-md",
+      "phase": "phase-5",
+      "recorded": "DONE",
+      "source": ".kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md/change.md",
+      "sourceSha256": "bb70ce3611045f557c8d0e8a578463a04d416400818e9c2eed5da13e9725b0fb",
+      "tasks": 4,
+      "checked": 0,
+      "destinations": [
+        ".kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md",
+        ".kbd-orchestrator/changes/change-U-generic-pattern-framing-in-skill-md"
+      ],
+      "discrepancy": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "changeId": "change-Q-worked-example-review-and-corrections",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "author-review",
+      "title": "Receive Travis verdict on the Tier 2 and Tier 3 worked examples before planning corrections",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Blocked authorization prerequisite recorded by phase-3b progress and plan. No author verdict supplied; no completion inferred."
+    }
+  ]
+}

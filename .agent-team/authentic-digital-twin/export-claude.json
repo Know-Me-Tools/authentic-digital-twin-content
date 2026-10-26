@@ -1,0 +1,5 @@
+{
+  "state": ".agent-team/authentic-digital-twin/state.json",
+  "target": "claude",
+  "out": ".agent-team/authentic-digital-twin/exports/claude"
+}

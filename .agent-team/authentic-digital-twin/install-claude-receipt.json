@@ -1,0 +1,111 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".claude/agents/product-manager.md",
+    ".claude/agents/systems-architect.md",
+    ".claude/agents/evidence-collector.md",
+    ".claude/agents/provenance-curator.md",
+    ".claude/agents/ingestion-engineer.md",
+    ".claude/agents/mcp-server-engineer.md",
+    ".claude/agents/rag-graphrag-expert.md",
+    ".claude/agents/surrealdb-engineer.md",
+    ".claude/agents/skill-maintainer.md",
+    ".claude/agents/security-reviewer.md",
+    ".claude/agents/evaluation-engineer.md",
+    ".claude/agents/release-engineer.md"
+  ],
+  "changed": [
+    ".claude/agents/product-manager.md",
+    ".claude/agents/systems-architect.md",
+    ".claude/agents/evidence-collector.md",
+    ".claude/agents/provenance-curator.md",
+    ".claude/agents/ingestion-engineer.md",
+    ".claude/agents/mcp-server-engineer.md",
+    ".claude/agents/rag-graphrag-expert.md",
+    ".claude/agents/surrealdb-engineer.md",
+    ".claude/agents/skill-maintainer.md",
+    ".claude/agents/security-reviewer.md",
+    ".claude/agents/evaluation-engineer.md",
+    ".claude/agents/release-engineer.md",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": false,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".claude/agents/product-manager.md",
+      "before": null,
+      "after": "410cf4a9a8c97aecf4a4a75e4486a3278d844dfdb656ecaedabf16328b6ffed0"
+    },
+    {
+      "file": ".claude/agents/systems-architect.md",
+      "before": null,
+      "after": "ceb40aa18bb1e21a50d68ffc6fee29f730c868e68b89f3990a166fd2261107cd"
+    },
+    {
+      "file": ".claude/agents/evidence-collector.md",
+      "before": null,
+      "after": "fba37285e8ec30cda66b717e74180a4f56eb3ac306af0cf8f6fdc54345b4192b"
+    },
+    {
+      "file": ".claude/agents/provenance-curator.md",
+      "before": null,
+      "after": "bc6af6bc412117f572fa2a70f756f7967172e28b749a4762c45081f17b092c5c"
+    },
+    {
+      "file": ".claude/agents/ingestion-engineer.md",
+      "before": null,
+      "after": "7ed018315c13b7a9d774fee100d45070e55e864c032ccb2150e50dce2cdee8eb"
+    },
+    {
+      "file": ".claude/agents/mcp-server-engineer.md",
+      "before": null,
+      "after": "84c2cd13b2346a1b38ca0e44cd40436a679f6f1608053354b40b22ccf7f0cf54"
+    },
+    {
+      "file": ".claude/agents/rag-graphrag-expert.md",
+      "before": null,
+      "after": "c9c0e3ad0dd0758d875dc37c74e09042cd65fe4d01d148e19e925ac93867a490"
+    },
+    {
+      "file": ".claude/agents/surrealdb-engineer.md",
+      "before": null,
+      "after": "5b0c2f5ac699ea813e9ce2653379bf11d224c995ca420ee5e4bea23b850c7e32"
+    },
+    {
+      "file": ".claude/agents/skill-maintainer.md",
+      "before": null,
+      "after": "a1db057304e846e74342d3330e62589ef15275f7328c3e4a7051aa6ab659492a"
+    },
+    {
+      "file": ".claude/agents/security-reviewer.md",
+      "before": null,
+      "after": "4ed6a35144ef43799cf600583fd50180897e08b14260fb1ac79dacf09b95d1b5"
+    },
+    {
+      "file": ".claude/agents/evaluation-engineer.md",
+      "before": null,
+      "after": "2b2b3b2abb770efcfe91cf053758dcb158526ded5e4098ce5d9dc3e0911249bc"
+    },
+    {
+      "file": ".claude/agents/release-engineer.md",
+      "before": null,
+      "after": "b1aaab004ea5d9439b845987e75bef5ef2db20af3e8f30de407070bade2daf83"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": "cf68b3f36d5d636a7216e6959209adc609c993fba88e8b37c4dd6336b32f38b5",
+      "after": "82807f7fd4f6da58fe7cb9fa721dd94d423e6d52b7c42b82c363ff31ae680a65"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "These are native subagents; installing them does not create an experimental Claude agent team or enable that feature.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "recovery": ".agent-team/recovery/30c8e8f1dac7d284d8f607ac.json"
+}

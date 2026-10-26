@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "1",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
+  "updatedAt": "2026-10-26T09:00:30.035627Z",
+  "cursor": [
+    "phase-3b-substrate-hardening",
+    "change-Q-worked-example-review-and-corrections"
+  ],
+  "root": {
+    "type": "phase",
+    "id": "fc7e5931-e8c0-49de-9cd6-5a491afe5fe7",
+    "status": "ready",
+    "progress": {
+      "done": 20,
+      "total": 21
+    },
+    "children": [
+      {
+        "type": "phase",
+        "id": "phase-1-distribution-compliance",
+        "canonicalId": "phase-1-distribution-compliance",
+        "status": "COMPLETE",
+        "progress": {
+          "done": 4,
+          "total": 4
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-A-spec-compliance",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-B-plugin-packaging",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-C-registration-docs",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-D-communication-scope",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      },
+      {
+        "type": "phase",
+        "id": "phase-2-substrate-enrichment",
+        "canonicalId": "phase-2-substrate-enrichment",
+        "status": "COMPLETE",
+        "progress": {
+          "done": 4,
+          "total": 4
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-E-release-cut",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-F-substrate-extension",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-G-tier2-worked-example",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-H-tier3-worked-example",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      },
+      {
+        "type": "phase",
+        "id": "phase-3-voice-validation",
+        "canonicalId": "phase-3-voice-validation",
+        "status": "COMPLETE",
+        "progress": {
+          "done": 3,
+          "total": 3
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-I-agentskills-submission",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-J-tier1-format-demo",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-K-readme-polish",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      },
+      {
+        "type": "phase",
+        "id": "phase-3b-substrate-hardening",
+        "canonicalId": "phase-3b-substrate-hardening",
+        "status": "BLOCKED",
+        "progress": {
+          "done": 3,
+          "total": 4
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-N-correspondence-re-extraction",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-O-ultra-short-re-extraction",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-P-spoken-re-extraction",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-Q-worked-example-review-and-corrections",
+            "status": "BLOCKED",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      },
+      {
+        "type": "phase",
+        "id": "phase-4",
+        "canonicalId": "phase-4",
+        "status": "COMPLETE",
+        "progress": {
+          "done": 2,
+          "total": 2
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-L-effortful-heuristic-enforcement",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-M-shadow-pattern-detector",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      },
+      {
+        "type": "phase",
+        "id": "phase-5",
+        "canonicalId": "phase-5",
+        "status": "COMPLETE",
+        "progress": {
+          "done": 4,
+          "total": 4
+        },
+        "children": [
+          {
+            "type": "change",
+            "id": "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-S-retest-cadence-protocol-in-voice-extraction-process",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-T-shadow-pattern-detector-reference-file",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          },
+          {
+            "type": "change",
+            "id": "change-U-generic-pattern-framing-in-skill-md",
+            "status": "COMPLETE",
+            "progress": {
+              "done": 0,
+              "total": 0
+            }
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "annotations": []
+  }
+}

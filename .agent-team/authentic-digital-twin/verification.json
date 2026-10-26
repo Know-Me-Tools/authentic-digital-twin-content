@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-26",
+  "installed": true,
+  "check": true,
+  "changed": 0,
+  "conflicts": [],
+  "skills": 16,
+  "roleCount": 12,
+  "nativeDefinitionsByTarget": {
+    "codex": 12,
+    "claude": 12,
+    "kimi": 12,
+    "opencode": 12,
+    "minimax": 12,
+    "deepseek": 13
+  },
+  "bundleManifestSha256": "532bc86c123239d38b67b12e5049a918b27a6b5a47091078108f8e38afd85be6",
+  "invokedAgents": false,
+  "report": "docs/agent-team-verification.md"
+}

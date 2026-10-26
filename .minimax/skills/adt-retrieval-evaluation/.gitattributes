@@ -1,0 +1,9 @@
+# Stable bytes for hashed skill bundles and TypeScript-generated runtime files.
+# Also applies when a Windows user's core.autocrlf setting is true.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary

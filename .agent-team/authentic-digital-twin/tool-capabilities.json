@@ -1,0 +1,69 @@
+{
+  "observedAt": "2026-10-26",
+  "status": "tool schemas exposed in authoring session; no service liveness or data-access probe performed",
+  "services": [
+    {
+      "provider": "edgequake",
+      "purpose": "Derived document/chunk/entity graph index",
+      "tools": [
+        "mcp__edgequake__eq_document_list",
+        "mcp__edgequake__eq_fetch",
+        "mcp__edgequake__eq_ingest",
+        "mcp__edgequake__eq_neighborhood",
+        "mcp__edgequake__eq_search",
+        "mcp__edgequake__eq_task_get",
+        "mcp__edgequake__eq_workspace_list"
+      ],
+      "requiredConfiguration": [
+        "authorized workspace id",
+        "source-author mapping",
+        "retention and remote upload scope"
+      ],
+      "note": "List workspaces/documents rather than inventing corpus; ingest pending must be polled to indexed."
+    },
+    {
+      "provider": "surreal-memory",
+      "purpose": "Scoped durable memories and memory graph",
+      "tools": [
+        "mcp__surreal_memory__add_memory",
+        "mcp__surreal_memory__create_entity",
+        "mcp__surreal_memory__create_relation",
+        "mcp__surreal_memory__expand_neighbors",
+        "mcp__surreal_memory__hybrid_search_memories",
+        "mcp__surreal_memory__search_memories",
+        "mcp__surreal_memory__semantic_search"
+      ],
+      "requiredConfiguration": [
+        "authorized user/agent/session scope",
+        "destination isolation guarantees"
+      ],
+      "note": "Tool filters alone are not access-control proof. Graph tool schemas may differ in supported scope."
+    },
+    {
+      "provider": "compass",
+      "purpose": "Optional existing graph discovery",
+      "tools": [
+        "mcp__compass__graph_stats",
+        "mcp__compass__query_graph"
+      ],
+      "note": "Detected read-oriented graph tools; no ingestion interface assumed."
+    },
+    {
+      "provider": "prometheus-knowledge",
+      "purpose": "Optional curated knowledge articles",
+      "tools": [
+        "mcp__prometheus_knowledge__knowledge_get",
+        "mcp__prometheus_knowledge__knowledge_ingest",
+        "mcp__prometheus_knowledge__knowledge_lint",
+        "mcp__prometheus_knowledge__knowledge_search"
+      ],
+      "note": "Knowledge/wiki store, not a drop-in vector DB contract."
+    },
+    {
+      "provider": "surrealdb-direct",
+      "purpose": "Embedded or remote vector/graph database via future Rust adapter",
+      "tools": [],
+      "note": "No direct database MCP capability was verified; configure future SDK adapter explicitly."
+    }
+  ]
+}

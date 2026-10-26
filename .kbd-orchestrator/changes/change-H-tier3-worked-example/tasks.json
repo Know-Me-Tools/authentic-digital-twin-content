@@ -1,0 +1,78 @@
+{
+  "changeId": "change-H-tier3-worked-example",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Write `skills/authentic-digital-twin-content/docs/worked-examples/tier-3-voice-prep-example.md`:",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Channel-level disclosure header at the top (before any content)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Format: talking points / bullets — not a script. Content the speaker owns and delivers in their voice, not prose to be read verbatim",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Length: enough points for a 5–10 minute segment (~8–15 bullets at depth)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "5",
+      "title": "Domain: agentic programming — the workspace identity problem or context infrastructure",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "6",
+      "title": "Apply domain anchors from 08 (agentic programming, context engineering, ACP)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "7",
+      "title": "At least one talking point demonstrates intensity context 4 (strategic opportunity framing + forward projection) from 07",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "8",
+      "title": "Talking points reflect Travis's documented thought-pattern moves from 04 (frame the structural gap before proposing the solution; surface the trade-off)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "9",
+      "title": "Annotation block after the talking points: which disclosure form was used; why Tier 3 applies (not Tier 1 or 2); which substrate documents drove the structure; Gate 3 spoken-register warning explanation; the Author vs. AI-verbatim distinction for spoken delivery",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-H-tier3-worked-example/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

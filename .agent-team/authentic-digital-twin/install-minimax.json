@@ -1,0 +1,6 @@
+{
+  "project": ".",
+  "teamId": "authentic-digital-twin",
+  "target": "minimax",
+  "minimaxDataDirectory": ".minimax"
+}

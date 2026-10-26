@@ -1,0 +1,109 @@
+{
+  "name": "authentic-digital-twin-content",
+  "description": "Portable author-substrate and content skill with specialist agent teams and future Rust ingestion, MCP, graph and vector tools.",
+  "activePhase": "phase-3b-substrate-hardening",
+  "focus_project_path": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "spec_paths": [
+    "openspec/specs/**/*.md",
+    "openspec/changes/*/specs/**/*.md",
+    "skills/authentic-digital-twin-content/docs/standards/*.md"
+  ],
+  "openspec_available": true,
+  "constraint_file": ".kbd-orchestrator/constraints.md",
+  "build_health_command": "node scripts/portability/build.mjs --check",
+  "test_command": "node --test tests/portability/hooks.test.mjs tests/portability/line-endings.test.mjs tests/team-bundle/installer.test.mjs",
+  "lint_command": "git diff --check",
+  "dev_command": null,
+  "verification_commands": [
+    "node scripts/portability/build.mjs --check",
+    "node scripts/team-bundle/compile.mjs --check",
+    "node scripts/team-bundle/build.mjs --check"
+  ],
+  "stack": {
+    "implemented": [
+      "Markdown agent skills",
+      "Node.js ESM",
+      "TypeScript 7"
+    ],
+    "nodeMinimum": "22.0.0",
+    "typescript": "7.0.2",
+    "planned": [
+      "Rust ingestion CLI",
+      "rmcp servers",
+      "SurrealDB adapters"
+    ],
+    "cargoWorkspacePresent": false
+  },
+  "preferred_planning_agent": "codex",
+  "preferred_execution_agents": [
+    "codex",
+    "claude-code",
+    "kimi-code",
+    "opencode",
+    "minimax-code",
+    "deepseek-harness",
+    "zed"
+  ],
+  "agents_config": {
+    "codex": {
+      "entry": "Codex app/CLI",
+      "definitions": ".codex/agents"
+    },
+    "claude-code": {
+      "entry": "Claude Code",
+      "definitions": ".claude/agents"
+    },
+    "kimi-code": {
+      "entry": "Kimi Code",
+      "definitions": ".kimi-code/agents"
+    },
+    "opencode": {
+      "entry": "OpenCode",
+      "definitions": ".opencode/agents"
+    },
+    "minimax-code": {
+      "entry": "Node project launcher",
+      "definitions": ".minimax/agents"
+    },
+    "deepseek-harness": {
+      "entry": "DeepSeek Harness",
+      "definitions": ".dsh/profiles"
+    },
+    "zed": {
+      "entry": "Zed instruction routing / configured ACP agent",
+      "instructions": "AGENTS.md"
+    }
+  },
+  "teamRouting": ".agent-team/project-routing.json",
+  "model_policy": {
+    "registry": {},
+    "active_environment": "local",
+    "selection": "inherit-authorized-client",
+    "note": "No verified provider catalog is configured; never invent model IDs or change providers during metadata initialization."
+  },
+  "ux_profile": "advanced",
+  "maxChildDepth": 4,
+  "workspace": {
+    "workspace_file": null,
+    "folders": [
+      {
+        "path": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+        "role": "focus",
+        "purpose": "Active repository; unrelated ancestor workspace files do not include this project.",
+        "write_access": true
+      }
+    ]
+  },
+  "metadataSource": {
+    "skillPack": "prometheus-skill-pack",
+    "skillPackVersion": "1.13.1",
+    "initSkillVersion": "1.1.0",
+    "orchestratorSkillVersion": "2.0.0",
+    "writerContract": "kbd-init/references/schemas/project.schema.json",
+    "runtimeAuthority": "Registered canonical KBD runtime; resolve platform journal using .prometheus/project.json and prometheus kbd status --json",
+    "policy": "Canonical runtime commands only; no legacy or shadow writers.",
+    "runtimeVersion": "1.11.3",
+    "migrationReport": ".kbd-orchestrator/migration-report.md"
+  },
+  "updatedAt": "2026-10-26T09:06:39.239Z"
+}

@@ -1,0 +1,118 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-team/cordis.patch.yml"
+  ],
+  "changed": [
+    ".dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml",
+    ".dsh/profiles/authentic-digital-twin-team/cordis.patch.yml",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": false,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml",
+      "before": null,
+      "after": "59081638a029e71ba5cbe95f809e462409c868a6d8319c484bccef7b9a4689ad"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml",
+      "before": null,
+      "after": "ea0f5bd033fdca376c4eeac55342d804821e4a59378faa682feb88e61124fca7"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml",
+      "before": null,
+      "after": "21f067c34c6fd073513094aedc61a796a9a513b804036ff55434d20c3d895646"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml",
+      "before": null,
+      "after": "741467d79574319b97d01d3e30be73ec915a8602b88b56bcfbc487804e2d3395"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml",
+      "before": null,
+      "after": "15c1e89789949c731e78d4174d92e1da61bb25bd8b24462bd4046aba6ecf245e"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml",
+      "before": null,
+      "after": "6ae2d7ddc9962590ccc4f7b600807db6827c5bde5c727c375b0d3fb3b87a314b"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml",
+      "before": null,
+      "after": "fa8dc96255eca0538d68f447fdab298f74bb0def5fdf25fcaf83860b254775ce"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml",
+      "before": null,
+      "after": "0714f1f8dd085fc1cb358745fbcde36f2fb663d48f3418cf96c6d81d17732d3c"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml",
+      "before": null,
+      "after": "ffcdfb86dc1c8d7196423529e45eaf6bace7c18be4cb8eca7b303489d46189fc"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml",
+      "before": null,
+      "after": "0458e34a1261be99bf20029f6158bd7d416eddfa1a2e007e1ac5ada6954bc1d8"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml",
+      "before": null,
+      "after": "78d75f84cbd9b091a9c3d3a67db6dca0802197e95194842b6025aa91ee152e0a"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml",
+      "before": null,
+      "after": "e08d089800da40b860e8d4f6dc226ae996ca32793ee20ef91fbb9524dc68f3e3"
+    },
+    {
+      "file": ".dsh/profiles/authentic-digital-twin-team/cordis.patch.yml",
+      "before": null,
+      "after": "5898e6ca5709150c7ee723d70d158abc10e6d62e78f1254e06a25084ef9f966b"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": "340b6fc6956378e548e54c07aa278c3b7ff50db5aecdd75bfb7415c50f5afd4e",
+      "after": "fb4e22024ea485b34bc5c1df4b64eb0e7d1c514ed78c9289db2ef0051b14d08b"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "DeepSeek teams are experimental, require durable session storage, share one process/workspace, and provide no static per-member model setting. No package install, profile activation or team creation occurs on export.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "recovery": ".agent-team/recovery/9a7b544b9fb61ffc3ca520aa.json"
+}

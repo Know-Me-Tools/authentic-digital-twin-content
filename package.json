@@ -1,0 +1,16 @@
+{
+  "name": "authentic-digital-twin-development-tooling",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build:hooks": "node scripts/portability/build.mjs",
+    "check:hooks": "node scripts/portability/build.mjs --check",
+    "build:installer": "node scripts/team-bundle/compile.mjs",
+    "check:installer": "node scripts/team-bundle/compile.mjs --check",
+    "build:bundle": "node scripts/team-bundle/build.mjs",
+    "check:bundle": "node scripts/team-bundle/build.mjs --check",
+    "test": "node --test tests/portability/hooks.test.mjs tests/portability/line-endings.test.mjs tests/team-bundle/installer.test.mjs"
+  }
+}

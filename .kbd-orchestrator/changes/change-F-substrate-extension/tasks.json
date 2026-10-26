@@ -1,0 +1,54 @@
+{
+  "changeId": "change-F-substrate-extension",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Add **Correspondence Register (Derived)** section: how casual-directive and architect-spec modes adapt for named-human email; structural features that transfer vs. don't; salutation/sign-off patterns by recipient tier from 10; derivation note",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Add **Ultra-Short Register (Derived)** section: what survives 280-char compression (hard-stops, specific numbers, reframe moves, one intensifier); what gets sacrificed (trade-off pairs, parenthetical chains); characteristic openers from 07 patterns; derivation note",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Add **Spoken/Conversational Register (Derived)** section: how documented patterns surface in speech; mid-thought starts, self-correction, \"etc.\" verbally; what prose features become speech features; derivation note",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Add **Spoken Register Humor and Emphasis** section: how dry understatement, anthropomorphization, and hard-stop pivots operate in speech vs. prose; conviction-driven intensity as delivery-independent",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "5",
+      "title": "Add **Ultra-Short Register Humor and Emphasis** section: dry understatement as only surviving humor mode; pointed comparison reduced to one clause; hard-stop as ultra-short default; Red intensifier budget (one per post)",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "6",
+      "title": "Add **Correspondence Register** section: email patterns by recipient tier (internal team, champion, formal enterprise, cold contact); LinkedIn post distinctions; inbound reply pattern; sign-off gradients",
+      "done": true,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-F-substrate-extension/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

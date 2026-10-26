@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ADTCS-1.0 — Authentic Digital Twin Content Standard — travisjames.ai</title>
+<meta name="description" content="The Authentic Digital Twin Content Standard, version 1.0. A normative protocol for declaring block-level authorship provenance within long-form published written content." />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" crossorigin="anonymous"></script>
+<style>
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOKENS ── */
+:root {
+  --bg:           #FAFAF9;
+  --fg:           #111210;
+  --muted-fg:     #5C6070;
+  --border:       #E2E4E9;
+  --muted:        #F2F3F5;
+  --card:         #FFFFFF;
+  --primary:      #E04E28;
+  --primary-light:#FF6A3D;
+  --accent:       #F5E6E1;
+  --secondary:    #0D1117;
+  --secondary-mid:#1C2333;
+  --dark-border:  #1E2736;
+  --code-bg:      #0D1117;
+
+  --sans:  'Space Grotesk', sans-serif;
+  --serif: 'Lora', Georgia, serif;
+  --ui:    'Inter', sans-serif;
+  --mono:  'JetBrains Mono', monospace;
+
+  --toc-w: 260px;
+  --nav-h: 52px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ui);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PROGRESS ── */
+#rp {
+  position: fixed; top: 0; left: 0; z-index: 300;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  transition: width .08s linear; pointer-events: none;
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: var(--nav-h);
+  background: rgba(250,250,249,.94); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.nav-mark {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: linear-gradient(140deg, var(--primary), var(--primary-light));
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.nav-mark span { font-family: var(--sans); font-size: .7rem; font-weight: 700; color: #fff; }
+.nav-wordmark { font-family: var(--sans); font-size: .85rem; font-weight: 700; letter-spacing: -.02em; color: var(--fg); }
+.nav-wordmark em { font-style: normal; color: var(--primary); }
+.nav-divider { width: 1px; height: 16px; background: var(--border); margin: 0 .85rem; }
+.nav-doc-id { font-family: var(--mono); font-size: .58rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-fg); }
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+.nav-link { font-family: var(--ui); font-size: .78rem; font-weight: 500; color: var(--muted-fg); text-decoration: none; transition: color .15s; }
+.nav-link:hover { color: var(--fg); }
+.nav-status {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #16A34A; background: #ECFDF5;
+  border: 1px solid #BBF7D0;
+  padding: .2rem .6rem; border-radius: 4px;
+}
+
+/* ── SPEC HERO ── */
+.spec-hero {
+  background: var(--secondary);
+  padding: calc(var(--nav-h) + 3.5rem) 2rem 3.5rem;
+  position: relative; overflow: hidden;
+}
+.spec-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(224,78,40,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(255,106,61,.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+.spec-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23233041' stroke-width='.4'%3E%3Cpath d='M0 30h60M30 0v60'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: .3; pointer-events: none;
+}
+.spec-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+
+.spec-id-badge {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: var(--mono); font-size: .62rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--primary-light); margin-bottom: 1.75rem;
+}
+.spec-id-badge::before { content: ''; width: 22px; height: 1.5px; background: var(--primary-light); }
+
+.spec-hero h1 {
+  font-family: var(--sans); font-size: clamp(1.75rem, 4vw, 2.8rem);
+  font-weight: 700; letter-spacing: -.03em; line-height: 1.12;
+  color: #E8EDF3; margin-bottom: 2.5rem;
+}
+
+/* metadata grid */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: .6rem 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #1E2736;
+}
+.meta-row { display: flex; gap: .65rem; align-items: baseline; }
+.meta-label {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: #4B5A6E;
+  flex-shrink: 0; min-width: 140px;
+}
+.meta-value {
+  font-family: var(--ui); font-size: .82rem; color: #8B95A8; line-height: 1.5;
+}
+.meta-value code {
+  font-family: var(--mono); font-size: .78em;
+  color: var(--primary-light); background: rgba(255,106,61,.1);
+  padding: .1em .35em; border-radius: 3px;
+}
+.meta-value a { color: #A0C4FF; text-decoration: none; }
+.meta-value a:hover { text-decoration: underline; }
+
+/* ── TWO-COLUMN LAYOUT ── */
+.spec-layout {
+  display: grid;
+  grid-template-columns: var(--toc-w) 1fr;
+  max-width: 1160px;
+  margin: 0 auto;
+  gap: 0;
+  align-items: start;
+}
+
+/* ── TOC SIDEBAR ── */
+.spec-toc {
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 1.25rem 2rem 2rem;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.spec-toc::-webkit-scrollbar { width: 4px; }
+.spec-toc::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.toc-label {
+  font-family: var(--mono); font-size: .55rem; font-weight: 600;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--muted-fg);
+  margin-bottom: 1rem; padding-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li { margin: 0; }
+.toc-list a {
+  font-family: var(--ui); font-size: .77rem; font-weight: 500;
+  color: var(--muted-fg); text-decoration: none;
+  display: block; padding: .22rem .3rem;
+  border-radius: 4px; line-height: 1.45;
+  transition: color .12s, background .12s;
+}
+.toc-list a:hover { color: var(--fg); background: var(--muted); }
+.toc-list a.active { color: var(--primary); background: var(--accent); font-weight: 600; }
+.toc-sub { list-style: none; padding: 0 0 0 .9rem; }
+.toc-sub a { font-size: .72rem; font-weight: 400; }
+.toc-sub2 { list-style: none; padding: 0 0 0 .85rem; }
+.toc-sub2 a { font-size: .68rem; color: #8B95A8; }
+.toc-spacer { height: .5rem; }
+.toc-group { margin-bottom: .1rem; }
+
+/* mobile TOC toggle */
+.toc-mobile-toggle {
+  display: none;
+  width: 100%; padding: .75rem 1.25rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; margin: 1rem 0;
+  font-family: var(--ui); font-size: .82rem; font-weight: 600;
+  color: var(--fg); cursor: pointer;
+  justify-content: space-between; align-items: center;
+}
+.toc-mobile-panel {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem; display: none;
+}
+.toc-mobile-panel.open { display: block; }
+
+/* ── SPEC MAIN ── */
+.spec-main {
+  padding: 3rem 3rem 6rem 3rem;
+  min-width: 0;
+}
+
+/* ── STATUS NOTICE ── */
+.status-notice {
+  background: var(--secondary-mid);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px; padding: 1.5rem 1.75rem;
+  margin-bottom: 3rem;
+}
+.status-notice-eyebrow {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--primary-light); margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.status-notice-eyebrow::before { content: ''; width: 18px; height: 1.5px; background: var(--primary-light); }
+.status-notice p {
+  font-family: var(--ui); font-size: .88rem; line-height: 1.72;
+  color: #8B95A8; margin-bottom: .85rem;
+}
+.status-notice p:last-child { margin-bottom: 0; }
+
+/* ── ABSTRACT ── */
+.abstract-block {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.75rem 2rem; margin-bottom: 3rem;
+}
+.abstract-eyebrow {
+  font-family: var(--mono); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--primary); background: var(--accent);
+  padding: .2rem .65rem; border-radius: 4px;
+  display: inline-block; margin-bottom: 1rem;
+}
+.abstract-block p {
+  font-family: var(--serif); font-size: 1rem;
+  line-height: 1.82; color: var(--fg); margin-bottom: 1rem;
+}
+.abstract-block p:last-child { margin-bottom: 0; }
+
+/* ── INLINE TOC (doc body) ── */
+.doc-toc {
+  background: var(--muted); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 3rem;
+}
+.doc-toc-title {
+  font-family: var(--sans); font-size: .9rem; font-weight: 700;
+  letter-spacing: -.02em; color: var(--fg); margin-bottom: 1rem;
+  padding-bottom: .75rem; border-bottom: 1px solid var(--border);
+}
+.doc-toc ol {
+  list-style: none; padding: 0; columns: 2; column-gap: 2rem;
+}
+.doc-toc li { break-inside: avoid; margin-bottom: .3rem; }
+.doc-toc a {
+  font-family: var(--ui); font-size: .8rem; color: var(--muted-fg);
+  text-decoration: none; transition: color .12s;
+}
+.doc-toc a:hover { color: var(--primary); }
+.doc-toc .sub { padding-left: 1.1rem; }
+.doc-toc .sub a { font-size: .75rem; }
+
+/* ── SPEC SECTIONS ── */
+.spec-section { margin-bottom: 4rem; padding-top: 2.5rem; }
+.spec-section:first-child { padding-top: 0; }
+
+.section-heading {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1.5rem; padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+.section-num {
+  font-family: var(--mono); font-size: .6rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--primary); background: var(--accent);
+  padding: .28rem .65rem; border-radius: 4px;
+  flex-shrink: 0; margin-top: .3rem; white-space: nowrap;
+}
+.section-num.appendix { color: #2563EB; background: #EFF6FF; }
+.section-title {
+  font-family: var(--sans); font-size: 1.45rem; font-weight: 700;
+  letter-spacing: -.025em; line-height: 1.18; color: var(--fg);
+}
+.section-title .norm-tag {
+  font-size: .65rem; letter-spacing: .1em; vertical-align: middle;
+  font-weight: 600; font-family: var(--mono);
+  color: #D97706; background: #FEF9C3;
+  border: 1px solid #FDE68A;
+  padding: .12rem .5rem; border-radius: 4px;
+  margin-left: .65rem; text-transform: uppercase;
+}
+.section-title .info-tag {
+  font-size: .65rem; letter-spacing: .1em; vertical-align: middle;
+  font-weight: 600; font-family: var(--mono);
+  color: #2563EB; background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: .12rem .5rem; border-radius: 4px;
+  margin-left: .65rem; text-transform: uppercase;
+}
+
+.subsection { margin: 2.25rem 0; }
+.subsection-heading {
+  display: flex; align-items: baseline; gap: .8rem;
+  margin-bottom: 1rem; padding-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+.subsection-num {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted-fg); flex-shrink: 0;
+}
+.subsection-title {
+  font-family: var(--sans); font-size: 1.1rem; font-weight: 700;
+  letter-spacing: -.02em; color: var(--fg);
+}
+
+/* ── PROSE ── */
+.prose p {
+  font-family: var(--ui); font-size: .96rem;
+  line-height: 1.8; color: var(--fg);
+  margin-bottom: 1.1rem; max-width: 72ch;
+}
+.prose p:last-child { margin-bottom: 0; }
+.prose > *:last-child { margin-bottom: 0; }
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem; margin-bottom: 1.1rem; max-width: 68ch;
+}
+.prose li {
+  font-family: var(--ui); font-size: .96rem; line-height: 1.8;
+  color: var(--fg); margin-bottom: .4rem;
+}
+.prose li ul, .prose li ol { margin-top: .35rem; margin-bottom: .35rem; }
+
+/* ── NORMATIVE KEYWORDS ── */
+.nk {
+  font-family: var(--mono); font-size: .78em; font-weight: 700;
+  letter-spacing: .04em;
+  color: #92400E; background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  padding: .05em .38em; border-radius: 3px;
+  white-space: nowrap;
+}
+.nk.shall { color: #7C3AED; background: #EDE9FE; border-color: #DDD6FE; }
+.nk.may   { color: #065F46; background: #ECFDF5; border-color: #BBF7D0; }
+.nk.not   { color: #991B1B; background: #FEF2F2; border-color: #FECACA; }
+
+/* ── CODE BLOCKS ── */
+.code-wrap {
+  background: var(--code-bg);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px; overflow: hidden;
+  margin: 1.5rem 0;
+}
+.code-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem 1rem; background: #161C29;
+  border-bottom: 1px solid var(--dark-border);
+}
+.code-lang {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: #5C6882;
+}
+.code-copy {
+  font-family: var(--mono); font-size: .55rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #5C6882; background: none; border: 1px solid #2D3448;
+  padding: .18rem .55rem; border-radius: 4px; cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.code-copy:hover { color: var(--primary-light); border-color: var(--primary); }
+.code-copy.ok { color: #4ade80; border-color: #4ade80; }
+.code-wrap pre { padding: 1.2rem 1.25rem; overflow-x: auto; margin: 0; }
+.code-wrap code {
+  font-family: var(--mono); font-size: .81rem; font-weight: 400;
+  line-height: 1.72; color: #C9D1E0;
+  background: none; padding: 0; border-radius: 0; white-space: pre;
+}
+/* inline code */
+.prose code, .abstract-block code, li code, td code, .status-notice code {
+  font-family: var(--mono); font-size: .82em; font-weight: 500;
+  background: var(--muted); color: var(--primary);
+  padding: .1em .4em; border-radius: 4px;
+}
+.code-wrap pre code { color: #C9D1E0 !important; background: none !important; padding: 0 !important; }
+
+/* eyebrow code examples */
+.eyebrow-example {
+  font-family: var(--mono); font-size: .82rem;
+  color: #C9D1E0; background: var(--code-bg);
+  border: 1px solid var(--dark-border);
+  padding: .65rem 1rem; border-radius: 7px;
+  margin: .75rem 0; display: block;
+}
+
+/* ── DEFINITION LIST ── */
+dl.spec-dl { margin: 1rem 0 1.1rem; }
+dl.spec-dl dt {
+  font-family: var(--sans); font-size: .95rem; font-weight: 700;
+  letter-spacing: -.01em; color: var(--fg);
+  margin-top: 1.25rem;
+}
+dl.spec-dl dt:first-child { margin-top: 0; }
+dl.spec-dl dd {
+  font-family: var(--ui); font-size: .93rem; line-height: 1.78;
+  color: var(--fg); margin-left: 1.5rem;
+  padding-left: .75rem; border-left: 2px solid var(--border);
+  margin-top: .3rem; max-width: 68ch;
+}
+
+/* ── DATA TABLES ── */
+.table-wrap {
+  margin: 1.5rem 0; border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+table.spec-table { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .85rem; }
+table.spec-table thead { background: var(--secondary); }
+table.spec-table thead th {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #8B95A8; padding: .7rem 1rem; text-align: left;
+  border-bottom: 1px solid var(--dark-border);
+}
+table.spec-table tbody tr { border-bottom: 1px solid var(--border); }
+table.spec-table tbody tr:last-child { border-bottom: none; }
+table.spec-table tbody tr:hover { background: var(--muted); }
+table.spec-table tbody td { padding: .65rem 1rem; color: var(--fg); vertical-align: top; line-height: 1.6; }
+table.spec-table tbody td:first-child { font-family: var(--mono); font-size: .82rem; font-weight: 600; color: var(--primary); white-space: nowrap; }
+
+/* ── REFERENCES ── */
+.ref-list { list-style: none; padding: 0; }
+.ref-list li {
+  font-family: var(--ui); font-size: .88rem; line-height: 1.72;
+  color: var(--fg); padding: .75rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: .85rem; align-items: baseline;
+}
+.ref-list li:last-child { border-bottom: none; }
+.ref-tag {
+  font-family: var(--mono); font-size: .72rem; font-weight: 700;
+  color: var(--primary); flex-shrink: 0;
+}
+.ref-list a { color: var(--primary); text-decoration: none; }
+.ref-list a:hover { text-decoration: underline; }
+
+/* ── CONFORMANCE LIST ── */
+.conformance-list { list-style: none; padding: 0; margin: 1rem 0; }
+.conformance-list li {
+  display: flex; gap: .85rem; align-items: flex-start;
+  font-family: var(--ui); font-size: .93rem; line-height: 1.75;
+  color: var(--fg); padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.conformance-list li:last-child { border-bottom: none; }
+.ci-num {
+  font-family: var(--mono); font-size: .65rem; font-weight: 700;
+  color: var(--primary); background: var(--accent);
+  padding: .15rem .5rem; border-radius: 4px;
+  flex-shrink: 0; margin-top: .18rem;
+}
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--muted); border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0; padding: 1.1rem 1.4rem;
+  margin: 1.5rem 0;
+}
+.callout p { font-size: .92rem !important; margin-bottom: .6rem !important; }
+.callout p:last-child { margin-bottom: 0 !important; }
+
+.callout.info { border-left-color: #2563EB; }
+.callout.warning { border-left-color: #D97706; }
+
+/* ── GRAMMAR BLOCK ── */
+.grammar-wrap {
+  background: var(--code-bg); border: 1px solid var(--dark-border);
+  border-radius: 10px; overflow: hidden; margin: 1.5rem 0;
+}
+.grammar-header {
+  padding: .5rem 1rem; background: #161C29;
+  border-bottom: 1px solid var(--dark-border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.grammar-label {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: #79C0FF;
+}
+.grammar-wrap pre { padding: 1.25rem; overflow-x: auto; }
+.grammar-wrap code {
+  font-family: var(--mono); font-size: .82rem; line-height: 1.72;
+  color: #C9D1E0; white-space: pre;
+}
+.grammar-rule   { color: #D2A8FF; }
+.grammar-literal{ color: #A5D6FF; }
+.grammar-alt    { color: #79C0FF; }
+.grammar-comment{ color: #5C6882; font-style: italic; }
+
+/* ── SECTION BREAK ── */
+.spec-sep {
+  height: 1px; background: var(--border);
+  margin: 3.5rem 0;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sf-brand { font-family: var(--sans); font-size: .82rem; font-weight: 700; }
+.sf-brand em { font-style: normal; color: var(--primary); }
+.sf-meta { font-family: var(--mono); font-size: .56rem; color: var(--muted-fg); letter-spacing: .06em; text-transform: uppercase; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .spec-layout { grid-template-columns: 1fr; }
+  .spec-toc { display: none; }
+  .toc-mobile-toggle { display: flex; }
+  .spec-main { padding: 1.5rem 1.25rem 4rem; }
+  .meta-grid { grid-template-columns: 1fr; }
+  .doc-toc ol { columns: 1; }
+  .spec-hero { padding: calc(var(--nav-h) + 2rem) 1.25rem 2.5rem; }
+  .nav { padding: 0 1.25rem; }
+  .site-footer { flex-direction: column; gap: .75rem; align-items: flex-start; }
+}
+@media (max-width: 540px) {
+  table.spec-table { font-size: .78rem; }
+  table.spec-table tbody td:first-child { white-space: normal; }
+  .section-title { font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="rp"></div>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-mark"><span>TJ</span></div>
+    <span class="nav-wordmark">travis<em>james</em>.ai</span>
+    <div class="nav-divider"></div>
+    <span class="nav-doc-id">ADTCS-1.0</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#">Writing</a>
+    <a class="nav-link" href="#">Projects</a>
+    <span class="nav-status">Published</span>
+  </div>
+</nav>
+
+<!-- ── SPEC HERO ── -->
+<header class="spec-hero">
+  <div class="spec-hero-inner">
+    <div class="spec-id-badge">Standards-Track Recommendation &middot; ADTCS-1.0</div>
+    <h1>Authentic Digital Twin Content Standard, Version 1.0</h1>
+    <div class="meta-grid">
+      <div class="meta-row"><span class="meta-label">Document identifier</span><span class="meta-value"><code>ADTCS-1.0</code></span></div>
+      <div class="meta-row"><span class="meta-label">Status of this document</span><span class="meta-value">Published &mdash; Recommendation, v1.0 &mdash; 2026-05-17</span></div>
+      <div class="meta-row"><span class="meta-label">This version</span><span class="meta-value"><code>ADTCS-1.0</code> (2026-05-17)</span></div>
+      <div class="meta-row"><span class="meta-label">Latest published version</span><span class="meta-value"><code>ADTCS-1.0</code></span></div>
+      <div class="meta-row"><span class="meta-label">Editor</span><span class="meta-value">Travis James (Prometheus Agentic Growth Solutions)</span></div>
+      <div class="meta-row"><span class="meta-label">Stream</span><span class="meta-value">Independent specification</span></div>
+      <div class="meta-row"><span class="meta-label">Category</span><span class="meta-value">Standards-Track Recommendation</span></div>
+      <div class="meta-row"><span class="meta-label">License</span><span class="meta-value">Creative Commons Attribution 4.0 International (CC BY 4.0)</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ── TWO-COLUMN ── -->
+<div class="spec-layout">
+
+<!-- ── SIDEBAR TOC ── -->
+<aside class="spec-toc" aria-label="Table of contents">
+  <div class="toc-label">Table of Contents</div>
+  <nav>
+    <ol class="toc-list">
+      <li class="toc-group"><a href="#s-status">Status of This Document</a></li>
+      <li class="toc-group"><a href="#s-abstract">Abstract</a></li>
+      <li class="toc-group"><a href="#s-toc">Table of Contents</a></li>
+      <li class="toc-spacer"></li>
+      <li class="toc-group"><a href="#s1">1. Introduction</a>
+        <ol class="toc-sub">
+          <li><a href="#s11">1.1 Motivation</a></li>
+          <li><a href="#s12">1.2 Background and prior art</a></li>
+          <li><a href="#s13">1.3 Document conventions</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s2">2. Scope</a>
+        <ol class="toc-sub">
+          <li><a href="#s21">2.1 In scope</a></li>
+          <li><a href="#s22">2.2 Out of scope</a></li>
+          <li><a href="#s23">2.3 Applicability</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s3">3. Requirements Language</a></li>
+      <li class="toc-group"><a href="#s4">4. Terms and Definitions</a></li>
+      <li class="toc-group"><a href="#s5">5. Conformance</a>
+        <ol class="toc-sub">
+          <li><a href="#s51">5.1 Conformance targets</a></li>
+          <li><a href="#s52">5.2 Conformance levels</a></li>
+          <li><a href="#s53">5.3 Conformance claims</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s6">6. Authorship Categories</a>
+        <ol class="toc-sub">
+          <li><a href="#s61">6.1 Human-Authored</a></li>
+          <li><a href="#s62">6.2 AI-Drafted Human-Edited</a></li>
+          <li><a href="#s63">6.3 AI Verbatim</a></li>
+          <li><a href="#s64">6.4 Category integrity</a></li>
+          <li><a href="#s65">6.5 Substantive editing threshold</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s7">7. Block-Level Provenance Markup</a>
+        <ol class="toc-sub">
+          <li><a href="#s71">7.1 Block definition</a></li>
+          <li><a href="#s72">7.2 Eyebrow line grammar</a></li>
+          <li><a href="#s73">7.3 Placement rules</a></li>
+          <li><a href="#s74">7.4 Inline content inheritance</a></li>
+          <li><a href="#s75">7.5 Multi-block sections</a></li>
+          <li><a href="#s76">7.6 Edge cases</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s8">8. Content Provenance Manifest</a>
+        <ol class="toc-sub">
+          <li><a href="#s81">8.1 Manifest placement</a></li>
+          <li><a href="#s82">8.2 Manifest data model</a></li>
+          <li><a href="#s83">8.3 Required columns</a></li>
+          <li><a href="#s84">8.4 Multi-model rows</a></li>
+          <li><a href="#s85">8.5 Optional structured-data manifest</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s9">9. Reader Preamble</a></li>
+      <li class="toc-group"><a href="#s10">10. Versioning</a>
+        <ol class="toc-sub">
+          <li><a href="#s101">10.1 Version declaration</a></li>
+          <li><a href="#s102">10.2 Forward compatibility</a></li>
+          <li><a href="#s103">10.3 Major and minor revisions</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s11b">11. Security Considerations</a></li>
+      <li class="toc-group"><a href="#s12b">12. Privacy Considerations</a></li>
+      <li class="toc-group"><a href="#s13b">13. Internationalization</a></li>
+      <li class="toc-group"><a href="#s14">14. Accessibility</a></li>
+      <li class="toc-group"><a href="#s15">15. Compliance Check</a></li>
+      <li class="toc-group"><a href="#s16">16. Extensibility</a>
+        <ol class="toc-sub">
+          <li><a href="#s161">16.1 Reserved namespace</a></li>
+          <li><a href="#s162">16.2 Extensions</a></li>
+          <li><a href="#s163">16.3 Future-version reservation</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s17">17. Relationship to Other Standards</a>
+        <ol class="toc-sub">
+          <li><a href="#s171">17.1 C2PA</a></li>
+          <li><a href="#s172">17.2 EU AI Act Article 50</a></li>
+          <li><a href="#s173">17.3 RFC 2119 / BCP 14</a></li>
+          <li><a href="#s174">17.4 W3C Verifiable Credentials</a></li>
+          <li><a href="#s175">17.5 Schema.org Article</a></li>
+        </ol>
+      </li>
+      <li class="toc-group"><a href="#s18">18. Examples <em>(Informative)</em></a></li>
+      <li class="toc-group"><a href="#s19">19. Change History</a></li>
+      <li class="toc-group"><a href="#s20">20. Acknowledgements</a></li>
+      <li class="toc-group"><a href="#s21b">21. Normative References</a></li>
+      <li class="toc-group"><a href="#s22b">22. Informative References</a></li>
+      <li class="toc-spacer"></li>
+      <li class="toc-group"><a href="#sa">Appendix A &mdash; JSON Schema</a></li>
+      <li class="toc-group"><a href="#sb">Appendix B &mdash; Worked Example</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<!-- ── MAIN ── -->
+<main class="spec-main" id="spec-main">
+
+  <!-- mobile TOC -->
+  <button class="toc-mobile-toggle" onclick="toggleMobileToc()" id="mobile-toc-btn">
+    <span>Table of Contents</span><span id="mobile-toc-arrow">▾</span>
+  </button>
+  <div class="toc-mobile-panel" id="mobile-toc-panel">
+    <ol style="list-style:none;padding:0">
+      <li style="margin-bottom:.35rem"><a href="#s1" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">1. Introduction</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s2" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">2. Scope</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s3" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">3. Requirements Language</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s4" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">4. Terms and Definitions</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s5" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">5. Conformance</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s6" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">6. Authorship Categories</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s7" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">7. Block-Level Provenance Markup</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s8" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">8. Content Provenance Manifest</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s9" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">9. Reader Preamble</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s10" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">10. Versioning</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s11b" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">11–14. Considerations</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s15" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">15. Compliance Check</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s16" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">16. Extensibility</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s17" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">17. Relationship to Other Standards</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s18" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">18. Examples</a></li>
+      <li style="margin-bottom:.35rem"><a href="#s21b" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">21–22. References</a></li>
+      <li><a href="#sa" style="font-family:var(--ui);font-size:.82rem;color:var(--muted-fg);text-decoration:none" onclick="toggleMobileToc()">Appendix A &amp; B</a></li>
+    </ol>
+  </div>
+
+  <!-- ── STATUS OF THIS DOCUMENT ── -->
+  <section class="spec-section" id="s-status">
+    <div class="status-notice">
+      <div class="status-notice-eyebrow">Status of This Document</div>
+      <p>This document is the version 1.0 Recommendation of the <strong>Authentic Digital Twin Content Standard</strong> (hereafter, <strong>the Standard</strong> or <strong>ADTCS-1.0</strong>). It is intended as a stable reference for implementers, authors, publishers, and downstream consumers of long-form published content produced wholly or partially by AI systems.</p>
+      <p>A Recommendation is a specification that has been reviewed for internal consistency, conformance testability, and editorial fitness, and is ready for adoption. Comments, errata, and revision proposals should be filed against the repository at the location of record for this document.</p>
+      <p>ADTCS-1.0 is published independently and is not currently sponsored by an SDO (Standards Development Organization). Authors and implementers are encouraged to reference it by its document identifier in attribution clauses and in tooling-emitted manifest output. Future versions may pursue formal SDO sponsorship; v1.0 is intentionally publishable without that sponsorship because the urgency of the labeling problem the Standard solves is greater than the time cost of formal standardization.</p>
+      <p>This document declares conformance to RFC 2119 <a href="#s21b">[RFC2119]</a> and RFC 8174 <a href="#s21b">[RFC8174]</a> for requirements language, per Section 3.</p>
+    </div>
+  </section>
+
+  <!-- ── ABSTRACT ── -->
+  <section class="spec-section" id="s-abstract">
+    <div class="abstract-block">
+      <span class="abstract-eyebrow">Abstract</span>
+      <p>The Authentic Digital Twin Content Standard, version 1.0, defines a normative protocol for declaring block-level authorship provenance within long-form published written content. The Standard partitions the content of any article into three mutually exclusive authorship categories — <strong>Human-Authored</strong>, <strong>AI-Drafted Human-Edited</strong>, and <strong>AI Verbatim</strong> — and requires every block of substantive content to declare its category by means of an italic eyebrow line placed immediately before the block. The Standard further requires a content provenance manifest at the article footer, enumerating every block's category along with, for AI-involved blocks, the model provider, the model name, and the authoring tool. The intent is to give readers a transparent, line-level audit of which content carries the named author's certification and which was generated by an AI system. The Standard is informed by C2PA (Coalition for Content Provenance and Authenticity) provenance principles, by the European Union AI Act Article 50 transparency obligations, and by W3C and IETF document-structuring conventions.</p>
+    </div>
+  </section>
+
+  <!-- ── INLINE TOC ── -->
+  <section class="spec-section" id="s-toc">
+    <div class="doc-toc">
+      <div class="doc-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">1. Introduction</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s11">1.1. Motivation</a></li>
+            <li class="sub"><a href="#s12">1.2. Background and prior art</a></li>
+            <li class="sub"><a href="#s13">1.3. Document conventions</a></li>
+          </ol>
+        </li>
+        <li><a href="#s2">2. Scope</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s21">2.1. In scope</a></li>
+            <li class="sub"><a href="#s22">2.2. Out of scope</a></li>
+            <li class="sub"><a href="#s23">2.3. Applicability</a></li>
+          </ol>
+        </li>
+        <li><a href="#s3">3. Requirements Language</a></li>
+        <li><a href="#s4">4. Terms and Definitions</a></li>
+        <li><a href="#s5">5. Conformance</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s51">5.1. Conformance targets</a></li>
+            <li class="sub"><a href="#s52">5.2. Conformance levels</a></li>
+            <li class="sub"><a href="#s53">5.3. Conformance claims</a></li>
+          </ol>
+        </li>
+        <li><a href="#s6">6. Authorship Categories <em>(Normative)</em></a>
+          <ol class="sub">
+            <li class="sub"><a href="#s61">6.1. Human-Authored</a></li>
+            <li class="sub"><a href="#s62">6.2. AI-Drafted Human-Edited</a></li>
+            <li class="sub"><a href="#s63">6.3. AI Verbatim</a></li>
+            <li class="sub"><a href="#s64">6.4. Category integrity — partition rule</a></li>
+            <li class="sub"><a href="#s65">6.5. Substantive editing threshold</a></li>
+          </ol>
+        </li>
+        <li><a href="#s7">7. Block-Level Provenance Markup <em>(Normative)</em></a>
+          <ol class="sub">
+            <li class="sub"><a href="#s71">7.1. Block definition</a></li>
+            <li class="sub"><a href="#s72">7.2. Eyebrow line grammar</a></li>
+            <li class="sub"><a href="#s73">7.3. Placement rules</a></li>
+            <li class="sub"><a href="#s74">7.4. Inline content inheritance</a></li>
+            <li class="sub"><a href="#s75">7.5. Multi-block sections</a></li>
+            <li class="sub"><a href="#s76">7.6. Edge cases</a></li>
+          </ol>
+        </li>
+        <li><a href="#s8">8. Content Provenance Manifest <em>(Normative)</em></a>
+          <ol class="sub">
+            <li class="sub"><a href="#s81">8.1. Manifest placement</a></li>
+            <li class="sub"><a href="#s82">8.2. Manifest data model</a></li>
+            <li class="sub"><a href="#s83">8.3. Required columns</a></li>
+            <li class="sub"><a href="#s84">8.4. Multi-model rows</a></li>
+            <li class="sub"><a href="#s85">8.5. Optional structured-data manifest</a></li>
+          </ol>
+        </li>
+        <li><a href="#s9">9. Reader Preamble <em>(Normative)</em></a></li>
+        <li><a href="#s10">10. Versioning</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s101">10.1. Version declaration</a></li>
+            <li class="sub"><a href="#s102">10.2. Forward compatibility</a></li>
+            <li class="sub"><a href="#s103">10.3. Major and minor revisions</a></li>
+          </ol>
+        </li>
+        <li><a href="#s11b">11. Security Considerations</a></li>
+        <li><a href="#s12b">12. Privacy Considerations</a></li>
+        <li><a href="#s13b">13. Internationalization Considerations</a></li>
+        <li><a href="#s14">14. Accessibility Considerations</a></li>
+        <li><a href="#s15">15. Compliance Check</a></li>
+        <li><a href="#s16">16. Extensibility</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s161">16.1. Reserved namespace</a></li>
+            <li class="sub"><a href="#s162">16.2. Extensions <span class="nk not">MUST NOT</span> relax requirements</a></li>
+            <li class="sub"><a href="#s163">16.3. Future-version reservation</a></li>
+          </ol>
+        </li>
+        <li><a href="#s17">17. Relationship to Other Standards</a>
+          <ol class="sub">
+            <li class="sub"><a href="#s171">17.1. C2PA</a></li>
+            <li class="sub"><a href="#s172">17.2. EU AI Act Article 50</a></li>
+            <li class="sub"><a href="#s173">17.3. RFC 2119 / BCP 14</a></li>
+            <li class="sub"><a href="#s174">17.4. W3C Verifiable Credentials Data Model</a></li>
+            <li class="sub"><a href="#s175">17.5. Schema.org Article</a></li>
+          </ol>
+        </li>
+        <li><a href="#s18">18. Examples <em>(Informative)</em></a>
+          <ol class="sub">
+            <li class="sub"><a href="#s181">18.1. Minimum-viable conformant article</a></li>
+            <li class="sub"><a href="#s182">18.2. Multi-block section example</a></li>
+          </ol>
+        </li>
+        <li><a href="#s19">19. Change History</a></li>
+        <li><a href="#s20">20. Acknowledgements</a></li>
+        <li><a href="#s21b">21. Normative References</a></li>
+        <li><a href="#s22b">22. Informative References</a></li>
+        <li><a href="#sa">Appendix A — JSON Schema for the Manifest</a></li>
+        <li><a href="#sb">Appendix B — Worked Example</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="spec-sep"></div>
+
+  <!-- ══ SECTION 1 ══ -->
+  <section class="spec-section" id="s1">
+    <div class="section-heading">
+      <span class="section-num">§ 1</span>
+      <div><div class="section-title">Introduction</div></div>
+    </div>
+
+    <div class="subsection" id="s11">
+      <div class="subsection-heading">
+        <span class="subsection-num">1.1</span>
+        <span class="subsection-title">Motivation</span>
+      </div>
+      <div class="prose">
+        <p>The publication of long-form written content has been transformed by generally-available generative AI systems. A single article carrying a single human byline can, in current practice, contain prose drafted by the named author, prose drafted by one or more AI systems and edited substantively by the human author, and prose generated by an AI system and published verbatim without editorial intervention. From the surface of the article, the reader cannot tell which is which.</p>
+        <p>This invisibility has two distinct failure modes. Readers who suspect AI involvement and cannot localize it discount the credibility of the entire article. Readers who do not suspect AI involvement absorb AI-generated assertions as if the named author had verified them. Both failure modes erode the trust contract between author and reader.</p>
+        <p>The Standard addresses this by requiring <strong>block-level authorship declaration</strong>. Every block of substantive content carries an explicit category. The categories partition the content. The reader can audit any individual block to determine whether it carries the author's certification.</p>
+        <p>The Standard is intentionally lightweight at the v1 layer: a human-readable italic eyebrow line plus a tabular manifest. It does not require cryptographic binding, manifest signing, or specialized rendering. v1 is publishable in plain Markdown and renders correctly on every major publishing platform. Cryptographic binding and machine-verifiable provenance are documented as future-version work items in Section 11.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s12">
+      <div class="subsection-heading">
+        <span class="subsection-num">1.2</span>
+        <span class="subsection-title">Background and prior art</span>
+      </div>
+      <div class="prose">
+        <p>The Standard draws on three converging prior bodies of work.</p>
+        <p><strong>C2PA — Coalition for Content Provenance and Authenticity.</strong> C2PA defines a technical specification <a href="#s22b">[C2PA]</a> for cryptographically binding provenance manifests to digital media assets, principally images, audio, and video. C2PA is the canonical reference for content provenance in media but does not directly address per-block authorship within long-form text. The Standard borrows C2PA's notion of a provenance manifest and adapts it to the prose-block granularity that text authorship requires.</p>
+        <p><strong>EU AI Act Article 50 — Transparency Obligations.</strong> The European Union's AI Act <a href="#s22b">[EU-AI-ACT]</a> establishes, in Article 50, transparency obligations for providers and deployers of generative AI systems whose output is intended for the public. The obligations include the marking of AI-generated content and the disclosure of AI-assistance in publications. Article 50 takes effect August 2026 <a href="#s22b">[EC-CODE-DRAFT]</a>. Notably, Article 50 carves out exemptions for content that has undergone substantive human editorial review. The Standard's three-category partition operationalizes that exemption — <code>Human-Authored</code> and <code>AI-Drafted Human-Edited</code> blocks carry author certification (and therefore the human-review exemption shape); <code>AI Verbatim</code> blocks declare AI-generation explicitly.</p>
+        <p><strong>RFC 2119 / BCP 14 — Requirements Language.</strong> RFC 2119 <a href="#s21b">[RFC2119]</a> and RFC 8174 <a href="#s21b">[RFC8174]</a> define the canonical interpretation of normative keywords (<span class="nk">MUST</span>, <span class="nk not">MUST NOT</span>, <span class="nk">SHOULD</span>, <span class="nk">SHOULD NOT</span>, <span class="nk may">MAY</span>, etc.) in technical specifications. The Standard uses RFC 2119 normative language throughout, per Section 3.</p>
+        <p>The Standard also draws structural conventions from the W3C Verifiable Credentials Data Model <a href="#s22b">[VC-DATA-MODEL]</a>, the RFC Style Guide <a href="#s22b">[RFC7322BIS]</a>, and the W3C QA Framework for Specification Guidelines <a href="#s22b">[W3C-QAFRAME]</a>.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s13">
+      <div class="subsection-heading">
+        <span class="subsection-num">1.3</span>
+        <span class="subsection-title">Document conventions</span>
+      </div>
+      <div class="prose">
+        <p>This document follows the structural conventions of IETF RFCs and W3C Technical Recommendations. Section numbering is normative for cross-reference. The body of the memo (Sections 6 through 17) contains normative requirements. Sections marked "(Informative)" are non-normative and provided for clarity. Appendices may be normative or informative; each appendix declares its status.</p>
+        <p>Code examples, eyebrow strings, JSON fragments, and manifest table rows in this document are illustrative unless explicitly marked normative. The grammars in Section 7 and the manifest schema in Section 8 and Appendix A are normative.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2 ══ -->
+  <section class="spec-section" id="s2">
+    <div class="section-heading">
+      <span class="section-num">§ 2</span>
+      <div><div class="section-title">Scope</div></div>
+    </div>
+
+    <div class="subsection" id="s21">
+      <div class="subsection-heading"><span class="subsection-num">2.1</span><span class="subsection-title">In scope</span></div>
+      <div class="prose">
+        <p>The Standard applies to <strong>long-form published written content</strong> intended for human readers, published in any text-based medium, including but not limited to:</p>
+        <ul>
+          <li>Articles published on the open web</li>
+          <li>Blog posts, op-eds, and editorial commentary</li>
+          <li>LinkedIn and platform-published long-form posts</li>
+          <li>Newsletters and email-format publications</li>
+          <li>Whitepapers and technical reports authored under a named byline</li>
+          <li>Internal memoranda and proposals with named human authorship</li>
+        </ul>
+        <p>The Standard governs the <strong>declaration of provenance at the block level</strong> within such content. It defines the authorship categories, the eyebrow-line grammar, the manifest schema, and the conformance criteria.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s22">
+      <div class="subsection-heading"><span class="subsection-num">2.2</span><span class="subsection-title">Out of scope</span></div>
+      <div class="prose">
+        <p>The Standard explicitly does not govern:</p>
+        <ul>
+          <li>Pure code generation or technical artifact generation that does not carry named human authorship</li>
+          <li>Conversational exchanges (chat messages, transcripts) whose authorship is self-evident</li>
+          <li>Anonymous or institutional content where no human author is named</li>
+          <li>Media authenticity in non-text content (images, audio, video) — this domain is addressed by C2PA <a href="#s22b">[C2PA]</a></li>
+          <li>Accuracy of the published content — the Standard certifies provenance, not factual correctness</li>
+          <li>Editorial responsibility — the named author remains responsible for what is published under their name regardless of category</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection" id="s23">
+      <div class="subsection-heading"><span class="subsection-num">2.3</span><span class="subsection-title">Applicability</span></div>
+      <div class="prose">
+        <p>A publication is <strong>in scope</strong> for the Standard if it is published under one or more named human authors and the publishing party wishes to provide block-level provenance disclosure. The Standard is opt-in: a publication that does not adopt the Standard is not non-compliant — it is simply not subject to the Standard's requirements.</p>
+        <p>A publication that <strong>claims compliance</strong> with the Standard <span class="nk">MUST</span> satisfy all conformance requirements in Section 5 and the body sections referenced therein. Partial implementation <span class="nk not">MUST NOT</span> be claimed as Standard-compliant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3 ══ -->
+  <section class="spec-section" id="s3">
+    <div class="section-heading">
+      <span class="section-num">§ 3</span>
+      <div><div class="section-title">Requirements Language</div></div>
+    </div>
+    <div class="prose">
+      <p>The key words "<span class="nk">MUST</span>", "<span class="nk not">MUST NOT</span>", "<span class="nk">REQUIRED</span>", "<span class="nk shall">SHALL</span>", "<span class="nk shall">SHALL NOT</span>", "<span class="nk">SHOULD</span>", "<span class="nk">SHOULD NOT</span>", "<span class="nk">RECOMMENDED</span>", "<span class="nk">NOT RECOMMENDED</span>", "<span class="nk may">MAY</span>", and "<span class="nk may">OPTIONAL</span>" in this document are to be interpreted as described in BCP 14 <a href="#s21b">[RFC2119]</a> <a href="#s21b">[RFC8174]</a> when, and only when, they appear in all capitals, as shown here.</p>
+      <p>This document also uses the following non-normative terms with their plain-English meaning: <em>intended</em>, <em>expected</em>, <em>typical</em>, <em>encouraged</em>. These terms do not carry normative weight.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4 ══ -->
+  <section class="spec-section" id="s4">
+    <div class="section-heading">
+      <span class="section-num">§ 4</span>
+      <div><div class="section-title">Terms and Definitions</div></div>
+    </div>
+    <div class="prose">
+      <p>For the purposes of this document, the following terms and definitions apply.</p>
+    </div>
+    <dl class="spec-dl">
+      <dt>Article</dt>
+      <dd>A single published unit of long-form written content with one or more named authors. The unit of conformance for the Standard is the article.</dd>
+      <dt>Author</dt>
+      <dd>The natural person under whose name an article is published. The author bears editorial responsibility for the article. Multiple co-authors are permitted; each co-author appears on every applicable eyebrow.</dd>
+      <dt>AI system</dt>
+      <dd>A software system that generates written text from a model and tooling, including but not limited to large language models accessed via authoring tools.</dd>
+      <dt>Model provider</dt>
+      <dd>The organization that produces and operates the underlying AI model (e.g., Anthropic, OpenAI, Google, Meta). The model provider name is reported in the eyebrow and manifest for AI-involved blocks.</dd>
+      <dt>Model</dt>
+      <dd>The named, versioned AI model used to produce or assist with the content (e.g., Claude Opus 4.7, GPT-5, Gemini Ultra 2.0). The model name is reported in the eyebrow and manifest for AI-involved blocks.</dd>
+      <dt>Authoring tool</dt>
+      <dd>The user-visible application or interface through which the author interacted with the model (e.g., Claude Code, Cursor, ChatGPT desktop, Claude.ai). The tool name is reported in the eyebrow and manifest for AI-involved blocks.</dd>
+      <dt>Block</dt>
+      <dd>A unit of content delimited per Section 7.1. Blocks are the granularity at which the Standard operates.</dd>
+      <dt>Eyebrow line</dt>
+      <dd>An italic single-line annotation placed immediately before a block, declaring the block's authorship category. Grammar in Section 7.2.</dd>
+      <dt>Manifest</dt>
+      <dd>The content provenance manifest — a table at the article footer enumerating every block's authorship category and AI-involvement details. Schema in Section 8 and Appendix A.</dd>
+      <dt>Substantive editing</dt>
+      <dd>Editorial intervention that meets at least one of the threshold criteria in Section 6.5. Distinguishes <code>AI-Drafted Human-Edited</code> from <code>AI Verbatim</code>.</dd>
+      <dt>Provenance</dt>
+      <dd>The recorded origin and authorship of a block of content. Provenance under v1 is human-readable; future versions <span class="nk may">MAY</span> add cryptographic binding.</dd>
+      <dt>Reader Preamble</dt>
+      <dd>The "How to read this article" section at the top of an article, declaring the Standard version and explaining the eyebrow scheme to readers. Required per Section 9.</dd>
+      <dt>Verbatim</dt>
+      <dd>Content reproduced from an AI system's output without editorial alteration. Defined precisely in Section 6.3.</dd>
+      <dt>Category</dt>
+      <dd>One of the three authorship categories defined in Section 6.</dd>
+    </dl>
+  </section>
+
+  <!-- ══ SECTION 5 ══ -->
+  <section class="spec-section" id="s5">
+    <div class="section-heading">
+      <span class="section-num">§ 5</span>
+      <div><div class="section-title">Conformance</div></div>
+    </div>
+
+    <div class="subsection" id="s51">
+      <div class="subsection-heading"><span class="subsection-num">5.1</span><span class="subsection-title">Conformance targets</span></div>
+      <div class="prose">
+        <p>The Standard defines conformance for the following targets:</p>
+        <ol>
+          <li><strong>Article.</strong> A published article claiming conformance to the Standard.</li>
+          <li><strong>Tool.</strong> A software tool that produces, edits, or validates Standard-compliant articles.</li>
+        </ol>
+        <p>This document defines the conformance requirements for both targets. Tool conformance is derived: a tool conforms if every article it produces conforms.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s52">
+      <div class="subsection-heading"><span class="subsection-num">5.2</span><span class="subsection-title">Conformance levels</span></div>
+      <div class="prose">
+        <p>ADTCS-1.0 defines a single conformance level. There are no tiers, no "AA" or "AAA" variants, no partial-compliance levels. An article either conforms or does not.</p>
+        <p>This decision is deliberate. Tiered conformance creates ambiguity about what a reader is being told when a publication advertises Standard compliance. Single-level conformance produces a clear contract: the eyebrows are present, the manifest is present, the categories are correctly assigned, the version is declared.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s53">
+      <div class="subsection-heading"><span class="subsection-num">5.3</span><span class="subsection-title">Conformance claims</span></div>
+      <div class="prose">
+        <p>An article <span class="nk may">MAY</span> claim conformance to ADTCS-1.0. A conformance claim takes the form of explicit declaration in the Reader Preamble (Section 9). Implicit claims (e.g., emitting eyebrow lines without declaring version) are <span class="nk">NOT RECOMMENDED</span>.</p>
+        <p>A conformance claim asserts that the article satisfies, at the time of publication, <strong>all</strong> requirements marked <span class="nk">MUST</span> or <span class="nk">REQUIRED</span> in this document. Conformance claims <span class="nk">SHOULD</span> be paired with the document identifier and version (<code>ADTCS-1.0</code>).</p>
+        <p>A tool <span class="nk may">MAY</span> claim conformance to ADTCS-1.0. A conforming tool <span class="nk">MUST</span> produce articles that conform to the Standard. A conforming validator <span class="nk">MUST</span> correctly identify non-conformance of any article that fails any <span class="nk">MUST</span>-level requirement of the Standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6 ══ -->
+  <section class="spec-section" id="s6">
+    <div class="section-heading">
+      <span class="section-num">§ 6</span>
+      <div><div class="section-title">Authorship Categories <span class="norm-tag">Normative</span></div></div>
+    </div>
+    <div class="prose">
+      <p>The Standard defines three authorship categories. Every block of substantive content in a Standard-compliant article <span class="nk">MUST</span> belong to exactly one category.</p>
+    </div>
+
+    <div class="subsection" id="s61">
+      <div class="subsection-heading"><span class="subsection-num">6.1</span><span class="subsection-title">Human-Authored</span></div>
+      <div class="prose">
+        <p>A block is <strong>Human-Authored</strong> if its content was produced by the named human author with no involvement from any AI system, <strong>or</strong> with AI involvement limited to spell-check, grammar checking, or autocorrect-style suggestions that did not alter voice, framing, or substance.</p>
+        <p>The Human-Authored category carries the author's full certification: the ideas, the framing, the sentence structure, the word choices, and the rhetorical moves are all the author's. The author certifies that the published voice in the block is theirs.</p>
+        <p>Eyebrow form:</p>
+        <code class="eyebrow-example">_— &lt;Author Name&gt;._</code>
+      </div>
+    </div>
+
+    <div class="subsection" id="s62">
+      <div class="subsection-heading"><span class="subsection-num">6.2</span><span class="subsection-title">AI-Drafted Human-Edited</span></div>
+      <div class="prose">
+        <p>A block is <strong>AI-Drafted Human-Edited</strong> if its content was originally produced by an AI system and was subsequently edited substantively by the named human author. Substantive editing is defined in Section 6.5.</p>
+        <p>The AI-Drafted Human-Edited category carries the author's certification of the published voice. The author certifies that the prose, as published, reflects their voice, their framing, and their editorial judgment, even though the initial draft was produced by an AI system. The provenance of the initial draft is reported in the eyebrow and manifest for transparency.</p>
+        <p>Eyebrow form:</p>
+        <code class="eyebrow-example">_— &lt;Author Name&gt; ← AI: &lt;Model Provider&gt; &lt;Model&gt; via &lt;Tool&gt;._</code>
+      </div>
+    </div>
+
+    <div class="subsection" id="s63">
+      <div class="subsection-heading"><span class="subsection-num">6.3</span><span class="subsection-title">AI Verbatim</span></div>
+      <div class="prose">
+        <p>A block is <strong>AI Verbatim</strong> if its content was produced by an AI system and reproduced in the article without editorial alteration of the AI's output, with the exception of:</p>
+        <ul>
+          <li>Trivial formatting changes that do not alter the content (e.g., wrapping a code block in a fence)</li>
+          <li>Truncation of trailing whitespace</li>
+          <li>Correction of demonstrably-wrong syntax that prevents the content from rendering (e.g., a missing closing brace in a code sample)</li>
+        </ul>
+        <p>The AI Verbatim category explicitly does <strong>not</strong> carry author certification of the prose voice. The author certifies that the content is appropriate to publish in machine-default voice — typically because the content is mechanical (code, structured data, reference tables) and the machine register is the correct one for the content type — but does not claim the prose as their own.</p>
+        <p>Eyebrow form:</p>
+        <code class="eyebrow-example">_— AI verbatim: &lt;Model Provider&gt; &lt;Model&gt; via &lt;Tool&gt;._</code>
+      </div>
+    </div>
+
+    <div class="subsection" id="s64">
+      <div class="subsection-heading"><span class="subsection-num">6.4</span><span class="subsection-title">Category integrity — partition rule</span></div>
+      <div class="prose">
+        <p>The three categories form a partition. Every block <span class="nk">MUST</span> belong to exactly one category. There is no fourth category, no "lightly edited" intermediate tier, no "mostly AI" qualifier.</p>
+        <p>The partition is intentionally strict. Intermediate tiers create ambiguity about what a reader is being told. The three-category set forces the author to make a clear declaration: either the published voice is theirs (Human-Authored or AI-Drafted Human-Edited) or it is not (AI Verbatim).</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s65">
+      <div class="subsection-heading"><span class="subsection-num">6.5</span><span class="subsection-title">Substantive editing threshold</span></div>
+      <div class="prose">
+        <p>For a block to be classified as <code>AI-Drafted Human-Edited</code>, the human author <span class="nk">MUST</span> have performed at least one of the following:</p>
+        <ol>
+          <li><strong>Voice rewriting.</strong> Changing sentence structure, word choice, or rhythm to match the author's voice.</li>
+          <li><strong>Framing changes.</strong> Changing the order in which ideas appear, the rhetorical move chosen, or the depth claim made.</li>
+          <li><strong>Accuracy corrections.</strong> Verifying claims, adding citations, removing unsupported assertions, correcting factual errors.</li>
+          <li><strong>Structural reshaping.</strong> Adding or removing sections, changing paragraph boundaries, merging or splitting paragraphs for argument flow.</li>
+        </ol>
+        <p>Editorial interventions that do <strong>not</strong> meet the threshold include:</p>
+        <ul>
+          <li>Fixing typos</li>
+          <li>Adding a single em-dash for punctuation</li>
+          <li>Renaming a heading without altering the content beneath it</li>
+          <li>Correcting a single word substitution</li>
+          <li>Adjusting capitalization</li>
+        </ul>
+        <p>A block that received only sub-threshold edits <span class="nk">MUST</span> be classified as <code>AI Verbatim</code>. Classification as <code>AI-Drafted Human-Edited</code> when only sub-threshold editing occurred is a conformance violation — it overstates author involvement and dilutes the meaning of the category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7 ══ -->
+  <section class="spec-section" id="s7">
+    <div class="section-heading">
+      <span class="section-num">§ 7</span>
+      <div><div class="section-title">Block-Level Provenance Markup <span class="norm-tag">Normative</span></div></div>
+    </div>
+
+    <div class="subsection" id="s71">
+      <div class="subsection-heading"><span class="subsection-num">7.1</span><span class="subsection-title">Block definition</span></div>
+      <div class="prose">
+        <p>A <strong>block</strong> under the Standard is any one of the following structural units of the article:</p>
+        <ol>
+          <li>A top-level prose section delimited by an <code>##</code> heading (Markdown level-2 heading) or equivalent in the article's source format. Sub-sections delimited by <code>###</code> headings <span class="nk may">MAY</span> be treated as separate blocks if their content is provenance-distinct from the parent section.</li>
+          <li>A code fence (any language) regardless of length.</li>
+          <li>A standalone JSON, YAML, TOML, or XML data example.</li>
+          <li>A standalone reference table that exists as substantive content rather than as inline prose formatting.</li>
+          <li>A standalone block quotation reproduced from an external source.</li>
+        </ol>
+        <p>Inline elements within a block — inline code spans, inline links, footnote references, formatting marks — inherit the block's category. They do not require their own eyebrows.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s72">
+      <div class="subsection-heading"><span class="subsection-num">7.2</span><span class="subsection-title">Eyebrow line grammar</span></div>
+      <div class="prose">
+        <p>The eyebrow line is the human-readable per-block provenance declaration. It <span class="nk">MUST</span> appear on its own line, separated from the preceding content by exactly one blank line, and from the following content (the block itself) by exactly one blank line.</p>
+        <p>The eyebrow line <span class="nk">MUST</span> be rendered in italic. In Markdown, this is achieved with surrounding underscores (<code>_..._</code>); other source formats <span class="nk">SHOULD</span> use the equivalent italic mechanism.</p>
+        <p><strong>Grammar (ABNF-style):</strong></p>
+      </div>
+      <div class="grammar-wrap">
+        <div class="grammar-header">
+          <span class="grammar-label">ABNF Grammar</span>
+          <button class="code-copy" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code><span class="grammar-rule">eyebrow-line</span>    = <span class="grammar-literal">"_"</span> <span class="grammar-literal">"—"</span> SP <span class="grammar-rule">category-clause</span> SP <span class="grammar-literal">"_"</span>
+<span class="grammar-rule">category-clause</span> = <span class="grammar-rule">human-clause</span> <span class="grammar-alt">/</span> <span class="grammar-rule">ai-edited-clause</span> <span class="grammar-alt">/</span> <span class="grammar-rule">ai-verbatim-clause</span>
+<span class="grammar-rule">human-clause</span>    = <span class="grammar-rule">author-name</span> <span class="grammar-literal">"."</span>
+<span class="grammar-rule">ai-edited-clause</span>   = <span class="grammar-rule">author-name</span> SP <span class="grammar-literal">"←"</span> SP <span class="grammar-literal">"AI:"</span> SP <span class="grammar-rule">provider</span> SP <span class="grammar-rule">model</span> SP <span class="grammar-literal">"via"</span> SP <span class="grammar-rule">tool</span> <span class="grammar-literal">"."</span>
+<span class="grammar-rule">ai-verbatim-clause</span> = <span class="grammar-literal">"AI verbatim:"</span> SP <span class="grammar-rule">provider</span> SP <span class="grammar-rule">model</span> SP <span class="grammar-literal">"via"</span> SP <span class="grammar-rule">tool</span> <span class="grammar-literal">"."</span>
+<span class="grammar-rule">author-name</span>     = 1*( ALPHA <span class="grammar-alt">/</span> SP <span class="grammar-alt">/</span> <span class="grammar-literal">"."</span> <span class="grammar-alt">/</span> <span class="grammar-literal">"'"</span> <span class="grammar-alt">/</span> <span class="grammar-literal">"-"</span> )
+<span class="grammar-rule">provider</span>        = 1*( ALPHA <span class="grammar-alt">/</span> SP )
+<span class="grammar-rule">model</span>           = 1*( ALPHA <span class="grammar-alt">/</span> DIGIT <span class="grammar-alt">/</span> SP <span class="grammar-alt">/</span> <span class="grammar-literal">"."</span> <span class="grammar-alt">/</span> <span class="grammar-literal">"-"</span> )
+<span class="grammar-rule">tool</span>            = 1*( ALPHA <span class="grammar-alt">/</span> DIGIT <span class="grammar-alt">/</span> SP <span class="grammar-alt">/</span> <span class="grammar-literal">"."</span> <span class="grammar-alt">/</span> <span class="grammar-literal">"-"</span> )</code></pre>
+      </div>
+      <div class="prose">
+        <p>Normative examples:</p>
+      </div>
+      <div class="code-wrap">
+        <div class="code-header"><span class="code-lang">markdown</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code>_— Travis James._
+_— Travis James ← AI: Anthropic Claude Opus 4.7 via Claude Code._
+_— AI verbatim: Anthropic Claude Opus 4.7 via Claude Code._</code></pre>
+      </div>
+      <div class="prose">
+        <p>The em-dash character (U+2014, "—") is <span class="nk">REQUIRED</span>. ASCII double-hyphen (<code>--</code>) <span class="nk not">MUST NOT</span> be substituted.</p>
+        <p>The terminal period is <span class="nk">REQUIRED</span> for typographic finish and to disambiguate eyebrows from sentence fragments in screen-reader interpretation.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s73">
+      <div class="subsection-heading"><span class="subsection-num">7.3</span><span class="subsection-title">Placement rules</span></div>
+      <div class="prose">
+        <p>The eyebrow line for a block <span class="nk">MUST</span> appear immediately above that block, with the following placement constraints:</p>
+        <ul>
+          <li>The eyebrow <span class="nk">MUST</span> be the last non-whitespace line before the block content begins.</li>
+          <li>The eyebrow <span class="nk not">MUST NOT</span> be embedded inside the block content (e.g., inside a code fence).</li>
+          <li>The eyebrow <span class="nk not">MUST NOT</span> be combined with another eyebrow into a multi-line annotation.</li>
+          <li>If a section heading precedes the block, the eyebrow appears between the heading and the block, on its own line.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection" id="s74">
+      <div class="subsection-heading"><span class="subsection-num">7.4</span><span class="subsection-title">Inline content inheritance</span></div>
+      <div class="prose">
+        <p>Inline elements within a block inherit the block's category. Specifically:</p>
+        <ul>
+          <li>Inline code spans inherit the surrounding prose block's category.</li>
+          <li>Inline links inherit the surrounding prose block's category.</li>
+          <li>Footnote references inherit the block's category; the footnote body itself is treated as a separate block if it is substantial.</li>
+          <li>Block quotations of third-party material reproduced verbatim within a prose block inherit the surrounding block's category. Quoted material is preserved verbatim and the author's responsibility extends to the choice of quotation, not to the quoted words.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection" id="s75">
+      <div class="subsection-heading"><span class="subsection-num">7.5</span><span class="subsection-title">Multi-block sections</span></div>
+      <div class="prose">
+        <p>When a single section (delimited by an <code>##</code> heading) contains multiple blocks of different categories, each block <span class="nk">MUST</span> carry its own eyebrow. A common pattern is human-authored prose followed by an AI-verbatim code block followed by human-authored commentary; in this pattern, three eyebrows appear within the section.</p>
+        <p>The section heading itself does not carry an eyebrow. The author may declare provenance of a heading in the manifest if desired, but the eyebrow grammar does not apply to headings.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s76">
+      <div class="subsection-heading"><span class="subsection-num">7.6</span><span class="subsection-title">Edge cases</span></div>
+      <div class="prose">
+        <p>The following edge cases are addressed normatively.</p>
+        <p><strong>Multiple models on one block.</strong> If a block was drafted by one model, then refined with a second model's suggestions, then edited by the human, the eyebrow names the dominant draft source. The manifest row enumerates all models involved, comma-separated, in the Model column, with the dominant model first.</p>
+        <p><strong>Translation.</strong> A translation of an article is a new article. Each translated block's authorship is determined by the translation process: <code>AI verbatim</code> if the AI translated unedited, <code>&lt;Translator&gt; ← AI</code> if a human translator edited the AI translation. The original article's manifest carries forward into the translation as a separate "source-article provenance" annotation.</p>
+        <p><strong>Dictation.</strong> When the author dictated content to an AI transcription tool and then edited the transcript, the block is <code>Human-Authored</code>. Transcription is not drafting; it is mechanical capture.</p>
+        <p><strong>Unknown model.</strong> When the author cannot honestly report which model produced an AI-involved block, the eyebrow uses the form <code>_— &lt;Author&gt; ← AI: model unknown via &lt;Tool&gt;._</code> or, when neither model nor tool is known, <code>_— &lt;Author&gt; ← AI: model and tool unknown._</code>. The manifest row reports <code>unknown</code> in the affected columns. Honest unknown attribution is <span class="nk">REQUIRED</span>; fabricated attribution is a conformance violation.</p>
+        <p><strong>Co-authorship.</strong> When multiple human co-authors are credited on an article, the eyebrow lists all co-authors of the block, separated by commas in author-name order matching the article byline. If a block is authored solely by one of the co-authors, only that co-author appears in the eyebrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 8 ══ -->
+  <section class="spec-section" id="s8">
+    <div class="section-heading">
+      <span class="section-num">§ 8</span>
+      <div><div class="section-title">Content Provenance Manifest <span class="norm-tag">Normative</span></div></div>
+    </div>
+
+    <div class="subsection" id="s81">
+      <div class="subsection-heading"><span class="subsection-num">8.1</span><span class="subsection-title">Manifest placement</span></div>
+      <div class="prose">
+        <p>Every Standard-compliant article <span class="nk">MUST</span> include a content provenance manifest. The manifest <span class="nk">MUST</span> appear at the article footer, after all body content and before the author bio (if present). The manifest is preceded by an <code>##</code> heading reading "Content provenance manifest" or, in non-English articles, the locale-appropriate translation declared in the Reader Preamble.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s82">
+      <div class="subsection-heading"><span class="subsection-num">8.2</span><span class="subsection-title">Manifest data model</span></div>
+      <div class="prose">
+        <p>The manifest is a tabular enumeration of blocks. The canonical rendering is a Markdown table. An optional structured-data form is defined in Section 8.5.</p>
+        <p>Every block in the article <span class="nk">MUST</span> appear as exactly one row in the manifest. The order of rows <span class="nk">MUST</span> match the order in which the blocks appear in the article body.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s83">
+      <div class="subsection-heading"><span class="subsection-num">8.3</span><span class="subsection-title">Required columns</span></div>
+      <div class="prose">
+        <p>The manifest table <span class="nk">MUST</span> contain the following columns, in this order:</p>
+      </div>
+      <div class="table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr><th>Column</th><th>Required</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Section</td>
+              <td>Yes</td>
+              <td>A label identifying the block. The section heading text is the default; for multi-block sections, a short qualifier identifying the specific block (e.g., "What we built — manifest TOML")</td>
+            </tr>
+            <tr>
+              <td>Authorship</td>
+              <td>Yes</td>
+              <td>One of: <code>&lt;Author Name&gt;</code>, <code>&lt;Author Name&gt; ← AI</code>, <code>AI verbatim</code></td>
+            </tr>
+            <tr>
+              <td>Model</td>
+              <td>Required when AI-involved</td>
+              <td>The model provider and name, in the form <code>&lt;Provider&gt; &lt;Model&gt;</code>. Use <code>—</code> (em-dash) when no AI involvement</td>
+            </tr>
+            <tr>
+              <td>Tool</td>
+              <td>Required when AI-involved</td>
+              <td>The authoring tool. Use <code>—</code> (em-dash) when no AI involvement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <p>Additional columns <span class="nk may">MAY</span> be added by the publisher (e.g., "Date drafted", "Editing pass count"). Additional columns <span class="nk not">MUST NOT</span> replace any required column.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s84">
+      <div class="subsection-heading"><span class="subsection-num">8.4</span><span class="subsection-title">Multi-model rows</span></div>
+      <div class="prose">
+        <p>A row representing a block that involved multiple models lists all models in the Model column, comma-separated, with the dominant model first. The Tool column lists all tools used, comma-separated, in the same order.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s85">
+      <div class="subsection-heading"><span class="subsection-num">8.5</span><span class="subsection-title">Optional structured-data manifest</span></div>
+      <div class="prose">
+        <p>A publisher <span class="nk may">MAY</span> emit a structured-data manifest in JSON form alongside the human-readable table, for machine consumption. The JSON form conforms to the schema in Appendix A. A structured-data manifest, when emitted, <span class="nk">MUST</span> be consistent with the human-readable table.</p>
+        <p>The structured-data manifest is <span class="nk may">OPTIONAL</span> in v1. A future version of the Standard <span class="nk may">MAY</span> make the structured-data form <span class="nk">REQUIRED</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 9 ══ -->
+  <section class="spec-section" id="s9">
+    <div class="section-heading">
+      <span class="section-num">§ 9</span>
+      <div><div class="section-title">Reader Preamble <span class="norm-tag">Normative</span></div></div>
+    </div>
+    <div class="prose">
+      <p>Every Standard-compliant article <span class="nk">MUST</span> include a Reader Preamble — a section near the top of the article that:</p>
+      <ol>
+        <li>Declares the version of the Standard the article conforms to.</li>
+        <li>Names the three authorship categories with their eyebrow forms.</li>
+        <li>Explains that the manifest at the article footer contains the full audit.</li>
+      </ol>
+      <p>The Reader Preamble <span class="nk">SHOULD</span> appear under an <code>##</code> heading reading "How to read this article" or, in non-English articles, the locale-appropriate translation. The Reader Preamble <span class="nk">SHOULD</span> appear before any substantive content but after the article title and subtitle.</p>
+      <p>The Reader Preamble <span class="nk">MUST</span> itself be authored at one of the three categories and <span class="nk">MUST</span> carry its own eyebrow per Section 7.</p>
+      <p>A normative example of a Reader Preamble appears in Appendix B.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 10 ══ -->
+  <section class="spec-section" id="s10">
+    <div class="section-heading">
+      <span class="section-num">§ 10</span>
+      <div><div class="section-title">Versioning</div></div>
+    </div>
+
+    <div class="subsection" id="s101">
+      <div class="subsection-heading"><span class="subsection-num">10.1</span><span class="subsection-title">Version declaration</span></div>
+      <div class="prose">
+        <p>The Standard version is declared in the article's Reader Preamble. The declaration takes the form of the document identifier and version (e.g., "<strong>Authentic Digital Twin Content Standard v1</strong>"). Articles <span class="nk">MUST</span> declare the version they conform to.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s102">
+      <div class="subsection-heading"><span class="subsection-num">10.2</span><span class="subsection-title">Forward compatibility</span></div>
+      <div class="prose">
+        <p>An article that conforms to a future version of the Standard (e.g., v1.1, v2.0) <span class="nk">MUST</span> declare that version. Articles do not need to be retroactively converted to future versions; the version declared at publication time is the contract at publication time.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s103">
+      <div class="subsection-heading"><span class="subsection-num">10.3</span><span class="subsection-title">Major and minor revisions</span></div>
+      <div class="prose">
+        <p>The Standard uses semantic versioning <a href="#s21b">[SEMVER]</a> for its document identifier.</p>
+        <ul>
+          <li><strong>Major versions</strong> (e.g., v2.0) <span class="nk may">MAY</span> introduce breaking changes to eyebrow grammar, manifest schema, or category definitions. Articles conforming to a major version are not, by default, conformant to other major versions.</li>
+          <li><strong>Minor versions</strong> (e.g., v1.1) <span class="nk may">MAY</span> add new optional features, additional manifest columns, or refined edge-case handling. Minor versions <span class="nk">MUST</span> be backward compatible with the major version's required features. An article conformant to v1.0 is also conformant to v1.x for any x.</li>
+          <li><strong>Patch versions</strong> (e.g., v1.0.1) <span class="nk may">MAY</span> correct editorial errors and clarify ambiguous text but <span class="nk not">MUST NOT</span> change normative requirements.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 11 ══ -->
+  <section class="spec-section" id="s11b">
+    <div class="section-heading">
+      <span class="section-num">§ 11</span>
+      <div><div class="section-title">Security Considerations</div></div>
+    </div>
+    <div class="prose">
+      <p>This section is <span class="nk">REQUIRED</span> per the conventions of RFC 7322bis <a href="#s22b">[RFC7322BIS]</a> and is informed by RFC 3552 <a href="#s21b">[RFC3552]</a>.</p>
+      <p>The Standard v1 is a <strong>human-readable provenance declaration</strong>. It is not cryptographically signed. It provides no tamper-resistance against malicious actors who modify an article after publication to misrepresent authorship.</p>
+      <p><strong>Threats explicitly out of scope for v1:</strong></p>
+      <ul>
+        <li>A malicious actor who edits a published article to relabel an <code>AI verbatim</code> block as <code>Human-Authored</code>, removing the eyebrow and changing the manifest row.</li>
+        <li>A malicious actor who publishes an article under a stolen authorship identity, applying the Standard's eyebrows to AI-generated content as if a human had certified them.</li>
+        <li>A platform that strips or reformats eyebrow lines during republishing.</li>
+      </ul>
+      <p><strong>Threats explicitly in scope for v1:</strong></p>
+      <ul>
+        <li><em>Inadvertent under-attribution.</em> The Standard's normative requirements explicitly require honest attribution and explicitly prohibit category-overstatement. Sections 6.5 and 7.6 address common under-attribution patterns.</li>
+        <li><em>Inadvertent over-attribution.</em> The Standard's substantive-editing threshold (Section 6.5) explicitly defines what is and is not editing, to prevent inflation of the AI-Drafted Human-Edited category to cover blocks that received only trivial intervention.</li>
+      </ul>
+      <p><strong>Future versions</strong> of the Standard <span class="nk may">MAY</span> introduce:</p>
+      <ul>
+        <li>Cryptographic binding of the manifest to the article body, drawing on the C2PA manifest signing approach <a href="#s22b">[C2PA]</a>.</li>
+        <li>Verifiable Credentials <a href="#s22b">[VC-DATA-MODEL]</a> for author identity attestation.</li>
+        <li>Public-key signatures on the manifest by the named author or publishing platform.</li>
+      </ul>
+      <p>These additions are deferred to future versions because v1's adoption barrier is more important than v1's tamper-resistance. An adopted v1 produces ecosystem signal even when un-signed; a perfect v2 that nobody adopts produces no signal.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 12 ══ -->
+  <section class="spec-section" id="s12b">
+    <div class="section-heading">
+      <span class="section-num">§ 12</span>
+      <div><div class="section-title">Privacy Considerations</div></div>
+    </div>
+    <div class="prose">
+      <p>This section is <span class="nk">REQUIRED</span> per the conventions of RFC 6973 <a href="#s21b">[RFC6973]</a>.</p>
+      <p>The Standard requires the declaration of certain provenance facts. These declarations have privacy implications.</p>
+      <p><strong>Author identity exposure.</strong> The Standard requires the author's name in every applicable eyebrow. This is consistent with normal byline practice for published articles and does not increase author identification beyond the existing byline.</p>
+      <p><strong>Pseudonymous authorship.</strong> Authors who publish under pseudonyms <span class="nk may">MAY</span> use the pseudonym in eyebrow lines. The Standard does not require legal-name disclosure. The pseudonym <span class="nk">MUST</span> be consistent with the byline.</p>
+      <p><strong>Model and tool disclosure.</strong> The Standard requires disclosure of the model provider, model name, and authoring tool for AI-involved blocks. This discloses, indirectly, certain facts about the author's tooling environment. Authors who consider their tooling environment sensitive (e.g., authors who use AI to write under conditions where AI assistance is unwelcome) may face conflict between Standard compliance and operational confidentiality. The Standard takes the position that honest disclosure is <span class="nk">REQUIRED</span> — the author may decline to publish under the Standard rather than publish a misleading manifest.</p>
+      <p><strong>Substrate confidentiality.</strong> The Standard's tooling ecosystem (notably the substrate documents described in the companion skill documentation) contains personal data about the author: personality assessment results, writing samples, communication patterns. The Standard does not require publication of substrate documents; substrate is private to the author and their tooling. Articles published under the Standard <span class="nk not">MUST NOT</span> disclose substrate facts unless the author explicitly chooses to do so.</p>
+      <p><strong>Reader privacy.</strong> The Standard does not collect, transmit, or process reader data. There is no privacy obligation imposed on readers.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 13 ══ -->
+  <section class="spec-section" id="s13b">
+    <div class="section-heading">
+      <span class="section-num">§ 13</span>
+      <div><div class="section-title">Internationalization Considerations</div></div>
+    </div>
+    <div class="prose">
+      <p>The Standard is written in English. The grammar in Section 7.2 uses English category names (<code>AI verbatim</code>) and a Latin-script em-dash. Adaptation for other languages is encouraged but requires the following:</p>
+      <p><strong>Locale adaptation.</strong> A translation of the Standard <span class="nk may">MAY</span> define locale-appropriate category labels (e.g., a German-language ADTCS would translate "AI verbatim" to "KI wörtlich"). Translations of the Standard <span class="nk">MUST</span> be registered as separate versioned documents and <span class="nk">MUST</span> be referenced from the article's Reader Preamble.</p>
+      <p><strong>Em-dash glyph.</strong> The em-dash character (U+2014) is <span class="nk">REQUIRED</span> in all locales. Locale-typical alternatives such as the en-dash (U+2013) <span class="nk not">MUST NOT</span> be substituted for the em-dash in eyebrow lines.</p>
+      <p><strong>Right-to-left scripts.</strong> When applied to right-to-left script articles (Arabic, Hebrew), the eyebrow line is rendered in the locale's standard reading order. The leading em-dash appears at the script's logical start, not at the visual left.</p>
+      <p><strong>CJK and ideographic punctuation.</strong> In CJK locales, the trailing period <span class="nk may">MAY</span> be rendered as the locale-appropriate full-width period (e.g., "。") instead of the Latin period. The italic emphasis <span class="nk may">MAY</span> be rendered as locale-appropriate emphasis (e.g., bouten in Japanese, dot-emphasis in Chinese) when italics are not the conventional emphasis mechanism.</p>
+      <p><strong>Translation provenance.</strong> A translated article is a new article and carries its own manifest per Section 7.6 (Edge cases — Translation).</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 14 ══ -->
+  <section class="spec-section" id="s14">
+    <div class="section-heading">
+      <span class="section-num">§ 14</span>
+      <div><div class="section-title">Accessibility Considerations</div></div>
+    </div>
+    <div class="prose">
+      <p>The Standard is designed to remain accessible to readers using assistive technology.</p>
+      <p><strong>Screen readers.</strong> Italic emphasis on the eyebrow line is conveyed by most screen readers as a tone shift or as explicit "italic" announcement. The eyebrow content remains intelligible when read aloud. Implementers <span class="nk">SHOULD</span> verify that their publishing platform's screen-reader behavior reads the italic content rather than skipping it.</p>
+      <p><strong>Plain-text rendering.</strong> When an article is reduced to plain text (e.g., copy-pasted into a text editor), the eyebrow lines remain readable as <code>_— Travis James._</code> and the manifest remains readable as an ASCII table. The Standard explicitly chose Markdown italic over HTML, CSS-class-based formatting, or invisible HTML comments specifically because plain-text reduction preserves the information.</p>
+      <p><strong>Cognitive accessibility.</strong> The Reader Preamble (Section 9) is required to support readers who would otherwise be confused by the eyebrow scheme. The preamble names the three categories and explains the audit mechanism in plain language.</p>
+      <p><strong>Visual rendering.</strong> Implementations rendering the article visually <span class="nk">SHOULD</span> render eyebrow lines in italic and <span class="nk">SHOULD</span> render the manifest as a properly-formatted table. Implementations <span class="nk">SHOULD NOT</span> use color alone to distinguish categories; if color is used, it <span class="nk">MUST</span> be in addition to the textual eyebrow content.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 15 ══ -->
+  <section class="spec-section" id="s15">
+    <div class="section-heading">
+      <span class="section-num">§ 15</span>
+      <div><div class="section-title">Compliance Check</div></div>
+    </div>
+    <div class="prose">
+      <p>An article is conformant to ADTCS-1.0 if and only if <strong>all</strong> of the following are true:</p>
+    </div>
+    <ol class="conformance-list">
+      <li><span class="ci-num">1</span><span>The article includes a Reader Preamble per Section 9, with the version declared as <code>v1</code> (or any patch version of v1.0).</span></li>
+      <li><span class="ci-num">2</span><span>Every block in the article body has an eyebrow line per Section 7, conforming to the grammar in Section 7.2.</span></li>
+      <li><span class="ci-num">3</span><span>Every AI-involved eyebrow line names the model provider, model, and tool.</span></li>
+      <li><span class="ci-num">4</span><span>The article includes a content provenance manifest per Section 8, located at the article footer.</span></li>
+      <li><span class="ci-num">5</span><span>The manifest contains exactly one row per block in the article body.</span></li>
+      <li><span class="ci-num">6</span><span>Every AI-involved manifest row contains the model provider, model name, and authoring tool.</span></li>
+      <li><span class="ci-num">7</span><span>The three authorship categories are defined within the article (either in the Reader Preamble, the manifest, or an adjacent definitions block).</span></li>
+      <li><span class="ci-num">8</span><span>The author's name in every applicable eyebrow matches the byline of the article.</span></li>
+    </ol>
+    <div class="prose" style="margin-top:1.25rem">
+      <p>A tool that validates Standard conformance <span class="nk">MUST</span> check all eight items. Reporting partial conformance is <span class="nk">NOT RECOMMENDED</span> — partial-conformance signaling tends to be misinterpreted as conformance.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 16 ══ -->
+  <section class="spec-section" id="s16">
+    <div class="section-heading">
+      <span class="section-num">§ 16</span>
+      <div><div class="section-title">Extensibility</div></div>
+    </div>
+
+    <div class="subsection" id="s161">
+      <div class="subsection-heading"><span class="subsection-num">16.1</span><span class="subsection-title">Reserved namespace</span></div>
+      <div class="prose">
+        <p>The reserved namespace for vendor-specific or platform-specific extensions is <code>x-</code>. Manifest columns prefixed with <code>x-</code> (e.g., <code>x-platform-id</code>, <code>x-edit-history-url</code>) are vendor extensions and do not affect conformance.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s162">
+      <div class="subsection-heading"><span class="subsection-num">16.2</span><span class="subsection-title">Extensions <span class="nk not">MUST NOT</span> relax requirements</span></div>
+      <div class="prose">
+        <p>Extensions <span class="nk may">MAY</span> add information. Extensions <span class="nk not">MUST NOT</span> relax any of the <span class="nk">MUST</span> or <span class="nk">REQUIRED</span> clauses of the Standard. A "compliance" claim by an article using extensions is valid only if all base requirements are satisfied independently of the extensions.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s163">
+      <div class="subsection-heading"><span class="subsection-num">16.3</span><span class="subsection-title">Future-version reservation</span></div>
+      <div class="prose">
+        <p>The following are reserved for future versions of the Standard and <span class="nk not">MUST NOT</span> be used in v1-conformant articles:</p>
+        <ul>
+          <li>Category names beyond the three defined in Section 6.</li>
+          <li>Eyebrow forms that include cryptographic signatures or hashes.</li>
+          <li>Manifest columns named <code>signature</code>, <code>hash</code>, or <code>attestation</code>.</li>
+          <li>Reader Preamble version declarations naming versions higher than the implementing version.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 17 ══ -->
+  <section class="spec-section" id="s17">
+    <div class="section-heading">
+      <span class="section-num">§ 17</span>
+      <div><div class="section-title">Relationship to Other Standards</div></div>
+    </div>
+
+    <div class="subsection" id="s171">
+      <div class="subsection-heading"><span class="subsection-num">17.1</span><span class="subsection-title">C2PA — Coalition for Content Provenance and Authenticity</span></div>
+      <div class="prose">
+        <p>The C2PA technical specification <a href="#s22b">[C2PA]</a> is the canonical content-provenance specification for media (images, audio, video). C2PA operates at the <em>asset</em> level using cryptographic manifest binding. ADTCS-1.0 complements C2PA by addressing the <em>block-within-prose</em> level for long-form written content — a granularity that C2PA does not address directly. Future ADTCS versions <span class="nk may">MAY</span> adopt C2PA-style cryptographic manifest binding for articles, drawing on C2PA's existing infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s172">
+      <div class="subsection-heading"><span class="subsection-num">17.2</span><span class="subsection-title">EU AI Act Article 50</span></div>
+      <div class="prose">
+        <p>The European Union AI Act <a href="#s22b">[EU-AI-ACT]</a> Article 50 establishes transparency obligations for providers and deployers of generative AI systems. Article 50 takes effect August 2026 <a href="#s22b">[EC-CODE-DRAFT]</a>. The Standard's three-category partition operationalizes Article 50's exemption pathway for human-edited content. An article that is fully Standard-conformant provides the block-level disclosure that Article 50 contemplates. The Standard does not assert legal sufficiency for Article 50 compliance — that is a legal determination — but the Standard's structure is designed to align with the Code of Practice's transparency principles.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s173">
+      <div class="subsection-heading"><span class="subsection-num">17.3</span><span class="subsection-title">RFC 2119 / BCP 14</span></div>
+      <div class="prose">
+        <p>Normative language in the Standard follows RFC 2119 <a href="#s21b">[RFC2119]</a> as updated by RFC 8174 <a href="#s21b">[RFC8174]</a>. Implementers familiar with IETF normative conventions can interpret the Standard's requirements without additional reference.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s174">
+      <div class="subsection-heading"><span class="subsection-num">17.4</span><span class="subsection-title">W3C Verifiable Credentials Data Model</span></div>
+      <div class="prose">
+        <p>The Verifiable Credentials Data Model v2.0 <a href="#s22b">[VC-DATA-MODEL]</a> is the canonical W3C specification for cryptographically secure, privacy-respecting, machine-verifiable digital credentials. ADTCS-1.0 does not require VC integration. Future versions of the Standard <span class="nk may">MAY</span> add a VC-based attestation mechanism whereby an author signs a manifest as a Verifiable Credential and binds the signed manifest to the article.</p>
+      </div>
+    </div>
+
+    <div class="subsection" id="s175">
+      <div class="subsection-heading"><span class="subsection-num">17.5</span><span class="subsection-title">Schema.org Article</span></div>
+      <div class="prose">
+        <p>The Standard does not conflict with Schema.org <code>Article</code> metadata. Publishers <span class="nk may">MAY</span> emit both Schema.org JSON-LD and the Standard's manifest. The Schema.org <code>author</code> property and the eyebrow author name <span class="nk">MUST</span> agree.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 18 ══ -->
+  <section class="spec-section" id="s18">
+    <div class="section-heading">
+      <span class="section-num">§ 18</span>
+      <div><div class="section-title">Examples <span class="info-tag">Informative</span></div></div>
+    </div>
+    <div class="prose">
+      <p>This section is non-normative. It provides illustrative examples for implementers.</p>
+    </div>
+
+    <div class="subsection" id="s181">
+      <div class="subsection-heading"><span class="subsection-num">18.1</span><span class="subsection-title">Minimum-viable Standard-compliant article</span></div>
+      <div class="code-wrap">
+        <div class="code-header"><span class="code-lang">markdown</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code># Article Title
+
+*Subtitle*
+
+---
+
+## How to read this article
+
+_— Jane Author._
+
+This article uses the **Authentic Digital Twin Content Standard v1**. Every
+block of substantive content declares its authorship:
+
+- **`[Jane Author]`** — original prose by Jane
+- **`[Jane Author ← AI]`** — AI-drafted, Jane-edited to her voice
+- **`[AI verbatim]`** — AI-generated, unedited
+
+A full manifest appears at the article footer.
+
+---
+
+## First section
+
+_— Jane Author._
+
+Body of the section, in Jane's voice.
+
+---
+
+## Second section
+
+_— AI verbatim: Anthropic Claude Opus 4.7 via Claude.ai._
+
+```rust
+fn example() { /* ... */ }
+```
+
+---
+
+## Content provenance manifest
+
+_— Jane Author._
+
+| Section | Authorship | Model | Tool |
+|---|---|---|---|
+| How to read this article | Jane Author | — | — |
+| First section | Jane Author | — | — |
+| Second section | AI verbatim | Anthropic Claude Opus 4.7 | Claude.ai |
+
+**Definitions:**
+
+- `Jane Author` — original prose; no AI involvement
+- `Jane Author ← AI` — drafted by AI, edited substantively by Jane
+- `AI verbatim` — generated by AI, reproduced without editorial intervention</code></pre>
+      </div>
+    </div>
+
+    <div class="subsection" id="s182">
+      <div class="subsection-heading"><span class="subsection-num">18.2</span><span class="subsection-title">Multi-block section example</span></div>
+      <div class="prose">
+        <p>A section containing both human prose and an AI-verbatim code sample:</p>
+      </div>
+      <div class="code-wrap">
+        <div class="code-header"><span class="code-lang">markdown</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+        <pre><code>## What we built
+
+_— Jane Author._
+
+The system is three components: a parser, a validator, and a renderer.
+
+_— AI verbatim: Anthropic Claude Opus 4.7 via Claude Code._
+
+```rust
+fn parse(input: &str) -> Result&lt;Ast, ParseError&gt; { /* ... */ }
+```
+
+_— Jane Author._
+
+The parser uses recursive descent because the grammar is small enough that
+LALR would be over-engineering.</code></pre>
+      </div>
+      <div class="prose">
+        <p>Three blocks, three eyebrows, three manifest rows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 19 ══ -->
+  <section class="spec-section" id="s19">
+    <div class="section-heading">
+      <span class="section-num">§ 19</span>
+      <div><div class="section-title">Change History</div></div>
+    </div>
+    <div class="prose">
+      <p><strong>v1.0 — 2026-05-17</strong></p>
+      <p>Initial publication of the Standard. Three authorship categories, eyebrow grammar, manifest schema, Reader Preamble requirement, security and privacy considerations, internationalization and accessibility considerations.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 20 ══ -->
+  <section class="spec-section" id="s20">
+    <div class="section-heading">
+      <span class="section-num">§ 20</span>
+      <div><div class="section-title">Acknowledgements</div></div>
+    </div>
+    <div class="prose">
+      <p>The Standard is informed by prior work of the Coalition for Content Provenance and Authenticity (C2PA), the European Union AI Office on Article 50 of the AI Act, the Internet Engineering Task Force on the RFC style guide and on requirements-language conventions (RFC 2119 and RFC 8174), and the World Wide Web Consortium on the Verifiable Credentials Data Model and on specification authoring guidelines.</p>
+      <p>The author thanks the contributors to the <code>authentic-digital-twin-content</code> reference implementation and the substrate-extraction methodology that motivated the Standard's creation.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 21 — NORMATIVE REFERENCES ══ -->
+  <section class="spec-section" id="s21b">
+    <div class="section-heading">
+      <span class="section-num">§ 21</span>
+      <div><div class="section-title">Normative References</div></div>
+    </div>
+    <ul class="ref-list">
+      <li><span class="ref-tag">[RFC2119]</span><span>Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, March 1997. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119" target="_blank" rel="noopener">https://www.rfc-editor.org/rfc/rfc2119</a></span></li>
+      <li><span class="ref-tag">[RFC8174]</span><span>Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, May 2017. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174" target="_blank" rel="noopener">https://www.rfc-editor.org/rfc/rfc8174</a></span></li>
+      <li><span class="ref-tag">[RFC3552]</span><span>Rescorla, E. and Korver, B., "Guidelines for Writing RFC Text on Security Considerations", BCP 72, RFC 3552, July 2003. URL: <a href="https://www.rfc-editor.org/rfc/rfc3552" target="_blank" rel="noopener">https://www.rfc-editor.org/rfc/rfc3552</a></span></li>
+      <li><span class="ref-tag">[RFC6973]</span><span>Cooper, A., et al., "Privacy Considerations for Internet Protocols", RFC 6973, July 2013. URL: <a href="https://www.rfc-editor.org/rfc/rfc6973" target="_blank" rel="noopener">https://www.rfc-editor.org/rfc/rfc6973</a></span></li>
+      <li><span class="ref-tag">[SEMVER]</span><span>Preston-Werner, T., "Semantic Versioning 2.0.0". URL: <a href="https://semver.org/spec/v2.0.0.html" target="_blank" rel="noopener">https://semver.org/spec/v2.0.0.html</a></span></li>
+    </ul>
+  </section>
+
+  <!-- ══ SECTION 22 — INFORMATIVE REFERENCES ══ -->
+  <section class="spec-section" id="s22b">
+    <div class="section-heading">
+      <span class="section-num">§ 22</span>
+      <div><div class="section-title">Informative References</div></div>
+    </div>
+    <ul class="ref-list">
+      <li><span class="ref-tag">[C2PA]</span><span>Coalition for Content Provenance and Authenticity, "C2PA Technical Specification, version 2.4". URL: <a href="https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html" target="_blank" rel="noopener">https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html</a></span></li>
+      <li><span class="ref-tag">[EU-AI-ACT]</span><span>Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Article 50: Transparency obligations for providers and deployers of certain AI systems.</span></li>
+      <li><span class="ref-tag">[EC-CODE-DRAFT]</span><span>European Commission, "Code of Practice on Transparency of AI-Generated Content (First Draft)", December 17, 2025. URL: <a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" target="_blank" rel="noopener">https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content</a></span></li>
+      <li><span class="ref-tag">[RFC7322BIS]</span><span>Flanagan, H. and Ginoza, S., "RFC Style Guide", Internet-Draft (draft-rpc-rfc7322bis-00), in progress. URL: <a href="https://www.ietf.org/archive/id/draft-rpc-rfc7322bis-00.html" target="_blank" rel="noopener">https://www.ietf.org/archive/id/draft-rpc-rfc7322bis-00.html</a></span></li>
+      <li><span class="ref-tag">[VC-DATA-MODEL]</span><span>Sporny, M., et al., "Verifiable Credentials Data Model v2.0", W3C Recommendation. URL: <a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noopener">https://www.w3.org/TR/vc-data-model-2.0/</a></span></li>
+      <li><span class="ref-tag">[W3C-QAFRAME]</span><span>Hazaël-Massieux, D., et al., "QA Framework: Specification Guidelines", W3C Note. URL: <a href="https://www.w3.org/TR/qaframe-spec/" target="_blank" rel="noopener">https://www.w3.org/TR/qaframe-spec/</a></span></li>
+    </ul>
+  </section>
+
+  <div class="spec-sep"></div>
+
+  <!-- ══ APPENDIX A ══ -->
+  <section class="spec-section" id="sa">
+    <div class="section-heading">
+      <span class="section-num appendix">Annex A</span>
+      <div><div class="section-title">JSON Schema for the Manifest <span class="norm-tag">Normative</span></div></div>
+    </div>
+    <div class="prose">
+      <p>The optional structured-data manifest defined in Section 8.5 conforms to the following JSON Schema (draft 2020-12):</p>
+    </div>
+    <div class="code-wrap">
+      <div class="code-header"><span class="code-lang">json</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+      <pre><code>{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/adtcs/v1/manifest.schema.json",
+  "title": "ADTCS v1 Content Provenance Manifest",
+  "type": "object",
+  "required": ["standard_version", "article_id", "authors", "blocks"],
+  "properties": {
+    "standard_version": {
+      "type": "string",
+      "const": "ADTCS-1.0"
+    },
+    "article_id": {
+      "type": "string",
+      "description": "Stable identifier for the article (URI, DOI, slug)"
+    },
+    "article_title": { "type": "string" },
+    "publication_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "authors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "pseudonymous": { "type": "boolean" },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["section", "authorship"],
+        "properties": {
+          "section": { "type": "string" },
+          "authorship": {
+            "type": "string",
+            "enum": ["Human-Authored", "AI-Drafted Human-Edited", "AI verbatim"]
+          },
+          "author_attribution": {
+            "type": "string",
+            "description": "The author name as it appears in the eyebrow, when authorship is Human-Authored or AI-Drafted Human-Edited"
+          },
+          "models": {
+            "type": "array",
+            "description": "Required when authorship involves AI",
+            "items": {
+              "type": "object",
+              "required": ["provider", "model"],
+              "properties": {
+                "provider": { "type": "string" },
+                "model": { "type": "string" },
+                "model_id": {
+                  "type": "string",
+                  "description": "Optional internal API model identifier"
+                }
+              }
+            }
+          },
+          "tools": {
+            "type": "array",
+            "description": "Required when authorship involves AI",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": { "type": "string" },
+                "version": { "type": "string" }
+              }
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Vendor extensions. Keys MUST be prefixed with 'x-'"
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+    </div>
+    <div class="prose">
+      <p>A conforming structured-data manifest validates against this schema. The schema is normative for the structured-data form; the human-readable table form remains the primary required output.</p>
+    </div>
+  </section>
+
+  <!-- ══ APPENDIX B ══ -->
+  <section class="spec-section" id="sb">
+    <div class="section-heading">
+      <span class="section-num appendix">Annex B</span>
+      <div><div class="section-title">Worked Example <span class="info-tag">Informative</span></div></div>
+    </div>
+    <div class="prose">
+      <p>A complete worked example of a Standard-conformant article appears at <code>/Users/gqadonis/Projects/skills/authentic-digital-twin-content/zed-workspace-article.md</code> in the reference implementation repository. The example demonstrates:</p>
+      <ul>
+        <li>Reader Preamble at the article top declaring v1 conformance</li>
+        <li>23 content blocks with eyebrow lines covering all three authorship categories</li>
+        <li>A multi-block section ("What we built") with prose, code, and table blocks each carrying their own eyebrow</li>
+        <li>A content provenance manifest at the article footer with one row per block</li>
+        <li>Definitions of the three categories reproduced after the manifest table</li>
+      </ul>
+      <p>The example is provided as a non-normative reference. Other Standard-conformant articles may differ in section count, category distribution, and topical content while still satisfying all conformance requirements.</p>
+    </div>
+  </section>
+
+  <div class="spec-sep"></div>
+  <p style="font-family:var(--mono);font-size:.65rem;color:var(--muted-fg);letter-spacing:.08em;text-align:center;padding-bottom:1rem"><em>End of ADTCS-1.0.</em></p>
+
+</main>
+</div><!-- /spec-layout -->
+
+<!-- ── SITE FOOTER ── -->
+<footer class="site-footer">
+  <div class="sf-brand">travis<em>james</em>.ai</div>
+  <div class="sf-meta">ADTCS-1.0 &nbsp;·&nbsp; CC BY 4.0 &nbsp;·&nbsp; Travis James · Prometheus AGS &nbsp;·&nbsp; 2026-05-17</div>
+</footer>
+
+<script>
+// ── Reading progress ──
+(function () {
+  const bar = document.getElementById('rp');
+  window.addEventListener('scroll', function () {
+    const doc = document.documentElement;
+    const pct = (window.scrollY / (doc.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+})();
+
+// ── ToC active link via IntersectionObserver ──
+(function () {
+  const sections = document.querySelectorAll('.spec-section[id], .subsection[id]');
+  const links    = document.querySelectorAll('.spec-toc a');
+  if (!links.length) return;
+
+  const map = {};
+  links.forEach(function (a) {
+    const id = a.getAttribute('href').replace('#', '');
+    map[id] = a;
+  });
+
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove('active'); });
+        const id = entry.target.id;
+        if (map[id]) map[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-52px 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(function (s) { obs.observe(s); });
+})();
+
+// ── Code copy ──
+function copyCode(btn) {
+  var pre  = btn.closest('.code-wrap, .grammar-wrap').querySelector('pre');
+  var text = pre.innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    btn.textContent = 'Copied!';
+    btn.classList.add('ok');
+    setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('ok'); }, 2000);
+  }).catch(function () {
+    btn.textContent = 'Error';
+    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+// ── Mobile ToC toggle ──
+function toggleMobileToc() {
+  var panel  = document.getElementById('mobile-toc-panel');
+  var arrow  = document.getElementById('mobile-toc-arrow');
+  var isOpen = panel.classList.toggle('open');
+  arrow.textContent = isOpen ? '▴' : '▾';
+}
+</script>
+</body>
+</html>

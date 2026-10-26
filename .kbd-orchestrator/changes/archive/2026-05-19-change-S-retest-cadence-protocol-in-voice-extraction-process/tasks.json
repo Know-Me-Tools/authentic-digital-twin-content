@@ -1,0 +1,30 @@
+{
+  "changeId": "change-S-retest-cadence-protocol-in-voice-extraction-process",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "As part of the same edit session as Change R, append the new subsection to `## Re-extraction triggers` in `voice-extraction-process.md`",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-S-retest-cadence-protocol-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "Subsection content (~250 words):",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-S-retest-cadence-protocol-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "Update STATE.md: find OQ5 line and change to `5. **Re-test cadence:** RESOLVED — see references/voice-extraction-process.md, Re-test Cadence Protocol section.`",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-S-retest-cadence-protocol-in-voice-extraction-process/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

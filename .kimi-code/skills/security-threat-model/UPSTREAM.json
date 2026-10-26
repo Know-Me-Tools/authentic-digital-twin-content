@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "source": "https://github.com/openai/skills",
+  "revision": "49f948faa9258a0c61caceaf225e179651397431",
+  "retrieved": "2026-10-26",
+  "license": "Apache-2.0",
+  "modified": false,
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/LICENSE.txt",
+      "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9"
+    },
+    {
+      "path": "SKILL.md",
+      "source": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/SKILL.md",
+      "sha256": "1283c0dd62a8104d9edda4583569b5d8510b4ddaa45120687c999250fd96bad2"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "source": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/agents/openai.yaml",
+      "sha256": "3319b59736312abceca614e341c0e59cae47263e3b58a22b2b5ddf1e5fc8c227"
+    },
+    {
+      "path": "references/prompt-template.md",
+      "source": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/references/prompt-template.md",
+      "sha256": "81a59aa3fb3ac3a739d6a26ab38e4015965f215581ee54becef21a2b121ec29b"
+    },
+    {
+      "path": "references/security-controls-and-assets.md",
+      "source": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/references/security-controls-and-assets.md",
+      "sha256": "d536cfa9acad2523dc39134bcf33b9566c29dd9a57b407cbc9901637230c6b98"
+    }
+  ]
+}

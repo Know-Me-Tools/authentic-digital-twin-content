@@ -1,0 +1,38 @@
+{
+  "changeId": "change-U-generic-pattern-framing-in-skill-md",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Read SKILL.md steps 4b and 8 in context to locate exact insertion points",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "2",
+      "title": "In step 4b: after the line \"The 11 natural heuristics (1, 2, 3, 5, 6, 8, 10, 12, 13, 14, 15) are applied implicitly via substrate reading — no explicit enforcement needed.\", add:",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "3",
+      "title": "In step 8: after the line \"Skip this step for Tier 2 and Tier 3 surfaces.\", add:",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    },
+    {
+      "id": "4",
+      "title": "Verify description field unchanged at 928/1024 chars (these are body additions only)",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-U-generic-pattern-framing-in-skill-md/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

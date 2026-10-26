@@ -1,0 +1,5 @@
+{
+  "state": ".agent-team/authentic-digital-twin/state.json",
+  "target": "codex",
+  "out": ".agent-team/authentic-digital-twin/exports/codex"
+}

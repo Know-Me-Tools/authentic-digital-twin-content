@@ -1,0 +1,44 @@
+{
+  "directory": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content/.agent-team/authentic-digital-twin/exports/opencode",
+  "files": [
+    ".opencode/agents/product-manager.md",
+    ".opencode/agents/systems-architect.md",
+    ".opencode/agents/evidence-collector.md",
+    ".opencode/agents/provenance-curator.md",
+    ".opencode/agents/ingestion-engineer.md",
+    ".opencode/agents/mcp-server-engineer.md",
+    ".opencode/agents/rag-graphrag-expert.md",
+    ".opencode/agents/surrealdb-engineer.md",
+    ".opencode/agents/skill-maintainer.md",
+    ".opencode/agents/security-reviewer.md",
+    ".opencode/agents/evaluation-engineer.md",
+    ".opencode/agents/release-engineer.md",
+    "export-receipt.json",
+    "team-export.json"
+  ],
+  "verification": {
+    "level": "source-verified",
+    "source": "https://opencode.ai/docs/agents/",
+    "version": "deployed singular agent schema inspected 2026-09-24",
+    "live": "unverified"
+  },
+  "capabilities": {
+    "agent-definition": "emitted",
+    "role-model": "emitted",
+    "team-options": "emitted",
+    "agent-plugin": "not-emitted",
+    "agent-marketplace": "not-emitted",
+    "static-team-roster": "not-emitted",
+    "model-policy-resolution": "not-emitted"
+  },
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "OpenCode JS/TS or npm plugins are separate from agent definitions; no agent marketplace manifest is invented.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "instructions": [
+    "Review staged artifacts before installation. Export grants no execution or registration authority.",
+    "Review .opencode/agents/*.md and optional opencode.json. Native configuration uses singular agent and permission keys."
+  ]
+}

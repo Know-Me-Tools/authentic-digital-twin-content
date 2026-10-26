@@ -1,0 +1,111 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".opencode/agents/product-manager.md",
+    ".opencode/agents/systems-architect.md",
+    ".opencode/agents/evidence-collector.md",
+    ".opencode/agents/provenance-curator.md",
+    ".opencode/agents/ingestion-engineer.md",
+    ".opencode/agents/mcp-server-engineer.md",
+    ".opencode/agents/rag-graphrag-expert.md",
+    ".opencode/agents/surrealdb-engineer.md",
+    ".opencode/agents/skill-maintainer.md",
+    ".opencode/agents/security-reviewer.md",
+    ".opencode/agents/evaluation-engineer.md",
+    ".opencode/agents/release-engineer.md"
+  ],
+  "changed": [
+    ".opencode/agents/product-manager.md",
+    ".opencode/agents/systems-architect.md",
+    ".opencode/agents/evidence-collector.md",
+    ".opencode/agents/provenance-curator.md",
+    ".opencode/agents/ingestion-engineer.md",
+    ".opencode/agents/mcp-server-engineer.md",
+    ".opencode/agents/rag-graphrag-expert.md",
+    ".opencode/agents/surrealdb-engineer.md",
+    ".opencode/agents/skill-maintainer.md",
+    ".opencode/agents/security-reviewer.md",
+    ".opencode/agents/evaluation-engineer.md",
+    ".opencode/agents/release-engineer.md",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": true,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".opencode/agents/product-manager.md",
+      "before": null,
+      "after": "e9171a34ca88cfe5e716821948fe8ece19a6b3328e76684bdfca777f0af31d87"
+    },
+    {
+      "file": ".opencode/agents/systems-architect.md",
+      "before": null,
+      "after": "39b2e5e0864a96578a6c9115a419f4e76c6094c6fb7f3c4357fe73ff2845b25c"
+    },
+    {
+      "file": ".opencode/agents/evidence-collector.md",
+      "before": null,
+      "after": "57a510f3b9d66353d7a73cc9a1894927304fe45e3ffdaf88a3289243ce76af8e"
+    },
+    {
+      "file": ".opencode/agents/provenance-curator.md",
+      "before": null,
+      "after": "f2ab7c2a39e1d5af63f88002a178aef2a71ad50e6ba6f5378c43df9cfad4e995"
+    },
+    {
+      "file": ".opencode/agents/ingestion-engineer.md",
+      "before": null,
+      "after": "4a229b2cbcb0c9f781955d14660fcb2143220ee57c524ae1bfbeef27a75e8438"
+    },
+    {
+      "file": ".opencode/agents/mcp-server-engineer.md",
+      "before": null,
+      "after": "6d784d0da72d558621ce4d326b0c08d8b0ecd734a42b278803671589f9777071"
+    },
+    {
+      "file": ".opencode/agents/rag-graphrag-expert.md",
+      "before": null,
+      "after": "b236fdf20bf7512375a0860993fb8290ff4ccf2559714064eb4b176659952431"
+    },
+    {
+      "file": ".opencode/agents/surrealdb-engineer.md",
+      "before": null,
+      "after": "7f1b41a6e34838a827168c1a6fef4fb5ea48ea85e7d1b35b06e68725086dc84d"
+    },
+    {
+      "file": ".opencode/agents/skill-maintainer.md",
+      "before": null,
+      "after": "ed0651dfd83bbbf941c8fc99c77ada9f1c4aa3086d1f11482e72b67d5cb06d7d"
+    },
+    {
+      "file": ".opencode/agents/security-reviewer.md",
+      "before": null,
+      "after": "fbfe51d104a5ba4c3f1b73bc3cc64656102ae08b3db309a049a797aa254897ba"
+    },
+    {
+      "file": ".opencode/agents/evaluation-engineer.md",
+      "before": null,
+      "after": "71ef2bf8725dcfd700bc231e479a15f8db16b8dfb487c3c3b3bbb01753f9e158"
+    },
+    {
+      "file": ".opencode/agents/release-engineer.md",
+      "before": null,
+      "after": "dd67d3ae68150b8956cda033915dcd98cae5162d80bc25f2d2722c7f41d62f2a"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": "8ad08ce310b80234be796c221b23733d2cc1086ca93bfd2f120e0b72ec6b68c8",
+      "after": "59bdd70399e7a0c175908a9bd9552aea07f70afcfa0633df6e0cdabcf820e1fe"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "OpenCode JS/TS or npm plugins are separate from agent definitions; no agent marketplace manifest is invented.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "recovery": null
+}

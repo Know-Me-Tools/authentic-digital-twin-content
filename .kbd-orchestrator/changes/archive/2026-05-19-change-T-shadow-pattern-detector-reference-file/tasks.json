@@ -1,0 +1,14 @@
+{
+  "changeId": "change-T-shadow-pattern-detector-reference-file",
+  "schemaVersion": "1",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Create `references/shadow-pattern-detector.md` with four sections:",
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "notes": "Migrated from .kbd-orchestrator/changes/archive/2026-05-19-change-T-shadow-pattern-detector-reference-file/change.md; canonical change ledger records DONE. Historical checkbox state is preserved exactly; this is not a new work assignment or approval. Do not reopen completed changes from this snapshot."
+    }
+  ]
+}

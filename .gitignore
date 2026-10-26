@@ -29,3 +29,17 @@ npm-debug.log*
 
 # OpenCode loop session state (ephemeral; skills/ and commands/ ARE tracked)
 .opencode/opencode-loop/
+
+# prometheus-context-bootstrap
+.prometheus/.writer.lock
+.prometheus/.review-pending
+.prometheus/recovery/
+.claude/settings.json.bak.*
+
+# Private source evidence and per-session team state
+.private-evidence/
+.agent-team/**/state.json
+.agent-team/**/state.json.*
+.agent-team/recovery/
+.minimax/sessions/
+.minimax/logs/

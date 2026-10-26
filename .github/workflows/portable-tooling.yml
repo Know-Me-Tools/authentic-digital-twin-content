@@ -1,0 +1,25 @@
+name: Portable tooling
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci --prefix scripts/portability --ignore-scripts
+      - run: node scripts/portability/build.mjs --check
+      - run: node scripts/team-bundle/compile.mjs --check
+      - run: node scripts/team-bundle/build.mjs --check
+      - run: node --test tests/portability/hooks.test.mjs tests/portability/line-endings.test.mjs tests/team-bundle/installer.test.mjs

@@ -1,0 +1,10 @@
+{
+  "version": "2",
+  "plugins": [
+    {
+      "id": "authentic-digital-twin",
+      "displayName": "authentic-digital-twin",
+      "source": "./plugins/authentic-digital-twin"
+    }
+  ]
+}

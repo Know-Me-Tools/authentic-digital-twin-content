@@ -1,0 +1,130 @@
+{
+  "project": "/Users/gqadonis/Projects/skills/authentic-digital-twin-content",
+  "activeTeam": "authentic-digital-twin",
+  "manifest": ".agent-team/authentic-digital-twin/team.json",
+  "nativeDefinitions": [
+    ".codex/agents/product_manager.toml",
+    ".codex/agents/systems_architect.toml",
+    ".codex/agents/evidence_collector.toml",
+    ".codex/agents/provenance_curator.toml",
+    ".codex/agents/ingestion_engineer.toml",
+    ".codex/agents/mcp_server_engineer.toml",
+    ".codex/agents/rag_graphrag_expert.toml",
+    ".codex/agents/surrealdb_engineer.toml",
+    ".codex/agents/skill_maintainer.toml",
+    ".codex/agents/security_reviewer.toml",
+    ".codex/agents/evaluation_engineer.toml",
+    ".codex/agents/release_engineer.toml"
+  ],
+  "changed": [
+    ".codex/agents/product_manager.toml",
+    ".codex/agents/systems_architect.toml",
+    ".codex/agents/evidence_collector.toml",
+    ".codex/agents/provenance_curator.toml",
+    ".codex/agents/ingestion_engineer.toml",
+    ".codex/agents/mcp_server_engineer.toml",
+    ".codex/agents/rag_graphrag_expert.toml",
+    ".codex/agents/surrealdb_engineer.toml",
+    ".codex/agents/skill_maintainer.toml",
+    ".codex/agents/security_reviewer.toml",
+    ".codex/agents/evaluation_engineer.toml",
+    ".codex/agents/release_engineer.toml",
+    ".agent-team/authentic-digital-twin/team.json",
+    "AGENTS.md",
+    "CLAUDE.md",
+    ".agent-team/project-routing.json"
+  ],
+  "clean": false,
+  "dryRun": false,
+  "check": false,
+  "fingerprints": [
+    {
+      "file": ".codex/agents/product_manager.toml",
+      "before": null,
+      "after": "87f87cd8461943e0819978f9b5155ca18660be3359a957cd0c79cf977160f5a6"
+    },
+    {
+      "file": ".codex/agents/systems_architect.toml",
+      "before": null,
+      "after": "1f815363ea3cf2d8aee2577240da5d96504021bbda78305013fed198673325b2"
+    },
+    {
+      "file": ".codex/agents/evidence_collector.toml",
+      "before": null,
+      "after": "3c9c9deda4601197116eb054556522451c8186e08fe84f3d1adc5f833327adfd"
+    },
+    {
+      "file": ".codex/agents/provenance_curator.toml",
+      "before": null,
+      "after": "87e410b8a738cb7927d8dc37fd7f6ba2152fdeb09cd9d5a3cebf51c3fd8ddbfd"
+    },
+    {
+      "file": ".codex/agents/ingestion_engineer.toml",
+      "before": null,
+      "after": "568c37a9e9899f9ff637fc875f9e7278d1405fb6c11923765d8f559c8f507fa5"
+    },
+    {
+      "file": ".codex/agents/mcp_server_engineer.toml",
+      "before": null,
+      "after": "412a3279278410af1fbec74d3aec886c6e2fc63b72ebf21a3a70ff603181e432"
+    },
+    {
+      "file": ".codex/agents/rag_graphrag_expert.toml",
+      "before": null,
+      "after": "b1af189191766964ba082573a3faf400663dc6bd7228b62169d80a096307116b"
+    },
+    {
+      "file": ".codex/agents/surrealdb_engineer.toml",
+      "before": null,
+      "after": "451e44df975851396604f2d92fd581ff4b8ae1ffceb48c37d3a435597e258530"
+    },
+    {
+      "file": ".codex/agents/skill_maintainer.toml",
+      "before": null,
+      "after": "6e7ab5d03a21ba24ca5e13d8bc463bacacfbb6df5b166cc97d951a8129913c32"
+    },
+    {
+      "file": ".codex/agents/security_reviewer.toml",
+      "before": null,
+      "after": "8bd182e16f85849d416c4eb8735f4be39b99ec4502c2f98cfa4c83e79a01e81c"
+    },
+    {
+      "file": ".codex/agents/evaluation_engineer.toml",
+      "before": null,
+      "after": "f4e52fccb01d1864de685c5ae30048524db9749b1b9ad861eccd9d7557bf923a"
+    },
+    {
+      "file": ".codex/agents/release_engineer.toml",
+      "before": null,
+      "after": "9a24470460dd0c2b04df255d889a30b2e87c7d25c417d63d9e8a58ff41707015"
+    },
+    {
+      "file": ".agent-team/authentic-digital-twin/team.json",
+      "before": "9095592472748a2571df5e80a31f3b5477c6101d362da28441443328e8af7c9a",
+      "after": "e02518f455c241ff10ae6de74c501bedc25eaaf3dcf2008693a43089f08c871d"
+    },
+    {
+      "file": "AGENTS.md",
+      "before": "cefa194f096033448c40c09784abbb4556074ef020307c12140df87aa6b0a074",
+      "after": "525705fe1d24324c7bbeeea8d4a1af8fa5a381db3a6b051bccb5a1d1be614a7a"
+    },
+    {
+      "file": "CLAUDE.md",
+      "before": "3fdedb28bca71e1cee33a168f396714c871091d70472ba12b35db8e96e63a91d",
+      "after": "6d40f87ab914e51840829605516f1497e58a1c5037899e05352f22d88de64e05"
+    },
+    {
+      "file": ".agent-team/project-routing.json",
+      "before": null,
+      "after": "cf68b3f36d5d636a7216e6959209adc609c993fba88e8b37c4dd6336b32f38b5"
+    }
+  ],
+  "diagnostics": [
+    "Source-verified serialization only; installed native validation and live execution are unverified.",
+    "Only explicit model IDs are translated. Resolve tier, skill, capability and price policies with agent-team-models before native invocation.",
+    "Codex agent names use underscores (role-id becomes role_id) and set memories.generate_memories=false so subagent threads do not write the user-level memory summary.",
+    "Standalone agent files are supported. A Codex plugin agents manifest field is not verified; no such field is emitted.",
+    "Role overrides are preserved without native schema certification. Skill IDs refer to separately installed skills; prompt mentions do not install or authorize them."
+  ],
+  "recovery": ".agent-team/recovery/b5bb3395ffcbcbb5ca7fd753.json"
+}

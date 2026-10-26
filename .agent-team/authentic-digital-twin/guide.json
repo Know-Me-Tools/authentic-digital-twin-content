@@ -1,0 +1,141 @@
+{
+  "operation": "create",
+  "ready": true,
+  "questions": [],
+  "team": {
+    "schemaVersion": 1,
+    "id": "authentic-digital-twin",
+    "outcome": "Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.",
+    "scope": "project",
+    "harness": "codex",
+    "roles": [
+      {
+        "id": "implementer",
+        "description": "Deliver the requested outcome within assigned scope.",
+        "prompt": "Deliver: Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.. Coordinate ownership before editing. Report evidence and remaining work.",
+        "skills": [],
+        "owns": [
+          "crates/**"
+        ],
+        "inputs": [
+          "Task and acceptance criteria"
+        ],
+        "outputs": [
+          "Portable specialist definitions",
+          "Bundled companion skills",
+          "Six native adapters and Zed routing",
+          "Cross-platform Node hooks and verification"
+        ],
+        "dependsOn": [],
+        "modelPolicy": {
+          "tier": "medium"
+        }
+      },
+      {
+        "id": "security-reviewer",
+        "description": "Review the actual trust boundaries and required controls.",
+        "prompt": "Review the actual trust boundaries and required controls. Outcome: Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.. Stay within assigned scope and return concrete evidence.",
+        "skills": [
+          "agent-runtime-security"
+        ],
+        "owns": [
+          "reviews/security/**"
+        ],
+        "inputs": [
+          "Task context"
+        ],
+        "outputs": [
+          "Threat model and evidence-backed findings"
+        ],
+        "dependsOn": [],
+        "modelPolicy": {
+          "tier": "hard"
+        }
+      },
+      {
+        "id": "documentation-specialist",
+        "description": "Keep operator and developer instructions consistent with the delivered behavior.",
+        "prompt": "Keep operator and developer instructions consistent with the delivered behavior. Outcome: Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.. Stay within assigned scope and return concrete evidence.",
+        "skills": [
+          "documentation-and-adrs"
+        ],
+        "owns": [
+          "docs/team/**"
+        ],
+        "inputs": [
+          "Task context"
+        ],
+        "outputs": [
+          "Updated documentation"
+        ],
+        "dependsOn": [],
+        "modelPolicy": {
+          "tier": "medium"
+        }
+      },
+      {
+        "id": "product-manager",
+        "description": "Translate desired outcomes into priorities and acceptance criteria.",
+        "prompt": "Translate desired outcomes into priorities and acceptance criteria. Outcome: Maintain the portable authorship skill and develop authorized evidence ingestion, interoperable Rust MCP tools, and evaluated graph/vector retrieval.. Stay within assigned scope and return concrete evidence.",
+        "skills": [
+          "domain-modeling"
+        ],
+        "owns": [
+          "docs/product/**"
+        ],
+        "inputs": [
+          "Task context"
+        ],
+        "outputs": [
+          "Prioritized requirements"
+        ],
+        "dependsOn": [],
+        "modelPolicy": {
+          "tier": "medium"
+        }
+      },
+      {
+        "id": "reviewer",
+        "description": "Independently verify acceptance criteria and code quality.",
+        "prompt": "Inspect the delivered diff and actual verification evidence at the completed phase boundary. Report concrete defects; do not rewrite implementation while reviewing.",
+        "skills": [
+          "code-review-and-quality"
+        ],
+        "owns": [
+          "reviews/acceptance/**"
+        ],
+        "inputs": [
+          "Implementation diff",
+          "Verification evidence"
+        ],
+        "outputs": [
+          "Review findings"
+        ],
+        "dependsOn": [
+          "implementer",
+          "security-reviewer",
+          "documentation-specialist",
+          "product-manager"
+        ],
+        "modelPolicy": {
+          "tier": "hard"
+        }
+      }
+    ],
+    "modelPolicy": {
+      "tier": "medium"
+    }
+  },
+  "reasons": [
+    "An implementer owns delivery. Assign concrete output paths before creating the team; suggested roles can be reduced.",
+    "security-reviewer: Review the actual trust boundaries and required controls.",
+    "documentation-specialist: Keep operator and developer instructions consistent with the delivered behavior.",
+    "product-manager: Translate desired outcomes into priorities and acceptance criteria.",
+    "An independent reviewer adds a separate verification pass and extra model cost."
+  ],
+  "alternatives": [
+    "Use one implementer for sequential work; invoke specialist skills as needed.",
+    "Add parallel roles only where work and file ownership can be separated."
+  ],
+  "skillDiscovery": "Skill names are suggestions, not installation claims. Discover installed AgentSkills, inspect their source and requirements, and replace or remove unavailable skills before export."
+}

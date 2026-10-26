@@ -1,0 +1,1871 @@
+{
+  "schemaVersion": 1,
+  "teamId": "authentic-digital-twin",
+  "nativeTargets": [
+    "codex",
+    "claude",
+    "kimi",
+    "opencode",
+    "minimax",
+    "deepseek"
+  ],
+  "sourcePolicy": "Generated snapshot. Source hashes describe bytes; exports are definitions, not live execution evidence.",
+  "authoringEntries": [
+    {
+      "path": ".gitattributes",
+      "sha256": "478d4cd071e4c10bb1a114925d24f5f8ff556077c189aa94003cce9528dbcdc4",
+      "source": "skills/authentic-digital-twin-content/.gitattributes"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/authentic-digital-twin-content/LICENSE"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "d71461c78ee8b90c0255c3e1bdbed2ce6a7b962a869d5936366b49cd375e7547",
+      "source": "skills/authentic-digital-twin-content/NOTICE.md"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "caae045977e5c408074989362e889af6ffc81afa9de373b9ebc32c67bf8347da",
+      "source": "skills/authentic-digital-twin-content/SKILL.md"
+    },
+    {
+      "path": "docs/CliftonStrengths-34-Report.md",
+      "sha256": "06989b21305020d66883189909ea0c982d77e4fafec7493b570f0d77cf85daa6",
+      "source": "skills/authentic-digital-twin-content/docs/CliftonStrengths-34-Report.md"
+    },
+    {
+      "path": "docs/adtcs-1-0.html",
+      "sha256": "1c9ae5542d613fad5d170ba526f3cb7573d6819844e1ab3653ca56b5ee7f1d2a",
+      "source": "skills/authentic-digital-twin-content/docs/adtcs-1-0.html"
+    },
+    {
+      "path": "docs/authentic-digital-twin-conversation-transcript.md",
+      "sha256": "bf15afc5ab94c3dfe034f8d9c4053a62dbf4a93773859dd8c8cbe720e394f8a6",
+      "source": "skills/authentic-digital-twin-content/docs/authentic-digital-twin-conversation-transcript.md"
+    },
+    {
+      "path": "docs/brittney-austin-behavioral-analysis.md",
+      "sha256": "ab850ce10ef27c06da8dc99e7ac7878fb08d2f552291d553881fa8092eebd247",
+      "source": "skills/authentic-digital-twin-content/docs/brittney-austin-behavioral-analysis.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/00-INDEX.md",
+      "sha256": "7db23be06aa966dedb03a24d14c14258973f8a2fe708c455e3e2825750c7d7f3",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/00-INDEX.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/01-personality-profile.md",
+      "sha256": "67d1767ce1d15dd1c6e62007f73fba863a17026c143e2f5f97f2a79ef60b883a",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/01-personality-profile.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/02-writing-samples-prompts.md",
+      "sha256": "4d6cf6f5d34f350e93e3efa39433ef3c3f775d3aa0426d4ba7334d30cb06ad3a",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/02-writing-samples-prompts.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/03-writing-samples-corrections.md",
+      "sha256": "b730f1eeacc40b7359558ee03fa1ad84b0e94c76b27631d7e1f35a1533024ff7",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/03-writing-samples-corrections.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/04-thought-patterns.md",
+      "sha256": "ae1fa1cb19567feafb92e4410d84ac31944d1a1f33c6f720b290aa7d711e2e82",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/04-thought-patterns.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/05-vocabulary-and-diction.md",
+      "sha256": "58e8a87b622d8cdb7bd8e68d1b712ddc2cc5ac57a5f0c99df7db174592b4e95b",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/05-vocabulary-and-diction.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/06-rhetorical-patterns.md",
+      "sha256": "64409a1fafeeba7498b9b2117577ec93a77ff1d40264dda55d235c5c37a15cd8",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/06-rhetorical-patterns.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/07-humor-and-emphasis.md",
+      "sha256": "64397d1441d6c3a7acc1ebeff30d9a517d9a0474519d0054f0fb7c159594fcd4",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/07-humor-and-emphasis.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/08-domain-anchors.md",
+      "sha256": "4e51d89b3398f4389a6c129915fe96fd9d5b764a54eabf7200d568d09e3e9af3",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/08-domain-anchors.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/09-aesthetic-preferences.md",
+      "sha256": "16fdce102012a7790a609d2e06e89811567ff15380ddec8a32d4b31b8a89f130",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/09-aesthetic-preferences.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/10-collaboration-style.md",
+      "sha256": "468b7850838851779bcae8dff1fb6f6146693394e2c37506887d4f90440fdf1f",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/10-collaboration-style.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/11-decision-heuristics.md",
+      "sha256": "aa3f4a17df5c30350bbbd17b442edeced6ea50d2f76ce5dcec8b91cfb2efd16f",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/11-decision-heuristics.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/STATE.md",
+      "sha256": "01580e6aa5652cc06a298e9e88a9159fb8fb656ed543854dce34b49878514527",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/STATE.md"
+    },
+    {
+      "path": "docs/digital-twin-travis/SURREAL-MEMORY-FAILURES.log.md",
+      "sha256": "45b99eec9af16cfe2d3f732026ba36904261d1d51faf8acb6b884e64c3fc485f",
+      "source": "skills/authentic-digital-twin-content/docs/digital-twin-travis/SURREAL-MEMORY-FAILURES.log.md"
+    },
+    {
+      "path": "docs/methodology/adtm-methodology.html",
+      "sha256": "a7cf6a3da919340c3c27de03aaf631544e045ab4d55f190c2694d371f507b8f6",
+      "source": "skills/authentic-digital-twin-content/docs/methodology/adtm-methodology.html"
+    },
+    {
+      "path": "docs/methodology/authentic-digital-twin-methodology.md",
+      "sha256": "7a5b9a12182c91b64d05b10629081809b357e3beac3203206f1f57612cf96398",
+      "source": "skills/authentic-digital-twin-content/docs/methodology/authentic-digital-twin-methodology.md"
+    },
+    {
+      "path": "docs/soultrace-assessment.md",
+      "sha256": "a3cd72a67f7fd3931d738cb2718de3e1a5f42ea9c61eccd097aba5ab31077926",
+      "source": "skills/authentic-digital-twin-content/docs/soultrace-assessment.md"
+    },
+    {
+      "path": "docs/standards/adtcs-1-0.html",
+      "sha256": "1c9ae5542d613fad5d170ba526f3cb7573d6819844e1ab3653ca56b5ee7f1d2a",
+      "source": "skills/authentic-digital-twin-content/docs/standards/adtcs-1-0.html"
+    },
+    {
+      "path": "docs/standards/authentic-digital-twin-content-standard-v1.md",
+      "sha256": "a58895cb570e54ce513b195e825415684e2a8330ee19e71d4fd3169c69840b4b",
+      "source": "skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v1.md"
+    },
+    {
+      "path": "docs/standards/authentic-digital-twin-content-standard-v2.md",
+      "sha256": "7078c2e30ae0da67289a9d6f43017cb5a6b5fb1a34b312797493235782cd7b95",
+      "source": "skills/authentic-digital-twin-content/docs/standards/authentic-digital-twin-content-standard-v2.md"
+    },
+    {
+      "path": "docs/worked-examples/README.md",
+      "sha256": "c3969d4d347f8ff5828a531654a206ac0b64e280091bfdb56d47d4a799495925",
+      "source": "skills/authentic-digital-twin-content/docs/worked-examples/README.md"
+    },
+    {
+      "path": "docs/worked-examples/tier-1-format-demo.md",
+      "sha256": "5cf6fa338c351edbdaf3a516dee9fd871e7f9e02044c557b916823ef80eb593d",
+      "source": "skills/authentic-digital-twin-content/docs/worked-examples/tier-1-format-demo.md"
+    },
+    {
+      "path": "docs/worked-examples/tier-2-linkedin-post-example.md",
+      "sha256": "17fd763a6ff99633e2474ae6b06663a4979e98cff4e7b8d24740c8d81a246c65",
+      "source": "skills/authentic-digital-twin-content/docs/worked-examples/tier-2-linkedin-post-example.md"
+    },
+    {
+      "path": "docs/worked-examples/tier-3-voice-prep-example.md",
+      "sha256": "f4c011f3d60fbb9bfaa84fa63d34aa949bf91c9090feea5771174fa1d49ccf72",
+      "source": "skills/authentic-digital-twin-content/docs/worked-examples/tier-3-voice-prep-example.md"
+    },
+    {
+      "path": "docs/zed-workspace-article.md",
+      "sha256": "8c838527f3c5bb29ee212c20a2df991eaeceb6301d6ed7e540490a4495589176",
+      "source": "skills/authentic-digital-twin-content/docs/zed-workspace-article.md"
+    },
+    {
+      "path": "docs/zed-workspace-rewrite-verification.md",
+      "sha256": "04faae28d677a9cf2d993aab6bb56653e8ff5dee468c2906a1dcfdde05c81d72",
+      "source": "skills/authentic-digital-twin-content/docs/zed-workspace-rewrite-verification.md"
+    },
+    {
+      "path": "references/annotation-scheme.md",
+      "sha256": "7d6df18b980d9f7bb19e9ff3d7530fec7bc2485902c0e80405d061bda9c11e4a",
+      "source": "skills/authentic-digital-twin-content/references/annotation-scheme.md"
+    },
+    {
+      "path": "references/authenticity-standard.md",
+      "sha256": "80de9060b4569a613b9d2f3ea817f1a639dbf7d8b9479b44938c23f571dcc5bd",
+      "source": "skills/authentic-digital-twin-content/references/authenticity-standard.md"
+    },
+    {
+      "path": "references/communication-surface-taxonomy.md",
+      "sha256": "599055a8cdd81aa1a5831383e841533bb1e7e2cc7931aaeac8f560824bf8d351",
+      "source": "skills/authentic-digital-twin-content/references/communication-surface-taxonomy.md"
+    },
+    {
+      "path": "references/shadow-pattern-detector.md",
+      "sha256": "c84d9b4ef1d3c2fa3a6c55914e290fb56add769ec2a30e3faa62cf9b39f502db",
+      "source": "skills/authentic-digital-twin-content/references/shadow-pattern-detector.md"
+    },
+    {
+      "path": "references/substrate-template.md",
+      "sha256": "dab1fd02d3ccaf0d3fa7f80f0d788b23ded087326144483e062d51cb4fddf1dd",
+      "source": "skills/authentic-digital-twin-content/references/substrate-template.md"
+    },
+    {
+      "path": "references/surreal-memory-schema.md",
+      "sha256": "a1216a3f1c55c4ddf7aa201f6ac46537ac9f1c490fec87e5fae5e3e74980a262",
+      "source": "skills/authentic-digital-twin-content/references/surreal-memory-schema.md"
+    },
+    {
+      "path": "references/voice-extraction-process.md",
+      "sha256": "9a84c5e0c57c5ec99e6bc4137c49800d6b5692a2f92222449092a865c26735ac",
+      "source": "skills/authentic-digital-twin-content/references/voice-extraction-process.md"
+    },
+    {
+      "path": "templates/00-INDEX.template.md",
+      "sha256": "17951e3c9f65bfc9bb820a59f21ab0c5d353cd56974d180ea13dc8e805f86ea2",
+      "source": "skills/authentic-digital-twin-content/templates/00-INDEX.template.md"
+    },
+    {
+      "path": "templates/STATE.template.md",
+      "sha256": "343d017cba585313f366408567972864bd73faf6e9f89a9693708218141c7183",
+      "source": "skills/authentic-digital-twin-content/templates/STATE.template.md"
+    },
+    {
+      "path": "tj-workspace-identity-article.html",
+      "sha256": "368414c4063a79c1e850d41056a0e13864ce600b013be7e1533a36bec316bd7d",
+      "source": "skills/authentic-digital-twin-content/tj-workspace-identity-article.html"
+    },
+    {
+      "path": "zed-workspace-article.md",
+      "sha256": "dc1b5980a665b6c72170a8d9b658a6d57cc4320a46d857ea0e474da9aad8632f",
+      "source": "skills/authentic-digital-twin-content/zed-workspace-article.md"
+    }
+  ],
+  "installerEntries": [
+    {
+      "path": "scripts/README.md",
+      "sha256": "81ab61e905b521b96ed6a7d87f5b5d19e5709e922d5d3e39ac1a10001f1d839f",
+      "source": "skills/authentic-digital-twin-content/scripts/README.md"
+    },
+    {
+      "path": "scripts/install-team.mjs",
+      "sha256": "227a8bfaa62ed6658d82294b86532639908c4fc28992f7ba4505409d9f8e8183",
+      "source": "skills/authentic-digital-twin-content/scripts/install-team.mjs"
+    },
+    {
+      "path": "scripts/launch-minimax.mjs",
+      "sha256": "d22ce4606c99a89303e8971d63dc6d72c2ce244f42285cf3eddf94228a86fc41",
+      "source": "skills/authentic-digital-twin-content/scripts/launch-minimax.mjs"
+    },
+    {
+      "path": "scripts/src/install-team.mts",
+      "sha256": "f7c34afde367225b27d96c6a939ad9c7228445fa6ce66fd4e724bac33b9060cd",
+      "source": "skills/authentic-digital-twin-content/scripts/src/install-team.mts"
+    },
+    {
+      "path": "scripts/src/launch-minimax.mts",
+      "sha256": "8ebd52dd7bf3f6a75d435f25472f6c6c301afa79f24aa24a19ac8e1ede7d8d75",
+      "source": "skills/authentic-digital-twin-content/scripts/src/launch-minimax.mts"
+    }
+  ],
+  "skills": [
+    {
+      "name": "adt-evidence-collection",
+      "path": "skills/adt-evidence-collection"
+    },
+    {
+      "name": "adt-mcp-compatibility",
+      "path": "skills/adt-mcp-compatibility"
+    },
+    {
+      "name": "adt-portable-delivery",
+      "path": "skills/adt-portable-delivery"
+    },
+    {
+      "name": "adt-product-management",
+      "path": "skills/adt-product-management"
+    },
+    {
+      "name": "adt-provenance-curator",
+      "path": "skills/adt-provenance-curator"
+    },
+    {
+      "name": "adt-retrieval-engineering",
+      "path": "skills/adt-retrieval-engineering"
+    },
+    {
+      "name": "adt-retrieval-evaluation",
+      "path": "skills/adt-retrieval-evaluation"
+    },
+    {
+      "name": "adt-rust-engineering",
+      "path": "skills/adt-rust-engineering"
+    },
+    {
+      "name": "adt-security-review",
+      "path": "skills/adt-security-review"
+    },
+    {
+      "name": "adt-skill-maintenance",
+      "path": "skills/adt-skill-maintenance"
+    },
+    {
+      "name": "adt-surrealdb-engineering",
+      "path": "skills/adt-surrealdb-engineering"
+    },
+    {
+      "name": "adt-team-operations",
+      "path": "skills/adt-team-operations"
+    },
+    {
+      "name": "agent-team-creator",
+      "path": "skills/agent-team-creator"
+    },
+    {
+      "name": "internal-comms",
+      "path": "skills/internal-comms"
+    },
+    {
+      "name": "security-threat-model",
+      "path": "skills/security-threat-model"
+    }
+  ],
+  "entries": [
+    {
+      "path": "creator-runtime/adapters-capabilities.mjs",
+      "sha256": "0b53de61b44433b588ee6356adbec8a1a12e3ef3a76d14b52e9a21c32dadd55b",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-capabilities.mjs"
+    },
+    {
+      "path": "creator-runtime/adapters-codecs.mjs",
+      "sha256": "778e00a26485302ebbd6b21320485ff32527c6f4e21ed405b0438b3e325af731",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-codecs.mjs"
+    },
+    {
+      "path": "creator-runtime/adapters-local.mjs",
+      "sha256": "6c1c3cab5a8b6f41b7ac0859462bd595c4983c204f8135bc6563579e7b112587",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-local.mjs"
+    },
+    {
+      "path": "creator-runtime/adapters-services.mjs",
+      "sha256": "117a6bae4337fb6b1ab8dffe32f5462db590d5640caf09dc35bc2626f55ae2c6",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-services.mjs"
+    },
+    {
+      "path": "creator-runtime/adapters.mjs",
+      "sha256": "656aca2b1673ba638a8af20ca37e20f283c45af5a23c6780559108bffe0655c5",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters.mjs"
+    },
+    {
+      "path": "creator-runtime/LICENSE",
+      "sha256": "b164a95706dd6b691be8419873b721f5ac5ee38db381ebda1759ea8b0f71091d",
+      "source": "skills/vendor/agent-team-creator/LICENSE"
+    },
+    {
+      "path": "creator-runtime/project-files.mjs",
+      "sha256": "607a5d9bd8b44ff99286960a3a0137d1f6b385ce0aff6191cebe78349bf5e8d0",
+      "source": "skills/vendor/agent-team-creator/scripts/project-files.mjs"
+    },
+    {
+      "path": "creator-runtime/project-install.mjs",
+      "sha256": "b3a0d61108d3a30f603c6670d913bf5259ed84ed06f5daaf020fe1341f220f91",
+      "source": "skills/vendor/agent-team-creator/scripts/project-install.mjs"
+    },
+    {
+      "path": "creator-runtime/project-instructions.mjs",
+      "sha256": "9d2db7c94387765f702d630efb6cabb0cb6be9fa6dfcffced6941a0805fb57b5",
+      "source": "skills/vendor/agent-team-creator/scripts/project-instructions.mjs"
+    },
+    {
+      "path": "creator-runtime/PROVENANCE.json",
+      "sha256": "8fe039af369f029de88b5095ef264d0be187753d9ad443ac9d5a12c15ff85ee9",
+      "source": "skills/vendor/agent-team-creator/PROVENANCE.json"
+    },
+    {
+      "path": "creator-runtime/types.mjs",
+      "sha256": "76c2cc2056adf8d5d5ee881bf07508d8d26100ce83360c37e561cf42bd87199a",
+      "source": "skills/vendor/agent-team-creator/scripts/types.mjs"
+    },
+    {
+      "path": "creator-runtime/ui-bindings.mjs",
+      "sha256": "0e2cc2e57600bf5b3bcedbf4a7926dff85ef8cf1ded90bd7f36f75b4b2b67159",
+      "source": "skills/vendor/agent-team-creator/scripts/ui-bindings.mjs"
+    },
+    {
+      "path": "creator-runtime/validation.mjs",
+      "sha256": "78d7481a5f82df1f729c3535b44352dac2873516d1b047823c94173be59f45c1",
+      "source": "skills/vendor/agent-team-creator/scripts/validation.mjs"
+    },
+    {
+      "path": "exports/claude/.claude-plugin/marketplace.json",
+      "sha256": "a7c147cc6dad1710d62e2c43202e767e116c1dc03eff5f80317d397dbce0bda2",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude-plugin/marketplace.json"
+    },
+    {
+      "path": "exports/claude/.claude/agents/evaluation-engineer.md",
+      "sha256": "2b2b3b2abb770efcfe91cf053758dcb158526ded5e4098ce5d9dc3e0911249bc",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/evaluation-engineer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/evidence-collector.md",
+      "sha256": "fba37285e8ec30cda66b717e74180a4f56eb3ac306af0cf8f6fdc54345b4192b",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/evidence-collector.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/ingestion-engineer.md",
+      "sha256": "7ed018315c13b7a9d774fee100d45070e55e864c032ccb2150e50dce2cdee8eb",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/ingestion-engineer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/mcp-server-engineer.md",
+      "sha256": "84c2cd13b2346a1b38ca0e44cd40436a679f6f1608053354b40b22ccf7f0cf54",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/mcp-server-engineer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/product-manager.md",
+      "sha256": "410cf4a9a8c97aecf4a4a75e4486a3278d844dfdb656ecaedabf16328b6ffed0",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/product-manager.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/provenance-curator.md",
+      "sha256": "bc6af6bc412117f572fa2a70f756f7967172e28b749a4762c45081f17b092c5c",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/provenance-curator.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/rag-graphrag-expert.md",
+      "sha256": "c9c0e3ad0dd0758d875dc37c74e09042cd65fe4d01d148e19e925ac93867a490",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/rag-graphrag-expert.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/release-engineer.md",
+      "sha256": "80cf74b2bdbd5562ed9f154119d27fbc51e7be6a54f495a854afc9a685d3beb0",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/release-engineer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/security-reviewer.md",
+      "sha256": "39afc44790695388e821f8bdc1e2ae690fc239df7e07f306dcb9ba6fe5225314",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/security-reviewer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/skill-maintainer.md",
+      "sha256": "a1db057304e846e74342d3330e62589ef15275f7328c3e4a7051aa6ab659492a",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/skill-maintainer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/surrealdb-engineer.md",
+      "sha256": "5b0c2f5ac699ea813e9ce2653379bf11d224c995ca420ee5e4bea23b850c7e32",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/surrealdb-engineer.md"
+    },
+    {
+      "path": "exports/claude/.claude/agents/systems-architect.md",
+      "sha256": "955f2559f8592f60d853fc26a1cdb5ad17b3ebc6949a23ef50f999d4b894f1db",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/.claude/agents/systems-architect.md"
+    },
+    {
+      "path": "exports/claude/export-receipt.json",
+      "sha256": "7aafda5738edaa7e89afcd5a9aa1140880b5cfa78390837f103a4bb550f3d0cf",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/export-receipt.json"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/.claude-plugin/plugin.json",
+      "sha256": "3eff87e6214ca20071c30d3dcbe4bf2e6ca5489f5e567c0d44f30c26eb0c9e68",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/.claude-plugin/plugin.json"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/evaluation-engineer.md",
+      "sha256": "2b2b3b2abb770efcfe91cf053758dcb158526ded5e4098ce5d9dc3e0911249bc",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/evaluation-engineer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/evidence-collector.md",
+      "sha256": "fba37285e8ec30cda66b717e74180a4f56eb3ac306af0cf8f6fdc54345b4192b",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/evidence-collector.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/ingestion-engineer.md",
+      "sha256": "7ed018315c13b7a9d774fee100d45070e55e864c032ccb2150e50dce2cdee8eb",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/ingestion-engineer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/mcp-server-engineer.md",
+      "sha256": "84c2cd13b2346a1b38ca0e44cd40436a679f6f1608053354b40b22ccf7f0cf54",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/mcp-server-engineer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/product-manager.md",
+      "sha256": "410cf4a9a8c97aecf4a4a75e4486a3278d844dfdb656ecaedabf16328b6ffed0",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/product-manager.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/provenance-curator.md",
+      "sha256": "bc6af6bc412117f572fa2a70f756f7967172e28b749a4762c45081f17b092c5c",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/provenance-curator.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/rag-graphrag-expert.md",
+      "sha256": "c9c0e3ad0dd0758d875dc37c74e09042cd65fe4d01d148e19e925ac93867a490",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/rag-graphrag-expert.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/release-engineer.md",
+      "sha256": "80cf74b2bdbd5562ed9f154119d27fbc51e7be6a54f495a854afc9a685d3beb0",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/release-engineer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/security-reviewer.md",
+      "sha256": "39afc44790695388e821f8bdc1e2ae690fc239df7e07f306dcb9ba6fe5225314",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/security-reviewer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/skill-maintainer.md",
+      "sha256": "a1db057304e846e74342d3330e62589ef15275f7328c3e4a7051aa6ab659492a",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/skill-maintainer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/surrealdb-engineer.md",
+      "sha256": "5b0c2f5ac699ea813e9ce2653379bf11d224c995ca420ee5e4bea23b850c7e32",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/surrealdb-engineer.md"
+    },
+    {
+      "path": "exports/claude/plugins/authentic-digital-twin/agents/systems-architect.md",
+      "sha256": "955f2559f8592f60d853fc26a1cdb5ad17b3ebc6949a23ef50f999d4b894f1db",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/plugins/authentic-digital-twin/agents/systems-architect.md"
+    },
+    {
+      "path": "exports/claude/team-export.json",
+      "sha256": "bd5532f374acff9d129ccdd0bbb39907dc3f4cca5137482e2810b8974dffcaaa",
+      "source": ".agent-team/authentic-digital-twin/exports/claude/team-export.json"
+    },
+    {
+      "path": "exports/codex/.codex/agents/evaluation_engineer.toml",
+      "sha256": "f4e52fccb01d1864de685c5ae30048524db9749b1b9ad861eccd9d7557bf923a",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/evaluation_engineer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/evidence_collector.toml",
+      "sha256": "3c9c9deda4601197116eb054556522451c8186e08fe84f3d1adc5f833327adfd",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/evidence_collector.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/ingestion_engineer.toml",
+      "sha256": "568c37a9e9899f9ff637fc875f9e7278d1405fb6c11923765d8f559c8f507fa5",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/ingestion_engineer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/mcp_server_engineer.toml",
+      "sha256": "412a3279278410af1fbec74d3aec886c6e2fc63b72ebf21a3a70ff603181e432",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/mcp_server_engineer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/product_manager.toml",
+      "sha256": "87f87cd8461943e0819978f9b5155ca18660be3359a957cd0c79cf977160f5a6",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/product_manager.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/provenance_curator.toml",
+      "sha256": "87e410b8a738cb7927d8dc37fd7f6ba2152fdeb09cd9d5a3cebf51c3fd8ddbfd",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/provenance_curator.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/rag_graphrag_expert.toml",
+      "sha256": "b1af189191766964ba082573a3faf400663dc6bd7228b62169d80a096307116b",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/rag_graphrag_expert.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/release_engineer.toml",
+      "sha256": "728945389f206c0a6756970a1c38a98a4d77ea6b029d37dc4a3ee9634afd6767",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/release_engineer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/security_reviewer.toml",
+      "sha256": "16293ed1f1f44e876c58e744ef8cc458538454dff3b5d8211ffdfbf5d6209074",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/security_reviewer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/skill_maintainer.toml",
+      "sha256": "6e7ab5d03a21ba24ca5e13d8bc463bacacfbb6df5b166cc97d951a8129913c32",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/skill_maintainer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/surrealdb_engineer.toml",
+      "sha256": "451e44df975851396604f2d92fd581ff4b8ae1ffceb48c37d3a435597e258530",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/surrealdb_engineer.toml"
+    },
+    {
+      "path": "exports/codex/.codex/agents/systems_architect.toml",
+      "sha256": "0011b6c973b3bdeac481c6129bf30a422ab2a77268622029c45abd597fcf8d31",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/.codex/agents/systems_architect.toml"
+    },
+    {
+      "path": "exports/codex/export-receipt.json",
+      "sha256": "1e2742a03fe27e7ee7112198b03e7e6b707dcab499511a5fbb7d1d220f7287b5",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/export-receipt.json"
+    },
+    {
+      "path": "exports/codex/team-export.json",
+      "sha256": "756cec0b2bcdd644b0d4d4b192be28e9491e4382c8ccd6eb47448429d1d90459",
+      "source": ".agent-team/authentic-digital-twin/exports/codex/team-export.json"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml",
+      "sha256": "78d75f84cbd9b091a9c3d3a67db6dca0802197e95194842b6025aa91ee152e0a",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-evaluation-engineer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml",
+      "sha256": "21f067c34c6fd073513094aedc61a796a9a513b804036ff55434d20c3d895646",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-evidence-collector/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml",
+      "sha256": "15c1e89789949c731e78d4174d92e1da61bb25bd8b24462bd4046aba6ecf245e",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-ingestion-engineer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml",
+      "sha256": "6ae2d7ddc9962590ccc4f7b600807db6827c5bde5c727c375b0d3fb3b87a314b",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-mcp-server-engineer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml",
+      "sha256": "59081638a029e71ba5cbe95f809e462409c868a6d8319c484bccef7b9a4689ad",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-product-manager/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml",
+      "sha256": "741467d79574319b97d01d3e30be73ec915a8602b88b56bcfbc487804e2d3395",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-provenance-curator/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml",
+      "sha256": "fa8dc96255eca0538d68f447fdab298f74bb0def5fdf25fcaf83860b254775ce",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-rag-graphrag-expert/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml",
+      "sha256": "031115bea4b3636f13e6b0a799e680e33c25be4270b51e7feee967399b171559",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-release-engineer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml",
+      "sha256": "0e241a448b1332ce3464f377cd7dea14c5eff2446216807328f88044cbc70e08",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-security-reviewer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml",
+      "sha256": "ffcdfb86dc1c8d7196423529e45eaf6bace7c18be4cb8eca7b303489d46189fc",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-skill-maintainer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml",
+      "sha256": "0714f1f8dd085fc1cb358745fbcde36f2fb663d48f3418cf96c6d81d17732d3c",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-surrealdb-engineer/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml",
+      "sha256": "5ca9bef0ebd9bd30d222b49db69f3ba3e5d2a4a23bc26e1c8810c9514bdc1a7d",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-systems-architect/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/.dsh/profiles/authentic-digital-twin-team/cordis.patch.yml",
+      "sha256": "5898e6ca5709150c7ee723d70d158abc10e6d62e78f1254e06a25084ef9f966b",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/.dsh/profiles/authentic-digital-twin-team/cordis.patch.yml"
+    },
+    {
+      "path": "exports/deepseek/export-receipt.json",
+      "sha256": "ddb682c7806986d26dafeb209412455bef18063afea2104c40bc30c4bdd06f4d",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/export-receipt.json"
+    },
+    {
+      "path": "exports/deepseek/team-export.json",
+      "sha256": "bea56fe06cf1342b9476561fb456ecd68a630ef4ecbf0c86eb5112b7bd6b1f21",
+      "source": ".agent-team/authentic-digital-twin/exports/deepseek/team-export.json"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/evaluation-engineer.md",
+      "sha256": "9116c9ca59a4b6f1f873bc1e3ab067596a113574a3b4d261ac0b717c56d7c97e",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/evaluation-engineer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/evidence-collector.md",
+      "sha256": "3e3efd82db2ff61d8a918f4332e3a5f4e906a095c2f78f1167c4ff12bae996a4",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/evidence-collector.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/ingestion-engineer.md",
+      "sha256": "021f11c2acbc236a97770c21e726831a3a32b6386efb1b2c4ad322118651b187",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/ingestion-engineer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/mcp-server-engineer.md",
+      "sha256": "0f20407f17aa5d34045a55c0af0aeec3b61e1eb689b2e98acf0375871e9f9a12",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/mcp-server-engineer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/product-manager.md",
+      "sha256": "ca7063141915d38049fdbdb23a0bf8dd9f70cb8bd87ae04de3c949f5087f19da",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/product-manager.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/provenance-curator.md",
+      "sha256": "1454d04241c23a926b6759872304a5a65fb82f1881866d7dc28315f7b731061d",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/provenance-curator.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/rag-graphrag-expert.md",
+      "sha256": "fe2437b9c1d7ab2c6d9d6a86be9a65ced64dbc3606676acf621ee51c36a68c7d",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/rag-graphrag-expert.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/release-engineer.md",
+      "sha256": "bcb0240e070dd1f6ed91e83209084d459bcfeb9b99e98b9a9040bade9bf3764e",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/release-engineer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/security-reviewer.md",
+      "sha256": "0ea9ec205df4dd18b22a4ca373576b08c2120eb3ca72a893bf66ea820cb2740c",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/security-reviewer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/skill-maintainer.md",
+      "sha256": "55a1174442b180004b69fd00d98b50b7016f6fd13c3b141bb6724cd09c075d40",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/skill-maintainer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/surrealdb-engineer.md",
+      "sha256": "e8036a45dc6abe711cb66e41e6ce85ad69531dca776d80ba041a886f8c5cc3a4",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/surrealdb-engineer.md"
+    },
+    {
+      "path": "exports/kimi/.kimi-code/agents/systems-architect.md",
+      "sha256": "88bfe7c2542449d45638e80513bbcd945c22612489fdc5d40f13b60fd7f58dd8",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/.kimi-code/agents/systems-architect.md"
+    },
+    {
+      "path": "exports/kimi/export-receipt.json",
+      "sha256": "bd61733a898c9409c9edb2f4b4b5dbcbec0fd52d1095d36292fed5fa17a6b77b",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/export-receipt.json"
+    },
+    {
+      "path": "exports/kimi/marketplace.json",
+      "sha256": "302ddcc2651293bb71fe708c22835a08576a3dac1747bf82d73ee29f10d8034c",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/marketplace.json"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/evaluation-engineer.md",
+      "sha256": "9116c9ca59a4b6f1f873bc1e3ab067596a113574a3b4d261ac0b717c56d7c97e",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/evaluation-engineer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/evidence-collector.md",
+      "sha256": "3e3efd82db2ff61d8a918f4332e3a5f4e906a095c2f78f1167c4ff12bae996a4",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/evidence-collector.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/ingestion-engineer.md",
+      "sha256": "021f11c2acbc236a97770c21e726831a3a32b6386efb1b2c4ad322118651b187",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/ingestion-engineer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/mcp-server-engineer.md",
+      "sha256": "0f20407f17aa5d34045a55c0af0aeec3b61e1eb689b2e98acf0375871e9f9a12",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/mcp-server-engineer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/product-manager.md",
+      "sha256": "ca7063141915d38049fdbdb23a0bf8dd9f70cb8bd87ae04de3c949f5087f19da",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/product-manager.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/provenance-curator.md",
+      "sha256": "1454d04241c23a926b6759872304a5a65fb82f1881866d7dc28315f7b731061d",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/provenance-curator.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/rag-graphrag-expert.md",
+      "sha256": "fe2437b9c1d7ab2c6d9d6a86be9a65ced64dbc3606676acf621ee51c36a68c7d",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/rag-graphrag-expert.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/release-engineer.md",
+      "sha256": "bcb0240e070dd1f6ed91e83209084d459bcfeb9b99e98b9a9040bade9bf3764e",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/release-engineer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/security-reviewer.md",
+      "sha256": "0ea9ec205df4dd18b22a4ca373576b08c2120eb3ca72a893bf66ea820cb2740c",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/security-reviewer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/skill-maintainer.md",
+      "sha256": "55a1174442b180004b69fd00d98b50b7016f6fd13c3b141bb6724cd09c075d40",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/skill-maintainer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/surrealdb-engineer.md",
+      "sha256": "e8036a45dc6abe711cb66e41e6ce85ad69531dca776d80ba041a886f8c5cc3a4",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/surrealdb-engineer.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/agents/systems-architect.md",
+      "sha256": "88bfe7c2542449d45638e80513bbcd945c22612489fdc5d40f13b60fd7f58dd8",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/agents/systems-architect.md"
+    },
+    {
+      "path": "exports/kimi/plugins/authentic-digital-twin/kimi.plugin.json",
+      "sha256": "b214912ee35429086c89f745d5377fcc5455ef00bdbe76c1444ca208cab96384",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/plugins/authentic-digital-twin/kimi.plugin.json"
+    },
+    {
+      "path": "exports/kimi/team-export.json",
+      "sha256": "bee46c456efba5df93d1ffa6a31d2515284a4d1def234743ddbf4f2de80e7b57",
+      "source": ".agent-team/authentic-digital-twin/exports/kimi/team-export.json"
+    },
+    {
+      "path": "exports/minimax/agents/evaluation-engineer/agent.md",
+      "sha256": "2b2b3b2abb770efcfe91cf053758dcb158526ded5e4098ce5d9dc3e0911249bc",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/evaluation-engineer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/evidence-collector/agent.md",
+      "sha256": "fba37285e8ec30cda66b717e74180a4f56eb3ac306af0cf8f6fdc54345b4192b",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/evidence-collector/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/ingestion-engineer/agent.md",
+      "sha256": "7ed018315c13b7a9d774fee100d45070e55e864c032ccb2150e50dce2cdee8eb",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/ingestion-engineer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/mcp-server-engineer/agent.md",
+      "sha256": "84c2cd13b2346a1b38ca0e44cd40436a679f6f1608053354b40b22ccf7f0cf54",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/mcp-server-engineer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/product-manager/agent.md",
+      "sha256": "410cf4a9a8c97aecf4a4a75e4486a3278d844dfdb656ecaedabf16328b6ffed0",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/product-manager/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/provenance-curator/agent.md",
+      "sha256": "bc6af6bc412117f572fa2a70f756f7967172e28b749a4762c45081f17b092c5c",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/provenance-curator/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/rag-graphrag-expert/agent.md",
+      "sha256": "c9c0e3ad0dd0758d875dc37c74e09042cd65fe4d01d148e19e925ac93867a490",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/rag-graphrag-expert/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/release-engineer/agent.md",
+      "sha256": "80cf74b2bdbd5562ed9f154119d27fbc51e7be6a54f495a854afc9a685d3beb0",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/release-engineer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/security-reviewer/agent.md",
+      "sha256": "39afc44790695388e821f8bdc1e2ae690fc239df7e07f306dcb9ba6fe5225314",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/security-reviewer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/skill-maintainer/agent.md",
+      "sha256": "a1db057304e846e74342d3330e62589ef15275f7328c3e4a7051aa6ab659492a",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/skill-maintainer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/surrealdb-engineer/agent.md",
+      "sha256": "5b0c2f5ac699ea813e9ce2653379bf11d224c995ca420ee5e4bea23b850c7e32",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/surrealdb-engineer/agent.md"
+    },
+    {
+      "path": "exports/minimax/agents/systems-architect/agent.md",
+      "sha256": "955f2559f8592f60d853fc26a1cdb5ad17b3ebc6949a23ef50f999d4b894f1db",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/agents/systems-architect/agent.md"
+    },
+    {
+      "path": "exports/minimax/export-receipt.json",
+      "sha256": "d459fb540b54d916c11f4de9af0db8e491df75e6ac9495b672142522b9302e9d",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/export-receipt.json"
+    },
+    {
+      "path": "exports/minimax/team-export.json",
+      "sha256": "226afdc75f8e83de9b189a55adf08c9edcfb64c22e02277caa3bfd6c098d1c9f",
+      "source": ".agent-team/authentic-digital-twin/exports/minimax/team-export.json"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/evaluation-engineer.md",
+      "sha256": "71ef2bf8725dcfd700bc231e479a15f8db16b8dfb487c3c3b3bbb01753f9e158",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/evaluation-engineer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/evidence-collector.md",
+      "sha256": "57a510f3b9d66353d7a73cc9a1894927304fe45e3ffdaf88a3289243ce76af8e",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/evidence-collector.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/ingestion-engineer.md",
+      "sha256": "4a229b2cbcb0c9f781955d14660fcb2143220ee57c524ae1bfbeef27a75e8438",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/ingestion-engineer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/mcp-server-engineer.md",
+      "sha256": "6d784d0da72d558621ce4d326b0c08d8b0ecd734a42b278803671589f9777071",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/mcp-server-engineer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/product-manager.md",
+      "sha256": "e9171a34ca88cfe5e716821948fe8ece19a6b3328e76684bdfca777f0af31d87",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/product-manager.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/provenance-curator.md",
+      "sha256": "f2ab7c2a39e1d5af63f88002a178aef2a71ad50e6ba6f5378c43df9cfad4e995",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/provenance-curator.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/rag-graphrag-expert.md",
+      "sha256": "b236fdf20bf7512375a0860993fb8290ff4ccf2559714064eb4b176659952431",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/rag-graphrag-expert.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/release-engineer.md",
+      "sha256": "ddb530529900197925f80a7c5b43a83df0f4420835bae052a2bca07fa8b63443",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/release-engineer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/security-reviewer.md",
+      "sha256": "0250170a6222a664deaf850d586132fc1381c8dcbf25b46c4859fa46c18eba9e",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/security-reviewer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/skill-maintainer.md",
+      "sha256": "ed0651dfd83bbbf941c8fc99c77ada9f1c4aa3086d1f11482e72b67d5cb06d7d",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/skill-maintainer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/surrealdb-engineer.md",
+      "sha256": "7f1b41a6e34838a827168c1a6fef4fb5ea48ea85e7d1b35b06e68725086dc84d",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/surrealdb-engineer.md"
+    },
+    {
+      "path": "exports/opencode/.opencode/agents/systems-architect.md",
+      "sha256": "e16671bc9d087f7f77f4b00efe3af055a9196ffee5f582e6b565cb8c5de0c1d6",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/.opencode/agents/systems-architect.md"
+    },
+    {
+      "path": "exports/opencode/export-receipt.json",
+      "sha256": "f41f640bfd650984763f7f8be811762fbe4a6e502be6ca2e25384db792ddc595",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/export-receipt.json"
+    },
+    {
+      "path": "exports/opencode/team-export.json",
+      "sha256": "1709e64cb9d142d67f75425ea7c6ff6af3d696d7e298040a0fc6139f2b2cb991",
+      "source": ".agent-team/authentic-digital-twin/exports/opencode/team-export.json"
+    },
+    {
+      "path": "skills/adt-evidence-collection/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-evidence-collection/LICENSE"
+    },
+    {
+      "path": "skills/adt-evidence-collection/references/computer-control.md",
+      "sha256": "ed73c089ac63358591903a98dc0c432547a7e1fc1c635b839f17298e430d5888",
+      "source": "skills/adt-evidence-collection/references/computer-control.md"
+    },
+    {
+      "path": "skills/adt-evidence-collection/references/evidence-contract.md",
+      "sha256": "baca2a5a7482ab50394772ed4eb4845e8e340f1c0ec8206787f9090294ac975b",
+      "source": "skills/adt-evidence-collection/references/evidence-contract.md"
+    },
+    {
+      "path": "skills/adt-evidence-collection/references/source-adapters.md",
+      "sha256": "01ca0c85db6830096f6a08c42941b36c8c1027763b0c07c683f6ce48c6e38c9b",
+      "source": "skills/adt-evidence-collection/references/source-adapters.md"
+    },
+    {
+      "path": "skills/adt-evidence-collection/SKILL.md",
+      "sha256": "b7c9f864947ebd468f8e6538a24ac6dedb9951d5f37b3aa6d81b2b45b8feb7bd",
+      "source": "skills/adt-evidence-collection/SKILL.md"
+    },
+    {
+      "path": "skills/adt-mcp-compatibility/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-mcp-compatibility/LICENSE"
+    },
+    {
+      "path": "skills/adt-mcp-compatibility/references/compatibility.md",
+      "sha256": "59d8746a9b6387ed8aad7c590f2e880e2d082d1e36a4ea5be4d13e6a23396138",
+      "source": "skills/adt-mcp-compatibility/references/compatibility.md"
+    },
+    {
+      "path": "skills/adt-mcp-compatibility/SKILL.md",
+      "sha256": "c5e9be11b1b3585a3361a32f8ed35e3d5a0ccbe3d2e912a82690619e756783d5",
+      "source": "skills/adt-mcp-compatibility/SKILL.md"
+    },
+    {
+      "path": "skills/adt-portable-delivery/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-portable-delivery/LICENSE"
+    },
+    {
+      "path": "skills/adt-portable-delivery/SKILL.md",
+      "sha256": "acf1b428d357dcafe15ffdbf77a1ceafca049418c003713ed371529d3af25cd5",
+      "source": "skills/adt-portable-delivery/SKILL.md"
+    },
+    {
+      "path": "skills/adt-product-management/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-product-management/LICENSE"
+    },
+    {
+      "path": "skills/adt-product-management/SKILL.md",
+      "sha256": "1b5377c17f745e80336785e0af8379ecc9cc437ee60fceaaa3a33c2cad5570e1",
+      "source": "skills/adt-product-management/SKILL.md"
+    },
+    {
+      "path": "skills/adt-provenance-curator/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-provenance-curator/LICENSE"
+    },
+    {
+      "path": "skills/adt-provenance-curator/SKILL.md",
+      "sha256": "5f3eccc6857eb6d63908aa81d717101547a819d55f4909250b0109e410ff6bb6",
+      "source": "skills/adt-provenance-curator/SKILL.md"
+    },
+    {
+      "path": "skills/adt-retrieval-engineering/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-retrieval-engineering/LICENSE"
+    },
+    {
+      "path": "skills/adt-retrieval-engineering/references/retrieval.md",
+      "sha256": "a996c72f3b560ec66ad86aed845277b5e9ab202bcea699bd893580a501a7eefd",
+      "source": "skills/adt-retrieval-engineering/references/retrieval.md"
+    },
+    {
+      "path": "skills/adt-retrieval-engineering/SKILL.md",
+      "sha256": "dfd3dc4650657575c9a148039ef9368d26b402f551c42d0a7e9e4e494684bb21",
+      "source": "skills/adt-retrieval-engineering/SKILL.md"
+    },
+    {
+      "path": "skills/adt-retrieval-evaluation/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-retrieval-evaluation/LICENSE"
+    },
+    {
+      "path": "skills/adt-retrieval-evaluation/SKILL.md",
+      "sha256": "1ca180864af2cfbeefb7f55f223ca2976ddfcda9ef2b57f2191b86f85aa6139e",
+      "source": "skills/adt-retrieval-evaluation/SKILL.md"
+    },
+    {
+      "path": "skills/adt-rust-engineering/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-rust-engineering/LICENSE"
+    },
+    {
+      "path": "skills/adt-rust-engineering/SKILL.md",
+      "sha256": "826eeb9fb66972f1bfe5aa5192955ba1f2ddbe170171defda79db2456e4f4de7",
+      "source": "skills/adt-rust-engineering/SKILL.md"
+    },
+    {
+      "path": "skills/adt-security-review/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-security-review/LICENSE"
+    },
+    {
+      "path": "skills/adt-security-review/SKILL.md",
+      "sha256": "732fdbf6808ae617c7b76dc0395f8f3917b676de9e863b9c69b11fec064f97c6",
+      "source": "skills/adt-security-review/SKILL.md"
+    },
+    {
+      "path": "skills/adt-skill-maintenance/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-skill-maintenance/LICENSE"
+    },
+    {
+      "path": "skills/adt-skill-maintenance/SKILL.md",
+      "sha256": "a369a6e7b042cf334de90f6923c18c9db5a740af323925f519effad03a3c3dc6",
+      "source": "skills/adt-skill-maintenance/SKILL.md"
+    },
+    {
+      "path": "skills/adt-surrealdb-engineering/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-surrealdb-engineering/LICENSE"
+    },
+    {
+      "path": "skills/adt-surrealdb-engineering/references/storage.md",
+      "sha256": "f5aa232d820d219042a9eb7ebeecb2bd2880dc5db71e8f49295feab8a6d4808b",
+      "source": "skills/adt-surrealdb-engineering/references/storage.md"
+    },
+    {
+      "path": "skills/adt-surrealdb-engineering/SKILL.md",
+      "sha256": "5c70faf1eaf32743577c1f29b64ac310f35bb263e9788787cab05ea2f1aa5edd",
+      "source": "skills/adt-surrealdb-engineering/SKILL.md"
+    },
+    {
+      "path": "skills/adt-team-operations/LICENSE",
+      "sha256": "39088da3cb0191c4540aa8efd815ea92d20319a7885b94b75a2cea4f9aa93613",
+      "source": "skills/adt-team-operations/LICENSE"
+    },
+    {
+      "path": "skills/adt-team-operations/SKILL.md",
+      "sha256": "8c9a5a89d61d27e9fdace7a897f5c225e054f26bde39b46c23404d93e3c75241",
+      "source": "skills/adt-team-operations/SKILL.md"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/deploy-intake.json",
+      "sha256": "7846c47e64d20da15b1f58035f69bf278ba9c4bbe7ab164e0ef95372f1d20f30",
+      "source": "skills/vendor/agent-team-creator/assets/deploy-intake.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/intake.json",
+      "sha256": "3504c2b28099192eea6857465be7f2fc91bffffb31b7e869c1f339fe113bc97f",
+      "source": "skills/vendor/agent-team-creator/assets/intake.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/revise-intake.json",
+      "sha256": "aa1cfe2a7cbce5faefb9da4a147fa6bedf28014d8adda1fa04e0df536159c973",
+      "source": "skills/vendor/agent-team-creator/assets/revise-intake.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-intake.json",
+      "sha256": "d09e6c8dd9c7ce413b2c9756ad24fd6268774c95694a6611b987f31fea176f9e",
+      "source": "skills/vendor/agent-team-creator/assets/uar-intake.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-package.json",
+      "sha256": "d13f0d3f4290374e173053cbea24cfdfa95accb3be27c5ab165d54443771ba9e",
+      "source": "skills/vendor/agent-team-creator/assets/uar-package.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/agents/child.json",
+      "sha256": "bbe71a2309c773bcc8b60972457b23616dcad126135b25482e2e7a707579b8da",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/agents/child.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/agents/coordinator.json",
+      "sha256": "091b8e1ecd4f8f0801d3bb1ce505fd6ad46684d5b2b31a5a2290ac62504dd404",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/agents/coordinator.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/agents/specialist.json",
+      "sha256": "64b9d0cc68825b03febd4bb6865e1b9e8ea8032d47c812385bf720aa364dda50",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/agents/specialist.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/manifest.source.json",
+      "sha256": "ae009045ddcac16d331d727a8b1b312702af44549f5d27609326c4281fd43a31",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/manifest.source.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/teams/root.json",
+      "sha256": "52c8c6ecd93dba0375b19cea94844d7dc9308bf90dc2e23f44bcd0fdcbfb37f8",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/teams/root.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/teams/subteam.json",
+      "sha256": "9573b49328b3643098f253e84873d97577e1c21fe7c8869cfbc3a408f74d594c",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/teams/subteam.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/workflows/review.json",
+      "sha256": "1a5a168434ca6f0462e2c601bd39e052baa69e53514cba6c7d54a27ef66e5c2a",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/workflows/review.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/workflows/specialist.json",
+      "sha256": "7b89846ff540e86b01d452a0fd6a585cc2784c040ac553a97c38d18f2196b9c3",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/workflows/specialist.json"
+    },
+    {
+      "path": "skills/agent-team-creator/assets/uar-workspace/workspace.json",
+      "sha256": "a6fed884060958000b1b362a908d22534e66664e869d5c15f17bd06143b5bd38",
+      "source": "skills/vendor/agent-team-creator/assets/uar-workspace/workspace.json"
+    },
+    {
+      "path": "skills/agent-team-creator/LICENSE",
+      "sha256": "b164a95706dd6b691be8419873b721f5ac5ee38db381ebda1759ea8b0f71091d",
+      "source": "skills/vendor/agent-team-creator/LICENSE"
+    },
+    {
+      "path": "skills/agent-team-creator/PROVENANCE.json",
+      "sha256": "8fe039af369f029de88b5095ef264d0be187753d9ad443ac9d5a12c15ff85ee9",
+      "source": "skills/vendor/agent-team-creator/PROVENANCE.json"
+    },
+    {
+      "path": "skills/agent-team-creator/references/manifest.md",
+      "sha256": "216b545cd1062fb11378706e6ef931f56484baa67de7cd953ec389eddcaed48c",
+      "source": "skills/vendor/agent-team-creator/references/manifest.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/models-memory.md",
+      "sha256": "d079ec9e6ea2ef7b54e45eb3cb26bd00497d93854a771780f8f654c0657b2a2b",
+      "source": "skills/vendor/agent-team-creator/references/models-memory.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/native-harnesses.md",
+      "sha256": "252c4e302ee4347c68f51aaba1d22e8c13210db59180f5df6376418a01a70ee8",
+      "source": "skills/vendor/agent-team-creator/references/native-harnesses.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/project-installation.md",
+      "sha256": "11362d423ddb1575d1593fa11c4f563e29174614c7e9d4a2f6a1fd18e0f51086",
+      "source": "skills/vendor/agent-team-creator/references/project-installation.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/task-handoff.md",
+      "sha256": "efd7d97d788f4c38e433c5051d9b838204ee7cbe5015b1ff955f96d58b9a146b",
+      "source": "skills/vendor/agent-team-creator/references/task-handoff.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/team-cards.md",
+      "sha256": "4f449f9828928fc5429f65abc9b00654a0c7d3ff98c350ade35ffd8a3fd38cd1",
+      "source": "skills/vendor/agent-team-creator/references/team-cards.md"
+    },
+    {
+      "path": "skills/agent-team-creator/references/uar-deployment.md",
+      "sha256": "bb92c74c21ea8c55dfb29462796c2402d17669078cdba0172c9bc305e7d702d6",
+      "source": "skills/vendor/agent-team-creator/references/uar-deployment.md"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/.gitignore",
+      "sha256": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
+      "source": "skills/vendor/agent-team-creator/runtime/.gitignore"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/package.json",
+      "sha256": "0f26c4c08d6c2c24d4e68fcc481145ea51e39679ddf0443de6f96530accd2f91",
+      "source": "skills/vendor/agent-team-creator/runtime/package.json"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/adapters-capabilities.mts",
+      "sha256": "aee2d83bebf1c760a45f52b00716aae49120415b2558794c3ffaf8a4fe8f4e41",
+      "source": "skills/vendor/agent-team-creator/runtime/src/adapters-capabilities.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/adapters-codecs.mts",
+      "sha256": "f5a3680170aecca93209216f9d4e0993e6848fd02a3a862fa2966f39590a649f",
+      "source": "skills/vendor/agent-team-creator/runtime/src/adapters-codecs.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/adapters-local.mts",
+      "sha256": "df6c652ce79bb3393e07e7b2c739201cd96a4b75a176af35cc788e7e2e22a5d5",
+      "source": "skills/vendor/agent-team-creator/runtime/src/adapters-local.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/adapters-services.mts",
+      "sha256": "2d70127f347efddeb9b30436576612dc22d4798e4f208aea72f817b19174f0e7",
+      "source": "skills/vendor/agent-team-creator/runtime/src/adapters-services.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/adapters.mts",
+      "sha256": "76cc330bac411d91f14280979848607b00646bf55c1d4ef202805a3e39630e32",
+      "source": "skills/vendor/agent-team-creator/runtime/src/adapters.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/cli.mts",
+      "sha256": "b13d19643b70d602f9c985257da47625f4cb7c773bcb28e81557c1e187c549ab",
+      "source": "skills/vendor/agent-team-creator/runtime/src/cli.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/export-files.mts",
+      "sha256": "e08c52becd9932e702f0c5a3173dd37cc993bf62dc8c49a7f688b5cbd6c6d5e3",
+      "source": "skills/vendor/agent-team-creator/runtime/src/export-files.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/guidance.mts",
+      "sha256": "0a98d01cef86d96a80af294a0389212fa188ddd2933e3b47e2ec266a3737904d",
+      "source": "skills/vendor/agent-team-creator/runtime/src/guidance.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/handoff-provenance-validation.mts",
+      "sha256": "380470304534b693c724036d405418f1fd1ea515415405e9ca73263535381168",
+      "source": "skills/vendor/agent-team-creator/runtime/src/handoff-provenance-validation.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/handoff-provenance.mts",
+      "sha256": "eae3103da8568a674f05c79ee3c691c96bcc314e75ab982772bda5eb155d1aba",
+      "source": "skills/vendor/agent-team-creator/runtime/src/handoff-provenance.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/handoff.mts",
+      "sha256": "6ae6c5b8e69b26828718be967da8e7820a0e180fa784ab935912927ea5b8c20c",
+      "source": "skills/vendor/agent-team-creator/runtime/src/handoff.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/memory.mts",
+      "sha256": "c0d22cb5398bc49001578616b11941b2c3350c3ce44c3d4f063af17fb85a1c2d",
+      "source": "skills/vendor/agent-team-creator/runtime/src/memory.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/models-http.mts",
+      "sha256": "1c71810b84836375f076e4d3aafd3493b1d22ea86e8675588526ca63ff012e27",
+      "source": "skills/vendor/agent-team-creator/runtime/src/models-http.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/models.mts",
+      "sha256": "ff8a4366a637eb2a02ddbd0b2dd9e7f40411eaba9120da1069a405450f812ec1",
+      "source": "skills/vendor/agent-team-creator/runtime/src/models.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/project-files.mts",
+      "sha256": "a171c5957f3969af12be2c614a0c8f0797072fccd437bd5c526127e9a56ed8b6",
+      "source": "skills/vendor/agent-team-creator/runtime/src/project-files.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/project-install.mts",
+      "sha256": "6708bc02f33380ec3e711e0c183e8169a30eae3a0799d5a3668719506b08d89c",
+      "source": "skills/vendor/agent-team-creator/runtime/src/project-install.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/project-instructions.mts",
+      "sha256": "c353d515da94974d4cd466a232252ceda2c186b5fad4f76f46ac52b5d18d417d",
+      "source": "skills/vendor/agent-team-creator/runtime/src/project-instructions.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/registry.mts",
+      "sha256": "db8fc63c84dcf9f42f0f5224212fdf0c718d084f7b8f2f9a1b7637bd10cfff8e",
+      "source": "skills/vendor/agent-team-creator/runtime/src/registry.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/state-kbd.mts",
+      "sha256": "fd3315928a53f96bdf06ac759509affbfe74a912af4b94f636076e7302d5860e",
+      "source": "skills/vendor/agent-team-creator/runtime/src/state-kbd.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/state-tasks.mts",
+      "sha256": "97a0b2986b597636e3a9f1855f0aec88fa9fdfa818404d690d6a40e338e449b2",
+      "source": "skills/vendor/agent-team-creator/runtime/src/state-tasks.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/state-validation.mts",
+      "sha256": "8c81065c26cb600595090af0dd48f8022f881468a5d2c32790c1905bbbd7b68d",
+      "source": "skills/vendor/agent-team-creator/runtime/src/state-validation.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/state.mts",
+      "sha256": "51f9b29c50ca14c8ce6af539c203390f44d6215b7c98fb312abd4cee4dacd797",
+      "source": "skills/vendor/agent-team-creator/runtime/src/state.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/types.mts",
+      "sha256": "a7dbf4b1f97fc0fb47cfbfcde3a6837d9a65eab8723cc9895c8c9dcbf132410a",
+      "source": "skills/vendor/agent-team-creator/runtime/src/types.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-client.mts",
+      "sha256": "58bd60466824b926154a5d6b198ed7b2daea04a860e06b00fbd7fd022b8eff9c",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-client.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package.mts",
+      "sha256": "4ec40be5e4ab5ae8a5b19e92ef4d753504cb98a70e0bb28cb3e6afd5dafc4b07",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/binding.mts",
+      "sha256": "f2fb495307f4b364eedd28763f4a3c01ccbd851eeb30b794a292f8fd9c23701b",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/binding.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/canonical.mts",
+      "sha256": "597e5ed9a95ed4e3e9070d2d02d7532bd86502653b0968f2e2c2adee0dfcfa16",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/canonical.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/commands.mts",
+      "sha256": "907e6ad0eecd2d894ba043e9ef08eb396bf6675bf606a9bd7622cb6e0902b88e",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/commands.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/compiler.mts",
+      "sha256": "7685d088e76ec39adb558a380d69fd7f77cd0955780072b8522de45934554706",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/compiler.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/graph-validation.mts",
+      "sha256": "ace0311f72469e2ecef1755e926e986f386d0da10cfd83313c5131b0fec1d405",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/graph-validation.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/maintenance.mts",
+      "sha256": "fa77b391725348fbf01da81c8b15f129c83de501998c4e866ce623538099aa0d",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/maintenance.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/migration.mts",
+      "sha256": "aea464b10e2b5a6aab88a0a14f24bda09ab4dacd800186208b288d5049c9f2f2",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/migration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/package-files.mts",
+      "sha256": "9578b0150a8c2f6598b1c4f027677f98e6b91156a5f4d45ba8728407fdedb169",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/package-files.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/private-authority.mts",
+      "sha256": "6e048d4aea147a809a3b95686cbd0b60defadf4785efe38efcdd63401b4b0af6",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/private-authority.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/profile-validation.mts",
+      "sha256": "ff3adcf899321c7afb87179796f915ac38be778344540663d239d5245d183984",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/profile-validation.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/workspace-questions.mts",
+      "sha256": "a52fcb8dbfd879fcc4b3d66382d0adefc7550e13f9d5867534e672754faaf0ca",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/workspace-questions.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/uar-package/workspace.mts",
+      "sha256": "426ca9de7972dc2878d9dbb3668731b2e88cbb4ab68b979e0344dff532f88121",
+      "source": "skills/vendor/agent-team-creator/runtime/src/uar-package/workspace.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/ui-bindings.mts",
+      "sha256": "394f67a00ab4496541abcb08a97380e0be6399f316726beda4dcb1e9558bd2e2",
+      "source": "skills/vendor/agent-team-creator/runtime/src/ui-bindings.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/src/validation.mts",
+      "sha256": "0db20ffec599c7953b3e3ecef1aa5a360b17e00e5bdfd1fb3b5d8be217cb8ded",
+      "source": "skills/vendor/agent-team-creator/runtime/src/validation.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/export.integration.mts",
+      "sha256": "6a6c8334626a1f2cad98d2c07b3d9afcd3570456cd855a87f2440230e8354320",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/export.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/fixture.mts",
+      "sha256": "ee2911b7ec3bc832ee6372ff3064e96fab77e2f1836035c35453ee9558eb734a",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/fixture.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/kbd.integration.mts",
+      "sha256": "af46a51cb71bf8ea300e18c9a534941703934656fa3b9246dcc56a87bef796a5",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/kbd.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/memory-envelope.integration.mts",
+      "sha256": "2902c83d482eb33f00f5f7eaacd10d8f83b1bfd10077b40b4d00e5aa23be44e4",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/memory-envelope.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/models-memory.integration.mts",
+      "sha256": "8ab207b37cbbf32d7f25da6a52901fb761377401c82d418aafeab3988d4ef7f7",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/models-memory.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/state.integration.mts",
+      "sha256": "929719ff2a562a6712fcabdb6dd715c64985a650ac497fee5e00406054b9e795",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/state.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/test-src/teams.integration.mts",
+      "sha256": "8f84a122f9c988f4db32a6586434c7ce8e7074911b104691792c442c54adce98",
+      "source": "skills/vendor/agent-team-creator/runtime/test-src/teams.integration.mts"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/tsconfig.json",
+      "sha256": "2e1e208abd20ca4c26a103e199feb49bfd39e21eeff32a52575af9c9853bc322",
+      "source": "skills/vendor/agent-team-creator/runtime/tsconfig.json"
+    },
+    {
+      "path": "skills/agent-team-creator/runtime/tsconfig.tests.json",
+      "sha256": "fcb187289ca8003900d8ac1acfbc947de8afbd3b424987482873dd6edaffb060",
+      "source": "skills/vendor/agent-team-creator/runtime/tsconfig.tests.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/project-routing.schema.json",
+      "sha256": "a868133067fe40154e0226c180c5c2e6d77d23a304c7739bd0ab9ca044633471",
+      "source": "skills/vendor/agent-team-creator/schemas/project-routing.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/team.schema.json",
+      "sha256": "7b96090e0b95c0e626a06a789311dd396012ad7509e638ef3fce0654d68fc1f2",
+      "source": "skills/vendor/agent-team-creator/schemas/team.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar-migration-diagnostics.schema.json",
+      "sha256": "74279916116e19ddac325ef11425249d817a5e15a75e86c2b02047111358710f",
+      "source": "skills/vendor/agent-team-creator/schemas/uar-migration-diagnostics.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar-package-authoring-v2.schema.json",
+      "sha256": "ef8870b61c066c8f871c91570b8e7d5d340053ddc6ad54491782b2a2130683f6",
+      "source": "skills/vendor/agent-team-creator/schemas/uar-package-authoring-v2.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar-package-authoring.schema.json",
+      "sha256": "d0d4ca9cdb112e86528dc88745e5d754a0f40bbc599b796c23000644467c5e40",
+      "source": "skills/vendor/agent-team-creator/schemas/uar-package-authoring.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar-workspace.schema.json",
+      "sha256": "2ea9f4f2696d9c609faa791e92ea36c3184cc3958fa5006a2c978975f7464997",
+      "source": "skills/vendor/agent-team-creator/schemas/uar-workspace.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/agent-definition.schema.json",
+      "sha256": "a5e0573b5323accec7e25766287af897cee34f689d77a2b6eb9d9367d41f179c",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/agent-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/collaboration-document.schema.json",
+      "sha256": "e7f8215d6e177f3ab00374df0ab34d0f19e24552af34c69aaf5b049260ccc2d1",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/collaboration-document.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/common.schema.json",
+      "sha256": "a832c0018f11abf564b341cc0ba9ed6d87172968fe2f43bdbcb0b4fb6fcfc2ef",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/common.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/consumer-source-receipt.json",
+      "sha256": "bfe98f4dc79e43c01d9a567b2f7965bd2e235df82305dac52b7ea6df041b25ca",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/consumer-source-receipt.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/conversion-report.schema.json",
+      "sha256": "4a013291e1768a5f0b98f6c99d3ec746f6a863cfd55d50d73863161943fb82cb",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/conversion-report.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/deployment-binding-template.schema.json",
+      "sha256": "73432b4f73217b166d13013cfdda63f0b139dd191196f009fc7e629886a2c22b",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/deployment-binding-template.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/deployment-binding.schema.json",
+      "sha256": "44f91ff1ebd6f6b31bd4d60dd1a928f5969033f2e218dec5d3eb36d111ad15f9",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/deployment-binding.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/effective-binding-receipt.schema.json",
+      "sha256": "b19661c1f662e2133cd884b0104dfe0e8330f132ced8064b5c6ff89bf8aa01da",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/effective-binding-receipt.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/package-manifest.schema.json",
+      "sha256": "bb96cd181790f391f9a543799f93369f8c53125ba9b3f70355f5f4c06fc1bd71",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/package-manifest.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/representation-grant.schema.json",
+      "sha256": "b856385bb5d1ab40fdb1e7e28d62ee0c9a0843e2fe46dd9162224d70c7ed8b01",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/representation-grant.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/team-definition.schema.json",
+      "sha256": "0fee47de55de762c09c158c73cda481c5b3857c5f999253885069b35daa58bcc",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/team-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/0.1.0-draft.2/workflow-definition.schema.json",
+      "sha256": "6129578c9c54d5fd7134ea11ef149ba1d629841b205856f6b151be6ff03a9abb",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/0.1.0-draft.2/workflow-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/agent-definition.schema.json",
+      "sha256": "baddf2dea8f9f3ca5ab2db149258c63e0c38fddca82d39d874a76df4345d59ae",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/agent-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/common.schema.json",
+      "sha256": "4b927640a4edc605697a56318ee028f6389d67a0e561aaa0f988c4519174cd0b",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/common.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/deployment-binding.schema.json",
+      "sha256": "e757c155db34b44fe7e9b98910e32340d54a21001c556acc74aa293bcb7cb039",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/deployment-binding.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/package-manifest.schema.json",
+      "sha256": "fc5670fa6eace7abb777edded9a7bd6dffbe63c6410d581fd991db22587426f3",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/package-manifest.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/README.md",
+      "sha256": "9450245098a38321517eafda9843d2e5b4fb32816474cbc5567d02181118bdde",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/README.md"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/team-definition.schema.json",
+      "sha256": "8e613a1597507a94dd2b4697384234464f80682992e4c2e78bddc448b6a3b099",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/team-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/schemas/uar/workflow-definition.schema.json",
+      "sha256": "8dee4d2b0fc5a8396cde3ad7c13c8484dcb7d758b847488aa308d92735334355",
+      "source": "skills/vendor/agent-team-creator/schemas/uar/workflow-definition.schema.json"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/adapters-capabilities.mjs",
+      "sha256": "0b53de61b44433b588ee6356adbec8a1a12e3ef3a76d14b52e9a21c32dadd55b",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-capabilities.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/adapters-codecs.mjs",
+      "sha256": "778e00a26485302ebbd6b21320485ff32527c6f4e21ed405b0438b3e325af731",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-codecs.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/adapters-local.mjs",
+      "sha256": "6c1c3cab5a8b6f41b7ac0859462bd595c4983c204f8135bc6563579e7b112587",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-local.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/adapters-services.mjs",
+      "sha256": "117a6bae4337fb6b1ab8dffe32f5462db590d5640caf09dc35bc2626f55ae2c6",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters-services.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/adapters.mjs",
+      "sha256": "656aca2b1673ba638a8af20ca37e20f283c45af5a23c6780559108bffe0655c5",
+      "source": "skills/vendor/agent-team-creator/scripts/adapters.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/cli.mjs",
+      "sha256": "d6ac8928a609011f2fed06dbe98f944019d1bd02547339611552be25f0a80e1d",
+      "source": "skills/vendor/agent-team-creator/scripts/cli.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/export-files.mjs",
+      "sha256": "9c5775adb080372618bb356efe882c8dc6f9449f338347a631318cf5208ff7f0",
+      "source": "skills/vendor/agent-team-creator/scripts/export-files.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/guidance.mjs",
+      "sha256": "9338adfef21690ee6e260d2dc1c97d7772b28208f97a70745324d7bbe32de756",
+      "source": "skills/vendor/agent-team-creator/scripts/guidance.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/handoff-provenance-validation.mjs",
+      "sha256": "7cde4e6964535bbe01e7d3fc253757fd7a46af2e8c22aa8a9de856bab5beeb91",
+      "source": "skills/vendor/agent-team-creator/scripts/handoff-provenance-validation.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/handoff-provenance.mjs",
+      "sha256": "69ec9554be0ad787abcff96404b4e423a1d0025963cbf617a5dc7096895f4cf9",
+      "source": "skills/vendor/agent-team-creator/scripts/handoff-provenance.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/handoff.mjs",
+      "sha256": "b371b1c667d4d0da1985e7e3b634855fd6caf7c0a9188e974446821a8c32cb83",
+      "source": "skills/vendor/agent-team-creator/scripts/handoff.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/memory.mjs",
+      "sha256": "c14150fefc88552882ccdc5721ae8f45885ea934a0a1bbf4f4e9c07f4bc5fad5",
+      "source": "skills/vendor/agent-team-creator/scripts/memory.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/models-http.mjs",
+      "sha256": "aea304aa515f8468446094ef3c5e140c78cffdbe63d4b54d414e3d1de709dc28",
+      "source": "skills/vendor/agent-team-creator/scripts/models-http.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/models.mjs",
+      "sha256": "8fbb72e7815e4f3e23d535679fae8a2deb73f013dfd40466952acf95d70f7b22",
+      "source": "skills/vendor/agent-team-creator/scripts/models.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/project-files.mjs",
+      "sha256": "607a5d9bd8b44ff99286960a3a0137d1f6b385ce0aff6191cebe78349bf5e8d0",
+      "source": "skills/vendor/agent-team-creator/scripts/project-files.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/project-install.mjs",
+      "sha256": "b3a0d61108d3a30f603c6670d913bf5259ed84ed06f5daaf020fe1341f220f91",
+      "source": "skills/vendor/agent-team-creator/scripts/project-install.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/project-instructions.mjs",
+      "sha256": "9d2db7c94387765f702d630efb6cabb0cb6be9fa6dfcffced6941a0805fb57b5",
+      "source": "skills/vendor/agent-team-creator/scripts/project-instructions.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/registry.mjs",
+      "sha256": "7db53af2ad673727ebbd7594b1ad420f716e89846eddba3be706d7618f1b7d48",
+      "source": "skills/vendor/agent-team-creator/scripts/registry.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/state-kbd.mjs",
+      "sha256": "4504194bccbc005e6774eb26c5829aa0d0ef2b5236a37cc74dca47d22bb9dc40",
+      "source": "skills/vendor/agent-team-creator/scripts/state-kbd.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/state-tasks.mjs",
+      "sha256": "3ef330a0f3689da1bd74f8a1998f51877c2e4f0d79d0b1fd23ff3b593504120d",
+      "source": "skills/vendor/agent-team-creator/scripts/state-tasks.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/state-validation.mjs",
+      "sha256": "ef4c3afb78b09d59d62816680a0082967950cb239d89f1febdba90d2b098a2d1",
+      "source": "skills/vendor/agent-team-creator/scripts/state-validation.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/state.mjs",
+      "sha256": "90ef7e07aae91ef787245d384fdac1c5e99fc676fa40db7d34bc1044257c9928",
+      "source": "skills/vendor/agent-team-creator/scripts/state.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/types.mjs",
+      "sha256": "76c2cc2056adf8d5d5ee881bf07508d8d26100ce83360c37e561cf42bd87199a",
+      "source": "skills/vendor/agent-team-creator/scripts/types.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-client.mjs",
+      "sha256": "13f0b36e40e549ef4b304afca5cedb2b3fb10ed87830d896eadf7836c62891b4",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-client.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package.mjs",
+      "sha256": "4ec40be5e4ab5ae8a5b19e92ef4d753504cb98a70e0bb28cb3e6afd5dafc4b07",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/binding.mjs",
+      "sha256": "4b3c8839da16d7547a36e4f4d5baadc6fe8b5480c42f29b08934325cdd018ca7",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/binding.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/canonical.mjs",
+      "sha256": "0f05afbd7c9d9e65146924f7de825448871966230659d3598129441bb2bf66fd",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/canonical.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/commands.mjs",
+      "sha256": "990daaef6407273d381fd5d07360b5911e3a4e36c61fcc894100006c903ddc3b",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/commands.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/compiler.mjs",
+      "sha256": "095bcf71a455f191361cae3d6927dc51d7061d3b86d65b6b7db095fdc158254d",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/compiler.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/graph-validation.mjs",
+      "sha256": "da13627077cb125edcf7e7f96bafd62c7a504d69f445335bd11e0946b3169c05",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/graph-validation.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/maintenance.mjs",
+      "sha256": "7f698ebe33d8d3f98b31d6ae42d062e3a267c6a4907c7061e7fc638abe5fd827",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/maintenance.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/migration.mjs",
+      "sha256": "f3041068290fba7b3eafffa3fd97b67e78781b656bbef7d137376c6095300380",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/migration.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/package-files.mjs",
+      "sha256": "e6df13fdd969785a1c834ac74f6d031e41cab79b12fe6013ecba2649971a6acd",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/package-files.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/private-authority.mjs",
+      "sha256": "78a28642c28f2b6b0a2b4441849cd4b181643ef9111788b7bf2f7ef23726dee6",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/private-authority.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/profile-validation.mjs",
+      "sha256": "02873529735152bc6ee344f3780fb33883d92a85d38a20cd69d5571c4524d44e",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/profile-validation.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/workspace-questions.mjs",
+      "sha256": "bf504ade7776fc784637f9b0c80ec6188e1120dd4654d08a7f74ad38671e8175",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/workspace-questions.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/uar-package/workspace.mjs",
+      "sha256": "4968bf0596ee8c84ec0626fdf18461b6e40daddc1b11af7400f6ae28ae0e257c",
+      "source": "skills/vendor/agent-team-creator/scripts/uar-package/workspace.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/ui-bindings.mjs",
+      "sha256": "0e2cc2e57600bf5b3bcedbf4a7926dff85ef8cf1ded90bd7f36f75b4b2b67159",
+      "source": "skills/vendor/agent-team-creator/scripts/ui-bindings.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/scripts/validation.mjs",
+      "sha256": "78d7481a5f82df1f729c3535b44352dac2873516d1b047823c94173be59f45c1",
+      "source": "skills/vendor/agent-team-creator/scripts/validation.mjs"
+    },
+    {
+      "path": "skills/agent-team-creator/SKILL.md",
+      "sha256": "eb445f411e653db4a501620fb2843e4478da1e1b3adce518603fef786beeff83",
+      "source": "skills/vendor/agent-team-creator/SKILL.md"
+    },
+    {
+      "path": "skills/internal-comms/examples/3p-updates.md",
+      "sha256": "087e4363c0f3513728a7e695eeb9ead5c3ecd12a4681b59340691180e65b68fc",
+      "source": "skills/vendor/internal-comms/examples/3p-updates.md"
+    },
+    {
+      "path": "skills/internal-comms/examples/company-newsletter.md",
+      "sha256": "30f81cfbdb03858a006169c72169024089c7c5d3d32611d337782da4f38c86b5",
+      "source": "skills/vendor/internal-comms/examples/company-newsletter.md"
+    },
+    {
+      "path": "skills/internal-comms/examples/faq-answers.md",
+      "sha256": "5ecd3356cd6666937f2ebefa753253edfdbdca15e368d07baf398bfcced72484",
+      "source": "skills/vendor/internal-comms/examples/faq-answers.md"
+    },
+    {
+      "path": "skills/internal-comms/examples/general-comms.md",
+      "sha256": "4d3a4bb198a77626bcf018e96b2b45a2dbabed172d4ade0fcd70d23ae8a47a47",
+      "source": "skills/vendor/internal-comms/examples/general-comms.md"
+    },
+    {
+      "path": "skills/internal-comms/LICENSE.txt",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "source": "skills/vendor/internal-comms/LICENSE.txt"
+    },
+    {
+      "path": "skills/internal-comms/SKILL.md",
+      "sha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+      "source": "skills/vendor/internal-comms/SKILL.md"
+    },
+    {
+      "path": "skills/internal-comms/UPSTREAM.json",
+      "sha256": "23e2fc4cbf3116da3862f339183295ba8b215da971d60b226d2442d71e7cc0e7",
+      "source": "skills/vendor/internal-comms/UPSTREAM.json"
+    },
+    {
+      "path": "skills/security-threat-model/agents/openai.yaml",
+      "sha256": "3319b59736312abceca614e341c0e59cae47263e3b58a22b2b5ddf1e5fc8c227",
+      "source": "skills/vendor/security-threat-model/agents/openai.yaml"
+    },
+    {
+      "path": "skills/security-threat-model/LICENSE.txt",
+      "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+      "source": "skills/vendor/security-threat-model/LICENSE.txt"
+    },
+    {
+      "path": "skills/security-threat-model/references/prompt-template.md",
+      "sha256": "81a59aa3fb3ac3a739d6a26ab38e4015965f215581ee54becef21a2b121ec29b",
+      "source": "skills/vendor/security-threat-model/references/prompt-template.md"
+    },
+    {
+      "path": "skills/security-threat-model/references/security-controls-and-assets.md",
+      "sha256": "d536cfa9acad2523dc39134bcf33b9566c29dd9a57b407cbc9901637230c6b98",
+      "source": "skills/vendor/security-threat-model/references/security-controls-and-assets.md"
+    },
+    {
+      "path": "skills/security-threat-model/SKILL.md",
+      "sha256": "1283c0dd62a8104d9edda4583569b5d8510b4ddaa45120687c999250fd96bad2",
+      "source": "skills/vendor/security-threat-model/SKILL.md"
+    },
+    {
+      "path": "skills/security-threat-model/UPSTREAM.json",
+      "sha256": "619b5f6f72a84ed11361a89bc5a822f1cee93a66e6b602f1478bf18ec900439d",
+      "source": "skills/vendor/security-threat-model/UPSTREAM.json"
+    },
+    {
+      "path": "team/team.json",
+      "sha256": "2a4e6695ba5ae5e40fbf6a903bdc004415011761c3b018365482be9ce9f5dc32",
+      "source": ".agent-team/authentic-digital-twin/team.json"
+    }
+  ]
+}

@@ -1,19 +1,39 @@
 {
-  "project": "authentic-digital-twin-content",
+  "schemaVersion": "5",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
+  "projectId": "fc7e5931-e8c0-49de-9cd6-5a491afe5fe7",
+  "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+  "path": [
+    "phase-3b-substrate-hardening"
+  ],
+  "phaseIds": [
+    "phase-3b-substrate-hardening"
+  ],
+  "activePhaseId": "phase-3b-substrate-hardening",
+  "activePhase": "phase-3b-substrate-hardening",
   "phase": "phase-3b-substrate-hardening",
-  "lifecycle_stage": "reflect-complete",
-  "change_backend": "native-kbd",
-  "changes_completed": 3,
-  "changes_total": 4,
-  "next_step": "Phase-3b reflected — 3/4 changes complete. Change Q (worked example review) carried forward, blocked on Travis verdict. Follow-up needed: reconcile the 'ultra-short' register-name references in voice-extraction-process.md after the Change O rename. Options: wait for Travis worked-example verdict to unblock Change Q, or run a small follow-up phase for the register-rename propagation. STATE.md OQ1 (stylometric validation) remains the one open question with no phase.",
-  "ordered_changes": [
-    "change-N-correspondence-re-extraction",
-    "change-O-ultra-short-re-extraction",
-    "change-P-spoken-re-extraction",
-    "change-Q-worked-example-review-and-corrections"
-  ],
-  "blocked_on": [
-    "Travis review of Tier 2 and Tier 3 worked examples (Change Q)"
-  ],
-  "last_updated": "2026-05-19"
+  "parentPhase": null,
+  "childPointer": null,
+  "change": "change-Q-worked-example-review-and-corrections",
+  "currentTask": null,
+  "status": "ready",
+  "lifecycle": "ready",
+  "stageId": null,
+  "stageStatus": null,
+  "completionMetric": "implementation",
+  "implementationCompleted": 20,
+  "implementationTotal": 21,
+  "planRevision": 1,
+  "revision": 4,
+  "exactNextCommand": null,
+  "nextChange": "change-Q-worked-example-review-and-corrections",
+  "nextTask": null,
+  "updatedAt": "2026-10-26T09:00:30.035627Z"
 }

@@ -134,6 +134,25 @@ Note: the Travis substrate is all-rights-reserved (see License and re-use below)
 
 ## Distribution and registration
 
+### Optional specialist development team
+
+The complete skill directory includes a portable twelve-role team for evidence
+collection, provenance, architecture, Rust CLI/MCP engineering, RAG/GraphRAG,
+SurrealDB, skill maintenance, independent review and delivery. It carries its
+companion skills and upstream licenses; no global skill installation is required.
+
+```text
+node skills/authentic-digital-twin-content/scripts/install-team.mjs --project .
+```
+
+See [the team guide](docs/agent-teams.md) and
+[standalone installer instructions](skills/authentic-digital-twin-content/scripts/README.md).
+Node.js 22+ runs the shipped `.mjs`; maintainers build typed runtime sources with
+TypeScript 7. Windows, macOS and Linux are targets. Client definition installation
+does not certify live execution or implement the planned Rust server.
+
+### Registration
+
 See [docs/REGISTRATION.md](docs/REGISTRATION.md) for step-by-step instructions for every distribution channel: agentskills.io community showcase, Anthropic official marketplace, community git-repo marketplaces, OpenCode, and generic agent clients.
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.

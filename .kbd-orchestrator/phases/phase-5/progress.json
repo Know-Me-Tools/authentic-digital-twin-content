@@ -1,27 +1,120 @@
 {
+  "schemaVersion": "2",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
   "phase": "phase-5",
-  "project": "authentic-digital-twin-content",
-  "assessment_complete": true,
-  "plan_complete": true,
-  "execute_complete": true,
-  "reflect_complete": true,
-  "change_backend": "native-kbd",
+  "phaseId": "phase-5",
+  "parentPhase": null,
+  "last_updated": "2026-10-26T09:00:30.035627Z",
+  "last_updated_by": "kbd-runtime",
   "changes_total": 4,
   "changes_completed": 4,
-  "ordered_changes": [
-    "change-R-effortful-heuristic-classification-in-voice-extraction-process",
-    "change-S-retest-cadence-protocol-in-voice-extraction-process",
-    "change-T-shadow-pattern-detector-reference-file",
-    "change-U-generic-pattern-framing-in-skill-md"
-  ],
-  "change_status": {
-    "change-R-effortful-heuristic-classification-in-voice-extraction-process": "DONE",
-    "change-S-retest-cadence-protocol-in-voice-extraction-process": "DONE",
-    "change-T-shadow-pattern-detector-reference-file": "DONE",
-    "change-U-generic-pattern-framing-in-skill-md": "DONE"
+  "implementation_total": 4,
+  "implementation_completed": 4,
+  "completion": {
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 4,
+      "total": 4,
+      "status": "COMPLETE"
+    },
+    "evidence": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    }
   },
-  "blocked_on": [],
-  "last_tool": "claude-code",
-  "last_updated": "2026-05-19",
-  "notes": "Phase complete. 5/5 goals MET. STATE.md OQ5 resolved (last open OQ in substrate ledger). All 4 changes documentation-only; QA skipped. Remaining work: phase-3b (Travis input required); shadow-pattern escalation evaluation (use data required after 20+ Tier 1 outputs)."
+  "completionScopes": {
+    "completion": "phase",
+    "runCompletion": "run"
+  },
+  "runCompletion": {
+    "scope": "run",
+    "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 20,
+      "total": 21,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    }
+  },
+  "changes": [
+    {
+      "id": "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+      "title": "change-R-effortful-heuristic-classification-in-voice-extraction-process",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-S-retest-cadence-protocol-in-voice-extraction-process",
+      "title": "change-S-retest-cadence-protocol-in-voice-extraction-process",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-T-shadow-pattern-detector-reference-file",
+      "title": "change-T-shadow-pattern-detector-reference-file",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-U-generic-pattern-framing-in-skill-md",
+      "title": "change-U-generic-pattern-framing-in-skill-md",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    }
+  ],
+  "children": {},
+  "migrationStatus": null
 }

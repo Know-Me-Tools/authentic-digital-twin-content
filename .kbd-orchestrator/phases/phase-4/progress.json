@@ -1,19 +1,98 @@
 {
+  "schemaVersion": "2",
+  "generatedBy": "kbd-runtime",
+  "projectionContractVersion": 2,
+  "sourceRevision": 4,
+  "derivedRevision": 4,
+  "frontier": {
+    "f480dc0e-b72c-4dda-88fc-06aeedbfa3f8": 4
+  },
+  "conflictCount": 0,
   "phase": "phase-4",
-  "project": "authentic-digital-twin-content",
-  "assessment_complete": true,
-  "plan_complete": true,
-  "execute_complete": true,
-  "reflect_complete": true,
-  "change_backend": "native-kbd",
+  "phaseId": "phase-4",
+  "parentPhase": null,
+  "last_updated": "2026-10-26T09:00:30.035627Z",
+  "last_updated_by": "kbd-runtime",
   "changes_total": 2,
   "changes_completed": 2,
-  "ordered_changes": ["change-L-effortful-heuristic-enforcement", "change-M-shadow-pattern-detector"],
-  "change_status": {
-    "change-L-effortful-heuristic-enforcement": "DONE",
-    "change-M-shadow-pattern-detector": "DONE"
+  "implementation_total": 2,
+  "implementation_completed": 2,
+  "completion": {
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 2,
+      "total": 2,
+      "status": "COMPLETE"
+    },
+    "evidence": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "NOT_TRACKED",
+      "summary": null,
+      "blockers": []
+    }
   },
-  "last_tool": "claude-code",
-  "last_updated": "2026-05-19",
-  "notes": "Phase complete. Both STATE.md OQ6 and OQ7 resolved. Mode A now has 8 steps: effortful-heuristic enforcement (4b) and shadow-pattern soft-warn (8). Remaining work: phase-3b blocked on Travis input; phase-5 for shadow-pattern escalation and generalization patterns."
+  "completionScopes": {
+    "completion": "phase",
+    "runCompletion": "run"
+  },
+  "runCompletion": {
+    "scope": "run",
+    "runId": "phase-3b-substrate-hardening-20261026T085321Z",
+    "primaryCounter": "implementation",
+    "implementation": {
+      "completed": 20,
+      "total": 21,
+      "status": "BLOCKED"
+    },
+    "evidence": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "certification": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "summary": null,
+      "blockers": []
+    }
+  },
+  "changes": [
+    {
+      "id": "change-L-effortful-heuristic-enforcement",
+      "title": "change-L-effortful-heuristic-enforcement",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    },
+    {
+      "id": "change-M-shadow-pattern-detector",
+      "title": "change-M-shadow-pattern-detector",
+      "status": "DONE",
+      "implementation_status": "COMPLETE",
+      "tasks_total": 0,
+      "tasks_done": 0,
+      "last_task_completed": null,
+      "next_task_pending": null,
+      "blockers": []
+    }
+  ],
+  "children": {},
+  "migrationStatus": null
 }
